@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" data-skin="noir">
+<html lang="ko" data-skin="wallpaper">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,7 +59,7 @@ p{margin:0}
 :root[data-skin="blanc"] .topbar,:root[data-skin="monocle"] .topbar{border-bottom:1px solid var(--ink)}
 .topbar .wrap{display:flex;align-items:center;gap:20px;height:64px}
 .topbar .logo{font-family:var(--mast-font);font-style:var(--mast-style);font-weight:var(--mast-weight);font-stretch:var(--mast-stretch);font-size:22px;letter-spacing:-.02em;white-space:nowrap}
-.topbar nav{display:flex;gap:4px 24px;overflow-x:auto;flex:1;scrollbar-width:none;padding:0 6px;min-width:0}
+.topbar nav{display:flex;gap:4px 18px;overflow-x:auto;flex:1;scrollbar-width:none;padding:0 6px;min-width:0}
 html,body{overflow-x:clip}
 .topbar nav::-webkit-scrollbar{display:none}
 .topbar nav a{font-size:15px;font-weight:500;white-space:nowrap;padding:4px 0;color:var(--cv-fg)}
@@ -261,6 +261,16 @@ table.launch td.pr{font-size:15px;white-space:nowrap}
 .sub-int legend{font-size:12px;color:var(--cv-mut);margin-bottom:8px;padding:0}
 .sub-int label{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--cv-fg);cursor:pointer}
 .sub-int input{accent-color:var(--cv-accent)}
+.sub-who{display:flex;flex-wrap:wrap;gap:14px 28px;margin-top:18px;align-items:center}
+.sub-g{border:0;padding:0;margin:0;display:flex;gap:14px;align-items:center}.sub-g legend{float:left;font-size:12px;color:var(--cv-mut);margin-right:10px;padding:0}
+.sub-g label{display:flex;gap:6px;align-items:center;font-size:14px;color:var(--cv-fg);cursor:pointer}.sub-g input{accent-color:var(--cv-accent)}
+.sub-age{display:flex;gap:10px;align-items:center;font-size:12px;color:var(--cv-mut)}
+.sub-age select{font:inherit;font-size:14px;background:transparent;color:var(--cv-fg);border:1px solid var(--cv-line);padding:7px 10px}
+.sub-age select option{color:#111}
+.stats{display:flex;gap:36px;align-items:flex-end;margin-top:28px;flex-wrap:wrap}.stats div{display:flex;flex-direction:column}
+.stats b{font-size:34px;line-height:1;color:var(--cv-fg)}.stats span{font-size:12px;color:var(--cv-mut);margin-top:6px}.stats small{font-size:11px;color:var(--cv-mut)}.stats b.pend{font-size:18px;font-weight:500;color:var(--cv-mut);line-height:34px}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px;font-size:12px}.foot-links a{color:inherit}
+.adslot{margin:24px 0;padding-top:8px;border-top:1px solid var(--rule);min-height:90px}.adlabel{display:block;font-size:10px;letter-spacing:.12em;color:var(--ink-2);margin-bottom:6px}
 .adnote{font-size:12px;color:var(--ink-2);margin:-6px 0 22px;letter-spacing:.01em}
 
 /* channels */
@@ -453,6 +463,7 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
   </table></div>
 </div></section>
 
+<div class="wrap"><div class="adslot" data-slot="top" hidden></div></div>
 <section class="sec" id="picks"><div class="wrap">
   <div class="sec-head"><div><span class="eyebrow">04 · Sourcing Picks</span><h2>오늘의 소싱 픽</h2></div><p>사진을 누르면 상세·점수 근거·구매처가 열립니다.</p></div>
   <p class="adnote">[광고] 이 섹션의 ‘쿠팡에서 구매’ 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
@@ -463,6 +474,7 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
     <span class="bchip" id="p-bchip"><span></span><button type="button" aria-label="브랜드 필터 해제">×</button></span>
   </div>
   <div class="picks" id="pick-list"></div>
+  <nav class="pager" id="pick-pager" aria-label="소싱 픽 페이지"></nav>
 </div></section>
 
 <section class="sec" id="channels"><div class="wrap">
@@ -487,6 +499,7 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
   <div class="az" id="brand-index"></div>
 </div></section>
 
+<div class="wrap"><div class="adslot" data-slot="mid" hidden></div></div>
 <section class="sec" id="sources"><div class="wrap">
   <div class="sec-head"><div><span class="eyebrow">08 · Sources &amp; Policy</span><h2>출처와 편집 원칙</h2></div><p>모든 수치의 매체와 발행일입니다. 발행일이 없는 페이지는 수집일을 적었습니다.</p></div>
   <div class="srcs"><table class="srct">
@@ -523,6 +536,7 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
       <span class="eyebrow">Newsletter</span>
       <h2>매일 아침 8시,<br>메일로 받아보기</h2>
       <p>새 호가 나오면 트렌드 · 추천템 · AI가전 소식을 한 통으로 보내 드립니다.</p>
+      <div class="stats" id="stats" hidden></div>
     </div>
     <form class="sub-form" id="sub-form" novalidate>
       <label for="sub-email" class="sr">이메일</label>
@@ -530,11 +544,15 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
         <input type="email" id="sub-email" name="email" placeholder="이메일 주소" autocomplete="email" required>
         <button type="submit" id="sub-btn">구독하기</button>
       </div>
+      <div class="sub-who">
+        <fieldset class="sub-g"><legend>성별</legend><label><input type="radio" name="sub-g" value="남성"> 남성</label><label><input type="radio" name="sub-g" value="여성"> 여성</label></fieldset>
+        <label class="sub-age"><span>나이대</span><select id="sub-age"><option value="">선택</option><option>10대 (만 14세 이상)</option><option>20대</option><option>30대</option><option>40대</option><option>50대</option><option>60대 이상</option></select></label>
+      </div>
       <fieldset class="sub-int" id="sub-int"><legend>관심 분야 (선택)</legend>
         <label><input type="checkbox" value="AI가전"> AI가전</label><label><input type="checkbox" value="AI디바이스"> AI디바이스</label><label><input type="checkbox" value="주방"> 주방</label><label><input type="checkbox" value="청소"> 청소</label><label><input type="checkbox" value="난방·가습"> 난방·가습</label><label><input type="checkbox" value="뷰티"> 뷰티</label>
       </fieldset>
       <label class="sub-agree"><input type="checkbox" id="sub-agree"> 개인정보 수집·이용에 동의합니다</label>
-      <p class="sub-fine">수집 항목: 이메일·관심 분야 · 목적: 매거진 발송과 맞춤 추천 · 보유: 구독 해지 시까지. 해지는 메일 하단의 ‘구독 해지’ 링크로 할 수 있습니다.</p>
+      <p class="sub-fine">수집 항목: 이메일·성별·나이대·관심 분야 · 목적: 매거진 발송, 맞춤 추천, 독자 통계 · 보유: 구독 해지 시까지(해지 즉시 파기). 만 14세 미만은 구독할 수 없습니다. 해지는 메일 하단의 ‘구독 해지’ 링크로 할 수 있습니다. <a href="privacy.html" style="color:inherit">개인정보처리방침</a></p>
       <p class="sub-msg" id="sub-msg" role="status" aria-live="polite"></p>
     </form>
   </div>
@@ -542,6 +560,7 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
 
 <footer><div class="wrap">
   <div class="colo"><span class="m">Atelier Électro</span><span id="colophon"></span></div>
+  <div class="foot-links"><span id="foot-stats"></span><a href="privacy.html">개인정보처리방침</a><a href="unsubscribe.html">구독 해지</a><a href="https://github.com/newyangs007/atelier-electro" target="_blank" rel="noopener">GitHub</a></div>
 </div></footer>
 
 <button type="button" class="totop" id="totop" aria-label="맨 위로">↑</button>
@@ -580,9 +599,9 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
 
   /* skins */
   var skinSel=$('skin-select');
-  try{var sv=localStorage.getItem('ae-skin');if(sv&&skinSel.querySelector('option[value="'+sv+'"]'))document.documentElement.dataset.skin=sv;}catch(e){}
+  try{var sv=localStorage.getItem('ae-skin-v2');if(sv&&skinSel.querySelector('option[value="'+sv+'"]'))document.documentElement.dataset.skin=sv;}catch(e){}
   skinSel.value=document.documentElement.dataset.skin;
-  skinSel.onchange=function(){document.documentElement.dataset.skin=this.value;try{localStorage.setItem('ae-skin',this.value);}catch(e){}};
+  skinSel.onchange=function(){document.documentElement.dataset.skin=this.value;try{localStorage.setItem('ae-skin-v2',this.value);}catch(e){}};
 
   /*__ICONS__*/
   function icon(k){return '<svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(IC[k]||IC.fryer)+'</svg>';}
@@ -689,12 +708,25 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
     $('launch-empty').hidden=shown>0;
     var bc=$('l-bchip');bc.classList.toggle('on',!!lState.b);bc.firstChild.textContent=lState.b?'브랜드: '+lState.b+' · '+shown+'건':'';
   }
-  function applyPicks(){
-    var shown=0;
+  var PICK_PER=6;
+  function pagerHTML(el,n,pages,total,per,cb,label){
+    if(pages<=1){el.innerHTML=total?'<span class="pinfo num">'+total+'개</span>':'';return;}
+    var b=['<button type="button" data-p="'+(n-1)+'"'+(n===0?' disabled':'')+'>‹ 이전</button>'];
+    for(var i=0;i<pages;i++)b.push('<button type="button" data-p="'+i+'"'+(i===n?' aria-current="page"':'')+'>'+(i+1)+'</button>');
+    b.push('<button type="button" data-p="'+(n+1)+'"'+(n>=pages-1?' disabled':'')+'>다음 ›</button>');
+    b.push('<span class="pinfo num">'+(n*per+1)+'–'+Math.min(total,(n+1)*per)+' / '+total+(label||'')+'</span>');
+    el.innerHTML=b.join('');el.onclick=function(e){var x=e.target.closest('button[data-p]');if(!x||x.disabled)return;cb(+x.dataset.p);};
+  }
+  function applyPicks(pg){
+    var okEls=[];pState.pg=pg||0;
     $('pick-list').querySelectorAll('.pick').forEach(function(el){
       var ok=(pState.v==='all'||(pState.v==='ai'?el.dataset.ai==='1':parseFloat(el.dataset.v)>=4))&&(pState.m==='all'||el.dataset.mk===pState.m)&&(pState.c==='all'||el.dataset.cat===pState.c)&&(!pState.b||el.dataset.b===pState.b);
-      el.style.display=ok?'':'none';if(ok){shown++;fadeIn(el);}
+      el.style.display='none';if(ok)okEls.push(el);
     });
+    var pages=Math.max(1,Math.ceil(okEls.length/PICK_PER));if(pState.pg>=pages)pState.pg=pages-1;
+    okEls.forEach(function(el,i){if(Math.floor(i/PICK_PER)===pState.pg){el.style.display='';fadeIn(el);}});
+    var shown=okEls.length;
+    pagerHTML($('pick-pager'),pState.pg,pages,shown,PICK_PER,function(n){applyPicks(n);var s=$('picks');if(s.getBoundingClientRect().top<0)s.scrollIntoView({behavior:'smooth'});},'개');
     $('pick-empty').hidden=shown>0;
     var bc=$('p-bchip');bc.classList.toggle('on',!!pState.b);bc.firstChild.textContent=pState.b?'브랜드: '+pState.b:'';
   }
@@ -764,6 +796,16 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
     var cp=e.target.closest('a.cp');if(cp){track('click',{target:cp.dataset.id||cp.href,where:cp.closest('#qv')?'quickview':'page'});}
   },true);
 
+  /* stats (updated daily) */
+  (function(){var st=window.AE_STATS;if(!st)return;var f=function(n){return Number(n).toLocaleString('ko-KR');};
+    var parts=['<div><b class="num">'+(st.subscribers!=null?f(st.subscribers):'—')+'</b><span>구독자</span></div>',(st.visitors!=null?'<div><b class="num">'+f(st.visitors)+'</b><span>누적 방문자</span></div>':'<div><b class="pend">집계 준비 중</b><span>누적 방문자</span></div>')];
+    var el=$('stats');el.innerHTML=parts.join('')+'<small>'+esc(st.asof||'')+' 기준</small>';el.hidden=false;
+    $('foot-stats').textContent='구독자 '+(st.subscribers!=null?f(st.subscribers)+'명':'—')+' · 누적 방문자 '+(st.visitors!=null?f(st.visitors)+'명':'집계 준비 중');})();
+  try{if(window.AE_FORM&&!sessionStorage.getItem('ae-visit')){sessionStorage.setItem('ae-visit','1');track('visit',{where:location.pathname});}}catch(e){}
+  /* ads (on when AE_ADS.client is set) */
+  (function(){var A=window.AE_ADS;if(!A||!A.client)return;var s=document.createElement('script');s.async=true;s.crossOrigin='anonymous';s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='+encodeURIComponent(A.client);document.head.appendChild(s);
+    document.querySelectorAll('.adslot').forEach(function(el){var slot=(A.slots||{})[el.dataset.slot];if(!slot)return;el.innerHTML='<span class="adlabel">광고</span><ins class="adsbygoogle" style="display:block" data-ad-client="'+esc(A.client)+'" data-ad-slot="'+esc(slot)+'" data-ad-format="auto" data-full-width-responsive="true"></ins>';el.hidden=false;try{(window.adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}});})();
+
   /* index */
   var IDX=[];
   function buildIndex(){
@@ -829,24 +871,28 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
     var dbP=null,usP=null;
     try{if(window.claude&&claude.use){dbP=claude.use('db');usP=claude.use('user');}}catch(e){}
     function say(s){msg.textContent=s;}
+    function gender(){var x=document.querySelector('input[name="sub-g"]:checked');return x?x.value:'';}
+    function age(){return document.getElementById('sub-age').value;}
     function interests(){return [].slice.call(document.querySelectorAll('#sub-int input:checked')).map(function(x){return x.value;});}
     function mailFallback(v){
-      var u='mailto:newyangs007@gmail.com?subject='+encodeURIComponent('[Atelier Électro] 구독 신청')+'&body='+encodeURIComponent('구독 이메일: '+v+'\n관심 분야: '+(interests().join(', ')||'전체'));
+      var u='mailto:newyangs007@gmail.com?subject='+encodeURIComponent('[Atelier Électro] 구독 신청')+'&body='+encodeURIComponent('구독 이메일: '+v+'\n성별: '+gender()+'\n나이대: '+age()+'\n관심 분야: '+(interests().join(', ')||'전체'));
       say('메일 앱이 열리면 보내기만 누르시면 신청됩니다.');location.href=u;
     }
     f.addEventListener('submit',function(ev){
       ev.preventDefault();
       var v=(em.value||'').trim();
       if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){say('이메일 주소를 확인해 주세요.');em.focus();return;}
+      if(!gender()){say('성별을 선택해 주세요.');return;}
+      if(!age()){say('나이대를 선택해 주세요.');return;}
       if(!ag.checked){say('개인정보 수집·이용에 동의해 주세요.');return;}
       btn.disabled=true;say('신청 중…');
       var done=false,timer=setTimeout(function(){if(!done){done=true;btn.disabled=false;mailFallback(v);}},10000);
-      if(window.AE_FORM){var F=window.AE_FORM,fd=new URLSearchParams();fd.append(F.f.type,'subscribe');fd.append(F.f.email,v);fd.append(F.f.interest,interests().join(', '));
+      if(window.AE_FORM){var F=window.AE_FORM,fd=new URLSearchParams();fd.append(F.f.type,'subscribe');fd.append(F.f.email,v);fd.append(F.f.interest,interests().join(', '));if(F.f.gender)fd.append(F.f.gender,gender());if(F.f.age)fd.append(F.f.age,age());
         fetch(F.url,{method:'POST',mode:'no-cors',body:fd}).then(function(){done=true;clearTimeout(timer);btn.disabled=false;try{localStorage.setItem('ae-sub',v);}catch(e){}em.value='';ag.checked=false;say('구독 신청이 완료됐습니다. 다음 날 아침 8시부터 보내 드립니다.');}).catch(function(){done=true;clearTimeout(timer);btn.disabled=false;mailFallback(v);});return;}
       Promise.all([dbP||Promise.resolve(null),usP||Promise.resolve(null)]).then(function(r){
         var db=r[0],us=r[1];
         if(!db||!us)throw new Error('nodb');
-        return us.id().then(function(id){return db.doc('subscribers/'+id).set({email:v,interests:interests(),at:new Date().toISOString(),src:'web'});});
+        return us.id().then(function(id){return db.doc('subscribers/'+id).set({email:v,gender:gender(),age:age(),interests:interests(),at:new Date().toISOString(),src:'web'});});
       }).then(function(){
         if(done)return;done=true;clearTimeout(timer);btn.disabled=false;
         try{localStorage.setItem('ae-sub',v);}catch(e){}

@@ -52,7 +52,7 @@ t = open(T + '/template.html', encoding='utf-8').read()
 t = t.replace('/*__BRANDS__*/', open(T + '/brands.json', encoding='utf-8').read())
 t = t.replace('/*__ICONS__*/', open(T + '/icons.txt', encoding='utf-8').read())
 t = t.replace('/*__ARCHIVE__*/', dump(issues)).replace('/*__ISSUE__*/', dump(latest))
-t = t.replace('<!--__VERIFY__-->', '\n'.join(cfg.get('verify', [])) + '\n<script>window.AE_FORM=%s;</script>' % dump(cfg.get('form')))
+t = t.replace('<!--__VERIFY__-->', '\n'.join(cfg.get('verify', [])) + '\n<script>window.AE_FORM=%s;window.AE_STATS=%s;window.AE_ADS=%s;</script>' % (dump(cfg.get('form')), dump(cfg.get('stats')), dump(cfg.get('ads'))))
 open('index.html', 'w', encoding='utf-8').write(t)
 
 # ---- product pages ----
@@ -67,7 +67,7 @@ def score(sc):
 
 
 PAGE = open(T + '/product.html', encoding='utf-8').read()
-urls = [SITE]
+urls = [SITE, SITE + 'privacy.html']
 for p in latest['picks']:
     v = score(p['sc'])
     verdict = '추천템' if v >= 4 else ('조건부' if v >= 3.5 else '관망')
