@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="ko" data-skin="noir">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>아틀리에 일렉트로 소형가전 매거진</title>
+<meta name="description" content="AI·소형·대형 가전 트렌드와 매일 아침 소싱 픽. 모든 수치에 출처와 날짜를 붙이는 가전 매거진 Atelier Électro.">
+<meta property="og:title" content="Atelier Électro — 가전 트렌드 & 소싱 매거진">
+<meta property="og:description" content="매일 아침 8시, AI·소형·대형 가전 뉴스와 추천템을 출처와 함께.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://newyangs007.github.io/atelier-electro/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@400;600;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Layout idea: fixed index bar, cover band, then photo-led product cards and boxed data; five skins share one structure; numbers in a condensed heavy grotesk. */
+  --bg:#f4f2ee;--bg-2:#e9e6df;--card:#ffffff;--ink:#121214;--ink-2:#5b5b61;--rule:#d6d2c9;--accent:#9c7a43;
+  --cv-bg:#0d0d0f;--cv-fg:#efe9dc;--cv-mut:#a9a59c;--cv-line:#2b2b2f;--cv-accent:#d2b37a;
+  --pt-bg:#0d0d0f;--pt-fg:#d2b37a;
+  --mast-font:"Bodoni Moda",serif;--mast-style:italic;--mast-weight:400;--mast-stretch:100%;
+  --head-font:"Nanum Myeongjo",serif;
+  --font-num:"Archivo","IBM Plex Sans KR",sans-serif;
+  --font-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --box:0px;
+  color-scheme:light;
+}
+:root[data-skin="blanc"]{--bg:#ffffff;--bg-2:#f3f3f1;--ink:#0b0b0c;--ink-2:#5d5f66;--rule:#e3e3df;--accent:#2340c8;--cv-bg:#ffffff;--cv-fg:#0b0b0c;--cv-mut:#6a6c72;--cv-line:#e3e3df;--cv-accent:#2340c8;--pt-bg:#2340c8;--pt-fg:#ffffff;--mast-font:"Archivo",sans-serif;--mast-style:normal;--mast-weight:800;--mast-stretch:112%}
+:root[data-skin="bordeaux"]{--bg:#f7f3f1;--bg-2:#ede5e0;--ink:#1a1416;--ink-2:#64595c;--rule:#ded3ce;--accent:#8a1f30;--cv-bg:#3a0e18;--cv-fg:#f6ebe4;--cv-mut:#cdb2b3;--cv-line:#5a2632;--cv-accent:#eab792;--pt-bg:#3a0e18;--pt-fg:#eab792;--mast-style:normal;--mast-weight:500}
+:root[data-skin="monocle"]{--bg:#F8F7F4;--bg-2:#ECE8E1;--ink:#22252A;--ink-2:#5A5A5A;--rule:#D4CBB8;--accent:#1B2A4A;--cv-bg:#F8F7F4;--cv-fg:#22252A;--cv-mut:#5A5A5A;--cv-line:#22252A;--cv-accent:#1B2A4A;--pt-bg:#1B2A4A;--pt-fg:#ffffff;--mast-font:"Noto Serif KR",serif;--mast-style:normal;--mast-weight:400;--head-font:"Noto Serif KR",serif;--box:1px}
+:root[data-skin="wallpaper"]{--bg:#ffffff;--bg-2:#f1f1f1;--ink:#000000;--ink-2:#555555;--rule:#dddddd;--accent:#e0301e;--cv-bg:#000000;--cv-fg:#ffffff;--cv-mut:#a8a8a8;--cv-line:#2a2a2a;--cv-accent:#ffffff;--pt-bg:#000000;--pt-fg:#ffffff;--mast-font:"Archivo",sans-serif;--mast-style:normal;--mast-weight:900;--mast-stretch:75%;--head-font:"IBM Plex Sans KR",sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-weight:300;font-size:15.5px;line-height:1.8;word-break:keep-all;overflow-wrap:break-word;transition:background .3s,color .3s}
+a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+a:hover{color:var(--accent);border-color:currentColor}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+button{font:inherit;color:inherit}
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(18px,5vw,56px)}
+h1,h2,h3,h4{text-wrap:balance;margin:0;font-weight:400}
+p{margin:0}
+.num{font-family:var(--font-num);font-stretch:75%;font-weight:700;font-variant-numeric:tabular-nums lining-nums;letter-spacing:-.01em}
+.eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+@keyframes rise{from{opacity:.35;transform:translateY(8px)}to{opacity:1;transform:none}}
+.fade{animation:rise .35s ease both}
+
+/* index bar */
+.topbar{position:sticky;top:0;z-index:40;background:var(--cv-bg);color:var(--cv-fg);border-bottom:1px solid var(--cv-line)}
+:root[data-skin="blanc"] .topbar,:root[data-skin="monocle"] .topbar{border-bottom:1px solid var(--ink)}
+.topbar .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.topbar .logo{font-family:var(--mast-font);font-style:var(--mast-style);font-weight:var(--mast-weight);font-stretch:var(--mast-stretch);font-size:22px;letter-spacing:-.02em;white-space:nowrap}
+.topbar nav{display:flex;gap:4px 24px;overflow-x:auto;flex:1;scrollbar-width:none;padding:0 6px;min-width:0}
+html,body{overflow-x:clip}
+.topbar nav::-webkit-scrollbar{display:none}
+.topbar nav a{font-size:15px;font-weight:500;white-space:nowrap;padding:4px 0;color:var(--cv-fg)}
+.topbar nav a .n{font-family:var(--font-num);font-stretch:75%;font-weight:700;font-size:13px;color:var(--cv-accent);margin-right:6px}
+.topbar nav a.on{border-bottom-color:var(--cv-accent)}
+.ctl{display:flex;gap:8px;align-items:center}
+.ctl label{position:absolute;left:-9999px}
+.ctl select{appearance:none;background:transparent;color:var(--cv-fg);border:1px solid var(--cv-line);font-size:12.5px;padding:6px 28px 6px 12px;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--cv-accent) 50%),linear-gradient(135deg,var(--cv-accent) 50%,transparent 50%);background-position:calc(100% - 14px) 50%,calc(100% - 9px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+:root[data-skin="blanc"] .ctl select,:root[data-skin="monocle"] .ctl select{border-color:var(--ink)}
+.ctl select option{color:#111;background:#fff}
+
+/* cover band */
+.band{background:var(--cv-bg);color:var(--cv-fg)}
+:root[data-skin="monocle"] .band{border-bottom:3px double var(--ink)}
+.mast{padding:48px 0 28px}
+.mast-name{font-family:var(--mast-font);font-style:var(--mast-style);font-weight:var(--mast-weight);font-stretch:var(--mast-stretch);font-size:clamp(54px,12vw,176px);line-height:.84;letter-spacing:-.045em;margin:0}
+:root[data-skin="monocle"] .mast-name{font-size:clamp(44px,8.6vw,120px);letter-spacing:-.03em;text-align:center}
+:root[data-skin="wallpaper"] .mast-name{text-transform:uppercase;letter-spacing:-.02em}
+.mast-name span{font-style:normal}
+.mast-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:10px 32px;margin-top:22px;padding-top:16px;border-top:1px solid var(--cv-line);font-size:13px;color:var(--cv-mut)}
+.mast-row .tag{font-family:var(--head-font);font-size:17px;color:var(--cv-fg)}
+.mast-row .tag i{font-style:normal;color:var(--cv-accent)}
+.mast-row b{color:var(--cv-accent);font-weight:500}
+.ticker{overflow:hidden;border-top:1px solid var(--cv-line);border-bottom:1px solid var(--cv-line)}
+.ticker-track{display:flex;gap:64px;padding:14px 0;width:max-content;animation:tick 90s linear infinite;font-size:14px;color:var(--cv-fg)}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track .k{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;color:var(--cv-mut);margin-right:10px;border:1px solid var(--cv-line);padding:1px 7px;border-radius:999px}
+.ticker-track .num{color:var(--cv-accent);font-size:17px}
+:root[data-skin="wallpaper"] .ticker-track .num{color:var(--accent)}
+@keyframes tick{to{transform:translateX(-50%)}}
+.cover{padding:72px 0 88px}
+.cover .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:72px;align-items:start}
+.cover .eyebrow{color:var(--cv-accent)}
+.cover h1{font-family:var(--head-font);font-weight:800;font-size:clamp(40px,6vw,82px);line-height:1.14;letter-spacing:-.04em;margin:18px 0 30px}
+:root[data-skin="monocle"] .cover h1{font-weight:600}
+.cover h1 em{font-style:normal;font-weight:400;color:var(--cv-accent)}
+:root[data-skin="wallpaper"] .cover h1 em{color:var(--accent)}
+.deck{font-size:17px;line-height:2;color:var(--cv-mut);max-width:44ch;white-space:pre-line}
+.byline{margin-top:30px;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--cv-mut)}
+.figs{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--cv-line)}
+:root[data-skin="monocle"] .figs{border:1px solid var(--ink);background:var(--card);overflow:hidden}
+.fig{padding:24px 0 22px;border-bottom:1px solid var(--cv-line)}
+.fig:nth-child(odd){padding-right:22px;border-right:1px solid var(--cv-line)}
+.fig:nth-child(even){padding-left:22px}
+:root[data-skin="monocle"] .fig{padding:20px 18px!important}
+:root[data-skin="monocle"] .fig:nth-last-child(-n+2){border-bottom:0}
+.fig .v{font-size:clamp(46px,5.4vw,72px);line-height:.95;color:var(--cv-fg)}
+.fig .v small{font-size:.46em;margin-left:2px;color:var(--cv-accent)}
+:root[data-skin="wallpaper"] .fig .v small{color:var(--accent)}
+.fig .l{font-size:13.5px;color:var(--cv-fg);margin-top:12px;line-height:1.55;font-weight:400}
+
+/* sources inline */
+.cite{display:inline-flex;flex-wrap:wrap;gap:4px 8px;margin-top:10px}
+.cite a{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.01em;color:#8f8c85;border:1px solid var(--rule);padding:1px 7px;border-radius:999px;white-space:nowrap}
+.cite a:hover{color:var(--accent);border-color:var(--accent)}
+.band .cite a{color:var(--cv-mut);border-color:var(--cv-line)}
+
+/* sections */
+section.sec{padding:112px 0}
+section.sec+section.sec{border-top:1px solid var(--rule)}
+:root[data-skin="monocle"] section.sec+section.sec{border-top:1px solid var(--ink)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 40px;align-items:end;margin-bottom:48px}
+.sec-head .eyebrow{color:var(--accent);margin-bottom:14px;display:block}
+.sec-head h2{font-family:var(--head-font);font-weight:800;font-size:clamp(30px,4vw,50px);letter-spacing:-.035em;line-height:1.15}
+:root[data-skin="monocle"] .sec-head h2{font-weight:600}
+.sec-head p{max-width:36ch;font-size:13.5px;color:var(--ink-2);text-align:right}
+.point{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:10px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase}
+.point::before{content:"";width:18px;height:1px;background:var(--accent)}
+
+/* trends */
+.trends{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:64px 56px}
+.trend{border-top:1px solid var(--ink);padding-top:20px;transition:transform .3s}
+.trend:hover{transform:translateY(-3px)}
+.trend .rn{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;color:var(--ink-2)}
+.trend .stat{font-size:clamp(54px,6vw,80px);line-height:.95;color:var(--accent);margin:20px 0 10px}
+.trend .sl{font-size:13px;font-weight:400}
+.trend h3{font-family:var(--head-font);font-weight:800;font-size:22px;letter-spacing:-.025em;line-height:1.35;margin:22px 0 8px}
+.trend p{font-size:14px;color:var(--ink-2)}
+
+/* filter bars */
+.bar{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;margin-bottom:40px;padding-bottom:20px;border-bottom:1px solid var(--rule)}
+.bar.stack{display:grid;gap:12px}
+.seg{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.seg-label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-2);margin-right:6px;min-width:52px}
+.chip{font-size:13px;border:1px solid var(--rule);background:transparent;padding:6px 16px;border-radius:999px;cursor:pointer;transition:all .2s}
+.chip:hover{border-color:var(--ink);transform:translateY(-1px)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chip .c{font-family:var(--font-num);font-stretch:75%;font-weight:700;margin-left:6px;opacity:.6}
+.bchip{display:none;align-items:center;gap:8px;font-size:13px;background:var(--accent);color:#fff;padding:6px 8px 6px 14px;border-radius:999px}
+.bchip.on{display:inline-flex}
+.bchip button{background:rgba(255,255,255,.2);border:0;color:#fff;width:22px;height:22px;border-radius:50%;cursor:pointer;line-height:1}
+
+/* wire */
+.wire{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 56px}
+.story{padding:28px 0 30px;border-top:1px solid var(--rule)}
+.story.pt{border-top:2px solid var(--accent)}
+.story .meta{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;color:var(--ink-2);margin-bottom:12px}
+.cat{display:inline-block;font-family:var(--font-body);font-size:11px;padding:1px 10px;border-radius:999px;border:1px solid currentColor;font-weight:500;letter-spacing:.02em}
+.c-AI{color:#34508f}.c-소형{color:#3f6150}.c-대형{color:#7a4c37}
+.story h3{font-family:var(--head-font);font-weight:800;font-size:19.5px;line-height:1.45;letter-spacing:-.02em;margin-bottom:10px}
+.story p{font-size:13.5px;color:var(--ink-2)}
+.story .point{margin-bottom:10px}
+.empty-note{grid-column:1/-1;padding:24px 0;color:var(--ink-2);font-size:14px;border-top:1px solid var(--rule)}
+
+/* launches */
+.tbl{overflow-x:auto}
+table.launch{width:100%;border-collapse:collapse;min-width:900px;font-size:14px}
+table.launch th{font-family:var(--font-mono);font-weight:400;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;text-align:left;color:var(--ink-2);padding:0 16px 14px 0;border-bottom:1px solid var(--ink)}
+table.launch td{padding:18px 16px 18px 0;border-bottom:1px solid var(--rule);vertical-align:middle}
+table.launch tbody tr{transition:background .2s}
+table.launch tbody tr:hover{background:var(--bg-2)}
+table.launch tr.pt td:first-child{box-shadow:inset 2px 0 0 var(--accent);padding-left:12px}
+table.launch td.d{font-size:15px;white-space:nowrap}
+table.launch td.d small{font-family:var(--font-body);font-size:11px;font-weight:400;color:var(--ink-2);margin-left:4px}
+table.launch td.m{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em}
+table.launch td.b{white-space:nowrap}
+table.launch td.ct{white-space:nowrap}
+table.launch td.ct .catname{font-size:13.5px;margin-left:8px}
+table.launch td.p{font-family:var(--head-font);font-weight:700;font-size:15px}
+table.launch td.pr{font-size:15px;white-space:nowrap}
+.brand-btn{background:none;border:0;border-bottom:1px dotted var(--ink-2);padding:0;cursor:pointer;font-weight:500}
+.brand-btn:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.tipcard{position:fixed;z-index:60;width:220px;background:var(--bg);color:var(--ink);border:1px solid var(--rule);padding:11px 13px 10px;box-shadow:0 6px 18px rgba(0,0,0,.07);pointer-events:none;opacity:0;transition:opacity .12s;font-size:12px;line-height:1.55}
+.tipcard.on{opacity:1}
+.tipcard .tc-c{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.14em;color:var(--ink-2)}
+.tipcard .tc-n{font-weight:600;font-size:13px;margin:2px 0 6px}
+.tipcard p{color:var(--ink-2)}
+.tipcard p b{font-weight:500;color:var(--ink)}
+.tipcard .tc-h{margin-top:6px;font-size:11px;color:var(--accent)}
+
+/* picks: photo-led */
+.picks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:56px 40px}
+.pick{display:flex;flex-direction:column;text-align:left;background:none;border:0;padding:0;cursor:pointer}
+.pick .vis{position:relative;aspect-ratio:1/1;background:#fff;display:grid;place-items:center;overflow:hidden;border:1px solid var(--rule);transition:border-color .3s}
+.pick:hover .vis{border-color:var(--ink)}
+.pick .vis img{width:86%;height:86%;object-fit:contain;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.pick:hover .vis img,.pick:hover .vis svg{transform:scale(1.05)}
+.pick .vis svg{width:44%;height:auto;color:var(--ink);transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.pick .vis .rank{position:absolute;top:12px;left:14px;font-size:24px;line-height:1;color:var(--ink)}
+.pick .vis .ribbon{position:absolute;top:12px;right:12px;font-size:12px;font-weight:600;color:var(--pt-fg);background:var(--pt-bg);padding:4px 11px}
+.pick .vis .aitag{position:absolute;top:12px;right:12px;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:#fff;background:#34508f;padding:3px 9px}
+.pick .vis .ribbon+.aitag{top:44px}
+.qv .links a.cp{background:var(--accent);color:#fff;border-color:var(--accent)}
+.pick .vis .peek{position:absolute;left:0;right:0;bottom:0;background:var(--ink);color:var(--bg);font-size:12.5px;padding:10px 14px;transform:translateY(100%);transition:transform .3s}
+.pick:hover .vis .peek,.pick:focus-visible .vis .peek{transform:none}
+.pick .who{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;color:var(--ink-2);margin-top:18px}
+.pick h3{font-family:var(--head-font);font-weight:800;font-size:19px;line-height:1.4;letter-spacing:-.02em;margin:6px 0 12px}
+.pick .row{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--ink);padding-top:12px}
+.pick .price{font-size:22px;line-height:1}
+.stars{display:flex;align-items:center;gap:8px}
+.st{position:relative;font-size:14px;letter-spacing:2px;line-height:1;color:var(--rule)}
+.st i{position:absolute;inset:0;overflow:hidden;color:var(--accent);font-style:normal;white-space:nowrap}
+.stars .num{font-size:18px}
+.verdict{font-size:11.5px;padding:2px 10px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+.v-go{color:var(--accent);font-weight:500}.v-cond{color:var(--ink-2)}.v-watch{color:#9a9aa0}
+
+/* quick view */
+.qv-veil{position:fixed;inset:0;z-index:70;background:rgba(10,10,12,.45);opacity:0;pointer-events:none;transition:opacity .25s}
+.qv-veil.on{opacity:1;pointer-events:auto}
+.qv{position:fixed;z-index:71;top:0;right:0;bottom:0;width:min(560px,100%);background:var(--bg);overflow-y:auto;transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.7,.2,1);box-shadow:-20px 0 40px rgba(0,0,0,.12)}
+.qv.on{transform:none}
+.qv .qv-in{padding:28px clamp(20px,4vw,36px) 48px}
+.qv .qv-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.qv .qv-x{border:1px solid var(--ink);background:none;padding:6px 14px;cursor:pointer;font-size:13px}
+.qv .qv-img{aspect-ratio:1/1;background:#fff;border:1px solid var(--rule);display:grid;place-items:center}
+.qv .qv-img img{width:84%;height:84%;object-fit:contain}
+.qv .qv-img svg{width:40%}
+.qv h3{font-family:var(--head-font);font-weight:800;font-size:24px;line-height:1.35;margin:18px 0 12px}
+.qv .plate{display:grid;grid-template-columns:1.35fr 1fr .8fr;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);margin:16px 0 20px}
+.qv .plate div{padding:12px 0}
+.qv .plate div+div{padding-left:14px;border-left:1px solid var(--rule)}
+.qv .plate span{display:block;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.18em;color:var(--ink-2)}
+.qv .plate b{font-size:21px}
+.qv .lines{display:grid;gap:10px;font-size:14px;line-height:1.75}
+.qv .lines div{display:grid;grid-template-columns:58px 1fr;gap:10px}
+.qv .lines .k{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;color:var(--accent);padding-top:4px}
+.qv .score{display:grid;gap:7px;margin:22px 0 14px;font-size:12.5px;border-top:1px solid var(--rule);padding-top:16px}
+.qv .score .r{display:grid;grid-template-columns:46px 22px 1fr;gap:8px;align-items:center}
+.qv .score .r .lb{color:var(--ink-2)}
+.qv .score .r .num{font-size:15px}
+.qv .score .avg{display:flex;justify-content:space-between;border-top:1px solid var(--rule);padding-top:8px;color:var(--ink-2)}
+.qv .note{font-size:13.5px;color:var(--ink-2);margin:6px 0 10px}
+.qv .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.qv .links a{border:1px solid var(--ink);padding:8px 14px;font-size:13px}
+.qv .links a:hover{background:var(--ink);color:var(--bg)}
+.qv .credit{font-size:11px;color:var(--ink-2);margin-top:8px}
+.adnote{font-size:12px;color:var(--ink-2);margin:-6px 0 22px;letter-spacing:.01em}
+
+/* channels */
+.chans{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:48px 36px}
+.chan{border-top:1px solid var(--ink);padding-top:18px;display:flex;flex-direction:column;gap:10px}
+.chan h3{font-family:var(--head-font);font-weight:800;font-size:18px}
+.chan .stt{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em}
+.chan .ok{color:var(--accent)}.chan .lim{color:#9a9aa0}
+.chan p{font-size:12.5px;color:var(--ink-2);line-height:1.8}
+.chan .go{font-size:12.5px;margin-top:auto;border-bottom:1px solid var(--rule);align-self:flex-start}
+
+/* archive */
+.archive{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.iss{text-align:left;background:var(--bg-2);border:0;padding:26px 24px 24px;cursor:pointer;display:flex;flex-direction:column;gap:12px;min-height:200px;transition:transform .25s}
+.iss:hover{transform:translateY(-3px)}
+.iss.cur{background:var(--pt-bg);color:var(--pt-fg)}
+.iss .no{font-size:44px;line-height:1}
+.iss .dt{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;opacity:.7}
+.iss .tt{font-family:var(--head-font);font-weight:700;font-size:16px;line-height:1.5;margin-top:auto}
+.banner{display:none;background:var(--accent);color:#fff;text-align:center;font-size:13px;padding:9px 16px}
+.banner.on{display:block}
+.banner button{background:none;border:0;border-bottom:1px solid #fff;color:#fff;cursor:pointer;margin-left:10px;padding:0}
+
+/* index */
+.search{display:flex;align-items:center;border-bottom:2px solid var(--ink)}
+.search label{position:absolute;left:-9999px}
+.search input{flex:1;border:0;background:transparent;font-family:var(--head-font);font-weight:700;font-size:clamp(28px,4.2vw,52px);padding:16px 0;color:var(--ink);min-width:0;letter-spacing:-.02em}
+.search input:focus{outline:none}
+.search input::placeholder{color:#bdb9b0;font-weight:400}
+.search:focus-within{border-color:var(--accent)}
+.search button{font-size:13px;letter-spacing:.16em;background:var(--ink);color:var(--bg);border:0;padding:12px 22px;cursor:pointer}
+.qtags{display:flex;flex-wrap:wrap;gap:10px 22px;margin:24px 0 40px}
+.qtags button{font-size:16px;background:none;border:0;padding:0;cursor:pointer;color:var(--ink-2)}
+.qtags button:hover{color:var(--accent)}
+.res{display:grid;grid-template-columns:140px minmax(0,1fr) auto;gap:20px;padding:18px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.res .t{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;color:var(--accent)}
+.res .h{font-weight:500;font-size:18px}
+.res .d{font-size:14px;color:var(--ink-2);margin-top:2px}
+.res a{font-size:13.5px;white-space:nowrap}
+.empty{padding:12px 0;color:var(--ink-2);font-size:15px}
+.az{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:4px 32px;margin-top:56px}
+.az h4{grid-column:1/-1;font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;color:var(--ink-2);margin:26px 0 10px;padding-bottom:10px;border-bottom:1px solid var(--rule)}
+.az .row{display:flex;justify-content:space-between;align-items:baseline;padding:7px 0;font-size:17px}
+.az .row .q{background:none;border:0;cursor:pointer;color:var(--ink-2);font-size:12.5px;padding:0}
+.az .row .q:hover{color:var(--accent)}
+
+/* method + sources */
+.method{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:64px}
+.method h3{font-family:var(--head-font);font-weight:800;font-size:19px;margin-bottom:14px}
+.method p{font-size:13.5px;color:var(--ink-2)}
+.method p+p{margin-top:12px}
+.rubric{width:100%;border-collapse:collapse;font-size:13px}
+.rubric th{text-align:left;font-family:var(--font-mono);font-weight:400;font-size:10.5px;letter-spacing:.14em;color:var(--ink-2);padding:0 10px 10px 0;border-bottom:1px solid var(--ink)}
+.rubric td{padding:11px 10px 11px 0;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink-2);line-height:1.6}
+.rubric td:first-child{color:var(--ink);font-weight:500;white-space:nowrap}
+.formula{margin-top:20px;padding:16px 18px;background:var(--bg-2);font-size:13.5px}
+.srcs{overflow-x:auto}
+table.srct{width:100%;border-collapse:collapse;font-size:13px;min-width:760px}
+table.srct th{text-align:left;font-family:var(--font-mono);font-weight:400;font-size:10.5px;letter-spacing:.14em;color:var(--ink-2);padding:0 14px 12px 0;border-bottom:1px solid var(--ink)}
+table.srct td{padding:11px 14px 11px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+table.srct td.n{font-family:var(--font-num);font-stretch:75%;font-weight:700;color:var(--ink-2)}
+table.srct td.md{font-weight:500;white-space:nowrap}
+table.srct td.dt{font-family:var(--font-mono);font-size:12px;white-space:nowrap}
+table.srct td.dt small{display:block;color:var(--ink-2);font-size:10.5px}
+table.srct tr:target{background:var(--bg-2)}
+.sub{background:var(--cv-bg);color:var(--cv-fg);padding:96px 0;border-top:1px solid var(--cv-line)}
+.sub-in{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end}
+.sub .eyebrow{color:var(--cv-accent)}
+.sub h2{font-family:var(--head-font,inherit);font-size:clamp(30px,3.4vw,44px);line-height:1.18;margin:14px 0 18px;word-break:keep-all;color:var(--cv-fg)}
+.sub-copy p{color:var(--cv-mut);font-size:15px;line-height:1.7;margin:0;word-break:keep-all}
+.sub-row{display:flex;border-bottom:1px solid var(--cv-fg)}
+.sub-row input{flex:1;background:transparent;border:0;color:var(--cv-fg);font:inherit;font-size:17px;padding:16px 2px;outline:none;min-width:0}
+.sub-row input::placeholder{color:var(--cv-mut)}
+.sub-row button{background:var(--cv-fg);color:var(--cv-bg);border:0;font:inherit;font-size:14px;font-weight:600;letter-spacing:.04em;padding:0 26px;cursor:pointer;transition:opacity .2s}
+.sub-row button:hover{opacity:.85}.sub-row button[disabled]{opacity:.5;cursor:default}
+.sub-row:focus-within{border-bottom-color:var(--cv-accent)}
+.sub-agree{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--cv-fg);margin-top:18px;cursor:pointer}
+.sub-agree input{accent-color:var(--cv-accent);width:15px;height:15px}
+.sub-fine{font-size:12px;color:var(--cv-mut);line-height:1.6;margin:8px 0 0;word-break:keep-all}
+.sub-msg{font-size:14px;margin:14px 0 0;min-height:1.4em;color:var(--cv-accent)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media(max-width:820px){.sub{padding:72px 0}.sub-in{grid-template-columns:1fr;gap:36px}}
+footer{background:var(--cv-bg);color:var(--cv-mut);padding:56px 0 48px}
+:root[data-skin="blanc"] footer,:root[data-skin="monocle"] footer{border-top:1px solid var(--ink)}
+footer .colo{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px}
+footer .colo .m{font-family:var(--mast-font);font-style:var(--mast-style);font-weight:var(--mast-weight);font-stretch:var(--mast-stretch);font-size:34px;color:var(--cv-fg)}
+footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em}
+.totop{position:fixed;right:20px;bottom:20px;z-index:35;width:46px;height:46px;border-radius:50%;border:1px solid var(--ink);background:var(--bg);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;font-size:18px}
+.totop.on{opacity:1;pointer-events:auto}
+.totop:hover{transform:translateY(-3px)}
+
+@media (max-width:1080px){
+  .trends,.wire,.picks{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .chans{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .archive{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .topbar .logo{display:none}
+}
+@media (max-width:860px){
+  .cover .wrap{grid-template-columns:1fr;gap:48px}
+  .sec-head{grid-template-columns:1fr}.sec-head p{text-align:left}
+  .method{grid-template-columns:1fr;gap:40px}
+  section.sec{padding:80px 0}
+  .topbar .wrap{height:auto;flex-wrap:wrap;padding-top:10px;padding-bottom:10px;gap:8px 16px}
+  .topbar nav{order:3;flex-basis:100%;max-width:100%;padding:0}
+}
+@media (max-width:620px){
+  .trends,.wire{grid-template-columns:1fr}
+  .picks{grid-template-columns:1fr 1fr;gap:36px 16px}
+  .pick h3{font-size:16px}.pick .price{font-size:18px}
+  .chans,.archive{grid-template-columns:1fr 1fr}
+  .res{grid-template-columns:1fr;gap:2px}
+  .fig:nth-child(odd){padding-right:14px}.fig:nth-child(even){padding-left:14px}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <span class="logo">Atelier Électro</span>
+    <nav aria-label="목차" id="toc">
+      <a href="#trends"><span class="n">01</span>트렌드</a>
+      <a href="#wire"><span class="n">02</span>뉴스</a>
+      <a href="#launches"><span class="n">03</span>신제품</a>
+      <a href="#picks"><span class="n">04</span>소싱 픽</a>
+      <a href="#channels"><span class="n">05</span>채널</a>
+      <a href="#archive"><span class="n">06</span>지난 호</a>
+      <a href="#index"><span class="n">07</span>검색</a>
+      <a href="#sources"><span class="n">08</span>출처</a>
+      <a href="#subscribe"><span class="n">09</span>구독</a>
+    </nav>
+    <div class="ctl">
+      <label for="issue-select">호 선택</label><select id="issue-select"></select>
+      <label for="skin-select">디자인 시안</label>
+      <select id="skin-select">
+        <option value="noir">A · 누아르</option>
+        <option value="blanc">B · 갤러리 화이트</option>
+        <option value="bordeaux">C · 보르도</option>
+        <option value="monocle">D · 모노클 네이비</option>
+        <option value="wallpaper">E · 월페이퍼 모던</option>
+      </select>
+    </div>
+  </div>
+</header>
+<div class="banner" id="past-banner" role="status"></div>
+
+<div class="band">
+  <div class="mast"><div class="wrap">
+    <p class="mast-name">Atelier <span>Électro</span></p>
+    <div class="mast-row">
+      <span class="tag">가전 트렌드 &amp; 소싱 매거진 <i>·</i> AI · 소형 · 대형</span>
+      <span><span id="edition-line"></span> · 매일 <b>08:00 KST</b> 발행</span>
+    </div>
+  </div></div>
+  <div class="ticker" aria-label="주요 수치"><div class="ticker-track" id="ticker"></div></div>
+  <section class="cover" id="cover"><div class="wrap">
+    <div>
+      <span class="eyebrow">Cover Story</span>
+      <h1 id="cover-title"></h1>
+      <p class="deck" id="cover-deck"></p>
+      <p class="byline" id="cover-byline"></p>
+    </div>
+    <div class="figs" id="cover-figs"></div>
+  </div></section>
+</div>
+
+<section class="sec" id="trends"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">01 · Trend Keywords</span><h2>이번 주의 여섯 단어</h2></div><p>숫자 하나, 문장 하나. 출처 칩에 매체와 발행일이 붙습니다.</p></div>
+  <div class="trends" id="trend-list"></div>
+</div></section>
+
+<section class="sec" id="wire"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">02 · The Wire</span><h2>AI · 소형 · 대형가전 뉴스</h2></div><p>선이 굵은 기사가 POINT입니다.</p></div>
+  <div class="bar">
+    <div class="seg" id="f-cat" role="group" aria-label="분야"></div>
+    <div class="seg" id="f-reg" role="group" aria-label="국가"></div>
+  </div>
+  <div class="wire" id="wire-list"></div>
+</div></section>
+
+<section class="sec" id="launches"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">03 · New Arrivals</span><h2>주요 브랜드 신제품</h2></div><p id="launch-range"></p></div>
+  <div class="bar">
+    <div class="seg" id="f-month" role="group" aria-label="월별 보기"></div>
+    <span class="bchip" id="l-bchip"><span></span><button type="button" aria-label="브랜드 필터 해제">×</button></span>
+  </div>
+  <div class="tbl"><table class="launch">
+    <thead><tr><th>시점</th><th>시장</th><th>브랜드</th><th>카테고리</th><th>제품</th><th>가격</th><th>출처</th></tr></thead>
+    <tbody id="launch-rows"></tbody>
+  </table></div>
+</div></section>
+
+<section class="sec" id="picks"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">04 · Sourcing Picks</span><h2>오늘의 소싱 픽</h2></div><p>사진을 누르면 상세·점수 근거·구매처가 열립니다.</p></div>
+  <p class="adnote">[광고] 이 섹션의 ‘쿠팡에서 구매’ 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+  <div class="bar stack">
+    <div class="seg" id="f-pv" role="group" aria-label="보기"></div>
+    <div class="seg" id="f-pm" role="group" aria-label="국가"></div>
+    <div class="seg" id="f-pc" role="group" aria-label="제품 카테고리"></div>
+    <span class="bchip" id="p-bchip"><span></span><button type="button" aria-label="브랜드 필터 해제">×</button></span>
+  </div>
+  <div class="picks" id="pick-list"></div>
+</div></section>
+
+<section class="sec" id="channels"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">05 · Channel Radar</span><h2>채널 레이더</h2></div><p>수치를 못 모은 채널은 추정 없이 링크로 안내합니다.</p></div>
+  <div class="chans" id="chan-list"></div>
+</div></section>
+
+<section class="sec" id="archive"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">06 · Back Issues</span><h2>지난 호</h2></div><p>매일 아침 발행된 호가 쌓입니다.</p></div>
+  <div class="archive" id="archive-list"></div>
+</div></section>
+
+<section class="sec" id="index"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">07 · Index</span><h2>검색 인덱스</h2></div><p>제품 · 브랜드 · 카테고리 · 국가 · 채널</p></div>
+  <form class="search" id="search-form" role="search">
+    <label for="q">이번 호 검색</label>
+    <input id="q" type="search" placeholder="에어프라이어, 다이슨, AI 냉장고" autocomplete="off">
+    <button type="submit">검색</button>
+  </form>
+  <div class="qtags" id="quick-tags"></div>
+  <div id="results" aria-live="polite"></div>
+  <div class="az" id="brand-index"></div>
+</div></section>
+
+<section class="sec" id="sources"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">08 · Sources &amp; Policy</span><h2>출처와 편집 원칙</h2></div><p>모든 수치의 매체와 발행일입니다. 발행일이 없는 페이지는 수집일을 적었습니다.</p></div>
+  <div class="srcs"><table class="srct">
+    <thead><tr><th>No.</th><th>매체·사이트</th><th>제목</th><th>발행일 · 수집일</th><th>원문</th></tr></thead>
+    <tbody id="source-rows"></tbody>
+  </table></div>
+  <div class="method" style="margin-top:72px">
+    <div>
+      <h3>사실</h3>
+      <p>가격·리뷰·평점·순위는 다나와 인기상품순(광고 제외), 해외 가격은 제조사 발표가입니다.</p>
+      <p>제품 사진은 다나와 등록 이미지입니다. 신제품은 첫 화면에 최근 3개월만 보이고, 월 단추로 이전 달을 볼 수 있습니다.</p>
+    </div>
+    <div>
+      <h3>소싱 점수</h3>
+      <table class="rubric">
+        <thead><tr><th>항목</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th></tr></thead>
+        <tbody>
+          <tr><td>수요</td><td>카테고리 인기 1위 · 채널 전체 1위</td><td>인기 2–3위 · 판매 3배+ 급증</td><td>인기 4–6위 · 출시 이슈만</td><td>7위 이하</td><td>신호 없음</td></tr>
+          <tr><td>검증</td><td>리뷰 500+</td><td>200–499 · 판매 1만+</td><td>50–199</td><td>10–49</td><td>10 미만 · 수집 전</td></tr>
+          <tr><td>타이밍</td><td>지금 성수기</td><td>연말 선물 · 상승세</td><td>연중 상시</td><td>비수기</td><td>—</td></tr>
+          <tr><td>접근성</td><td>ODM·도매 다수</td><td>중소 브랜드 직거래</td><td>중견·수입사 경유</td><td>대기업 공식 유통</td><td>국내 미출시</td></tr>
+          <tr><td>마진</td><td>고단가 · 경쟁 적음</td><td>차별화 가능</td><td>경쟁 보통</td><td>가격경쟁 · AS 부담</td><td>마진 없음</td></tr>
+        </tbody>
+      </table>
+      <p class="formula">별점 = 다섯 항목 평균을 0.5 단위로 반올림 · 평점 4.5 미만이면 검증 −1 · <b>4.0 이상 추천템</b> · 3.5 조건부 · 3.0 이하 관망</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="sub" id="subscribe"><div class="wrap">
+  <div class="sub-in">
+    <div class="sub-copy">
+      <span class="eyebrow">Newsletter</span>
+      <h2>매일 아침 8시,<br>메일로 받아보기</h2>
+      <p>새 호가 나오면 트렌드 · 추천템 · AI가전 소식을 한 통으로 보내 드립니다.</p>
+    </div>
+    <form class="sub-form" id="sub-form" novalidate>
+      <label for="sub-email" class="sr">이메일</label>
+      <div class="sub-row">
+        <input type="email" id="sub-email" name="email" placeholder="이메일 주소" autocomplete="email" required>
+        <button type="submit" id="sub-btn">구독하기</button>
+      </div>
+      <label class="sub-agree"><input type="checkbox" id="sub-agree"> 개인정보 수집·이용에 동의합니다</label>
+      <p class="sub-fine">수집 항목: 이메일 · 목적: 매거진 발송 · 보유: 구독 해지 시까지. 해지는 받은 메일에 ‘구독 해지’로 답장하면 됩니다.</p>
+      <p class="sub-msg" id="sub-msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="colo"><span class="m">Atelier Électro</span><span id="colophon"></span></div>
+</div></footer>
+
+<button type="button" class="totop" id="totop" aria-label="맨 위로">↑</button>
+<div class="tipcard" id="tipcard" role="tooltip" aria-hidden="true"></div>
+<div class="qv-veil" id="qv-veil"></div>
+<aside class="qv" id="qv" role="dialog" aria-modal="true" aria-labelledby="qv-title" aria-hidden="true"><div class="qv-in" id="qv-in"></div></aside>
+
+<script id="brand-data" type="application/json">{
+"신일전자":{"c":"KR · 대한민국","f":"1959년 창업, 선풍기 명가","p":"선풍기, 전기히터, 제습기"},
+"LG전자":{"c":"KR · 대한민국","f":"글로벌 종합가전, 오브제컬렉션","p":"스타일러, 코드제로, 퓨리케어, 휘센"},
+"삼성전자":{"c":"KR · 대한민국","f":"글로벌 종합가전, 비스포크","p":"비스포크 냉장고, 그랑데 세탁기, 제트 청소기"},
+"쿠쿠전자":{"c":"KR · 대한민국","f":"국내 대표 밥솥 브랜드","p":"IH 압력밥솥, 정수기, 음식물처리기"},
+"풀무원건강생활":{"c":"KR · 대한민국","f":"풀무원 그룹 계열 건강가전","p":"녹즙기, 스팀쿡"},
+"미닉스":{"c":"KR · 대한민국","f":"소형 생활가전 브랜드","p":"미니 건조기, 음식물처리기 더 플렌더"},
+"아이닉":{"c":"KR · 대한민국","f":"주방·생활 소형가전","p":"올스텐 에어프라이어"},
+"키친아트":{"c":"KR · 대한민국","f":"주방용품·소형 주방가전","p":"냄비·프라이팬, 에어프라이어"},
+"루메나":{"c":"KR · 대한민국","f":"휴대용 생활가전","p":"무선 선풍기, 가습기, 캠핑 랜턴"},
+"프리옴":{"c":"국내 판매 브랜드","f":"상세 정보 확인 중","p":"9L 에어프라이어"},
+"다이슨":{"c":"GB · 영국 창업(1991)","f":"모터·기류 기술의 프리미엄 가전","p":"무선청소기, 슈퍼소닉, 에어랩"},
+"블라우풍트":{"c":"DE · 독일(1923)","f":"카오디오로 시작, 현재 라이선스 가전","p":"카오디오, 헤어드라이어"},
+"Siemens":{"c":"DE · 독일","f":"BSH(보쉬·지멘스) 가전 브랜드","p":"빌트인 오븐, 식기세척기, 세탁기"},
+"밀레":{"c":"DE · 독일(1899)","f":"내구성으로 유명한 프리미엄 가전","p":"세탁기, 식기세척기, 진공청소기"},
+"Ninja":{"c":"US · 미국","f":"샤크닌자의 주방가전 브랜드","p":"에어프라이어, 블렌더, CREAMi"},
+"샤크닌자":{"c":"US · 미국","f":"Shark·Ninja 두 브랜드 운영","p":"Shark 무선청소기, Ninja 에어프라이어"},
+"Shark":{"c":"US · 미국","f":"샤크닌자의 청소·뷰티 브랜드","p":"무선청소기, 공기청정기"},
+"조지루시":{"c":"JP · 일본 오사카(1918)","f":"보온병에서 시작한 주방가전","p":"전기밥솥, 전기포트, 텀블러"},
+"Toffy":{"c":"JP · 일본","f":"라돈나의 레트로 디자인 가전","p":"오븐토스터, 전기포트, 스프 블렌더"},
+"Dreame":{"c":"CN · 중국 쑤저우","f":"고속 모터 기반 청소가전","p":"로봇청소기, 무선청소기"},
+"모바":{"c":"CN · 중국","f":"드리미 계열 청소가전 브랜드","p":"로봇청소기"},
+"하이얼":{"c":"CN · 중국 칭다오","f":"세계 최대급 대형가전 그룹","p":"냉장고, 세탁기, GE Appliances 보유"}
+}</script>
+<script id="archive-index" type="application/json">[{"date":"2026-11-22","no":1,"title":"덜 사고, 더 좋은 것을 산다"}]</script>
+<script id="magazine-data" type="application/json">{"edition":{"date":"2026-11-22","no":1,"label":"2026.11.22 SUN · No.001","collected":"2026-11-22 05:30 KST","next":"다음 호 2026.11.23 MON 08:00 KST"},"sources":{"S1":{"t":"리스닝마인드·디아이투데이, 검색 데이터로 본 2026년 가전 시장 트렌드","u":"https://ditoday.com/?p=155775"},"S2":{"t":"아이보스, 리스닝마인드 2026 가전 리포트 요약(미니냉풍기 검색)","u":"https://www.i-boss.co.kr/ab-3208-1814"},"S3":{"t":"스페셜타임즈, NIQ 2026년 상반기 한국 가전시장 트렌드","u":"https://www.specialtimes.co.kr/news/articleView.html?idxno=482521"},"S4":{"t":"벤처스퀘어, 크리테오 국내 가전 온라인 매출 분석(2025년 4분기)","u":"https://www.venturesquare.net/1118687/"},"S5":{"t":"지디넷코리아, 쿠팡 가전·디지털 블랙프라이데이(2026.11.15)","u":"https://zdnet.co.kr/view?no=20261115110246"},"S6":{"t":"뉴스와이어(GS리테일), GS샵 브레빌 론칭·프리미엄 가전 실적(2026.02.18)","u":"https://www.newswire.co.kr/newsRead.php?no=1028856"},"S7":{"t":"스마트투데이, GS샵 홈쇼핑 히트상품 ‘실용적 프리미엄’(2025.12.01)","u":"https://www.smarttoday.co.kr/ko-kr/articles/97709"},"S8":{"t":"MTN, 29CM DDP디자인페어 이구홈 거래액(2026.10.14)","u":"https://news.mtn.co.kr/article/2026101416464235976"},"S9":{"t":"원포인트, 인스타 공동구매 30,372건 분석","u":"https://1point.kr/blog/insights/food-groupbuy-influencer-guide/"},"S10":{"t":"뉴데일리, 신일 에코 팬 큐브 히터 누적 판매 260억원","u":"https://biz.newdaily.co.kr/site/data/html/2025/11/21/2025112100192.amp.html"},"S11":{"t":"헤럴드코리아, 신일전자 에코 팬 큐브 히터 신규 에디션(2026.10.22)","u":"https://mbiz.heraldcorp.com/article/10911441"},"S12":{"t":"쿠키뉴스, 다이슨코리아 로봇·물청소기·공기청정기 3종 출시(2026.01.12)","u":"https://www.kukinews.com/article/view/kuk202601120083"},"S13":{"t":"위키트리, 다이슨 손풍기 국내 2026년 5월 출시 예정","u":"https://www.wikitree.co.kr/articles/1130682"},"S14":{"t":"헤럴드경제, 삼성 비스포크 AI 스팀 로봇청소기 CES 2026(2026.01.21)","u":"https://www.heraldk.com/article/2026012122540809603"},"S15":{"t":"다나와 검색 ‘에어프라이어’ 인기상품순","u":"https://search.danawa.com/dsearch.php?query=%EC%97%90%EC%96%B4%ED%94%84%EB%9D%BC%EC%9D%B4%EC%96%B4&sort=saveDESC"},"S16":{"t":"다나와 검색 ‘가습기’ 인기상품순","u":"https://search.danawa.com/dsearch.php?query=%EA%B0%80%EC%8A%B5%EA%B8%B0&sort=saveDESC"},"S17":{"t":"다나와 검색 ‘전기히터’ 인기상품순","u":"https://search.danawa.com/dsearch.php?query=%EC%A0%84%EA%B8%B0%ED%9E%88%ED%84%B0&sort=saveDESC"},"S18":{"t":"다나와 검색 ‘음식물처리기’ 인기상품순","u":"https://search.danawa.com/dsearch.php?query=%EC%9D%8C%EC%8B%9D%EB%AC%BC%EC%B2%98%EB%A6%AC%EA%B8%B0&sort=saveDESC"},"S19":{"t":"다나와 검색 ‘로봇청소기’ 인기상품순","u":"https://search.danawa.com/dsearch.php?query=%EB%A1%9C%EB%B4%87%EC%B2%AD%EC%86%8C%EA%B8%B0&sort=saveDESC"},"S20":{"t":"다나와 검색 ‘헤어드라이어’ 인기상품순","u":"https://search.danawa.com/dsearch.php?query=%ED%97%A4%EC%96%B4%EB%93%9C%EB%9D%BC%EC%9D%B4%EC%96%B4&sort=saveDESC"},"S21":{"t":"다나와 검색 ‘닌자’ 인기상품순","u":"https://search.danawa.com/dsearch.php?query=%EB%8B%8C%EC%9E%90&sort=saveDESC"},"S22":{"t":"다나와 검색 ‘무선청소기’ 인기상품순","u":"https://search.danawa.com/dsearch.php?query=%EB%AC%B4%EC%84%A0%EC%B2%AD%EC%86%8C%EA%B8%B0&sort=saveDESC"},"S23":{"t":"SharkNinja, Ninja PREPi 출시 보도자료(2026.10.02)","u":"https://www.webull.com/news/15678799031780352"},"S24":{"t":"SharkNinja Newsroom, Ninja Crispi Microwave 출시","u":"https://newsroom.sharkninja.com/ninja-launches-its-first-ever-microwave-that-crisps-like-an-air-fryer/"},"S25":{"t":"Business Wire via Finviz, Ninja HydraSense 출시(2026.08.13)","u":"https://finviz.com/news/381886/ninja-raises-the-standard-for-home-water-with-the-launch-of-ninja-hydrasense"},"S26":{"t":"SharkNinja IR, Ninja SLUSHi Twist 출시(2026.05.19)","u":"https://ir.sharkninja.com/news/news-details/2026/Ninja-Launches-SLUSHi-Twist-the-Dual-Flavor-Frozen-Drink-Maker-Built-for-Summer-Entertaining/default.aspx"},"S27":{"t":"Business Wire, Ninja Luxe Café 한정 컬러(2026.04.16)","u":"https://www.businesswire.com/news/home/20260416599592/en/David"},"S28":{"t":"Net Influencer(Kalodata), TikTok Shop 2026년 3월 판매 Top 10","u":"https://www.netinfluencer.com/?p=45540"},"S29":{"t":"FastMoss, TikTok Shop US 2026년 1분기 Top 10","u":"https://www.fastmoss.com/blog/top-selling-products-tiktok-shop-us-q1-2026/"},"S30":{"t":"FastMoss, TikTok Shop US 2026년 2분기 Top 10(eMarketer 전망 인용)","u":"https://www.fastmoss.com/blog/best-selling-tiktok-shop-products-us-q2-2026/"},"S31":{"t":"Boston 25 News, TikTok kitchen: viral videos and purchases","u":"https://www.boston25news.com/news/tiktok-kitchen-how/ANGAOYH5XY4KHFRFOQUXDTSIUI/?outputType=amp"},"S32":{"t":"TT123, TikTok 미국 초음파 세척기 월매출 23.53만 달러(2026.02.14)","u":"https://www.tt123.com/kx/AyIfvZId"},"S33":{"t":"Mordor Intelligence, 미국 소형가전 시장","u":"https://www.mordorintelligence.kr/industry-reports/united-states-small-home-appliances-market"},"S34":{"t":"@DIME, 2026 히트 ‘에어프라이어’와 ‘스프 블렌더’(2026.08.31)","u":"https://dime.jp/genre/2138147/"},"S35":{"t":"@DIME, 샤크닌자 가전이 잘 팔리는 이유(2026.11.15)","u":"https://dime.jp/genre/2166543/"},"S36":{"t":"가격.com 가전 카테고리 랭킹(2026.11.03–11.09)","u":"https://kakaku.com/ranking/kaden/"},"S37":{"t":"Ameba Choice, 2026년 최신 가전","u":"https://choice.ameba.jp/articles/latest-home-appliances/"},"S38":{"t":"21세기경제보도, 2026 쌍11 가전 결산(2026.11.17)","u":"https://www.sfccn.com/2026/11-17/4NMDE0MDdfMjMwODY4Ng.html"},"S39":{"t":"신랑과기, 2026 상반기 주방 소형가전 ‘량축가승’(2026.08.05)","u":"https://finance.sina.cn/tech/2026-08-05/detail-inimhawm4663142.d.html?vt=4"},"S40":{"t":"푸단대 소비빅데이터실험실, 2026 쌍11 온라인 소비(2026.11.17)","u":"https://fddi.fudan.edu.cn/34/78/c19047a799864/page.htm"},"S41":{"t":"퉁화순, 2026 티몰 쌍11 신제품·신트랙(2026.11.12)","u":"https://news.10jqka.com.cn/20261112/c681748703.shtml"},"S42":{"t":"중국신문망, 소형가전 실적 둔화와 보조금 축소(2026.08.18)","u":"https://www.chinanews.com.cn/cj/2026/08-18/10679621.shtml"},"S43":{"t":"즈후, 2026 소형가전 세대교체(스팀 에어프라이어)","u":"https://www.zhihu.com/tardis/jm/ans/1997682309680345801"},"S44":{"t":"IFA Berlin 보도자료, IFA Media Days 2026(2026.09.02)","u":"https://www.ifa-berlin.com/press-releases/ifa2026-started-media-days"},"S45":{"t":"NIQ, Home Appliances Outlook 2026: Western Europe","u":"https://nielseniq.com/global/en/insights/report/2025/home-appliances-outlook-2026-western-europe/"},"S46":{"t":"Euromonitor, IFA 2026: AI, robotics and blurring product lines","u":"https://www.euromonitor.com/article/ifa-2026-ai-robotics-and-blurring-product-lines"},"S47":{"t":"ChannelNews, IFA 2026 AEG 소형가전 Design Collection","u":"https://www.channelnews.com.au/ifa-2026-aeg-unveils-first-pasta-hob-and-new-floorcare-range/"},"S48":{"t":"ChannelNews, IFA 2026 Miele 컴팩트 리빙","u":"https://www.channelnews.com.au/ifa-2026-miele-showcases-ai-cooking-self-cleaning-floorcare-and-compact-living/"},"S49":{"t":"LinkedIn(Kalodata 추정), 독일 TikTok Shop 가전 브랜드 Top 5","u":"https://at.linkedin.com/in/martinradimsky"},"S50":{"t":"Mordor Intelligence, 글로벌 소형가전 시장","u":"https://www.mordorintelligence.kr/industry-reports/small-home-appliances-market"},"S51":{"t":"오늘의집 가전·디지털 카테고리","u":"https://ohou.se/store/category?category_id=14000000"},"S52":{"t":"YTN, 폭염 속 ‘미니 가전’ 인기(2026.07.27)","u":"https://www.ytn.co.kr/_ln/0102_202607271431178104"},"S53":{"t":"SBS Biz, 다이슨 AI 로봇청소기 공개(2026.01.23)","u":"https://biz.sbs.co.kr/amp/article/20000286914"},"S54":{"t":"다나와 검색 ‘침구청소기’ 인기상품순","u":"https://search.danawa.com/dsearch.php?query=%EC%B9%A8%EA%B5%AC%EC%B2%AD%EC%86%8C%EA%B8%B0&sort=saveDESC"},"S55":{"t":"전자신문, KES 2026 삼성 ‘일상 속 AI’·LG ‘산업까지 확장’(2026.10.13)","u":"https://etnews.com/20261013000179"},"S56":{"t":"비즈워치, LG전자 3분기 HS사업본부 실적(2026.10.28)","u":"https://news.bizwatch.co.kr/article/industry/2026/10/28/0047"},"S57":{"t":"연합뉴스(한민족센터), LG전자 3분기 실적·AIDC 냉각 수주 3조(2026.10.28)","u":"https://www.koreancenter.or.kr/news/articleView.html?idxno=1431044"},"S58":{"t":"CEO스코어데일리, CES 2026 삼성 비스포크 AI 패밀리허브 제미나이 탑재(2026.01.05)","u":"https://ceoscoredaily.com/page/view/2026010517300994675"},"S59":{"t":"한국경제, 2026년형 무풍·휘센 오브제컬렉션 AI 냉방(2026.05.12)","u":"https://www.hankyung.com/article/2026051201781"},"S60":{"t":"Finanznachrichten(PR Newswire), Whirlpool 2026년 3분기 실적(2026.10.26)","u":"https://www.finanznachrichten.de/nachrichten-2026-10/69944018-whirlpool-corporation-announces-third-quarter-results-008.htm"},"S61":{"t":"TradingKey, Whirlpool Q3 2026: 매출 감소·소형가전 마진 확대(2026.10.26)","u":"https://www.tradingkey.com/news/earnings/262240253-tradingkey"},"S62":{"t":"FIRSTonline, Electrolux 2026년 3분기 실적","u":"https://firstonline.info/en/Electrolux-beats-operating-profit-expectations-but-falls-back-into-the-red-and-revises-2026-forecasts/"},"S63":{"t":"신화망, 하이얼 쌍11 AI 가전 성과(2026.11.13)","u":"https://www.news.cn/tech/20261113/2b597819b9014e9dbbcdd087fafffd4e/c.html"},"S64":{"t":"환구망, AWE2026 하이얼 ‘AI의 눈’ 2.0","u":"https://tech.huanqiu.com/article/4QukAPkWiwl"},"S65":{"t":"퉁화순(루왕), 중국 냉장고 신 에너지효율 국가표준 시행(2026.11.09)","u":"https://stock.10jqka.com.cn/20261109/c681627232.shtml"},"S66":{"t":"Digit, IFA 2026 주목할 신가전(Siemens iQ700 등)","u":"https://www.digit.in/features/home-appliances/ifa-2026-from-ai-washers-to-smart-robot-cleaners-these-are-the-most-interesting-new-appliances.html"},"S67":{"t":"디지털데일리, LG전자 로보틱스사업센터 신설(2026.07.02)","u":"https://m.ddaily.co.kr/page/view/2026070214533009888"},"S68":{"t":"하이얼, 대형가전 글로벌 혁신대회 AI 냉장고 신품류(2026.11.10)","u":"https://www.haier.com/about_haier/xinwen/20261110_296289.shtml"},"S69":{"t":"코리아헤럴드, 밀레 주방가전 4종 출시(2026.11.02)","u":"https://mbiz.heraldcorp.com/article/10922190"},"S70":{"t":"다나와 검색 ‘다이슨 스팟앤스크럽’","u":"https://search.danawa.com/dsearch.php?query=%EB%8B%A4%EC%9D%B4%EC%8A%A8+%EC%8A%A4%ED%8C%9F%EC%95%A4%EC%8A%A4%ED%81%AC%EB%9F%BD"},"S71":{"t":"다나와 제품 페이지 ‘비스포크 AI 스팀 울트라 VR90F01AAG’","u":"https://prod.danawa.com/info/?pcode=124075114"},"S72":{"t":"Kohl's, Shark PowerPro Flex Reveal Plus IZ382H 상품 페이지","u":"https://www.kohls.com/product/prd-7647696/shark-powerpro-flex-reveal-plus-cordless-vacuum-iz382h.jsp"}},"cover":{"title":"덜 사고, <em>더 좋은 것<\/em>을 산다","deck":"2026년 가전의 공통 문법은 ‘수량은 줄고, 단가는 오른다’.\n대형가전은 수익성 방어전, 소형가전은 프리미엄과 1인 가구, 그 사이를 AI가 잇습니다.","byline":"수집 2026-11-22 05:30 KST · 출처 67건","figs":[{"v":"+11.5","u":"%","l":"중국 주방 소형가전 평균가 (상반기)","s":["S39"]},{"v":"−14","u":"%","l":"중국 쌍11 가전 온라인 판매액","s":["S38"]},{"v":"+5","u":"%","l":"글로벌 소형가전 상반기 성장","s":["S44"]},{"v":"−8.8","u":"%","l":"월풀 3분기 매출","s":["S60"]},{"v":"3.7","u":"%","l":"LG전자 가전(HS) 3분기 영업이익률","s":["S56"]},{"v":"+9.5","u":"%","l":"한국 가전·내구재 상반기 성장","s":["S3"]}]},"ticker":[["AI","KES 2026 · 삼성 ‘일상 속 AI’, LG ‘산업까지 확장’","S55"],["대형","LG전자 HS 3분기 매출 7조 444억 원","S56"],["대형","월풀 3분기 매출 $3.677B, −8.8%","S60"],["소형","다나와 전기히터 1위 신일 큐브 히터","S17"],["소형","쿠팡 가전·디지털 블랙프라이데이 11/16–11/29","S5"],["AI","하이얼 ‘AI의 눈’ 냉장고 식재료 인식 300종+","S64"],["소형","쌍11 소형가전 Top3 메이디·로보락·쑤포얼","S38"],["소형","BRUNO 글라스 에어프라이어 계획 대비 510%","S34"],["소형","Ninja PREPi 출시 $179","S23"],["대형","중국 냉장고 새 에너지효율 표준 시행","S65"]],"trends":[{"rn":"01","t":"양은 줄고 값은 오른다","stat":"+11.5%","sl":"중국 주방 소형가전 평균가","line":"판매량 −14.6%에도 평균가 상승. 국내 홈쇼핑은 로보락 450억·다이슨 헤어 300억.","s":["S39","S6"]},{"rn":"02","t":"코팅 대신 유리와 스틸","stat":"510%","sl":"BRUNO 글라스 에어프라이어 계획 대비 판매","line":"닌자 크리스피, 아이닉 올스텐까지 ‘보이는 조리’가 대세.","s":["S34","S35","S15"]},{"rn":"03","t":"AI가 대형가전을 다시 설계한다","stat":"300+","sl":"하이얼 AI 냉장고 인식 식재료 종류","line":"삼성 패밀리허브는 제미나이 탑재, LG는 로보틱스사업센터 신설.","s":["S64","S58","S67"]},{"rn":"04","t":"1인용, 미니, 원룸","stat":"105.8만","sl":"‘미니·소형’ 가전 월 검색량","line":"여성 비중 61%, 20대 유입 증가. ‘미니냉풍기’ 검색은 역대 최고.","s":["S1","S2"]},{"rn":"05","t":"내 자리만 데운다","stat":"260억","sl":"신일 큐브 히터 라인 누적 판매","line":"다나와 전기히터 인기 1·2위가 모두 같은 라인.","s":["S11","S17"]},{"rn":"06","t":"고가 가전도 숏폼에서","stat":"$6.12M","sl":"TikTok Shop 3월 1위 샤크 청소기 매출","line":"독일 TikTok Shop GMV 상위 5개도 모두 가전 브랜드.","s":["S28","S49"]}],"news":[{"r":"KR","c":"AI","pt":true,"h":"KES 2026, 삼성 ‘일상 속 AI’ vs LG ‘산업까지 AI’","p":"삼성은 가전·모바일 연결 생태계, LG는 홈과 산업을 나눠 전시.","d":"2026.10.13","s":"S55"},{"r":"KR","c":"대형","pt":true,"h":"LG전자 가전 3분기 매출 7조 444억 원","p":"매출은 2개 분기 연속 7조원대, 영업이익률은 9.7%에서 3.7%로.","d":"2026.10.28","s":"S56"},{"r":"KR","c":"대형","h":"LG, AI 데이터센터 냉각 수주 3조원 돌파","p":"상반기 6천억원에서 한 분기 만에 5배 이상.","d":"2026.10.28","s":"S57"},{"r":"KR","c":"AI","h":"비스포크 AI 패밀리허브, 가전 최초 제미나이","p":"CES 2026에서 식품 인식 범위를 넓힌 냉장고 공개.","d":"2026.01.05","s":"S58"},{"r":"KR","c":"소형","pt":true,"h":"한국 가전·내구재 상반기 11조 2,273억 원","p":"+9.5%. 마켓플레이스 매출은 약 25% 증가.","s":"S3"},{"r":"KR","c":"소형","h":"소형가전 검색, 20대·여성이 늘었다","p":"2년간 검색량이 늘어난 카테고리는 냉풍기·음식물처리기뿐.","s":"S1"},{"r":"KR","c":"소형","h":"쿠팡 가전·디지털 블랙프라이데이","p":"11/16–11/29, 삼성·LG 등 참여.","d":"2026.11.15","s":"S5"},{"r":"US","c":"대형","pt":true,"h":"월풀 3분기 매출 −8.8%, 적자 전환","p":"북미 대형가전 수요 부진. 소형가전(SDA)은 매출 보합에 이익률 상승.","d":"2026.10.26","s":"S60"},{"r":"US","c":"소형","h":"TikTok Shop US, 올해 234억 달러 전망","p":"eMarketer 전망. 2분기 Top10에 가전 포함.","s":"S30"},{"r":"US","c":"소형","h":"샤크닌자, 하반기 신제품 연속 출시","p":"Crispi Microwave $449 · HydraSense $199.99 · PREPi $179.","s":"S23"},{"r":"US","c":"소형","h":"소비자 71%, 바이럴 제품 구매·고려","p":"싱글도즈 그라인더는 틱톡 바이럴 후 판매 22% 증가.","s":"S31"},{"r":"JP","c":"소형","pt":true,"h":"올해 일본 히트는 ‘방치형 조리가전’","p":"글라스 에어프라이어 510%, 오토 스프 블렌더 약 4배.","d":"2026.08.31","s":"S34"},{"r":"JP","c":"소형","h":"샤크닌자 재팬, 사용자 조사로 연속 히트","p":"ChillPill 핸디팬 크라우드펀딩 1.1억 엔+.","d":"2026.11.15","s":"S35"},{"r":"JP","c":"소형","h":"가격닷컴 가전 랭킹 4위 ‘밥솥’","p":"11.03–11.09 집계 카테고리 순위.","s":"S36"},{"r":"CN","c":"대형","pt":true,"h":"쌍11 가전 온라인 −14%","p":"대형은 하이얼·메이디·샤오톈어, 소형은 메이디·로보락·쑤포얼이 상위.","d":"2026.11.17","s":"S38"},{"r":"CN","c":"AI","h":"하이얼 ‘AI의 눈’ 2.0, 냉장고가 식재료 300종+ 인식","p":"AWE2026에서 냉장고·세탁기·에어컨 Seeker 시리즈 공개.","s":"S64"},{"r":"CN","c":"AI","h":"하이얼, 쌍11 대형가전 점유율 선두 유지","p":"AI 제품군이 여러 품목에서 판매 상위.","d":"2026.11.13","s":"S63"},{"r":"CN","c":"대형","h":"냉장고 새 에너지효율 표준 시행","p":"2026.6.1부터 소비전력 한도 30~40% 강화.","d":"2026.11.09","s":"S65"},{"r":"CN","c":"소형","h":"티몰 쌍11, 로보락이 소형가전 1위까지","p":"신제품이 성장의 핵심 동력.","d":"2026.11.12","s":"S41"},{"r":"EU","c":"소형","pt":true,"h":"소형가전, 상반기 +5%로 시장 주도","p":"NIQ/GfK 글로벌 Tech & Durables 집계.","d":"2026.09.02","s":"S44"},{"r":"EU","c":"AI","h":"IFA 2026, AI가 묶는 가전 생태계","p":"드리미는 16개 카테고리 100여 개 제품 전시.","s":"S46"},{"r":"EU","c":"AI","h":"지멘스 iQ700 오븐, 요리 100종+ 인식","p":"IFA 2026 공개, 조리 설정 자동 제안.","s":"S66"},{"r":"EU","c":"대형","h":"일렉트로룩스 3분기 매출 +5%, 순손실","p":"원자재·물류비와 미국 관세 부담.","s":"S62"},{"r":"EU","c":"소형","h":"서유럽 소형가전 2026 +5~7% 전망","p":"소형가전 매출의 45%가 온라인.","s":"S45"}],"launches":[{"d":"2026.11.07","m":"CN","b":"하이얼","cat":"냉장고","tier":"AI","p":"AI 냉장고 신제품군 (대형가전 글로벌 혁신대회)","pr":"—","s":"S68","pt":true},{"d":"2026.11.02","m":"KR","b":"밀레","cat":"주방가전 4종","tier":"대형","p":"조리·세척 자동화 강화 주방가전 4종","pr":"—","s":"S69"},{"d":"2026.11 등록","m":"KR","b":"신일전자","cat":"전기히터","tier":"소형","p":"SEH-H1800WHS","pr":"149,780원","s":"S17"},{"d":"2026.10.22","m":"KR","b":"신일전자","cat":"전기히터","tier":"소형","p":"에코 팬 큐브 히터 신규 에디션","pr":"128,880원~","s":"S11","pt":true},{"d":"2026.10.13","m":"KR","b":"삼성전자","cat":"세탁건조기","tier":"AI","p":"비스포크 AI 콤보 ‘AI 맞춤+’ (KES 2026)","pr":"—","s":"S55","pt":true},{"d":"2026.10 등록","m":"KR","b":"LG전자","cat":"가습기","tier":"소형","p":"퓨리케어 하이드로타워 HY706RSUA","pr":"1,041,680원","s":"S16"},{"d":"2026.10 등록","m":"KR","b":"루메나","cat":"가습기","tier":"소형","p":"MIST TOWER PRO","pr":"119,000원","s":"S16"},{"d":"2026.10 등록","m":"KR","b":"키친아트","cat":"에어프라이어","tier":"소형","p":"라팔 KAEK-ST0604S","pr":"119,000원","s":"S15"},{"d":"2026.10.02","m":"US","b":"Ninja","cat":"푸드프로세서","tier":"소형","p":"PREPi 프렙+보관 시스템","pr":"$179 / $229","s":"S23","pt":true},{"d":"2026.09 등록","m":"KR","b":"조지루시","cat":"가습기","tier":"소형","p":"STAN EE-FAH50K","pr":"360,670원","s":"S16"},{"d":"2026.09 등록","m":"KR","b":"쿠쿠전자","cat":"음식물처리기","tier":"소형","p":"에코웨일 큐브 메가 CFD-FNL301DCGW","pr":"468,990원","s":"S18"},{"d":"2026.09","m":"EU","b":"Siemens","cat":"오븐","tier":"AI","p":"iQ700 오븐 (요리 100종+ 인식)","pr":"—","s":"S66"},{"d":"2026.09","m":"EU","b":"Dreame","cat":"멀티 카테고리","tier":"AI","p":"IFA 전시 100여 개 제품","pr":"—","s":"S46"},{"d":"2026.08 등록","m":"KR","b":"쿠쿠전자","cat":"음식물처리기","tier":"소형","p":"에코웨일 메가 CFD-ENL301DCGW","pr":"428,930원","s":"S18"},{"d":"2026.08 등록","m":"KR","b":"샤크닌자","cat":"글라스 쿠커","tier":"소형","p":"닌자 크리스피 FN100KR","pr":"197,100원","s":"S21"},{"d":"2026.08.13","m":"US","b":"Ninja","cat":"정수기","tier":"소형","p":"HydraSense","pr":"$199.99","s":"S25"},{"d":"2026.07.16","m":"US","b":"Ninja","cat":"전자레인지","tier":"소형","p":"Crispi Microwave","pr":"$449","s":"S24"},{"d":"2026.05.19","m":"US","b":"Ninja","cat":"슬러시 메이커","tier":"소형","p":"SLUSHi Twist","pr":"—","s":"S26"},{"d":"2026.05","m":"KR","b":"다이슨","cat":"핸디팬","tier":"소형","p":"다이슨 첫 손풍기 (출시 예정)","pr":"출시 시 확정","s":"S13"},{"d":"2026.05","m":"KR","b":"LG전자","cat":"에어컨","tier":"대형","p":"휘센 오브제컬렉션 2026 (AI 콜드프리)","pr":"—","s":"S59"},{"d":"2026.03 등록","m":"KR","b":"삼성전자","cat":"로봇청소기","tier":"AI","p":"비스포크 AI 스팀 울트라","pr":"1,601,990원","s":"S19"},{"d":"2026.03","m":"US","b":"Ninja","cat":"에스프레소 머신","tier":"소형","p":"Luxe Café 한정 컬러 (3~5월 순차)","pr":"—","s":"S27"},{"d":"2026.01.12","m":"KR","b":"다이슨","cat":"로봇청소기","tier":"AI","p":"스팟앤스크럽 AI 로봇청소기","pr":"179만원","s":"S12"},{"d":"2026.01","m":"KR","b":"삼성전자","cat":"냉장고","tier":"AI","p":"비스포크 AI 패밀리허브 (제미나이)","pr":"—","s":"S58"}],"picks":[{"id":"p1","cat":"난방","mk":"KR","icon":"heater","brand":"신일전자","name":"신일 에코 팬 큐브 히터 SEH-H800V","price":"128,880원","rev":"839","rate":"4.8","reg":"2026.11","ch":"다나와 전기히터 인기 1위","why":"다나와 전기히터 1위. 같은 라인이 2위(리뷰 999+), 누적 260억원.","target":"원룸·1인 가구, 인테리어를 신경 쓰는 20~30대, 반려동물 가정","usp":"TV를 닮은 레트로 큐브 디자인, 반사판형 히터","src":["S17","S11","S10"],"sc":[5,5,5,3,3],"note":"브랜드 단일 유통 제품이라 신일 대리점·B2B 도매 협의가 전제. 난방 시즌이 2월이면 끝나므로 12월 초까지 물량 확보가 관건.","pc":"124871036","q":"신일 에코 팬 큐브 히터","scw":["전기히터 인기 1위","리뷰 839·4.8","난방 성수기","중견 브랜드 대리점 경유","12만원대·경쟁 보통"],"img":"issues/img/124871036.jpg","cp":"https://link.coupang.com/a/iSaeMc3VRY"},{"id":"p2","cat":"가습","mk":"KR","icon":"humid","brand":"조지루시","name":"조지루시 STAN 가습기 EE-FAH50K","price":"360,670원","rev":"69","rate":"4.7","reg":"2026.09","ch":"다나와 가습기 인기 1위","why":"다나와 가습기 1위. 가습기는 11월 초가 온라인 구매 피크.","target":"영유아 가정, 위생을 중시하는 30~40대","usp":"조지루시 STAN 디자인 라인의 가습기, 프리미엄 가격대","src":["S16","S4"],"sc":[5,3,5,3,3],"note":"일본 브랜드라 국내 공식 수입사 경유가 기본. 병행수입은 전압·KC 인증 확인 필수.","pc":"124298665","q":"조지루시 STAN 가습기","scw":["가습기 인기 1위","리뷰 69","가습 성수기","일본 브랜드 수입사 경유","30만원대·경쟁 보통"],"img":"issues/img/124298665.jpg","cp":"https://link.coupang.com/a/iSan18nmua"},{"id":"p3","cat":"주방","mk":"KR","icon":"fryer","brand":"프리옴","name":"프리옴 9L 에어프라이어","price":"63,080원","rev":"396","rate":"4.9","reg":"2026.04","ch":"다나와 에어프라이어 인기 6위","why":"4월 등록 신제품이 리뷰 396건·평점 4.9.","target":"대용량이 필요한 3~4인 가구, 가성비 중심 구매자","usp":"9L 용량을 6만원대에","src":["S15"],"sc":[3,4,3,4,2],"note":"중소 브랜드라 유통 협업 여지가 큼. 동급 ODM 제품이 많아 차별화 포인트(창·바스켓 소재) 확인 후 소싱 권장.","pc":"122616605","q":"프리옴 9L 에어프라이어","scw":["에어프라이어 6위","리뷰 396·4.9","연중 상시","중소 브랜드 직거래","6만원대 가격경쟁"],"img":"issues/img/122616605.jpg","cp":"https://link.coupang.com/a/iSaopysjIq"},{"id":"p4","cat":"뷰티","mk":"KR","icon":"dryer","brand":"블라우풍트","name":"블라우풍트 에어이지 프로 BLP-HD7300","price":"63,430원","rev":"535","rate":"4.8","reg":"2025.09","ch":"다나와 헤어드라이어 인기 4위","why":"다이슨 2·3위 다음 4위, 6만원대 대체 수요.","target":"고속 드라이어를 원하는 20~30대 여성, 선물 수요","usp":"6만원대 고속 드라이어, 높은 평점","src":["S20","S6"],"sc":[3,5,4,5,3],"note":"고속 드라이어는 중국 ODM 공급망이 넓어 유사 사양 PB 소싱도 가능. KC 전기안전 인증과 모터 내구성 검증이 핵심.","pc":"97406273","q":"블라우풍트 에어이지 프로 BLP-HD7300","scw":["헤어드라이어 4위","리뷰 535·4.8","연말 선물","고속 드라이어 ODM 다수","6만원대·차별화 보통"],"img":"issues/img/97406273.jpg","cp":"https://link.coupang.com/a/iSaoM0sCaG"},{"id":"p5","cat":"주방","mk":"KR","icon":"glass","brand":"샤크닌자","name":"닌자 크리스피 FN100KR","price":"197,100원","rev":"163","rate":"4.8","reg":"2026.08","ch":"다나와 ‘닌자’ 인기 6위 · 일본 히트","why":"유리 용기 조리·보관. 일본 히트, 국내 리뷰 163건.","target":"1~2인 가구, 밀프렙·도시락족, 코팅을 꺼리는 소비자","usp":"유리 용기 하나로 조리·보관·재가열","src":["S21","S35"],"sc":[3,3,4,2,3],"note":"샤크닌자코리아 공식 유통 구조라 셀러는 공식 판매점 입점 방식이 현실적. 글라스 쿠킹 트렌드의 기준 제품으로 PB 기획 벤치마크 가치가 큼.","pc":"124182087","q":"닌자 크리스피","scw":["‘닌자’ 검색 6위","리뷰 163","연말 선물","샤크닌자 공식 유통","20만원대·경쟁 보통"],"img":"issues/img/124182087.jpg","cp":"https://link.coupang.com/a/iSapah8tIO"},{"id":"p6","cat":"주방","mk":"KR","icon":"steam","brand":"풀무원건강생활","name":"풀무원 스팀쿡 마스터 듀얼스팀 AV20F11","price":"325,710원","rev":"284","rate":"4.8","reg":"2026.03","ch":"다나와 에어프라이어 인기 5위","why":"스팀+에어프라이 결합, 중국도 같은 흐름.","target":"건강식·촉촉한 조리를 원하는 3~4인 가구, 40~50대","usp":"듀얼 스팀 + 에어프라이 조합","src":["S15","S43"],"sc":[3,4,3,2,3],"note":"대기업 계열 브랜드라 직접 소싱보다 스팀 에어프라이어 카테고리의 중국 ODM 소싱 근거로 활용 권장.","pc":"108365732","q":"풀무원 스팀쿡 마스터","scw":["에어프라이어 5위","리뷰 284·4.8","연중 상시","대기업 계열 유통","30만원대·경쟁 보통"],"img":"issues/img/108365732.jpg","cp":"https://link.coupang.com/a/iSapxPkgtV"},{"id":"p7","cat":"주방","mk":"KR","icon":"disposer","brand":"미닉스","name":"미닉스 더 플렌더 mini MNFD-300G","price":"255,710원","rev":"37","rate":"4.7","reg":"2026.06","ch":"다나와 음식물처리기 인기 5위","why":"2년간 검색량이 늘어난 음식물처리기, 검증된 라인의 소형 모델.","target":"원룸·소형 주방의 1~2인 가구","usp":"검증된 플렌더 라인의 소형 모델","src":["S18","S1"],"sc":[3,2,3,4,4],"note":"리뷰가 아직 적어 초기 반응을 2~3주 더 확인 후 발주 권장. 고단가라 마진 폭은 큰 편.","pc":"122694803","q":"미닉스 플렌더 mini","scw":["음식물처리기 5위","리뷰 37","연중 상시","중소 브랜드 직거래","25만원대 고단가"],"img":"issues/img/122694803.jpg","cp":"https://link.coupang.com/a/iSapVsRe20"},{"id":"p8","cat":"청소","mk":"KR","icon":"robot","brand":"모바","name":"모바 P70 Pro Ultra 로봇청소기","price":"549,000원","rev":"999+","rate":"4.9","reg":"2026.04","ch":"다나와 로봇청소기 인기 1위","why":"로봇청소기 1위, 2위의 약 3분의 1 가격.","target":"가성비 올인원을 찾는 30~40대 맞벌이 가정","usp":"인기 1위 제품 중 50만원대 가격","src":["S19","S1"],"sc":[5,5,3,3,2],"note":"고가·대형 AS가 필요한 제품이라 국내 AS 체계 확인이 전제. 셀러 마진은 얇은 편.","pc":"124075398","q":"모바 P70 Pro Ultra","scw":["로봇청소기 1위","리뷰 999+·4.9","연중 상시","해외 브랜드 수입사","고가·AS 부담"],"img":"issues/img/124075398.jpg","cp":"https://link.coupang.com/a/iSaqjnWZHg"},{"id":"p9","cat":"주방","mk":"JP","icon":"soup","brand":"Toffy","name":"Toffy 오토 스프 블렌더 (세라믹 코트)","price":"¥9,900","rev":"수집 전","rate":"—","reg":"2026 상반기 히트","ch":"일본 DIME 2026 히트","why":"4개월 새 판매 약 4배, 겨울 수프 시즌과 일치.","target":"아침 대용식을 찾는 1~2인 가구, 이유식 가정","usp":"자동 메뉴로 수프를 만드는 1만 엔대 블렌더","src":["S34"],"sc":[4,1,5,1,4],"note":"국내 수입 여부와 220V 사양을 먼저 확인. 수프 블렌더 카테고리 자체를 ODM으로 기획하는 방안도 유효.","pc":"","q":"오토 스프 블렌더","scw":["판매 약 4배","리뷰 수집 전","수프 성수기","국내 유통 미확인","1만 엔대·차별화 가능"],"cp":"https://link.coupang.com/a/iSasl2iXPo"},{"id":"p10","cat":"청소","mk":"US","icon":"stick","brand":"Shark","name":"Shark PowerPro Flex Reveal Plus 무선청소기","price":"$379.99","rev":"16,480대 판매(3월)","rate":"—","reg":"TikTok Shop 2026.03 1위","ch":"TikTok Shop US 월 1위","why":"TikTok Shop 3월 전체 1위, 월 $6.12M.","target":"미국 숏폼 쇼핑 이용자, 반려동물 가정","usp":"틱톡 시연 영상과 결합한 무선청소기","src":["S28","S29","S72"],"sc":[5,4,3,1,2],"note":"국내 출시 여부는 확인되지 않았습니다. 직접 소싱보다 ‘시연형 숏폼 판매’ 방식을 국내 무선청소기에 적용하는 참고 사례로 권장.","pc":"","q":"Shark PowerPro Flex Reveal Plus","scw":["TikTok Shop 월 1위","판매 16,480대","연중 상시","국내 출시 미확인","고가·AS 부담"],"img":"issues/img/shark_iz382h.jpg","imgc":"Kohl's 상품 이미지 (모델 IZ382H)","cp":"https://link.coupang.com/a/iSasITt7kW"},{"id":"p11","cat":"주방","mk":"US","icon":"prep","brand":"Ninja","name":"Ninja PREPi 프렙+보관 시스템","price":"$179 / $229","rev":"수집 전","rate":"—","reg":"2026.10.02 출시","ch":"미국 신제품","why":"10월 출시, ‘한 용기’ 흐름의 푸드프렙 확장.","target":"밀프렙족, 샐러드·도시락을 직접 만드는 직장인","usp":"한 볼로 프렙·서빙·보관·휴대","src":["S23"],"sc":[3,1,4,1,3],"note":"출시 직후라 판매·리뷰 데이터가 없고 국내 출시 정보도 확인되지 않았습니다. 워치리스트에 두고 아마존 리뷰 누적을 추적하세요.","pc":"","q":"Ninja PREPi","scw":["출시 이슈만","리뷰 수집 전","연말 선물","국내 출시 미확인","$179·경쟁 보통"],"cp":"https://link.coupang.com/a/iSas6fGHGS"},{"id":"p12","cat":"주방","mk":"KR","icon":"fryer","brand":"아이닉","name":"아이닉 4세대 올스텐 에어프라이어 iSA6L","price":"89,000원","rev":"934","rate":"4.6","reg":"2024.12","ch":"다나와 에어프라이어 인기 3위","why":"리뷰 934건 스테디셀러, 올스텐 내부.","target":"코팅 벗겨짐이 걱정되는 40~50대, 위생 중시 가정","usp":"내부 올스텐, 8만원대","src":["S15"],"sc":[4,5,3,4,2],"note":"중소 브랜드라 협업 여지는 있으나 이미 판매처가 많아 가격 경쟁이 치열. 번들 구성으로 차별화 필요.","pc":"72816731","q":"아이닉 올스텐 에어프라이어","scw":["에어프라이어 3위","리뷰 934·4.6","연중 상시","중소 브랜드 직거래","8만원대 가격경쟁"],"img":"issues/img/72816731.jpg","cp":"https://link.coupang.com/a/iSardo1y32"},{"id":"p13","ai":true,"cat":"청소","mk":"KR","icon":"robot","brand":"삼성전자","name":"삼성 비스포크 AI 스팀 울트라 VR90F01AAG","price":"1,493,460원","rev":"763","rate":"4.7","reg":"2026.03","ch":"다나와 로봇청소기 인기 2위 · CES 2026 AI 기능","why":"카메라로 사물과 투명한 액체까지 인식하는 AI 로봇청소기, 리뷰 763건.","target":"영유아·반려동물 가정, 프리미엄 로봇청소기 구매층","usp":"3D 사물 인식 · 투명 액체 감지 · 100℃ 스팀 살균","src":["S19","S71","S14"],"sc":[4,5,3,2,2],"scw":["로봇청소기 인기 2위","리뷰 763·4.7","연중 상시","대기업 공식 유통","고가·AS 부담"],"note":"대기업 공식 유통이라 직소싱은 어렵습니다. 공식 판매점 입점, 또는 ‘AI 스팀 로봇청소기’ ODM 기획의 기준 제품으로 활용하세요. 가격은 07:50 다나와 제품 페이지 기준입니다.","pc":"124075114","q":"비스포크 AI 스팀 울트라","img":"issues/img/124075114.jpg","cp":"https://link.coupang.com/a/iSarAIh9aK"},{"id":"p14","ai":true,"cat":"청소","mk":"KR","icon":"robot","brand":"다이슨","name":"다이슨 스팟앤스크럽 AI 로봇청소기","price":"908,990원","rev":"317","rate":"4.6","reg":"2026.01","ch":"다나와 등록 2026.01 · 권장가 179만원","why":"AI로 젖은 액체와 마른 이물을 구분해 진공·물청소를 한 번에.","target":"물청소까지 한 대로 끝내려는 프리미엄 구매층","usp":"AI 오염 식별 + 진공·물청소 겸용","src":["S70","S53","S12"],"sc":[3,4,3,2,2],"scw":["출시 이슈 중심(순위 미확인)","리뷰 317·4.6","연중 상시","글로벌 브랜드 공식 유통","고가·AS 부담"],"note":"권장가 179만원 대비 다나와 최저가가 90만원대로, 가격 변동 폭이 큽니다. 공식 유통 경로 확인이 전제입니다.","pc":"103877486","q":"다이슨 스팟앤스크럽","img":"issues/img/103877486.jpg","cp":"https://link.coupang.com/a/iSarYyhYK4"}],"channels":[{"n":"쿠팡","st":"lim","sig":"11/16–11/29 가전·디지털 블랙프라이데이 기획전 진행 중. 삼성·LG 등 참여.","s":"S5","u":"https://www.coupang.com/np/search?q=%EC%86%8C%ED%98%95%EA%B0%80%EC%A0%84","ul":"쿠팡에서 소형가전 보기"},{"n":"네이버쇼핑","st":"lim","sig":"이번 호에서 상품 단위 순위를 수집하지 못했습니다. 실시간 순위는 링크에서 확인하세요.","s":"","u":"https://search.shopping.naver.com/search/all?query=%EC%86%8C%ED%98%95%EA%B0%80%EC%A0%84","ul":"네이버쇼핑 검색"},{"n":"다나와","st":"ok","sig":"이번 호 소싱 픽의 1차 데이터 출처. 에어프라이어·가습기·히터·로봇청소기 등 9개 검색어 인기순을 수집했습니다.","s":"S17","u":"https://search.danawa.com/dsearch.php?query=%EC%86%8C%ED%98%95%EA%B0%80%EC%A0%84&sort=saveDESC","ul":"다나와 인기순 보기"},{"n":"29CM","st":"lim","sig":"DDP디자인페어 기간 홈 카테고리 ‘이구홈’ 거래액이 직전 주 대비 40% 이상 증가.","s":"S8","u":"https://www.29cm.co.kr/","ul":"29CM 바로가기"},{"n":"오늘의집","st":"lim","sig":"가전·디지털 카테고리 메인에 ‘로보락 26년 신제품 스팀살균’ 기획(광고 표기)이 노출되어 있습니다.","s":"S51","u":"https://ohou.se/store/category?category_id=14000000","ul":"오늘의집 가전 보기"},{"n":"홈쇼핑","st":"ok","sig":"GS샵 로보락 주문 450억원, 다이슨 헤어기기 300억원. 210만원대 브레빌 커피머신도 론칭.","s":"S6","u":"https://www.gsshop.com/","ul":"GS샵 바로가기"},{"n":"인스타 공동구매","st":"lim","sig":"원포인트 분석 기준 2026년 1~8월 공동구매 30,372건. 가전 단위 집계는 이번 호에서 확보하지 못했습니다.","s":"S9","u":"https://www.instagram.com/explore/tags/%EA%B0%80%EC%A0%84%EA%B3%B5%EA%B5%AC/","ul":"#가전공구 보기"},{"n":"아마존 US","st":"lim","sig":"아마존 페이지는 자동 수집이 차단되어 이번 호 순위가 없습니다. 베스트셀러 링크에서 확인하세요.","s":"","u":"https://www.amazon.com/Best-Sellers-Home-Kitchen-Small-Kitchen-Appliances/zgbs/home-garden/289913","ul":"Small Kitchen 베스트셀러"},{"n":"유튜브","st":"lim","sig":"이번 호에서 영상 조회 데이터를 수집하지 못했습니다. 최신 리뷰 영상은 링크에서 확인하세요.","s":"","u":"https://www.youtube.com/results?search_query=%EC%86%8C%ED%98%95%EA%B0%80%EC%A0%84+%EC%B6%94%EC%B2%9C","ul":"유튜브 검색"},{"n":"틱톡","st":"ok","sig":"3월 TikTok Shop 1위 샤크 무선청소기($6.12M), 7위 샤크 공기청정기(매출 +895.6%). 초음파 세척기는 1월 출시 후 한 달 새 1만 건 가까이 판매.","s":["S28","S32"],"u":"https://www.tiktok.com/search?q=small%20appliance","ul":"틱톡 검색"}]}</script>
+
+<script>
+(function(){
+  var BR=JSON.parse(document.getElementById('brand-data').textContent);
+  var AR=JSON.parse(document.getElementById('archive-index').textContent);
+  var LATEST=JSON.parse(document.getElementById('magazine-data').textContent);
+  var cache={};cache[LATEST.edition.date]=LATEST;
+  var D,S,order,SM={};
+  function $(id){return document.getElementById(id);}
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function pad(n){return String(n).padStart(3,'0');}
+  function numify(s){return esc(s).replace(/([+\-−$€¥]?\d[\d,.]*(?:%|억|만|조|원|배|종|B|M)?\+?)/g,'<span class="num">$1</span>');}
+
+  /* source meta: where + when */
+  function srcMeta(id){
+    if(SM[id])return SM[id];
+    var s=S[id]||{t:'',u:''},t=s.t,ci=t.indexOf(','),media=ci>0?t.slice(0,ci).trim():'',title=ci>0?t.slice(ci+1).trim():t;
+    var m=/\((\d{4})\.(\d{2})(?:\.(\d{2}))?(?:[–~-][^)]*)?\)/.exec(title),date='',kind='pub';
+    if(m){date=m[1]+'.'+m[2]+(m[3]?'.'+m[3]:'');title=title.replace(m[0],'').trim();}
+    if(!media){var h='';try{h=new URL(s.u).hostname.replace(/^www\./,'');}catch(e){}media=/danawa/.test(h)?'다나와':(/ohou/.test(h)?'오늘의집':h);}
+    if(!date){date=D.edition.date.replace(/-/g,'.');kind='col';}
+    return (SM[id]={media:media,title:title,date:date,kind:kind,u:s.u,no:order.indexOf(id)+1});
+  }
+  function shortD(m){var p=m.date.split('.');return (m.kind==='col'?'수집 ':'')+p[0].slice(2)+'.'+p.slice(1).join('.');}
+  function cite(ids){ids=[].concat(ids||[]).filter(function(x){return S[x];});if(!ids.length)return '';return '<span class="cite">'+ids.map(function(id){var m=srcMeta(id);return '<a href="'+esc(m.u)+'" target="_blank" rel="noopener" title="'+esc('['+m.no+'] '+m.media+' · '+m.title+' · '+(m.kind==='col'?'수집 ':'발행 ')+m.date)+'">'+esc(m.media)+' · '+esc(shortD(m))+'</a>';}).join('')+'</span>';}
+
+  /* skins */
+  var skinSel=$('skin-select');
+  try{var sv=localStorage.getItem('ae-skin');if(sv&&skinSel.querySelector('option[value="'+sv+'"]'))document.documentElement.dataset.skin=sv;}catch(e){}
+  skinSel.value=document.documentElement.dataset.skin;
+  skinSel.onchange=function(){document.documentElement.dataset.skin=this.value;try{localStorage.setItem('ae-skin',this.value);}catch(e){}};
+
+  var IC={
+    heater:'<rect x="22" y="24" width="76" height="62" rx="10"/><rect x="32" y="34" width="44" height="42" rx="6"/><path d="M40 44h28M40 52h28M40 60h28M40 68h28"/><circle cx="87" cy="42" r="4"/><circle cx="87" cy="56" r="2"/><path d="M34 86l-4 12M86 86l4 12"/>',
+    humid:'<path d="M38 96h44l6-46a22 22 0 0 0-22-20h-12a22 22 0 0 0-22 20z"/><path d="M48 30c0-8 6-12 12-12s12 4 12 12"/><path d="M56 12c-2-4 2-6 0-10M64 12c-2-4 2-6 0-10"/><circle cx="60" cy="72" r="7"/>',
+    fryer:'<rect x="26" y="20" width="68" height="80" rx="18"/><rect x="34" y="58" width="52" height="34" rx="8"/><path d="M70 75h22"/><circle cx="60" cy="38" r="9"/><path d="M60 33v5l3 3"/>',
+    glass:'<path d="M24 50h72l-6 40a8 8 0 0 1-8 7H38a8 8 0 0 1-8-7z"/><path d="M28 50l4-14h56l4 14"/><path d="M40 60l30 28M54 60l26 24" opacity=".45"/><rect x="44" y="26" width="32" height="10" rx="3"/>',
+    steam:'<rect x="20" y="34" width="80" height="62" rx="8"/><rect x="28" y="44" width="48" height="42" rx="4"/><path d="M84 46v10M84 64v10"/><path d="M42 26c-3-5 3-7 0-12M52 26c-3-5 3-7 0-12M62 26c-3-5 3-7 0-12"/>',
+    disposer:'<rect x="32" y="22" width="56" height="78" rx="12"/><path d="M32 46h56"/><rect x="46" y="30" width="28" height="8" rx="4"/><circle cx="60" cy="74" r="12"/><path d="M60 66v16M52 74h16" opacity=".5"/>',
+    robot:'<circle cx="60" cy="64" r="36"/><circle cx="60" cy="64" r="24"/><rect x="50" y="30" width="20" height="8" rx="4"/><circle cx="60" cy="64" r="4"/>',
+    stick:'<path d="M70 14l-20 76"/><rect x="62" y="10" width="20" height="30" rx="6" transform="rotate(15 72 25)"/><path d="M30 92h44a6 6 0 0 1 0 12H30a6 6 0 0 1 0-12z"/>',
+    dryer:'<path d="M28 40a22 22 0 0 1 22-22h26a8 8 0 0 1 8 8v28a8 8 0 0 1-8 8H50a22 22 0 0 1-22-22z"/><circle cx="50" cy="40" r="10"/><path d="M60 62l8 40h12l-4-40"/><path d="M90 30h10M90 40h14M90 50h10"/>',
+    soup:'<path d="M40 30h40l-4 52H44z"/><rect x="36" y="82" width="48" height="18" rx="4"/><path d="M80 40h8a6 6 0 0 1 6 6v16a6 6 0 0 1-6 6h-8"/><path d="M48 60c4 4 20 4 24 0"/><rect x="44" y="20" width="32" height="10" rx="3"/>',
+    prep:'<path d="M26 48h68l-8 46H34z"/><path d="M22 48h76"/><path d="M50 70l20-8M48 80l24-10" opacity=".5"/><rect x="48" y="22" width="24" height="26" rx="5"/><circle cx="60" cy="30" r="3"/>'
+  };
+  function icon(k){return '<svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(IC[k]||IC.fryer)+'</svg>';}
+  function overall(sc){var a=sc.reduce(function(x,y){return x+y;},0)/sc.length;return Math.round(a*2)/2;}
+  function verdict(v){return v>=4?['추천템','v-go']:(v>=3.5?['조건부','v-cond']:['관망','v-watch']);}
+  function stars(v){return '<span class="stars"><span class="st" aria-label="5점 만점에 '+v+'점">★★★★★<i style="width:'+(v/5*100)+'%">★★★★★</i></span><span class="num">'+v.toFixed(1)+'</span></span>';}
+  var LBL=['수요','검증','타이밍','접근성','마진'];
+  var CATN={'AI':'AI가전','소형':'소형가전','대형':'대형가전'};
+  var REGN={KR:'한국',US:'미국',JP:'일본',CN:'중국',EU:'유럽'};
+  function chips(el,label,defs,initial,cb){
+    el.innerHTML='<span class="seg-label">'+label+'</span>'+defs.map(function(f){return '<button type="button" class="chip" data-f="'+esc(f[0])+'" aria-pressed="'+(f[0]===initial)+'">'+esc(f[1])+(f[2]!=null?'<span class="c">'+f[2]+'</span>':'')+'</button>';}).join('');
+    el.onclick=function(e){var b=e.target.closest('.chip');if(!b)return;el.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');cb(b.dataset.f);};
+  }
+  function setChip(el,f){el.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.f===f));});}
+  function parseD(s){var m=/(\d{4})\.(\d{2})(?:\.(\d{2}))?/.exec(s||'');if(!m)return null;var y=+m[1],mo=+m[2]-1;return m[3]?new Date(y,mo,+m[3]):new Date(y,mo+1,0);}
+  function monthKey(s){var m=/(\d{4})\.(\d{2})/.exec(s||'');return m?m[1]+'.'+m[2]:null;}
+  function brandBtn(b){return '<button type="button" class="brand-btn" data-brand="'+esc(b)+'" title="'+esc(b)+' 제품만 보기">'+esc(b)+'</button>';}
+  function fadeIn(el){el.classList.remove('fade');void el.offsetWidth;el.classList.add('fade');}
+
+  var lState,pState;
+  function render(issue){
+    D=issue;S=D.sources;order=Object.keys(S);SM={};
+    var E=D.edition;
+    $('edition-line').textContent=E.label;
+    $('colophon').textContent='No.'+pad(E.no)+' · '+E.date+' · 수집 '+E.collected+' · '+E.next;
+    var tk=D.ticker.map(function(t){var m=S[t[2]]?srcMeta(t[2]):null;return '<span><span class="k">'+esc(t[0])+'</span>'+numify(t[1])+(m?' <span style="opacity:.55;font-size:12px">— '+esc(m.media)+' '+esc(shortD(m))+'</span>':'')+'</span>';}).join('');
+    $('ticker').innerHTML=tk+tk;
+    $('cover-title').innerHTML=D.cover.title;
+    $('cover-deck').textContent=D.cover.deck;
+    $('cover-byline').textContent='No.'+pad(E.no)+' · '+D.cover.byline;
+    $('cover-figs').innerHTML=D.cover.figs.map(function(f){return '<div class="fig"><div class="v num">'+esc(f.v)+'<small>'+esc(f.u)+'</small></div><div class="l">'+esc(f.l)+'</div>'+cite(f.s)+'</div>';}).join('');
+    $('trend-list').innerHTML=D.trends.map(function(t,i){return '<article class="trend" id="trend-'+(i+1)+'"><div class="rn">'+esc(t.rn)+'</div><div class="stat num">'+esc(t.stat)+'</div><div class="sl">'+esc(t.sl)+'</div><h3>'+esc(t.t)+'</h3><p>'+esc(t.line)+'</p>'+cite(t.s)+'</article>';}).join('');
+
+    /* wire */
+    var news=D.news.slice().sort(function(a,b){return (b.pt?1:0)-(a.pt?1:0);});
+    $('wire-list').innerHTML=news.map(function(n,i){var m=S[n.s]?srcMeta(n.s):null;return '<article class="story'+(n.pt?' pt':'')+'" id="news-'+(i+1)+'" data-c="'+esc(n.c)+'" data-r="'+esc(n.r)+'">'+(n.pt?'<div class="point">Point</div>':'')+'<div class="meta"><span>'+esc(REGN[n.r]||n.r)+'</span><span class="cat c-'+esc(n.c)+'">'+esc(CATN[n.c]||n.c)+'</span></div><h3>'+esc(n.h)+'</h3><p>'+esc(n.p)+'</p>'+cite([n.s])+'</article>';}).join('')+'<div class="empty-note" id="wire-empty" hidden>이 조건에 맞는 기사가 이번 호에는 없습니다.</div>';
+    var fc='AI',fr='all';
+    function cnt(c){return D.news.filter(function(n){return c==='all'||n.c===c;}).length;}
+    function applyWire(){var shown=0;$('wire-list').querySelectorAll('.story').forEach(function(el){var ok=(fc==='all'||el.dataset.c===fc)&&(fr==='all'||el.dataset.r===fr);el.style.display=ok?'':'none';if(ok){shown++;fadeIn(el);}});$('wire-empty').hidden=shown>0;}
+    chips($('f-cat'),'분야',[['AI','AI가전',cnt('AI')],['소형','소형가전',cnt('소형')],['대형','대형가전',cnt('대형')],['all','전체',cnt('all')]],fc,function(f){fc=f;applyWire();});
+    chips($('f-reg'),'국가',[['all','전체'],['KR','한국'],['US','미국'],['JP','일본'],['CN','중국'],['EU','유럽']],fr,function(f){fr=f;applyWire();});
+    applyWire();
+
+    /* launches: default last 3 months, month tabs, brand filter */
+    var ed=new Date(E.date+'T00:00:00'),cut=new Date(ed);cut.setMonth(cut.getMonth()-3);
+    function skey(s){var m=/(\d{4})\.(\d{2})(?:\.(\d{2}))?/.exec(s);return (+m[1])*10000+(+m[2])*100+(m[3]?+m[3]:0);}
+    var L=D.launches.filter(function(l){return parseD(l.d);}).sort(function(a,b){return skey(b.d)-skey(a.d);});
+    D._launches=L;
+    var months=[];L.forEach(function(l){var k=monthKey(l.d);if(months.indexOf(k)<0)months.push(k);});
+    lState={m:months[0]||'recent',b:null};
+    $('launch-rows').innerHTML=L.map(function(l,i){var dm=/^(\S+)\s*(.*)$/.exec(l.d);var rec=parseD(l.d)>=cut;return '<tr id="launch-'+(i+1)+'" data-m="'+monthKey(l.d)+'" data-r="'+(rec?1:0)+'" data-b="'+esc(l.b)+'"'+(l.pt?' class="pt"':'')+'><td class="d num">'+esc(dm[1])+(dm[2]?'<small>'+esc(dm[2])+'</small>':'')+'</td><td class="m">'+esc(l.m)+'</td><td class="b">'+brandBtn(l.b)+'</td><td class="ct"><span class="cat c-'+esc(l.tier)+'">'+esc(CATN[l.tier]||l.tier)+'</span><span class="catname">'+esc(l.cat)+'</span></td><td class="p">'+esc(l.p)+(l.pt?' <span class="point" style="margin-left:8px">Point</span>':'')+'</td><td class="pr num">'+esc(l.pr)+'</td><td>'+cite([l.s])+'</td></tr>';}).join('')+'<tr id="launch-empty" hidden><td colspan="7" style="color:var(--ink-2)">조건에 맞는 신제품이 없습니다.</td></tr>';
+    var nRecent=L.filter(function(l){return parseD(l.d)>=cut;}).length;
+    chips($('f-month'),'월별',months.map(function(k){return [k,k.replace('.','년 ').replace(/^20/,'').replace(/년 0?/,'.')+'월',L.filter(function(l){return monthKey(l.d)===k;}).length];}).concat([['recent','최근 3개월',nRecent],['all','전체',L.length]]),lState.m,function(f){lState.m=f;applyLaunch();});
+    $('launch-range').textContent='첫 화면은 이번 달('+(months[0]||'')+') 출시분입니다. 월 단추로 다른 달을, 브랜드를 누르면 그 브랜드 제품만 봅니다.';
+    applyLaunch();
+
+    /* picks */
+    pState={v:'go',m:'all',c:'all',b:null};
+    $('pick-list').innerHTML=D.picks.map(function(p,i){
+      var v=overall(p.sc),vd=verdict(v);
+      var media=p.img?'<img src="'+esc(p.img)+'" alt="'+esc(p.name)+'" loading="lazy">':icon(p.icon);
+      return '<button type="button" class="pick" id="'+esc(p.id)+'" data-i="'+i+'" data-cat="'+esc(p.cat)+'" data-mk="'+esc(p.mk)+'" data-b="'+esc(p.brand)+'" data-ai="'+(p.ai?1:0)+'" data-v="'+v+'" aria-label="'+esc(p.name)+' 상세 보기">'+
+        '<span class="vis"><span class="rank num">'+String(i+1).padStart(2,'0')+'</span>'+(v>=4?'<span class="ribbon">추천템</span>':'')+(p.ai?'<span class="aitag">AI</span>':'')+media+'<span class="peek">'+esc(p.why)+'</span></span>'+
+        '<span class="who">'+esc(p.brand)+' · '+esc(REGN[p.mk]||p.mk)+' · '+esc(p.cat)+'</span>'+
+        '<h3>'+esc(p.name)+'</h3>'+
+        '<span class="row"><span class="price num">'+esc(p.price)+'</span><span style="display:flex;gap:8px;align-items:center">'+stars(v)+'<span class="verdict '+vd[1]+'">'+vd[0]+'</span></span></span></button>';
+    }).join('')+'<div class="empty-note" id="pick-empty" hidden>조건에 맞는 제품이 없습니다. ‘전체’를 눌러 보세요.</div>';
+    var nGo=D.picks.filter(function(p){return overall(p.sc)>=4;}).length;
+    chips($('f-pv'),'보기',[['go','추천템',nGo],['ai','AI가전',D.picks.filter(function(p){return p.ai;}).length],['all','전체',D.picks.length]],'go',function(f){pState.v=f;applyPicks();});
+    var mks=[];D.picks.forEach(function(p){if(mks.indexOf(p.mk)<0)mks.push(p.mk);});
+    chips($('f-pm'),'국가',[['all','전체']].concat(mks.map(function(m){return [m,REGN[m]||m,D.picks.filter(function(p){return p.mk===m;}).length];})),'all',function(f){pState.m=f;applyPicks();});
+    var cats=[];D.picks.forEach(function(p){if(cats.indexOf(p.cat)<0)cats.push(p.cat);});
+    chips($('f-pc'),'카테고리',[['all','전체']].concat(cats.map(function(c){return [c,c,D.picks.filter(function(p){return p.cat===c;}).length];})),'all',function(f){pState.c=f;applyPicks();});
+    applyPicks();
+
+    $('chan-list').innerHTML=D.channels.map(function(c,i){return '<div class="chan" id="chan-'+(i+1)+'"><h3>'+esc(c.n)+'</h3><span class="stt '+(c.st==='ok'?'ok':'lim')+'">'+(c.st==='ok'?'● 수치 확보':'○ 링크만')+'</span><p>'+numify(c.sig)+'</p>'+(c.s?cite(c.s):'')+'<a class="go" href="'+esc(c.u)+'" target="_blank" rel="noopener">'+esc(c.ul)+' ↗</a></div>';}).join('');
+    $('source-rows').innerHTML=order.map(function(k){var m=srcMeta(k);return '<tr id="src-'+m.no+'"><td class="n">'+m.no+'</td><td class="md">'+esc(m.media)+'</td><td>'+esc(m.title)+'</td><td class="dt">'+esc(m.date)+'<small>'+(m.kind==='col'?'수집일 (발행일 미표기)':'발행일')+'</small></td><td><a href="'+esc(m.u)+'" target="_blank" rel="noopener">열기 ↗</a></td></tr>';}).join('');
+
+    renderArchive();buildIndex();
+    var bn=$('past-banner');
+    if(E.date===LATEST.edition.date){bn.classList.remove('on');bn.innerHTML='';}
+    else{bn.classList.add('on');bn.innerHTML='지난 호 No.'+pad(E.no)+' ('+esc(E.date)+')를 보고 있습니다.<button type="button" id="to-latest">최신 호로 →</button>';$('to-latest').onclick=function(){openIssue(LATEST.edition.date,true);};}
+  }
+
+  function applyLaunch(){
+    var shown=0;
+    $('launch-rows').querySelectorAll('tr[data-m]').forEach(function(tr){
+      var ok=(lState.m==='all'||(lState.m==='recent'?tr.dataset.r==='1':tr.dataset.m===lState.m))&&(!lState.b||tr.dataset.b===lState.b);
+      tr.style.display=ok?'':'none';if(ok){shown++;fadeIn(tr);}
+    });
+    $('launch-empty').hidden=shown>0;
+    var bc=$('l-bchip');bc.classList.toggle('on',!!lState.b);bc.firstChild.textContent=lState.b?'브랜드: '+lState.b+' · '+shown+'건':'';
+  }
+  function applyPicks(){
+    var shown=0;
+    $('pick-list').querySelectorAll('.pick').forEach(function(el){
+      var ok=(pState.v==='all'||(pState.v==='ai'?el.dataset.ai==='1':parseFloat(el.dataset.v)>=4))&&(pState.m==='all'||el.dataset.mk===pState.m)&&(pState.c==='all'||el.dataset.cat===pState.c)&&(!pState.b||el.dataset.b===pState.b);
+      el.style.display=ok?'':'none';if(ok){shown++;fadeIn(el);}
+    });
+    $('pick-empty').hidden=shown>0;
+    var bc=$('p-bchip');bc.classList.toggle('on',!!pState.b);bc.firstChild.textContent=pState.b?'브랜드: '+pState.b:'';
+  }
+  $('l-bchip').querySelector('button').onclick=function(){lState.b=null;applyLaunch();};
+  $('p-bchip').querySelector('button').onclick=function(){pState.b=null;applyPicks();};
+
+  /* brand click = filter launches (and picks when the brand has picks) */
+  function filterBrand(b){
+    lState.b=b;
+    if(lState.m!=='all'&&!D._launches.some(function(l){return l.b===b&&(lState.m==='recent'?true:monthKey(l.d)===lState.m);})){lState.m='all';setChip($('f-month'),'all');}
+    if(lState.m==='recent'){var ed=new Date(D.edition.date+'T00:00:00'),cut=new Date(ed);cut.setMonth(cut.getMonth()-3);if(!D._launches.some(function(l){return l.b===b&&parseD(l.d)>=cut;})){lState.m='all';setChip($('f-month'),'all');}}
+    applyLaunch();
+    if(D.picks.some(function(p){return p.brand===b;})){pState.b=b;pState.v='all';setChip($('f-pv'),'all');applyPicks();}
+  }
+  document.addEventListener('click',function(e){var bb=e.target.closest('.brand-btn');if(bb){e.preventDefault();filterBrand(bb.dataset.brand);hideTip();var t=$('launches');if(!bb.closest('#launches'))t.scrollIntoView({behavior:'smooth'});}});
+
+  /* quick view */
+  var qv=$('qv'),veil=$('qv-veil'),lastFocus=null;
+  function openQV(p,i){
+    var v=overall(p.sc),vd=verdict(v),q=encodeURIComponent(p.q),w=p.scw||[];
+    var links=[];
+    if(p.pc)links.push('<a href="https://prod.danawa.com/info/?pcode='+esc(p.pc)+'" target="_blank" rel="noopener">다나와 ↗</a>');
+    if(p.cp){links.unshift('<a class="cp" href="'+esc(p.cp)+'" target="_blank" rel="noopener sponsored">쿠팡에서 구매 ↗</a>');}
+    if(p.mk==='KR'){if(!p.cp)links.push('<a href="https://www.coupang.com/np/search?q='+q+'" target="_blank" rel="noopener">쿠팡 ↗</a>');links.push('<a href="https://search.shopping.naver.com/search/all?query='+q+'" target="_blank" rel="noopener">네이버 ↗</a>');}
+    else if(p.mk==='JP'){links.push('<a href="https://www.amazon.co.jp/s?k='+q+'" target="_blank" rel="noopener">Amazon JP ↗</a>');links.push('<a href="https://www.coupang.com/np/search?q='+q+'" target="_blank" rel="noopener">쿠팡 ↗</a>');}
+    else{links.push('<a href="https://www.amazon.com/s?k='+q+'" target="_blank" rel="noopener">Amazon US ↗</a>');links.push('<a href="https://www.coupang.com/np/search?q='+q+'" target="_blank" rel="noopener">쿠팡 ↗</a>');}
+    var sum=p.sc.reduce(function(a,b){return a+b;},0)/5;
+    $('qv-in').innerHTML='<div class="qv-top"><span class="eyebrow" style="color:var(--accent)">Pick '+String(i+1).padStart(2,'0')+'</span><button type="button" class="qv-x" id="qv-x">닫기 ✕</button></div>'+
+      '<div class="qv-img">'+(p.img?'<img src="'+esc(p.img)+'" alt="'+esc(p.name)+'">':icon(p.icon))+'</div>'+
+      (p.img?'<p class="credit">사진: '+esc(p.imgc||'다나와 등록 이미지')+'</p>':'<p class="credit">일러스트 · 실제 사진은 구매처 링크에서 확인</p>')+
+      '<p class="eyebrow" style="margin-top:18px;color:var(--ink-2)">'+(BR[p.brand]?esc(BR[p.brand].c)+' · ':'')+esc(p.cat)+'</p>'+
+      '<h3 id="qv-title">'+esc(p.name)+'</h3>'+
+      '<div style="display:flex;gap:10px;align-items:center">'+stars(v)+'<span class="verdict '+vd[1]+'">'+vd[0]+'</span></div>'+
+      '<div class="plate"><div><span>PRICE</span><b class="num">'+esc(p.price)+'</b></div><div><span>REVIEWS</span><b class="num">'+esc(p.rev)+'</b></div><div><span>RATING</span><b class="num">'+esc(p.rate)+'</b></div></div>'+
+      '<div class="lines"><div><span class="k">WHY</span><span>'+esc(p.why)+'</span></div><div><span class="k">FOR</span><span>'+esc(p.target)+'</span></div><div><span class="k">USP</span><span>'+esc(p.usp)+'</span></div><div><span class="k">SIGNAL</span><span>'+esc(p.ch)+' · 등록 '+esc(p.reg)+'</span></div></div>'+
+      '<div class="score">'+p.sc.map(function(s,k){return '<div class="r"><span class="lb">'+LBL[k]+'</span><span class="num">'+s+'</span><span>'+esc(w[k]||'')+'</span></div>';}).join('')+'<div class="avg"><span>평균 '+sum.toFixed(1)+' → 별점 '+v.toFixed(1)+'</span><span>08 점수 규칙</span></div></div>'+
+      '<p class="note"><b style="font-weight:500;color:var(--ink)">소싱 검토</b> '+esc(p.note)+'</p>'+cite(p.src)+
+      '<div class="links">'+links.join('')+'</div>'+(p.cp?'<p class="credit" style="margin-top:12px">이 링크는 쿠팡 파트너스 활동의 일환으로, 구매 시 일정액의 수수료를 제공받습니다.</p>':'');
+    lastFocus=document.activeElement;
+    qv.classList.add('on');veil.classList.add('on');qv.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+    $('qv-x').onclick=closeQV;setTimeout(function(){$('qv-x').focus();},60);
+  }
+  function closeQV(){qv.classList.remove('on');veil.classList.remove('on');qv.setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
+  veil.onclick=closeQV;
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&qv.classList.contains('on'))closeQV();});
+  $('pick-list').addEventListener('click',function(e){var c=e.target.closest('.pick');if(c)openQV(D.picks[+c.dataset.i],+c.dataset.i);});
+
+  function renderArchive(){
+    var cur=D.edition.date;
+    $('issue-select').innerHTML=AR.map(function(a){return '<option value="'+esc(a.date)+'"'+(a.date===cur?' selected':'')+'>No.'+pad(a.no)+' · '+esc(a.date)+'</option>';}).join('');
+    $('archive-list').innerHTML=AR.map(function(a){return '<button type="button" class="iss'+(a.date===cur?' cur':'')+'" data-d="'+esc(a.date)+'"><span class="no num">No.'+pad(a.no)+'</span><span class="dt">'+esc(a.date)+(a.date===LATEST.edition.date?' · LATEST':'')+'</span><span class="tt">'+esc(a.title)+'</span></button>';}).join('');
+  }
+  function openIssue(date,scroll){
+    if(cache[date]){render(cache[date]);after();return;}
+    fetch('issues/'+date+'.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(j){cache[date]=j;render(j);after();}).catch(function(){var bn=$('past-banner');bn.classList.add('on');bn.textContent=date+' 호를 불러오지 못했습니다. 잠시 후 다시 시도하세요.';});
+    function after(){try{history.replaceState(null,'',date===LATEST.edition.date?location.pathname:'#issue-'+date);}catch(e){}if(scroll)window.scrollTo({top:0});}
+  }
+  $('issue-select').onchange=function(){openIssue(this.value,true);};
+  $('archive-list').onclick=function(e){var b=e.target.closest('.iss');if(b)openIssue(b.dataset.d,true);};
+
+  /* index */
+  var IDX=[];
+  function buildIndex(){
+    IDX=[];
+    D.picks.forEach(function(p){IDX.push({t:'소싱 픽',h:p.name,d:p.brand+' · '+p.price,k:[p.name,p.brand,p.cat,p.mk,REGN[p.mk],p.ch,p.usp,p.target,p.q,overall(p.sc)>=4?'추천템':''].join(' '),a:'#'+p.id,b:p.brand});});
+    D._launches.forEach(function(l,i){IDX.push({t:'신제품',h:l.b+' '+l.p,d:l.d+' · '+l.cat+' · '+l.pr,k:[l.b,l.p,l.m,REGN[l.m],l.cat,l.tier,CATN[l.tier]].join(' '),a:'#launches',b:l.b});});
+    D.trends.forEach(function(t,i){IDX.push({t:'트렌드',h:t.t,d:t.stat+' '+t.sl,k:[t.t,t.sl,t.line].join(' '),a:'#trend-'+(i+1)});});
+    $('wire-list').querySelectorAll('.story').forEach(function(el){var h=el.querySelector('h3').textContent;var n=D.news.filter(function(x){return x.h===h;})[0];if(n)IDX.push({t:(CATN[n.c]||'')+' 뉴스',h:n.h,d:n.p,k:[n.h,n.p,n.r,REGN[n.r],n.c,CATN[n.c]].join(' '),a:'#'+el.id});});
+    D.channels.forEach(function(c,i){IDX.push({t:'채널',h:c.n,d:c.sig,k:c.n+' '+c.sig,a:'#chan-'+(i+1)});});
+    var bc={};IDX.forEach(function(it){if(it.b)bc[it.b]=(bc[it.b]||0)+1;});
+    var bs=Object.keys(bc).sort(function(a,b){return a.localeCompare(b,'ko');});
+    var ko=bs.filter(function(b){return /[가-힣]/.test(b[0]);}),en=bs.filter(function(b){return !/[가-힣]/.test(b[0]);});
+    function grp(t,l){return '<h4>'+t+'</h4>'+l.map(function(b){return '<div class="row">'+brandBtn(b)+'<button type="button" class="q" data-q="'+esc(b)+'">'+bc[b]+'건 검색</button></div>';}).join('');}
+    $('brand-index').innerHTML=grp('브랜드 · 가나다',ko)+grp('BRANDS · A–Z',en);
+    search($('q').value);
+  }
+  function norm(s){return String(s).toLowerCase().replace(/\s+/g,'');}
+  function search(q){
+    var out=$('results');q=(q||'').trim();
+    if(!q){out.innerHTML='<div class="empty">이번 호 항목 <span class="num">'+IDX.length+'</span>개가 색인되어 있습니다.</div>';return;}
+    var terms=q.split(/\s+/).map(norm);
+    var hits=IDX.filter(function(it){var h=norm(it.k+' '+it.h+' '+it.d);return terms.every(function(t){return h.indexOf(t)>=0;});});
+    out.innerHTML=hits.length?hits.map(function(it){return '<div class="res fade"><span class="t">'+esc(it.t)+'</span><div><div class="h">'+esc(it.h)+'</div><div class="d">'+esc(it.d)+'</div></div><a href="'+it.a+'">이동 →</a></div>';}).join(''):'<div class="empty">“'+esc(q)+'” 결과가 없습니다. 브랜드나 카테고리로 찾아보세요.</div>';
+  }
+  $('search-form').onsubmit=function(e){e.preventDefault();search($('q').value);};
+  $('q').oninput=function(){search(this.value);};
+  $('quick-tags').innerHTML=['AI','냉장고','에어프라이어','가습기','히터','로봇청소기','추천템','대형가전','일본','중국'].map(function(t){return '<button type="button" data-q="'+t+'">#'+t+'</button>';}).join('');
+  $('quick-tags').onclick=function(e){var b=e.target.closest('button');if(!b)return;$('q').value=b.dataset.q;search(b.dataset.q);};
+  $('brand-index').addEventListener('click',function(e){var b=e.target.closest('.q');if(!b)return;$('q').value=b.dataset.q;search(b.dataset.q);$('results').scrollIntoView({block:'nearest',behavior:'smooth'});});
+
+  /* quiet brand tooltip on hover/focus */
+  var tip=$('tipcard'),tipFor=null;
+  function showTip(el){
+    var b=BR[el.dataset.brand];if(!b)return;tipFor=el;
+    tip.innerHTML='<div class="tc-c">'+esc(b.c)+'</div><div class="tc-n">'+esc(el.dataset.brand)+'</div><p>'+esc(b.f)+'</p><p><b>대표</b> '+esc(b.p)+'</p><p class="tc-h">클릭하면 이 브랜드 제품만 보기</p>';
+    var r=el.getBoundingClientRect(),w=tip.offsetWidth||220,h=tip.offsetHeight||120;
+    var x=Math.min(Math.max(12,r.left),window.innerWidth-w-12),y=r.bottom+8;
+    if(y+h>window.innerHeight-8)y=r.top-h-8;
+    tip.style.left=x+'px';tip.style.top=y+'px';tip.classList.add('on');tip.setAttribute('aria-hidden','false');
+  }
+  function hideTip(){tip.classList.remove('on');tip.setAttribute('aria-hidden','true');tipFor=null;}
+  document.addEventListener('mouseover',function(e){var el=e.target.closest('.brand-btn');if(el)showTip(el);});
+  document.addEventListener('mouseout',function(e){var el=e.target.closest('.brand-btn');if(el&&!el.contains(e.relatedTarget))hideTip();});
+  document.addEventListener('focusin',function(e){var el=e.target.closest('.brand-btn');if(el)showTip(el);});
+  document.addEventListener('focusout',function(e){if(e.target.closest('.brand-btn'))hideTip();});
+
+  /* index highlight + back to top */
+  var links=[].slice.call(document.querySelectorAll('#toc a')),tt=$('totop');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id);});}});},{rootMargin:'-40% 0px -55% 0px'});document.querySelectorAll('section.sec').forEach(function(s){io.observe(s);});}
+  window.addEventListener('scroll',function(){if(tipFor)hideTip();tt.classList.toggle('on',window.scrollY>900);},{passive:true});
+  tt.onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};
+
+  render(LATEST);
+  var m=/^#issue-(\d{4}-\d{2}-\d{2})$/.exec(location.hash);
+  if(m&&m[1]!==LATEST.edition.date)openIssue(m[1],false);
+  window.addEventListener('hashchange',function(){var m=/^#issue-(\d{4}-\d{2}-\d{2})$/.exec(location.hash);if(m&&m[1]!==D.edition.date)openIssue(m[1],true);});
+
+  /* subscribe */
+  (function(){
+    var f=document.getElementById('sub-form');if(!f)return;
+    var em=document.getElementById('sub-email'),ag=document.getElementById('sub-agree'),msg=document.getElementById('sub-msg'),btn=document.getElementById('sub-btn');
+    var dbP=null,usP=null;
+    try{if(window.claude&&claude.use){dbP=claude.use('db');usP=claude.use('user');}}catch(e){}
+    function say(s){msg.textContent=s;}
+    function mailFallback(v){
+      var u='mailto:newyangs007@gmail.com?subject='+encodeURIComponent('[Atelier Électro] 구독 신청')+'&body='+encodeURIComponent('구독 이메일: '+v);
+      say('메일 앱이 열리면 보내기만 누르시면 신청됩니다.');location.href=u;
+    }
+    f.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      var v=(em.value||'').trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){say('이메일 주소를 확인해 주세요.');em.focus();return;}
+      if(!ag.checked){say('개인정보 수집·이용에 동의해 주세요.');return;}
+      btn.disabled=true;say('신청 중…');
+      var done=false,timer=setTimeout(function(){if(!done){done=true;btn.disabled=false;mailFallback(v);}},10000);
+      Promise.all([dbP||Promise.resolve(null),usP||Promise.resolve(null)]).then(function(r){
+        var db=r[0],us=r[1];
+        if(!db||!us)throw new Error('nodb');
+        return us.id().then(function(id){return db.doc('subscribers/'+id).set({email:v,at:new Date().toISOString(),src:'web'});});
+      }).then(function(){
+        if(done)return;done=true;clearTimeout(timer);btn.disabled=false;
+        try{localStorage.setItem('ae-sub',v);}catch(e){}
+        em.value='';ag.checked=false;say('구독 신청이 완료됐습니다. 내일 아침 8시부터 '+v+'로 보내 드립니다.');
+      }).catch(function(){
+        if(done)return;done=true;clearTimeout(timer);btn.disabled=false;mailFallback(v);
+      });
+    });
+    try{var s=localStorage.getItem('ae-sub');if(s)say(s+' 로 구독 중입니다.');}catch(e){}
+  })();
+})();
+</script>
+</body>
+</html>

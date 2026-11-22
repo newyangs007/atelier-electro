@@ -1,0 +1,1546 @@
+{
+ "edition": {
+  "date": "2026-11-22",
+  "no": 1,
+  "label": "2026.11.22 SUN · No.001",
+  "collected": "2026-11-22 05:30 KST",
+  "next": "다음 호 2026.11.23 MON 08:00 KST"
+ },
+ "sources": {
+  "S1": {
+   "t": "리스닝마인드·디아이투데이, 검색 데이터로 본 2026년 가전 시장 트렌드",
+   "u": "https://ditoday.com/?p=155775"
+  },
+  "S2": {
+   "t": "아이보스, 리스닝마인드 2026 가전 리포트 요약(미니냉풍기 검색)",
+   "u": "https://www.i-boss.co.kr/ab-3208-1814"
+  },
+  "S3": {
+   "t": "스페셜타임즈, NIQ 2026년 상반기 한국 가전시장 트렌드",
+   "u": "https://www.specialtimes.co.kr/news/articleView.html?idxno=482521"
+  },
+  "S4": {
+   "t": "벤처스퀘어, 크리테오 국내 가전 온라인 매출 분석(2025년 4분기)",
+   "u": "https://www.venturesquare.net/1118687/"
+  },
+  "S5": {
+   "t": "지디넷코리아, 쿠팡 가전·디지털 블랙프라이데이(2026.11.15)",
+   "u": "https://zdnet.co.kr/view?no=20261115110246"
+  },
+  "S6": {
+   "t": "뉴스와이어(GS리테일), GS샵 브레빌 론칭·프리미엄 가전 실적(2026.02.18)",
+   "u": "https://www.newswire.co.kr/newsRead.php?no=1028856"
+  },
+  "S7": {
+   "t": "스마트투데이, GS샵 홈쇼핑 히트상품 ‘실용적 프리미엄’(2025.12.01)",
+   "u": "https://www.smarttoday.co.kr/ko-kr/articles/97709"
+  },
+  "S8": {
+   "t": "MTN, 29CM DDP디자인페어 이구홈 거래액(2026.10.14)",
+   "u": "https://news.mtn.co.kr/article/2026101416464235976"
+  },
+  "S9": {
+   "t": "원포인트, 인스타 공동구매 30,372건 분석",
+   "u": "https://1point.kr/blog/insights/food-groupbuy-influencer-guide/"
+  },
+  "S10": {
+   "t": "뉴데일리, 신일 에코 팬 큐브 히터 누적 판매 260억원",
+   "u": "https://biz.newdaily.co.kr/site/data/html/2025/11/21/2025112100192.amp.html"
+  },
+  "S11": {
+   "t": "헤럴드코리아, 신일전자 에코 팬 큐브 히터 신규 에디션(2026.10.22)",
+   "u": "https://mbiz.heraldcorp.com/article/10911441"
+  },
+  "S12": {
+   "t": "쿠키뉴스, 다이슨코리아 로봇·물청소기·공기청정기 3종 출시(2026.01.12)",
+   "u": "https://www.kukinews.com/article/view/kuk202601120083"
+  },
+  "S13": {
+   "t": "위키트리, 다이슨 손풍기 국내 2026년 5월 출시 예정",
+   "u": "https://www.wikitree.co.kr/articles/1130682"
+  },
+  "S14": {
+   "t": "헤럴드경제, 삼성 비스포크 AI 스팀 로봇청소기 CES 2026(2026.01.21)",
+   "u": "https://www.heraldk.com/article/2026012122540809603"
+  },
+  "S15": {
+   "t": "다나와 검색 ‘에어프라이어’ 인기상품순",
+   "u": "https://search.danawa.com/dsearch.php?query=%EC%97%90%EC%96%B4%ED%94%84%EB%9D%BC%EC%9D%B4%EC%96%B4&sort=saveDESC"
+  },
+  "S16": {
+   "t": "다나와 검색 ‘가습기’ 인기상품순",
+   "u": "https://search.danawa.com/dsearch.php?query=%EA%B0%80%EC%8A%B5%EA%B8%B0&sort=saveDESC"
+  },
+  "S17": {
+   "t": "다나와 검색 ‘전기히터’ 인기상품순",
+   "u": "https://search.danawa.com/dsearch.php?query=%EC%A0%84%EA%B8%B0%ED%9E%88%ED%84%B0&sort=saveDESC"
+  },
+  "S18": {
+   "t": "다나와 검색 ‘음식물처리기’ 인기상품순",
+   "u": "https://search.danawa.com/dsearch.php?query=%EC%9D%8C%EC%8B%9D%EB%AC%BC%EC%B2%98%EB%A6%AC%EA%B8%B0&sort=saveDESC"
+  },
+  "S19": {
+   "t": "다나와 검색 ‘로봇청소기’ 인기상품순",
+   "u": "https://search.danawa.com/dsearch.php?query=%EB%A1%9C%EB%B4%87%EC%B2%AD%EC%86%8C%EA%B8%B0&sort=saveDESC"
+  },
+  "S20": {
+   "t": "다나와 검색 ‘헤어드라이어’ 인기상품순",
+   "u": "https://search.danawa.com/dsearch.php?query=%ED%97%A4%EC%96%B4%EB%93%9C%EB%9D%BC%EC%9D%B4%EC%96%B4&sort=saveDESC"
+  },
+  "S21": {
+   "t": "다나와 검색 ‘닌자’ 인기상품순",
+   "u": "https://search.danawa.com/dsearch.php?query=%EB%8B%8C%EC%9E%90&sort=saveDESC"
+  },
+  "S22": {
+   "t": "다나와 검색 ‘무선청소기’ 인기상품순",
+   "u": "https://search.danawa.com/dsearch.php?query=%EB%AC%B4%EC%84%A0%EC%B2%AD%EC%86%8C%EA%B8%B0&sort=saveDESC"
+  },
+  "S23": {
+   "t": "SharkNinja, Ninja PREPi 출시 보도자료(2026.10.02)",
+   "u": "https://www.webull.com/news/15678799031780352"
+  },
+  "S24": {
+   "t": "SharkNinja Newsroom, Ninja Crispi Microwave 출시",
+   "u": "https://newsroom.sharkninja.com/ninja-launches-its-first-ever-microwave-that-crisps-like-an-air-fryer/"
+  },
+  "S25": {
+   "t": "Business Wire via Finviz, Ninja HydraSense 출시(2026.08.13)",
+   "u": "https://finviz.com/news/381886/ninja-raises-the-standard-for-home-water-with-the-launch-of-ninja-hydrasense"
+  },
+  "S26": {
+   "t": "SharkNinja IR, Ninja SLUSHi Twist 출시(2026.05.19)",
+   "u": "https://ir.sharkninja.com/news/news-details/2026/Ninja-Launches-SLUSHi-Twist-the-Dual-Flavor-Frozen-Drink-Maker-Built-for-Summer-Entertaining/default.aspx"
+  },
+  "S27": {
+   "t": "Business Wire, Ninja Luxe Café 한정 컬러(2026.04.16)",
+   "u": "https://www.businesswire.com/news/home/20260416599592/en/David"
+  },
+  "S28": {
+   "t": "Net Influencer(Kalodata), TikTok Shop 2026년 3월 판매 Top 10",
+   "u": "https://www.netinfluencer.com/?p=45540"
+  },
+  "S29": {
+   "t": "FastMoss, TikTok Shop US 2026년 1분기 Top 10",
+   "u": "https://www.fastmoss.com/blog/top-selling-products-tiktok-shop-us-q1-2026/"
+  },
+  "S30": {
+   "t": "FastMoss, TikTok Shop US 2026년 2분기 Top 10(eMarketer 전망 인용)",
+   "u": "https://www.fastmoss.com/blog/best-selling-tiktok-shop-products-us-q2-2026/"
+  },
+  "S31": {
+   "t": "Boston 25 News, TikTok kitchen: viral videos and purchases",
+   "u": "https://www.boston25news.com/news/tiktok-kitchen-how/ANGAOYH5XY4KHFRFOQUXDTSIUI/?outputType=amp"
+  },
+  "S32": {
+   "t": "TT123, TikTok 미국 초음파 세척기 월매출 23.53만 달러(2026.02.14)",
+   "u": "https://www.tt123.com/kx/AyIfvZId"
+  },
+  "S33": {
+   "t": "Mordor Intelligence, 미국 소형가전 시장",
+   "u": "https://www.mordorintelligence.kr/industry-reports/united-states-small-home-appliances-market"
+  },
+  "S34": {
+   "t": "@DIME, 2026 히트 ‘에어프라이어’와 ‘스프 블렌더’(2026.08.31)",
+   "u": "https://dime.jp/genre/2138147/"
+  },
+  "S35": {
+   "t": "@DIME, 샤크닌자 가전이 잘 팔리는 이유(2026.11.15)",
+   "u": "https://dime.jp/genre/2166543/"
+  },
+  "S36": {
+   "t": "가격.com 가전 카테고리 랭킹(2026.11.03–11.09)",
+   "u": "https://kakaku.com/ranking/kaden/"
+  },
+  "S37": {
+   "t": "Ameba Choice, 2026년 최신 가전",
+   "u": "https://choice.ameba.jp/articles/latest-home-appliances/"
+  },
+  "S38": {
+   "t": "21세기경제보도, 2026 쌍11 가전 결산(2026.11.17)",
+   "u": "https://www.sfccn.com/2026/11-17/4NMDE0MDdfMjMwODY4Ng.html"
+  },
+  "S39": {
+   "t": "신랑과기, 2026 상반기 주방 소형가전 ‘량축가승’(2026.08.05)",
+   "u": "https://finance.sina.cn/tech/2026-08-05/detail-inimhawm4663142.d.html?vt=4"
+  },
+  "S40": {
+   "t": "푸단대 소비빅데이터실험실, 2026 쌍11 온라인 소비(2026.11.17)",
+   "u": "https://fddi.fudan.edu.cn/34/78/c19047a799864/page.htm"
+  },
+  "S41": {
+   "t": "퉁화순, 2026 티몰 쌍11 신제품·신트랙(2026.11.12)",
+   "u": "https://news.10jqka.com.cn/20261112/c681748703.shtml"
+  },
+  "S42": {
+   "t": "중국신문망, 소형가전 실적 둔화와 보조금 축소(2026.08.18)",
+   "u": "https://www.chinanews.com.cn/cj/2026/08-18/10679621.shtml"
+  },
+  "S43": {
+   "t": "즈후, 2026 소형가전 세대교체(스팀 에어프라이어)",
+   "u": "https://www.zhihu.com/tardis/jm/ans/1997682309680345801"
+  },
+  "S44": {
+   "t": "IFA Berlin 보도자료, IFA Media Days 2026(2026.09.02)",
+   "u": "https://www.ifa-berlin.com/press-releases/ifa2026-started-media-days"
+  },
+  "S45": {
+   "t": "NIQ, Home Appliances Outlook 2026: Western Europe",
+   "u": "https://nielseniq.com/global/en/insights/report/2025/home-appliances-outlook-2026-western-europe/"
+  },
+  "S46": {
+   "t": "Euromonitor, IFA 2026: AI, robotics and blurring product lines",
+   "u": "https://www.euromonitor.com/article/ifa-2026-ai-robotics-and-blurring-product-lines"
+  },
+  "S47": {
+   "t": "ChannelNews, IFA 2026 AEG 소형가전 Design Collection",
+   "u": "https://www.channelnews.com.au/ifa-2026-aeg-unveils-first-pasta-hob-and-new-floorcare-range/"
+  },
+  "S48": {
+   "t": "ChannelNews, IFA 2026 Miele 컴팩트 리빙",
+   "u": "https://www.channelnews.com.au/ifa-2026-miele-showcases-ai-cooking-self-cleaning-floorcare-and-compact-living/"
+  },
+  "S49": {
+   "t": "LinkedIn(Kalodata 추정), 독일 TikTok Shop 가전 브랜드 Top 5",
+   "u": "https://at.linkedin.com/in/martinradimsky"
+  },
+  "S50": {
+   "t": "Mordor Intelligence, 글로벌 소형가전 시장",
+   "u": "https://www.mordorintelligence.kr/industry-reports/small-home-appliances-market"
+  },
+  "S51": {
+   "t": "오늘의집 가전·디지털 카테고리",
+   "u": "https://ohou.se/store/category?category_id=14000000"
+  },
+  "S52": {
+   "t": "YTN, 폭염 속 ‘미니 가전’ 인기(2026.07.27)",
+   "u": "https://www.ytn.co.kr/_ln/0102_202607271431178104"
+  },
+  "S53": {
+   "t": "SBS Biz, 다이슨 AI 로봇청소기 공개(2026.01.23)",
+   "u": "https://biz.sbs.co.kr/amp/article/20000286914"
+  },
+  "S54": {
+   "t": "다나와 검색 ‘침구청소기’ 인기상품순",
+   "u": "https://search.danawa.com/dsearch.php?query=%EC%B9%A8%EA%B5%AC%EC%B2%AD%EC%86%8C%EA%B8%B0&sort=saveDESC"
+  },
+  "S55": {
+   "t": "전자신문, KES 2026 삼성 ‘일상 속 AI’·LG ‘산업까지 확장’(2026.10.13)",
+   "u": "https://etnews.com/20261013000179"
+  },
+  "S56": {
+   "t": "비즈워치, LG전자 3분기 HS사업본부 실적(2026.10.28)",
+   "u": "https://news.bizwatch.co.kr/article/industry/2026/10/28/0047"
+  },
+  "S57": {
+   "t": "연합뉴스(한민족센터), LG전자 3분기 실적·AIDC 냉각 수주 3조(2026.10.28)",
+   "u": "https://www.koreancenter.or.kr/news/articleView.html?idxno=1431044"
+  },
+  "S58": {
+   "t": "CEO스코어데일리, CES 2026 삼성 비스포크 AI 패밀리허브 제미나이 탑재(2026.01.05)",
+   "u": "https://ceoscoredaily.com/page/view/2026010517300994675"
+  },
+  "S59": {
+   "t": "한국경제, 2026년형 무풍·휘센 오브제컬렉션 AI 냉방(2026.05.12)",
+   "u": "https://www.hankyung.com/article/2026051201781"
+  },
+  "S60": {
+   "t": "Finanznachrichten(PR Newswire), Whirlpool 2026년 3분기 실적(2026.10.26)",
+   "u": "https://www.finanznachrichten.de/nachrichten-2026-10/69944018-whirlpool-corporation-announces-third-quarter-results-008.htm"
+  },
+  "S61": {
+   "t": "TradingKey, Whirlpool Q3 2026: 매출 감소·소형가전 마진 확대(2026.10.26)",
+   "u": "https://www.tradingkey.com/news/earnings/262240253-tradingkey"
+  },
+  "S62": {
+   "t": "FIRSTonline, Electrolux 2026년 3분기 실적",
+   "u": "https://firstonline.info/en/Electrolux-beats-operating-profit-expectations-but-falls-back-into-the-red-and-revises-2026-forecasts/"
+  },
+  "S63": {
+   "t": "신화망, 하이얼 쌍11 AI 가전 성과(2026.11.13)",
+   "u": "https://www.news.cn/tech/20261113/2b597819b9014e9dbbcdd087fafffd4e/c.html"
+  },
+  "S64": {
+   "t": "환구망, AWE2026 하이얼 ‘AI의 눈’ 2.0",
+   "u": "https://tech.huanqiu.com/article/4QukAPkWiwl"
+  },
+  "S65": {
+   "t": "퉁화순(루왕), 중국 냉장고 신 에너지효율 국가표준 시행(2026.11.09)",
+   "u": "https://stock.10jqka.com.cn/20261109/c681627232.shtml"
+  },
+  "S66": {
+   "t": "Digit, IFA 2026 주목할 신가전(Siemens iQ700 등)",
+   "u": "https://www.digit.in/features/home-appliances/ifa-2026-from-ai-washers-to-smart-robot-cleaners-these-are-the-most-interesting-new-appliances.html"
+  },
+  "S67": {
+   "t": "디지털데일리, LG전자 로보틱스사업센터 신설(2026.07.02)",
+   "u": "https://m.ddaily.co.kr/page/view/2026070214533009888"
+  },
+  "S68": {
+   "t": "하이얼, 대형가전 글로벌 혁신대회 AI 냉장고 신품류(2026.11.10)",
+   "u": "https://www.haier.com/about_haier/xinwen/20261110_296289.shtml"
+  },
+  "S69": {
+   "t": "코리아헤럴드, 밀레 주방가전 4종 출시(2026.11.02)",
+   "u": "https://mbiz.heraldcorp.com/article/10922190"
+  },
+  "S70": {
+   "t": "다나와 검색 ‘다이슨 스팟앤스크럽’",
+   "u": "https://search.danawa.com/dsearch.php?query=%EB%8B%A4%EC%9D%B4%EC%8A%A8+%EC%8A%A4%ED%8C%9F%EC%95%A4%EC%8A%A4%ED%81%AC%EB%9F%BD"
+  },
+  "S71": {
+   "t": "다나와 제품 페이지 ‘비스포크 AI 스팀 울트라 VR90F01AAG’",
+   "u": "https://prod.danawa.com/info/?pcode=124075114"
+  },
+  "S72": {
+   "t": "Kohl's, Shark PowerPro Flex Reveal Plus IZ382H 상품 페이지",
+   "u": "https://www.kohls.com/product/prd-7647696/shark-powerpro-flex-reveal-plus-cordless-vacuum-iz382h.jsp"
+  }
+ },
+ "cover": {
+  "title": "덜 사고, <em>더 좋은 것</em>을 산다",
+  "deck": "2026년 가전의 공통 문법은 ‘수량은 줄고, 단가는 오른다’.\n대형가전은 수익성 방어전, 소형가전은 프리미엄과 1인 가구, 그 사이를 AI가 잇습니다.",
+  "byline": "수집 2026-11-22 05:30 KST · 출처 67건",
+  "figs": [
+   {
+    "v": "+11.5",
+    "u": "%",
+    "l": "중국 주방 소형가전 평균가 (상반기)",
+    "s": [
+     "S39"
+    ]
+   },
+   {
+    "v": "−14",
+    "u": "%",
+    "l": "중국 쌍11 가전 온라인 판매액",
+    "s": [
+     "S38"
+    ]
+   },
+   {
+    "v": "+5",
+    "u": "%",
+    "l": "글로벌 소형가전 상반기 성장",
+    "s": [
+     "S44"
+    ]
+   },
+   {
+    "v": "−8.8",
+    "u": "%",
+    "l": "월풀 3분기 매출",
+    "s": [
+     "S60"
+    ]
+   },
+   {
+    "v": "3.7",
+    "u": "%",
+    "l": "LG전자 가전(HS) 3분기 영업이익률",
+    "s": [
+     "S56"
+    ]
+   },
+   {
+    "v": "+9.5",
+    "u": "%",
+    "l": "한국 가전·내구재 상반기 성장",
+    "s": [
+     "S3"
+    ]
+   }
+  ]
+ },
+ "ticker": [
+  [
+   "AI",
+   "KES 2026 · 삼성 ‘일상 속 AI’, LG ‘산업까지 확장’",
+   "S55"
+  ],
+  [
+   "대형",
+   "LG전자 HS 3분기 매출 7조 444억 원",
+   "S56"
+  ],
+  [
+   "대형",
+   "월풀 3분기 매출 $3.677B, −8.8%",
+   "S60"
+  ],
+  [
+   "소형",
+   "다나와 전기히터 1위 신일 큐브 히터",
+   "S17"
+  ],
+  [
+   "소형",
+   "쿠팡 가전·디지털 블랙프라이데이 11/16–11/29",
+   "S5"
+  ],
+  [
+   "AI",
+   "하이얼 ‘AI의 눈’ 냉장고 식재료 인식 300종+",
+   "S64"
+  ],
+  [
+   "소형",
+   "쌍11 소형가전 Top3 메이디·로보락·쑤포얼",
+   "S38"
+  ],
+  [
+   "소형",
+   "BRUNO 글라스 에어프라이어 계획 대비 510%",
+   "S34"
+  ],
+  [
+   "소형",
+   "Ninja PREPi 출시 $179",
+   "S23"
+  ],
+  [
+   "대형",
+   "중국 냉장고 새 에너지효율 표준 시행",
+   "S65"
+  ]
+ ],
+ "trends": [
+  {
+   "rn": "01",
+   "t": "양은 줄고 값은 오른다",
+   "stat": "+11.5%",
+   "sl": "중국 주방 소형가전 평균가",
+   "line": "판매량 −14.6%에도 평균가 상승. 국내 홈쇼핑은 로보락 450억·다이슨 헤어 300억.",
+   "s": [
+    "S39",
+    "S6"
+   ]
+  },
+  {
+   "rn": "02",
+   "t": "코팅 대신 유리와 스틸",
+   "stat": "510%",
+   "sl": "BRUNO 글라스 에어프라이어 계획 대비 판매",
+   "line": "닌자 크리스피, 아이닉 올스텐까지 ‘보이는 조리’가 대세.",
+   "s": [
+    "S34",
+    "S35",
+    "S15"
+   ]
+  },
+  {
+   "rn": "03",
+   "t": "AI가 대형가전을 다시 설계한다",
+   "stat": "300+",
+   "sl": "하이얼 AI 냉장고 인식 식재료 종류",
+   "line": "삼성 패밀리허브는 제미나이 탑재, LG는 로보틱스사업센터 신설.",
+   "s": [
+    "S64",
+    "S58",
+    "S67"
+   ]
+  },
+  {
+   "rn": "04",
+   "t": "1인용, 미니, 원룸",
+   "stat": "105.8만",
+   "sl": "‘미니·소형’ 가전 월 검색량",
+   "line": "여성 비중 61%, 20대 유입 증가. ‘미니냉풍기’ 검색은 역대 최고.",
+   "s": [
+    "S1",
+    "S2"
+   ]
+  },
+  {
+   "rn": "05",
+   "t": "내 자리만 데운다",
+   "stat": "260억",
+   "sl": "신일 큐브 히터 라인 누적 판매",
+   "line": "다나와 전기히터 인기 1·2위가 모두 같은 라인.",
+   "s": [
+    "S11",
+    "S17"
+   ]
+  },
+  {
+   "rn": "06",
+   "t": "고가 가전도 숏폼에서",
+   "stat": "$6.12M",
+   "sl": "TikTok Shop 3월 1위 샤크 청소기 매출",
+   "line": "독일 TikTok Shop GMV 상위 5개도 모두 가전 브랜드.",
+   "s": [
+    "S28",
+    "S49"
+   ]
+  }
+ ],
+ "news": [
+  {
+   "r": "KR",
+   "c": "AI",
+   "pt": true,
+   "h": "KES 2026, 삼성 ‘일상 속 AI’ vs LG ‘산업까지 AI’",
+   "p": "삼성은 가전·모바일 연결 생태계, LG는 홈과 산업을 나눠 전시.",
+   "d": "2026.10.13",
+   "s": "S55"
+  },
+  {
+   "r": "KR",
+   "c": "대형",
+   "pt": true,
+   "h": "LG전자 가전 3분기 매출 7조 444억 원",
+   "p": "매출은 2개 분기 연속 7조원대, 영업이익률은 9.7%에서 3.7%로.",
+   "d": "2026.10.28",
+   "s": "S56"
+  },
+  {
+   "r": "KR",
+   "c": "대형",
+   "h": "LG, AI 데이터센터 냉각 수주 3조원 돌파",
+   "p": "상반기 6천억원에서 한 분기 만에 5배 이상.",
+   "d": "2026.10.28",
+   "s": "S57"
+  },
+  {
+   "r": "KR",
+   "c": "AI",
+   "h": "비스포크 AI 패밀리허브, 가전 최초 제미나이",
+   "p": "CES 2026에서 식품 인식 범위를 넓힌 냉장고 공개.",
+   "d": "2026.01.05",
+   "s": "S58"
+  },
+  {
+   "r": "KR",
+   "c": "소형",
+   "pt": true,
+   "h": "한국 가전·내구재 상반기 11조 2,273억 원",
+   "p": "+9.5%. 마켓플레이스 매출은 약 25% 증가.",
+   "s": "S3"
+  },
+  {
+   "r": "KR",
+   "c": "소형",
+   "h": "소형가전 검색, 20대·여성이 늘었다",
+   "p": "2년간 검색량이 늘어난 카테고리는 냉풍기·음식물처리기뿐.",
+   "s": "S1"
+  },
+  {
+   "r": "KR",
+   "c": "소형",
+   "h": "쿠팡 가전·디지털 블랙프라이데이",
+   "p": "11/16–11/29, 삼성·LG 등 참여.",
+   "d": "2026.11.15",
+   "s": "S5"
+  },
+  {
+   "r": "US",
+   "c": "대형",
+   "pt": true,
+   "h": "월풀 3분기 매출 −8.8%, 적자 전환",
+   "p": "북미 대형가전 수요 부진. 소형가전(SDA)은 매출 보합에 이익률 상승.",
+   "d": "2026.10.26",
+   "s": "S60"
+  },
+  {
+   "r": "US",
+   "c": "소형",
+   "h": "TikTok Shop US, 올해 234억 달러 전망",
+   "p": "eMarketer 전망. 2분기 Top10에 가전 포함.",
+   "s": "S30"
+  },
+  {
+   "r": "US",
+   "c": "소형",
+   "h": "샤크닌자, 하반기 신제품 연속 출시",
+   "p": "Crispi Microwave $449 · HydraSense $199.99 · PREPi $179.",
+   "s": "S23"
+  },
+  {
+   "r": "US",
+   "c": "소형",
+   "h": "소비자 71%, 바이럴 제품 구매·고려",
+   "p": "싱글도즈 그라인더는 틱톡 바이럴 후 판매 22% 증가.",
+   "s": "S31"
+  },
+  {
+   "r": "JP",
+   "c": "소형",
+   "pt": true,
+   "h": "올해 일본 히트는 ‘방치형 조리가전’",
+   "p": "글라스 에어프라이어 510%, 오토 스프 블렌더 약 4배.",
+   "d": "2026.08.31",
+   "s": "S34"
+  },
+  {
+   "r": "JP",
+   "c": "소형",
+   "h": "샤크닌자 재팬, 사용자 조사로 연속 히트",
+   "p": "ChillPill 핸디팬 크라우드펀딩 1.1억 엔+.",
+   "d": "2026.11.15",
+   "s": "S35"
+  },
+  {
+   "r": "JP",
+   "c": "소형",
+   "h": "가격닷컴 가전 랭킹 4위 ‘밥솥’",
+   "p": "11.03–11.09 집계 카테고리 순위.",
+   "s": "S36"
+  },
+  {
+   "r": "CN",
+   "c": "대형",
+   "pt": true,
+   "h": "쌍11 가전 온라인 −14%",
+   "p": "대형은 하이얼·메이디·샤오톈어, 소형은 메이디·로보락·쑤포얼이 상위.",
+   "d": "2026.11.17",
+   "s": "S38"
+  },
+  {
+   "r": "CN",
+   "c": "AI",
+   "h": "하이얼 ‘AI의 눈’ 2.0, 냉장고가 식재료 300종+ 인식",
+   "p": "AWE2026에서 냉장고·세탁기·에어컨 Seeker 시리즈 공개.",
+   "s": "S64"
+  },
+  {
+   "r": "CN",
+   "c": "AI",
+   "h": "하이얼, 쌍11 대형가전 점유율 선두 유지",
+   "p": "AI 제품군이 여러 품목에서 판매 상위.",
+   "d": "2026.11.13",
+   "s": "S63"
+  },
+  {
+   "r": "CN",
+   "c": "대형",
+   "h": "냉장고 새 에너지효율 표준 시행",
+   "p": "2026.6.1부터 소비전력 한도 30~40% 강화.",
+   "d": "2026.11.09",
+   "s": "S65"
+  },
+  {
+   "r": "CN",
+   "c": "소형",
+   "h": "티몰 쌍11, 로보락이 소형가전 1위까지",
+   "p": "신제품이 성장의 핵심 동력.",
+   "d": "2026.11.12",
+   "s": "S41"
+  },
+  {
+   "r": "EU",
+   "c": "소형",
+   "pt": true,
+   "h": "소형가전, 상반기 +5%로 시장 주도",
+   "p": "NIQ/GfK 글로벌 Tech & Durables 집계.",
+   "d": "2026.09.02",
+   "s": "S44"
+  },
+  {
+   "r": "EU",
+   "c": "AI",
+   "h": "IFA 2026, AI가 묶는 가전 생태계",
+   "p": "드리미는 16개 카테고리 100여 개 제품 전시.",
+   "s": "S46"
+  },
+  {
+   "r": "EU",
+   "c": "AI",
+   "h": "지멘스 iQ700 오븐, 요리 100종+ 인식",
+   "p": "IFA 2026 공개, 조리 설정 자동 제안.",
+   "s": "S66"
+  },
+  {
+   "r": "EU",
+   "c": "대형",
+   "h": "일렉트로룩스 3분기 매출 +5%, 순손실",
+   "p": "원자재·물류비와 미국 관세 부담.",
+   "s": "S62"
+  },
+  {
+   "r": "EU",
+   "c": "소형",
+   "h": "서유럽 소형가전 2026 +5~7% 전망",
+   "p": "소형가전 매출의 45%가 온라인.",
+   "s": "S45"
+  }
+ ],
+ "launches": [
+  {
+   "d": "2026.11.07",
+   "m": "CN",
+   "b": "하이얼",
+   "cat": "냉장고",
+   "tier": "AI",
+   "p": "AI 냉장고 신제품군 (대형가전 글로벌 혁신대회)",
+   "pr": "—",
+   "s": "S68",
+   "pt": true
+  },
+  {
+   "d": "2026.11.02",
+   "m": "KR",
+   "b": "밀레",
+   "cat": "주방가전 4종",
+   "tier": "대형",
+   "p": "조리·세척 자동화 강화 주방가전 4종",
+   "pr": "—",
+   "s": "S69"
+  },
+  {
+   "d": "2026.11 등록",
+   "m": "KR",
+   "b": "신일전자",
+   "cat": "전기히터",
+   "tier": "소형",
+   "p": "SEH-H1800WHS",
+   "pr": "149,780원",
+   "s": "S17"
+  },
+  {
+   "d": "2026.10.22",
+   "m": "KR",
+   "b": "신일전자",
+   "cat": "전기히터",
+   "tier": "소형",
+   "p": "에코 팬 큐브 히터 신규 에디션",
+   "pr": "128,880원~",
+   "s": "S11",
+   "pt": true
+  },
+  {
+   "d": "2026.10.13",
+   "m": "KR",
+   "b": "삼성전자",
+   "cat": "세탁건조기",
+   "tier": "AI",
+   "p": "비스포크 AI 콤보 ‘AI 맞춤+’ (KES 2026)",
+   "pr": "—",
+   "s": "S55",
+   "pt": true
+  },
+  {
+   "d": "2026.10 등록",
+   "m": "KR",
+   "b": "LG전자",
+   "cat": "가습기",
+   "tier": "소형",
+   "p": "퓨리케어 하이드로타워 HY706RSUA",
+   "pr": "1,041,680원",
+   "s": "S16"
+  },
+  {
+   "d": "2026.10 등록",
+   "m": "KR",
+   "b": "루메나",
+   "cat": "가습기",
+   "tier": "소형",
+   "p": "MIST TOWER PRO",
+   "pr": "119,000원",
+   "s": "S16"
+  },
+  {
+   "d": "2026.10 등록",
+   "m": "KR",
+   "b": "키친아트",
+   "cat": "에어프라이어",
+   "tier": "소형",
+   "p": "라팔 KAEK-ST0604S",
+   "pr": "119,000원",
+   "s": "S15"
+  },
+  {
+   "d": "2026.10.02",
+   "m": "US",
+   "b": "Ninja",
+   "cat": "푸드프로세서",
+   "tier": "소형",
+   "p": "PREPi 프렙+보관 시스템",
+   "pr": "$179 / $229",
+   "s": "S23",
+   "pt": true
+  },
+  {
+   "d": "2026.09 등록",
+   "m": "KR",
+   "b": "조지루시",
+   "cat": "가습기",
+   "tier": "소형",
+   "p": "STAN EE-FAH50K",
+   "pr": "360,670원",
+   "s": "S16"
+  },
+  {
+   "d": "2026.09 등록",
+   "m": "KR",
+   "b": "쿠쿠전자",
+   "cat": "음식물처리기",
+   "tier": "소형",
+   "p": "에코웨일 큐브 메가 CFD-FNL301DCGW",
+   "pr": "468,990원",
+   "s": "S18"
+  },
+  {
+   "d": "2026.09",
+   "m": "EU",
+   "b": "Siemens",
+   "cat": "오븐",
+   "tier": "AI",
+   "p": "iQ700 오븐 (요리 100종+ 인식)",
+   "pr": "—",
+   "s": "S66"
+  },
+  {
+   "d": "2026.09",
+   "m": "EU",
+   "b": "Dreame",
+   "cat": "멀티 카테고리",
+   "tier": "AI",
+   "p": "IFA 전시 100여 개 제품",
+   "pr": "—",
+   "s": "S46"
+  },
+  {
+   "d": "2026.08 등록",
+   "m": "KR",
+   "b": "쿠쿠전자",
+   "cat": "음식물처리기",
+   "tier": "소형",
+   "p": "에코웨일 메가 CFD-ENL301DCGW",
+   "pr": "428,930원",
+   "s": "S18"
+  },
+  {
+   "d": "2026.08 등록",
+   "m": "KR",
+   "b": "샤크닌자",
+   "cat": "글라스 쿠커",
+   "tier": "소형",
+   "p": "닌자 크리스피 FN100KR",
+   "pr": "197,100원",
+   "s": "S21"
+  },
+  {
+   "d": "2026.08.13",
+   "m": "US",
+   "b": "Ninja",
+   "cat": "정수기",
+   "tier": "소형",
+   "p": "HydraSense",
+   "pr": "$199.99",
+   "s": "S25"
+  },
+  {
+   "d": "2026.07.16",
+   "m": "US",
+   "b": "Ninja",
+   "cat": "전자레인지",
+   "tier": "소형",
+   "p": "Crispi Microwave",
+   "pr": "$449",
+   "s": "S24"
+  },
+  {
+   "d": "2026.05.19",
+   "m": "US",
+   "b": "Ninja",
+   "cat": "슬러시 메이커",
+   "tier": "소형",
+   "p": "SLUSHi Twist",
+   "pr": "—",
+   "s": "S26"
+  },
+  {
+   "d": "2026.05",
+   "m": "KR",
+   "b": "다이슨",
+   "cat": "핸디팬",
+   "tier": "소형",
+   "p": "다이슨 첫 손풍기 (출시 예정)",
+   "pr": "출시 시 확정",
+   "s": "S13"
+  },
+  {
+   "d": "2026.05",
+   "m": "KR",
+   "b": "LG전자",
+   "cat": "에어컨",
+   "tier": "대형",
+   "p": "휘센 오브제컬렉션 2026 (AI 콜드프리)",
+   "pr": "—",
+   "s": "S59"
+  },
+  {
+   "d": "2026.03 등록",
+   "m": "KR",
+   "b": "삼성전자",
+   "cat": "로봇청소기",
+   "tier": "AI",
+   "p": "비스포크 AI 스팀 울트라",
+   "pr": "1,601,990원",
+   "s": "S19"
+  },
+  {
+   "d": "2026.03",
+   "m": "US",
+   "b": "Ninja",
+   "cat": "에스프레소 머신",
+   "tier": "소형",
+   "p": "Luxe Café 한정 컬러 (3~5월 순차)",
+   "pr": "—",
+   "s": "S27"
+  },
+  {
+   "d": "2026.01.12",
+   "m": "KR",
+   "b": "다이슨",
+   "cat": "로봇청소기",
+   "tier": "AI",
+   "p": "스팟앤스크럽 AI 로봇청소기",
+   "pr": "179만원",
+   "s": "S12"
+  },
+  {
+   "d": "2026.01",
+   "m": "KR",
+   "b": "삼성전자",
+   "cat": "냉장고",
+   "tier": "AI",
+   "p": "비스포크 AI 패밀리허브 (제미나이)",
+   "pr": "—",
+   "s": "S58"
+  }
+ ],
+ "picks": [
+  {
+   "id": "p1",
+   "cat": "난방",
+   "mk": "KR",
+   "icon": "heater",
+   "brand": "신일전자",
+   "name": "신일 에코 팬 큐브 히터 SEH-H800V",
+   "price": "128,880원",
+   "rev": "839",
+   "rate": "4.8",
+   "reg": "2026.11",
+   "ch": "다나와 전기히터 인기 1위",
+   "why": "다나와 전기히터 1위. 같은 라인이 2위(리뷰 999+), 누적 260억원.",
+   "target": "원룸·1인 가구, 인테리어를 신경 쓰는 20~30대, 반려동물 가정",
+   "usp": "TV를 닮은 레트로 큐브 디자인, 반사판형 히터",
+   "src": [
+    "S17",
+    "S11",
+    "S10"
+   ],
+   "sc": [
+    5,
+    5,
+    5,
+    3,
+    3
+   ],
+   "note": "브랜드 단일 유통 제품이라 신일 대리점·B2B 도매 협의가 전제. 난방 시즌이 2월이면 끝나므로 12월 초까지 물량 확보가 관건.",
+   "pc": "124871036",
+   "q": "신일 에코 팬 큐브 히터",
+   "scw": [
+    "전기히터 인기 1위",
+    "리뷰 839·4.8",
+    "난방 성수기",
+    "중견 브랜드 대리점 경유",
+    "12만원대·경쟁 보통"
+   ],
+   "img": "issues/img/124871036.jpg",
+   "cp": "https://link.coupang.com/a/iSaeMc3VRY"
+  },
+  {
+   "id": "p2",
+   "cat": "가습",
+   "mk": "KR",
+   "icon": "humid",
+   "brand": "조지루시",
+   "name": "조지루시 STAN 가습기 EE-FAH50K",
+   "price": "360,670원",
+   "rev": "69",
+   "rate": "4.7",
+   "reg": "2026.09",
+   "ch": "다나와 가습기 인기 1위",
+   "why": "다나와 가습기 1위. 가습기는 11월 초가 온라인 구매 피크.",
+   "target": "영유아 가정, 위생을 중시하는 30~40대",
+   "usp": "조지루시 STAN 디자인 라인의 가습기, 프리미엄 가격대",
+   "src": [
+    "S16",
+    "S4"
+   ],
+   "sc": [
+    5,
+    3,
+    5,
+    3,
+    3
+   ],
+   "note": "일본 브랜드라 국내 공식 수입사 경유가 기본. 병행수입은 전압·KC 인증 확인 필수.",
+   "pc": "124298665",
+   "q": "조지루시 STAN 가습기",
+   "scw": [
+    "가습기 인기 1위",
+    "리뷰 69",
+    "가습 성수기",
+    "일본 브랜드 수입사 경유",
+    "30만원대·경쟁 보통"
+   ],
+   "img": "issues/img/124298665.jpg",
+   "cp": "https://link.coupang.com/a/iSan18nmua"
+  },
+  {
+   "id": "p3",
+   "cat": "주방",
+   "mk": "KR",
+   "icon": "fryer",
+   "brand": "프리옴",
+   "name": "프리옴 9L 에어프라이어",
+   "price": "63,080원",
+   "rev": "396",
+   "rate": "4.9",
+   "reg": "2026.04",
+   "ch": "다나와 에어프라이어 인기 6위",
+   "why": "4월 등록 신제품이 리뷰 396건·평점 4.9.",
+   "target": "대용량이 필요한 3~4인 가구, 가성비 중심 구매자",
+   "usp": "9L 용량을 6만원대에",
+   "src": [
+    "S15"
+   ],
+   "sc": [
+    3,
+    4,
+    3,
+    4,
+    2
+   ],
+   "note": "중소 브랜드라 유통 협업 여지가 큼. 동급 ODM 제품이 많아 차별화 포인트(창·바스켓 소재) 확인 후 소싱 권장.",
+   "pc": "122616605",
+   "q": "프리옴 9L 에어프라이어",
+   "scw": [
+    "에어프라이어 6위",
+    "리뷰 396·4.9",
+    "연중 상시",
+    "중소 브랜드 직거래",
+    "6만원대 가격경쟁"
+   ],
+   "img": "issues/img/122616605.jpg",
+   "cp": "https://link.coupang.com/a/iSaopysjIq"
+  },
+  {
+   "id": "p4",
+   "cat": "뷰티",
+   "mk": "KR",
+   "icon": "dryer",
+   "brand": "블라우풍트",
+   "name": "블라우풍트 에어이지 프로 BLP-HD7300",
+   "price": "63,430원",
+   "rev": "535",
+   "rate": "4.8",
+   "reg": "2025.09",
+   "ch": "다나와 헤어드라이어 인기 4위",
+   "why": "다이슨 2·3위 다음 4위, 6만원대 대체 수요.",
+   "target": "고속 드라이어를 원하는 20~30대 여성, 선물 수요",
+   "usp": "6만원대 고속 드라이어, 높은 평점",
+   "src": [
+    "S20",
+    "S6"
+   ],
+   "sc": [
+    3,
+    5,
+    4,
+    5,
+    3
+   ],
+   "note": "고속 드라이어는 중국 ODM 공급망이 넓어 유사 사양 PB 소싱도 가능. KC 전기안전 인증과 모터 내구성 검증이 핵심.",
+   "pc": "97406273",
+   "q": "블라우풍트 에어이지 프로 BLP-HD7300",
+   "scw": [
+    "헤어드라이어 4위",
+    "리뷰 535·4.8",
+    "연말 선물",
+    "고속 드라이어 ODM 다수",
+    "6만원대·차별화 보통"
+   ],
+   "img": "issues/img/97406273.jpg",
+   "cp": "https://link.coupang.com/a/iSaoM0sCaG"
+  },
+  {
+   "id": "p5",
+   "cat": "주방",
+   "mk": "KR",
+   "icon": "glass",
+   "brand": "샤크닌자",
+   "name": "닌자 크리스피 FN100KR",
+   "price": "197,100원",
+   "rev": "163",
+   "rate": "4.8",
+   "reg": "2026.08",
+   "ch": "다나와 ‘닌자’ 인기 6위 · 일본 히트",
+   "why": "유리 용기 조리·보관. 일본 히트, 국내 리뷰 163건.",
+   "target": "1~2인 가구, 밀프렙·도시락족, 코팅을 꺼리는 소비자",
+   "usp": "유리 용기 하나로 조리·보관·재가열",
+   "src": [
+    "S21",
+    "S35"
+   ],
+   "sc": [
+    3,
+    3,
+    4,
+    2,
+    3
+   ],
+   "note": "샤크닌자코리아 공식 유통 구조라 셀러는 공식 판매점 입점 방식이 현실적. 글라스 쿠킹 트렌드의 기준 제품으로 PB 기획 벤치마크 가치가 큼.",
+   "pc": "124182087",
+   "q": "닌자 크리스피",
+   "scw": [
+    "‘닌자’ 검색 6위",
+    "리뷰 163",
+    "연말 선물",
+    "샤크닌자 공식 유통",
+    "20만원대·경쟁 보통"
+   ],
+   "img": "issues/img/124182087.jpg",
+   "cp": "https://link.coupang.com/a/iSapah8tIO"
+  },
+  {
+   "id": "p6",
+   "cat": "주방",
+   "mk": "KR",
+   "icon": "steam",
+   "brand": "풀무원건강생활",
+   "name": "풀무원 스팀쿡 마스터 듀얼스팀 AV20F11",
+   "price": "325,710원",
+   "rev": "284",
+   "rate": "4.8",
+   "reg": "2026.03",
+   "ch": "다나와 에어프라이어 인기 5위",
+   "why": "스팀+에어프라이 결합, 중국도 같은 흐름.",
+   "target": "건강식·촉촉한 조리를 원하는 3~4인 가구, 40~50대",
+   "usp": "듀얼 스팀 + 에어프라이 조합",
+   "src": [
+    "S15",
+    "S43"
+   ],
+   "sc": [
+    3,
+    4,
+    3,
+    2,
+    3
+   ],
+   "note": "대기업 계열 브랜드라 직접 소싱보다 스팀 에어프라이어 카테고리의 중국 ODM 소싱 근거로 활용 권장.",
+   "pc": "108365732",
+   "q": "풀무원 스팀쿡 마스터",
+   "scw": [
+    "에어프라이어 5위",
+    "리뷰 284·4.8",
+    "연중 상시",
+    "대기업 계열 유통",
+    "30만원대·경쟁 보통"
+   ],
+   "img": "issues/img/108365732.jpg",
+   "cp": "https://link.coupang.com/a/iSapxPkgtV"
+  },
+  {
+   "id": "p7",
+   "cat": "주방",
+   "mk": "KR",
+   "icon": "disposer",
+   "brand": "미닉스",
+   "name": "미닉스 더 플렌더 mini MNFD-300G",
+   "price": "255,710원",
+   "rev": "37",
+   "rate": "4.7",
+   "reg": "2026.06",
+   "ch": "다나와 음식물처리기 인기 5위",
+   "why": "2년간 검색량이 늘어난 음식물처리기, 검증된 라인의 소형 모델.",
+   "target": "원룸·소형 주방의 1~2인 가구",
+   "usp": "검증된 플렌더 라인의 소형 모델",
+   "src": [
+    "S18",
+    "S1"
+   ],
+   "sc": [
+    3,
+    2,
+    3,
+    4,
+    4
+   ],
+   "note": "리뷰가 아직 적어 초기 반응을 2~3주 더 확인 후 발주 권장. 고단가라 마진 폭은 큰 편.",
+   "pc": "122694803",
+   "q": "미닉스 플렌더 mini",
+   "scw": [
+    "음식물처리기 5위",
+    "리뷰 37",
+    "연중 상시",
+    "중소 브랜드 직거래",
+    "25만원대 고단가"
+   ],
+   "img": "issues/img/122694803.jpg",
+   "cp": "https://link.coupang.com/a/iSapVsRe20"
+  },
+  {
+   "id": "p8",
+   "cat": "청소",
+   "mk": "KR",
+   "icon": "robot",
+   "brand": "모바",
+   "name": "모바 P70 Pro Ultra 로봇청소기",
+   "price": "549,000원",
+   "rev": "999+",
+   "rate": "4.9",
+   "reg": "2026.04",
+   "ch": "다나와 로봇청소기 인기 1위",
+   "why": "로봇청소기 1위, 2위의 약 3분의 1 가격.",
+   "target": "가성비 올인원을 찾는 30~40대 맞벌이 가정",
+   "usp": "인기 1위 제품 중 50만원대 가격",
+   "src": [
+    "S19",
+    "S1"
+   ],
+   "sc": [
+    5,
+    5,
+    3,
+    3,
+    2
+   ],
+   "note": "고가·대형 AS가 필요한 제품이라 국내 AS 체계 확인이 전제. 셀러 마진은 얇은 편.",
+   "pc": "124075398",
+   "q": "모바 P70 Pro Ultra",
+   "scw": [
+    "로봇청소기 1위",
+    "리뷰 999+·4.9",
+    "연중 상시",
+    "해외 브랜드 수입사",
+    "고가·AS 부담"
+   ],
+   "img": "issues/img/124075398.jpg",
+   "cp": "https://link.coupang.com/a/iSaqjnWZHg"
+  },
+  {
+   "id": "p9",
+   "cat": "주방",
+   "mk": "JP",
+   "icon": "soup",
+   "brand": "Toffy",
+   "name": "Toffy 오토 스프 블렌더 (세라믹 코트)",
+   "price": "¥9,900",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2026 상반기 히트",
+   "ch": "일본 DIME 2026 히트",
+   "why": "4개월 새 판매 약 4배, 겨울 수프 시즌과 일치.",
+   "target": "아침 대용식을 찾는 1~2인 가구, 이유식 가정",
+   "usp": "자동 메뉴로 수프를 만드는 1만 엔대 블렌더",
+   "src": [
+    "S34"
+   ],
+   "sc": [
+    4,
+    1,
+    5,
+    1,
+    4
+   ],
+   "note": "국내 수입 여부와 220V 사양을 먼저 확인. 수프 블렌더 카테고리 자체를 ODM으로 기획하는 방안도 유효.",
+   "pc": "",
+   "q": "오토 스프 블렌더",
+   "scw": [
+    "판매 약 4배",
+    "리뷰 수집 전",
+    "수프 성수기",
+    "국내 유통 미확인",
+    "1만 엔대·차별화 가능"
+   ],
+   "cp": "https://link.coupang.com/a/iSasl2iXPo"
+  },
+  {
+   "id": "p10",
+   "cat": "청소",
+   "mk": "US",
+   "icon": "stick",
+   "brand": "Shark",
+   "name": "Shark PowerPro Flex Reveal Plus 무선청소기",
+   "price": "$379.99",
+   "rev": "16,480대 판매(3월)",
+   "rate": "—",
+   "reg": "TikTok Shop 2026.03 1위",
+   "ch": "TikTok Shop US 월 1위",
+   "why": "TikTok Shop 3월 전체 1위, 월 $6.12M.",
+   "target": "미국 숏폼 쇼핑 이용자, 반려동물 가정",
+   "usp": "틱톡 시연 영상과 결합한 무선청소기",
+   "src": [
+    "S28",
+    "S29",
+    "S72"
+   ],
+   "sc": [
+    5,
+    4,
+    3,
+    1,
+    2
+   ],
+   "note": "국내 출시 여부는 확인되지 않았습니다. 직접 소싱보다 ‘시연형 숏폼 판매’ 방식을 국내 무선청소기에 적용하는 참고 사례로 권장.",
+   "pc": "",
+   "q": "Shark PowerPro Flex Reveal Plus",
+   "scw": [
+    "TikTok Shop 월 1위",
+    "판매 16,480대",
+    "연중 상시",
+    "국내 출시 미확인",
+    "고가·AS 부담"
+   ],
+   "img": "issues/img/shark_iz382h.jpg",
+   "imgc": "Kohl's 상품 이미지 (모델 IZ382H)",
+   "cp": "https://link.coupang.com/a/iSasITt7kW"
+  },
+  {
+   "id": "p11",
+   "cat": "주방",
+   "mk": "US",
+   "icon": "prep",
+   "brand": "Ninja",
+   "name": "Ninja PREPi 프렙+보관 시스템",
+   "price": "$179 / $229",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2026.10.02 출시",
+   "ch": "미국 신제품",
+   "why": "10월 출시, ‘한 용기’ 흐름의 푸드프렙 확장.",
+   "target": "밀프렙족, 샐러드·도시락을 직접 만드는 직장인",
+   "usp": "한 볼로 프렙·서빙·보관·휴대",
+   "src": [
+    "S23"
+   ],
+   "sc": [
+    3,
+    1,
+    4,
+    1,
+    3
+   ],
+   "note": "출시 직후라 판매·리뷰 데이터가 없고 국내 출시 정보도 확인되지 않았습니다. 워치리스트에 두고 아마존 리뷰 누적을 추적하세요.",
+   "pc": "",
+   "q": "Ninja PREPi",
+   "scw": [
+    "출시 이슈만",
+    "리뷰 수집 전",
+    "연말 선물",
+    "국내 출시 미확인",
+    "$179·경쟁 보통"
+   ],
+   "cp": "https://link.coupang.com/a/iSas6fGHGS"
+  },
+  {
+   "id": "p12",
+   "cat": "주방",
+   "mk": "KR",
+   "icon": "fryer",
+   "brand": "아이닉",
+   "name": "아이닉 4세대 올스텐 에어프라이어 iSA6L",
+   "price": "89,000원",
+   "rev": "934",
+   "rate": "4.6",
+   "reg": "2024.12",
+   "ch": "다나와 에어프라이어 인기 3위",
+   "why": "리뷰 934건 스테디셀러, 올스텐 내부.",
+   "target": "코팅 벗겨짐이 걱정되는 40~50대, 위생 중시 가정",
+   "usp": "내부 올스텐, 8만원대",
+   "src": [
+    "S15"
+   ],
+   "sc": [
+    4,
+    5,
+    3,
+    4,
+    2
+   ],
+   "note": "중소 브랜드라 협업 여지는 있으나 이미 판매처가 많아 가격 경쟁이 치열. 번들 구성으로 차별화 필요.",
+   "pc": "72816731",
+   "q": "아이닉 올스텐 에어프라이어",
+   "scw": [
+    "에어프라이어 3위",
+    "리뷰 934·4.6",
+    "연중 상시",
+    "중소 브랜드 직거래",
+    "8만원대 가격경쟁"
+   ],
+   "img": "issues/img/72816731.jpg",
+   "cp": "https://link.coupang.com/a/iSardo1y32"
+  },
+  {
+   "id": "p13",
+   "ai": true,
+   "cat": "청소",
+   "mk": "KR",
+   "icon": "robot",
+   "brand": "삼성전자",
+   "name": "삼성 비스포크 AI 스팀 울트라 VR90F01AAG",
+   "price": "1,493,460원",
+   "rev": "763",
+   "rate": "4.7",
+   "reg": "2026.03",
+   "ch": "다나와 로봇청소기 인기 2위 · CES 2026 AI 기능",
+   "why": "카메라로 사물과 투명한 액체까지 인식하는 AI 로봇청소기, 리뷰 763건.",
+   "target": "영유아·반려동물 가정, 프리미엄 로봇청소기 구매층",
+   "usp": "3D 사물 인식 · 투명 액체 감지 · 100℃ 스팀 살균",
+   "src": [
+    "S19",
+    "S71",
+    "S14"
+   ],
+   "sc": [
+    4,
+    5,
+    3,
+    2,
+    2
+   ],
+   "scw": [
+    "로봇청소기 인기 2위",
+    "리뷰 763·4.7",
+    "연중 상시",
+    "대기업 공식 유통",
+    "고가·AS 부담"
+   ],
+   "note": "대기업 공식 유통이라 직소싱은 어렵습니다. 공식 판매점 입점, 또는 ‘AI 스팀 로봇청소기’ ODM 기획의 기준 제품으로 활용하세요. 가격은 07:50 다나와 제품 페이지 기준입니다.",
+   "pc": "124075114",
+   "q": "비스포크 AI 스팀 울트라",
+   "img": "issues/img/124075114.jpg",
+   "cp": "https://link.coupang.com/a/iSarAIh9aK"
+  },
+  {
+   "id": "p14",
+   "ai": true,
+   "cat": "청소",
+   "mk": "KR",
+   "icon": "robot",
+   "brand": "다이슨",
+   "name": "다이슨 스팟앤스크럽 AI 로봇청소기",
+   "price": "908,990원",
+   "rev": "317",
+   "rate": "4.6",
+   "reg": "2026.01",
+   "ch": "다나와 등록 2026.01 · 권장가 179만원",
+   "why": "AI로 젖은 액체와 마른 이물을 구분해 진공·물청소를 한 번에.",
+   "target": "물청소까지 한 대로 끝내려는 프리미엄 구매층",
+   "usp": "AI 오염 식별 + 진공·물청소 겸용",
+   "src": [
+    "S70",
+    "S53",
+    "S12"
+   ],
+   "sc": [
+    3,
+    4,
+    3,
+    2,
+    2
+   ],
+   "scw": [
+    "출시 이슈 중심(순위 미확인)",
+    "리뷰 317·4.6",
+    "연중 상시",
+    "글로벌 브랜드 공식 유통",
+    "고가·AS 부담"
+   ],
+   "note": "권장가 179만원 대비 다나와 최저가가 90만원대로, 가격 변동 폭이 큽니다. 공식 유통 경로 확인이 전제입니다.",
+   "pc": "103877486",
+   "q": "다이슨 스팟앤스크럽",
+   "img": "issues/img/103877486.jpg",
+   "cp": "https://link.coupang.com/a/iSarYyhYK4"
+  }
+ ],
+ "channels": [
+  {
+   "n": "쿠팡",
+   "st": "lim",
+   "sig": "11/16–11/29 가전·디지털 블랙프라이데이 기획전 진행 중. 삼성·LG 등 참여.",
+   "s": "S5",
+   "u": "https://www.coupang.com/np/search?q=%EC%86%8C%ED%98%95%EA%B0%80%EC%A0%84",
+   "ul": "쿠팡에서 소형가전 보기"
+  },
+  {
+   "n": "네이버쇼핑",
+   "st": "lim",
+   "sig": "이번 호에서 상품 단위 순위를 수집하지 못했습니다. 실시간 순위는 링크에서 확인하세요.",
+   "s": "",
+   "u": "https://search.shopping.naver.com/search/all?query=%EC%86%8C%ED%98%95%EA%B0%80%EC%A0%84",
+   "ul": "네이버쇼핑 검색"
+  },
+  {
+   "n": "다나와",
+   "st": "ok",
+   "sig": "이번 호 소싱 픽의 1차 데이터 출처. 에어프라이어·가습기·히터·로봇청소기 등 9개 검색어 인기순을 수집했습니다.",
+   "s": "S17",
+   "u": "https://search.danawa.com/dsearch.php?query=%EC%86%8C%ED%98%95%EA%B0%80%EC%A0%84&sort=saveDESC",
+   "ul": "다나와 인기순 보기"
+  },
+  {
+   "n": "29CM",
+   "st": "lim",
+   "sig": "DDP디자인페어 기간 홈 카테고리 ‘이구홈’ 거래액이 직전 주 대비 40% 이상 증가.",
+   "s": "S8",
+   "u": "https://www.29cm.co.kr/",
+   "ul": "29CM 바로가기"
+  },
+  {
+   "n": "오늘의집",
+   "st": "lim",
+   "sig": "가전·디지털 카테고리 메인에 ‘로보락 26년 신제품 스팀살균’ 기획(광고 표기)이 노출되어 있습니다.",
+   "s": "S51",
+   "u": "https://ohou.se/store/category?category_id=14000000",
+   "ul": "오늘의집 가전 보기"
+  },
+  {
+   "n": "홈쇼핑",
+   "st": "ok",
+   "sig": "GS샵 로보락 주문 450억원, 다이슨 헤어기기 300억원. 210만원대 브레빌 커피머신도 론칭.",
+   "s": "S6",
+   "u": "https://www.gsshop.com/",
+   "ul": "GS샵 바로가기"
+  },
+  {
+   "n": "인스타 공동구매",
+   "st": "lim",
+   "sig": "원포인트 분석 기준 2026년 1~8월 공동구매 30,372건. 가전 단위 집계는 이번 호에서 확보하지 못했습니다.",
+   "s": "S9",
+   "u": "https://www.instagram.com/explore/tags/%EA%B0%80%EC%A0%84%EA%B3%B5%EA%B5%AC/",
+   "ul": "#가전공구 보기"
+  },
+  {
+   "n": "아마존 US",
+   "st": "lim",
+   "sig": "아마존 페이지는 자동 수집이 차단되어 이번 호 순위가 없습니다. 베스트셀러 링크에서 확인하세요.",
+   "s": "",
+   "u": "https://www.amazon.com/Best-Sellers-Home-Kitchen-Small-Kitchen-Appliances/zgbs/home-garden/289913",
+   "ul": "Small Kitchen 베스트셀러"
+  },
+  {
+   "n": "유튜브",
+   "st": "lim",
+   "sig": "이번 호에서 영상 조회 데이터를 수집하지 못했습니다. 최신 리뷰 영상은 링크에서 확인하세요.",
+   "s": "",
+   "u": "https://www.youtube.com/results?search_query=%EC%86%8C%ED%98%95%EA%B0%80%EC%A0%84+%EC%B6%94%EC%B2%9C",
+   "ul": "유튜브 검색"
+  },
+  {
+   "n": "틱톡",
+   "st": "ok",
+   "sig": "3월 TikTok Shop 1위 샤크 무선청소기($6.12M), 7위 샤크 공기청정기(매출 +895.6%). 초음파 세척기는 1월 출시 후 한 달 새 1만 건 가까이 판매.",
+   "s": [
+    "S28",
+    "S32"
+   ],
+   "u": "https://www.tiktok.com/search?q=small%20appliance",
+   "ul": "틱톡 검색"
+  }
+ ]
+}
