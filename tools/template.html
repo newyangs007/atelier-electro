@@ -9,6 +9,14 @@
 <meta property="og:description" content="매일 아침 8시, AI·소형·대형 가전 뉴스와 추천템을 출처와 함께.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://newyangs007.github.io/atelier-electro/">
+<meta property="og:image" content="https://newyangs007.github.io/atelier-electro/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Atelier Électro">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://newyangs007.github.io/atelier-electro/">
+<!--__VERIFY__-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@400;600;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -238,6 +246,21 @@ table.launch td.pr{font-size:15px;white-space:nowrap}
 .qv .links a{border:1px solid var(--ink);padding:8px 14px;font-size:13px}
 .qv .links a:hover{background:var(--ink);color:var(--bg)}
 .qv .credit{font-size:11px;color:var(--ink-2);margin-top:8px}
+.srct td.rg{white-space:nowrap;font-size:13px}.srct td.rg b{display:inline-block;min-width:26px;font-family:var(--mono,monospace);font-size:11px;letter-spacing:.06em;color:var(--accent);margin-right:6px}
+.pager{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:20px}
+.pager button{font:inherit;font-size:13px;min-width:38px;height:36px;padding:0 12px;border:1px solid var(--rule);background:transparent;color:var(--ink);border-radius:18px;cursor:pointer;transition:background .2s,color .2s}
+.pager button:hover:not([disabled]){border-color:var(--ink)}
+.pager button[aria-current]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.pager button[disabled]{opacity:.35;cursor:default}
+.pager .gap{opacity:.5;padding:0 2px}.pager .pinfo{margin-left:auto;font-size:12px;color:var(--ink-2)}
+.srct tr.flash td{background:color-mix(in srgb,var(--accent) 14%,transparent)}
+.pd{font-style:normal;font-size:11px;margin-left:8px;letter-spacing:.02em;color:var(--ink-2);vertical-align:middle}.pd.dn{color:#2f7a4f}.pd.up{color:#b0412e}
+.qv .plate .pd{display:block;margin:4px 0 0}
+.qv .links .share{font:inherit;font-size:13px;background:transparent;border:1px solid var(--rule);color:var(--ink);padding:10px 16px;cursor:pointer}
+.sub-int{border:0;padding:0;margin:18px 0 0;display:flex;flex-wrap:wrap;gap:8px 16px}
+.sub-int legend{font-size:12px;color:var(--cv-mut);margin-bottom:8px;padding:0}
+.sub-int label{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--cv-fg);cursor:pointer}
+.sub-int input{accent-color:var(--cv-accent)}
 .adnote{font-size:12px;color:var(--ink-2);margin:-6px 0 22px;letter-spacing:.01em}
 
 /* channels */
@@ -467,9 +490,10 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
 <section class="sec" id="sources"><div class="wrap">
   <div class="sec-head"><div><span class="eyebrow">08 · Sources &amp; Policy</span><h2>출처와 편집 원칙</h2></div><p>모든 수치의 매체와 발행일입니다. 발행일이 없는 페이지는 수집일을 적었습니다.</p></div>
   <div class="srcs"><table class="srct">
-    <thead><tr><th>No.</th><th>매체·사이트</th><th>제목</th><th>발행일 · 수집일</th><th>원문</th></tr></thead>
+    <thead><tr><th>No.</th><th>국가</th><th>매체·사이트</th><th>제목</th><th>발행일 · 수집일</th><th>원문</th></tr></thead>
     <tbody id="source-rows"></tbody>
   </table></div>
+  <nav class="pager" id="src-pager" aria-label="출처 페이지"></nav>
   <div class="method" style="margin-top:72px">
     <div>
       <h3>사실</h3>
@@ -506,8 +530,11 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
         <input type="email" id="sub-email" name="email" placeholder="이메일 주소" autocomplete="email" required>
         <button type="submit" id="sub-btn">구독하기</button>
       </div>
+      <fieldset class="sub-int" id="sub-int"><legend>관심 분야 (선택)</legend>
+        <label><input type="checkbox" value="AI가전"> AI가전</label><label><input type="checkbox" value="AI디바이스"> AI디바이스</label><label><input type="checkbox" value="주방"> 주방</label><label><input type="checkbox" value="청소"> 청소</label><label><input type="checkbox" value="난방·가습"> 난방·가습</label><label><input type="checkbox" value="뷰티"> 뷰티</label>
+      </fieldset>
       <label class="sub-agree"><input type="checkbox" id="sub-agree"> 개인정보 수집·이용에 동의합니다</label>
-      <p class="sub-fine">수집 항목: 이메일 · 목적: 매거진 발송 · 보유: 구독 해지 시까지. 해지는 받은 메일에 ‘구독 해지’로 답장하면 됩니다.</p>
+      <p class="sub-fine">수집 항목: 이메일·관심 분야 · 목적: 매거진 발송과 맞춤 추천 · 보유: 구독 해지 시까지. 해지는 메일 하단의 ‘구독 해지’ 링크로 할 수 있습니다.</p>
       <p class="sub-msg" id="sub-msg" role="status" aria-live="polite"></p>
     </form>
   </div>
@@ -565,6 +592,18 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
   var LBL=['수요','검증','타이밍','접근성','마진'];
   var CATN={'AI':'AI가전','디바이스':'AI디바이스','소형':'소형가전','대형':'대형가전'};
   var REGN={KR:'한국',US:'미국',JP:'일본',CN:'중국',EU:'유럽'};
+  var CTRY={KR:'한국',US:'미국',JP:'일본',CN:'중국',DE:'독일',IT:'이탈리아',GB:'영국',CH:'스위스',AU:'호주',IN:'인도',SG:'싱가포르',FR:'프랑스',EU:'유럽'};
+  var SRC_PER=5,srcCur=0;
+  function srcPage(n){var rows=$('source-rows').querySelectorAll('tr');var pages=Math.max(1,Math.ceil(rows.length/SRC_PER));n=Math.max(0,Math.min(pages-1,n));srcCur=n;rows.forEach(function(r){r.hidden=(+r.dataset.pg!==n);});
+    var b=[];b.push('<button type="button" data-p="'+(n-1)+'"'+(n===0?' disabled':'')+' aria-label="이전 출처">‹ 이전</button>');
+    var lo=Math.max(0,Math.min(n-3,pages-7)),hi=Math.min(pages,lo+7);
+    if(lo>0)b.push('<button type="button" data-p="0">1</button><span class="gap">…</span>');
+    for(var i=lo;i<hi;i++)b.push('<button type="button" data-p="'+i+'"'+(i===n?' aria-current="page"':'')+'>'+(i+1)+'</button>');
+    if(hi<pages)b.push('<span class="gap">…</span><button type="button" data-p="'+(pages-1)+'">'+pages+'</button>');
+    b.push('<button type="button" data-p="'+(n+1)+'"'+(n>=pages-1?' disabled':'')+' aria-label="다음 출처">다음 ›</button>');
+    b.push('<span class="pinfo num">'+(n*SRC_PER+1)+'–'+Math.min(rows.length,(n+1)*SRC_PER)+' / '+rows.length+'</span>');
+    var pg=$('src-pager');pg.innerHTML=b.join('');pg.onclick=function(e){var x=e.target.closest('button[data-p]');if(!x||x.disabled)return;srcPage(+x.dataset.p);};}
+  function showSrc(no){var r=$('src-'+no);if(!r)return;srcPage(+r.dataset.pg);r.classList.add('flash');setTimeout(function(){r.classList.remove('flash');},1600);}
   function chips(el,label,defs,initial,cb){
     el.innerHTML='<span class="seg-label">'+label+'</span>'+defs.map(function(f){return '<button type="button" class="chip" data-f="'+esc(f[0])+'" aria-pressed="'+(f[0]===initial)+'">'+esc(f[1])+(f[2]!=null?'<span class="c">'+f[2]+'</span>':'')+'</button>';}).join('');
     el.onclick=function(e){var b=e.target.closest('.chip');if(!b)return;el.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');cb(b.dataset.f);};
@@ -621,7 +660,7 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
         '<span class="vis"><span class="rank num">'+String(i+1).padStart(2,'0')+'</span>'+(v>=4?'<span class="ribbon">추천템</span>':'')+(p.ai?'<span class="aitag">AI</span>':'')+media+'<span class="peek">'+esc(p.why)+'</span></span>'+
         '<span class="who">'+esc(p.brand)+' · '+esc(REGN[p.mk]||p.mk)+' · '+esc(p.cat)+'</span>'+
         '<h3>'+esc(p.name)+'</h3>'+
-        '<span class="row"><span class="price num">'+esc(p.price)+'</span><span style="display:flex;gap:8px;align-items:center">'+stars(v)+'<span class="verdict '+vd[1]+'">'+vd[0]+'</span></span></span></button>';
+        '<span class="row"><span class="price num">'+esc(p.price)+(p.pd?'<em class="pd '+(p.pd.charAt(0)==='▼'?'dn':(p.pd.charAt(0)==='▲'?'up':''))+'">'+esc(p.pd)+'</em>':'')+'</span><span style="display:flex;gap:8px;align-items:center">'+stars(v)+'<span class="verdict '+vd[1]+'">'+vd[0]+'</span></span></span></button>';
     }).join('')+'<div class="empty-note" id="pick-empty" hidden>조건에 맞는 제품이 없습니다. ‘전체’를 눌러 보세요.</div>';
     var nGo=D.picks.filter(function(p){return overall(p.sc)>=4;}).length;
     chips($('f-pv'),'보기',[['go','추천템',nGo],['ai','AI가전·디바이스',D.picks.filter(function(p){return p.ai;}).length],['all','전체',D.picks.length]],'go',function(f){pState.v=f;applyPicks();});
@@ -632,7 +671,8 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
     applyPicks();
 
     $('chan-list').innerHTML=D.channels.map(function(c,i){return '<div class="chan" id="chan-'+(i+1)+'"><h3>'+esc(c.n)+'</h3><span class="stt '+(c.st==='ok'?'ok':'lim')+'">'+(c.st==='ok'?'● 수치 확보':'○ 링크만')+'</span><p>'+numify(c.sig)+'</p>'+(c.s?cite(c.s):'')+'<a class="go" href="'+esc(c.u)+'" target="_blank" rel="noopener">'+esc(c.ul)+' ↗</a></div>';}).join('');
-    $('source-rows').innerHTML=order.map(function(k){var m=srcMeta(k);return '<tr id="src-'+m.no+'"><td class="n">'+m.no+'</td><td class="md">'+esc(m.media)+'</td><td>'+esc(m.title)+'</td><td class="dt">'+esc(m.date)+'<small>'+(m.kind==='col'?'수집일 (발행일 미표기)':'발행일')+'</small></td><td><a href="'+esc(m.u)+'" target="_blank" rel="noopener">열기 ↗</a></td></tr>';}).join('');
+    $('source-rows').innerHTML=order.map(function(k){var m=srcMeta(k);var rc=S[k].r||'';return '<tr id="src-'+m.no+'" data-pg="'+Math.floor((m.no-1)/SRC_PER)+'"><td class="n">'+m.no+'</td><td class="rg">'+(rc?'<b>'+esc(rc)+'</b>'+esc(CTRY[rc]||rc):'<span style="opacity:.6">확인 중</span>')+'</td><td class="md">'+esc(m.media)+'</td><td>'+esc(m.title)+'</td><td class="dt">'+esc(m.date)+'<small>'+(m.kind==='col'?'수집일 (발행일 미표기)':'발행일')+'</small></td><td><a href="'+esc(m.u)+'" target="_blank" rel="noopener">열기 ↗</a></td></tr>';}).join('');
+    srcPage(0);
 
     renderArchive();buildIndex();
     var bn=$('past-banner');
@@ -677,7 +717,7 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
     var v=overall(p.sc),vd=verdict(v),q=encodeURIComponent(p.q),w=p.scw||[];
     var links=[];
     if(p.pc)links.push('<a href="https://prod.danawa.com/info/?pcode='+esc(p.pc)+'" target="_blank" rel="noopener">다나와 ↗</a>');
-    if(p.cp){links.unshift('<a class="cp" href="'+esc(p.cp)+'" target="_blank" rel="noopener sponsored">쿠팡에서 구매 ↗</a>');}
+    if(p.cp){links.unshift('<a class="cp" data-id="'+esc(p.id)+'" href="'+esc(p.cp)+'" target="_blank" rel="noopener sponsored">쿠팡에서 구매 ↗</a>');}
     if(p.mk==='KR'){if(!p.cp)links.push('<a href="https://www.coupang.com/np/search?q='+q+'" target="_blank" rel="noopener">쿠팡 ↗</a>');links.push('<a href="https://search.shopping.naver.com/search/all?query='+q+'" target="_blank" rel="noopener">네이버 ↗</a>');}
     else if(p.mk==='JP'){links.push('<a href="https://www.amazon.co.jp/s?k='+q+'" target="_blank" rel="noopener">Amazon JP ↗</a>');links.push('<a href="https://www.coupang.com/np/search?q='+q+'" target="_blank" rel="noopener">쿠팡 ↗</a>');}
     else{links.push('<a href="https://www.amazon.com/s?k='+q+'" target="_blank" rel="noopener">Amazon US ↗</a>');links.push('<a href="https://www.coupang.com/np/search?q='+q+'" target="_blank" rel="noopener">쿠팡 ↗</a>');}
@@ -688,11 +728,11 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
       '<p class="eyebrow" style="margin-top:18px;color:var(--ink-2)">'+(BR[p.brand]?esc(BR[p.brand].c)+' · ':'')+esc(p.cat)+'</p>'+
       '<h3 id="qv-title">'+esc(p.name)+'</h3>'+
       '<div style="display:flex;gap:10px;align-items:center">'+stars(v)+'<span class="verdict '+vd[1]+'">'+vd[0]+'</span></div>'+
-      '<div class="plate"><div><span>PRICE</span><b class="num">'+esc(p.price)+'</b></div><div><span>REVIEWS</span><b class="num">'+esc(p.rev)+'</b></div><div><span>RATING</span><b class="num">'+esc(p.rate)+'</b></div></div>'+
+      '<div class="plate"><div><span>PRICE</span><b class="num">'+esc(p.price)+'</b>'+(p.pd?'<em class="pd '+(p.pd.charAt(0)==='▼'?'dn':(p.pd.charAt(0)==='▲'?'up':''))+'">'+esc(p.pd)+'</em>':'')+'</div><div><span>REVIEWS</span><b class="num">'+esc(p.rev)+'</b></div><div><span>RATING</span><b class="num">'+esc(p.rate)+'</b></div></div>'+
       '<div class="lines"><div><span class="k">WHY</span><span>'+esc(p.why)+'</span></div><div><span class="k">FOR</span><span>'+esc(p.target)+'</span></div><div><span class="k">USP</span><span>'+esc(p.usp)+'</span></div><div><span class="k">SIGNAL</span><span>'+esc(p.ch)+' · 등록 '+esc(p.reg)+'</span></div></div>'+
       '<div class="score">'+p.sc.map(function(s,k){return '<div class="r"><span class="lb">'+LBL[k]+'</span><span class="num">'+s+'</span><span>'+esc(w[k]||'')+'</span></div>';}).join('')+'<div class="avg"><span>평균 '+sum.toFixed(1)+' → 별점 '+v.toFixed(1)+'</span><span>08 점수 규칙</span></div></div>'+
       '<p class="note"><b style="font-weight:500;color:var(--ink)">소싱 검토</b> '+esc(p.note)+'</p>'+cite(p.src)+
-      '<div class="links">'+links.join('')+'</div>'+(p.cp?'<p class="credit" style="margin-top:12px">이 링크는 쿠팡 파트너스 활동의 일환으로, 구매 시 일정액의 수수료를 제공받습니다.</p>':'');
+      '<div class="links">'+links.join('')+(p.page?'<a href="'+esc(p.page)+'">제품 페이지 ↗</a><button type="button" class="share" data-u="'+esc(p.page)+'" data-t="'+esc(p.name)+'">링크 복사</button>':'')+'</div>'+(p.cp?'<p class="credit" style="margin-top:12px">이 링크는 쿠팡 파트너스 활동의 일환으로, 구매 시 일정액의 수수료를 제공받습니다.</p>':'');
     lastFocus=document.activeElement;
     qv.classList.add('on');veil.classList.add('on');qv.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
     $('qv-x').onclick=closeQV;setTimeout(function(){$('qv-x').focus();},60);
@@ -715,6 +755,15 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
   $('issue-select').onchange=function(){openIssue(this.value,true);};
   $('archive-list').onclick=function(e){var b=e.target.closest('.iss');if(b)openIssue(b.dataset.d,true);};
 
+  /* click tracking (on when AE_FORM is configured), share, source jump */
+  var AE_FORM=window.AE_FORM||null; /* {url:'https://docs.google.com/forms/d/e/…/formResponse', f:{type:'entry.x',email:'entry.y',interest:'entry.z',target:'entry.a',where:'entry.b'}} */
+  function track(type,o){if(!AE_FORM)return;try{var fd=new URLSearchParams();fd.append(AE_FORM.f.type,type);Object.keys(o||{}).forEach(function(k){if(AE_FORM.f[k])fd.append(AE_FORM.f[k],o[k]);});fetch(AE_FORM.url,{method:'POST',mode:'no-cors',body:fd});}catch(e){}}
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#src-"]');if(a){e.preventDefault();var no=a.getAttribute('href').slice(5);$('sources').scrollIntoView({behavior:'smooth'});showSrc(no);return;}
+    var sh=e.target.closest('.share');if(sh){var u=new URL(sh.dataset.u,location.href).href;if(navigator.share){navigator.share({title:sh.dataset.t,url:u}).catch(function(){});}else{try{navigator.clipboard.writeText(u);sh.textContent='복사됨';setTimeout(function(){sh.textContent='링크 복사';},1500);}catch(x){}}return;}
+    var cp=e.target.closest('a.cp');if(cp){track('click',{target:cp.dataset.id||cp.href,where:cp.closest('#qv')?'quickview':'page'});}
+  },true);
+
   /* index */
   var IDX=[];
   function buildIndex(){
@@ -724,6 +773,7 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
     D.trends.forEach(function(t,i){IDX.push({t:'트렌드',h:t.t,d:t.stat+' '+t.sl,k:[t.t,t.sl,t.line].join(' '),a:'#trend-'+(i+1)});});
     $('wire-list').querySelectorAll('.story').forEach(function(el){var h=el.querySelector('h3').textContent;var n=D.news.filter(function(x){return x.h===h;})[0];if(n)IDX.push({t:(CATN[n.c]||'')+' 뉴스',h:n.h,d:n.p,k:[n.h,n.p,n.r,REGN[n.r],n.c,CATN[n.c]].join(' '),a:'#'+el.id});});
     D.channels.forEach(function(c,i){IDX.push({t:'채널',h:c.n,d:c.sig,k:c.n+' '+c.sig,a:'#chan-'+(i+1)});});
+    order.forEach(function(k){var m=srcMeta(k),rc=S[k].r||'';IDX.push({t:'출처',h:m.media+' · '+m.title,d:(CTRY[rc]||'국가 확인 중')+' · '+m.date,k:[m.media,m.title,rc,CTRY[rc]||''].join(' '),a:'#src-'+m.no});});
     var bc={};IDX.forEach(function(it){if(it.b)bc[it.b]=(bc[it.b]||0)+1;});
     var bs=Object.keys(bc).sort(function(a,b){return a.localeCompare(b,'ko');});
     var ko=bs.filter(function(b){return /[가-힣]/.test(b[0]);}),en=bs.filter(function(b){return !/[가-힣]/.test(b[0]);});
@@ -779,8 +829,9 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
     var dbP=null,usP=null;
     try{if(window.claude&&claude.use){dbP=claude.use('db');usP=claude.use('user');}}catch(e){}
     function say(s){msg.textContent=s;}
+    function interests(){return [].slice.call(document.querySelectorAll('#sub-int input:checked')).map(function(x){return x.value;});}
     function mailFallback(v){
-      var u='mailto:newyangs007@gmail.com?subject='+encodeURIComponent('[Atelier Électro] 구독 신청')+'&body='+encodeURIComponent('구독 이메일: '+v);
+      var u='mailto:newyangs007@gmail.com?subject='+encodeURIComponent('[Atelier Électro] 구독 신청')+'&body='+encodeURIComponent('구독 이메일: '+v+'\n관심 분야: '+(interests().join(', ')||'전체'));
       say('메일 앱이 열리면 보내기만 누르시면 신청됩니다.');location.href=u;
     }
     f.addEventListener('submit',function(ev){
@@ -790,10 +841,12 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
       if(!ag.checked){say('개인정보 수집·이용에 동의해 주세요.');return;}
       btn.disabled=true;say('신청 중…');
       var done=false,timer=setTimeout(function(){if(!done){done=true;btn.disabled=false;mailFallback(v);}},10000);
+      if(window.AE_FORM){var F=window.AE_FORM,fd=new URLSearchParams();fd.append(F.f.type,'subscribe');fd.append(F.f.email,v);fd.append(F.f.interest,interests().join(', '));
+        fetch(F.url,{method:'POST',mode:'no-cors',body:fd}).then(function(){done=true;clearTimeout(timer);btn.disabled=false;try{localStorage.setItem('ae-sub',v);}catch(e){}em.value='';ag.checked=false;say('구독 신청이 완료됐습니다. 다음 날 아침 8시부터 보내 드립니다.');}).catch(function(){done=true;clearTimeout(timer);btn.disabled=false;mailFallback(v);});return;}
       Promise.all([dbP||Promise.resolve(null),usP||Promise.resolve(null)]).then(function(r){
         var db=r[0],us=r[1];
         if(!db||!us)throw new Error('nodb');
-        return us.id().then(function(id){return db.doc('subscribers/'+id).set({email:v,at:new Date().toISOString(),src:'web'});});
+        return us.id().then(function(id){return db.doc('subscribers/'+id).set({email:v,interests:interests(),at:new Date().toISOString(),src:'web'});});
       }).then(function(){
         if(done)return;done=true;clearTimeout(timer);btn.disabled=false;
         try{localStorage.setItem('ae-sub',v);}catch(e){}

@@ -9,367 +9,463 @@
  "sources": {
   "S1": {
    "t": "리스닝마인드·디아이투데이, 검색 데이터로 본 2026년 가전 시장 트렌드",
-   "u": "https://ditoday.com/?p=155775"
+   "u": "https://ditoday.com/?p=155775",
+   "r": "KR"
   },
   "S2": {
    "t": "아이보스, 리스닝마인드 2026 가전 리포트 요약(미니냉풍기 검색)",
-   "u": "https://www.i-boss.co.kr/ab-3208-1814"
+   "u": "https://www.i-boss.co.kr/ab-3208-1814",
+   "r": "KR"
   },
   "S3": {
    "t": "스페셜타임즈, NIQ 2026년 상반기 한국 가전시장 트렌드",
-   "u": "https://www.specialtimes.co.kr/news/articleView.html?idxno=482521"
+   "u": "https://www.specialtimes.co.kr/news/articleView.html?idxno=482521",
+   "r": "KR"
   },
   "S4": {
    "t": "벤처스퀘어, 크리테오 국내 가전 온라인 매출 분석(2025년 4분기)",
-   "u": "https://www.venturesquare.net/1118687/"
+   "u": "https://www.venturesquare.net/1118687/",
+   "r": "KR"
   },
   "S5": {
    "t": "지디넷코리아, 쿠팡 가전·디지털 블랙프라이데이(2026.11.15)",
-   "u": "https://zdnet.co.kr/view?no=20261115110246"
+   "u": "https://zdnet.co.kr/view?no=20261115110246",
+   "r": "KR"
   },
   "S6": {
    "t": "뉴스와이어(GS리테일), GS샵 브레빌 론칭·프리미엄 가전 실적(2026.02.18)",
-   "u": "https://www.newswire.co.kr/newsRead.php?no=1028856"
+   "u": "https://www.newswire.co.kr/newsRead.php?no=1028856",
+   "r": "KR"
   },
   "S7": {
    "t": "스마트투데이, GS샵 홈쇼핑 히트상품 ‘실용적 프리미엄’(2025.12.01)",
-   "u": "https://www.smarttoday.co.kr/ko-kr/articles/97709"
+   "u": "https://www.smarttoday.co.kr/ko-kr/articles/97709",
+   "r": "KR"
   },
   "S8": {
    "t": "MTN, 29CM DDP디자인페어 이구홈 거래액(2026.10.14)",
-   "u": "https://news.mtn.co.kr/article/2026101416464235976"
+   "u": "https://news.mtn.co.kr/article/2026101416464235976",
+   "r": "KR"
   },
   "S9": {
    "t": "원포인트, 인스타 공동구매 30,372건 분석",
-   "u": "https://1point.kr/blog/insights/food-groupbuy-influencer-guide/"
+   "u": "https://1point.kr/blog/insights/food-groupbuy-influencer-guide/",
+   "r": "KR"
   },
   "S10": {
    "t": "뉴데일리, 신일 에코 팬 큐브 히터 누적 판매 260억원",
-   "u": "https://biz.newdaily.co.kr/site/data/html/2025/11/21/2025112100192.amp.html"
+   "u": "https://biz.newdaily.co.kr/site/data/html/2025/11/21/2025112100192.amp.html",
+   "r": "KR"
   },
   "S11": {
    "t": "헤럴드코리아, 신일전자 에코 팬 큐브 히터 신규 에디션(2026.10.22)",
-   "u": "https://mbiz.heraldcorp.com/article/10911441"
+   "u": "https://mbiz.heraldcorp.com/article/10911441",
+   "r": "KR"
   },
   "S12": {
    "t": "쿠키뉴스, 다이슨코리아 로봇·물청소기·공기청정기 3종 출시(2026.01.12)",
-   "u": "https://www.kukinews.com/article/view/kuk202601120083"
+   "u": "https://www.kukinews.com/article/view/kuk202601120083",
+   "r": "KR"
   },
   "S13": {
    "t": "위키트리, 다이슨 손풍기 국내 2026년 5월 출시 예정",
-   "u": "https://www.wikitree.co.kr/articles/1130682"
+   "u": "https://www.wikitree.co.kr/articles/1130682",
+   "r": "KR"
   },
   "S14": {
    "t": "헤럴드경제, 삼성 비스포크 AI 스팀 로봇청소기 CES 2026(2026.01.21)",
-   "u": "https://www.heraldk.com/article/2026012122540809603"
+   "u": "https://www.heraldk.com/article/2026012122540809603",
+   "r": "KR"
   },
   "S15": {
    "t": "다나와 검색 ‘에어프라이어’ 인기상품순",
-   "u": "https://search.danawa.com/dsearch.php?query=%EC%97%90%EC%96%B4%ED%94%84%EB%9D%BC%EC%9D%B4%EC%96%B4&sort=saveDESC"
+   "u": "https://search.danawa.com/dsearch.php?query=%EC%97%90%EC%96%B4%ED%94%84%EB%9D%BC%EC%9D%B4%EC%96%B4&sort=saveDESC",
+   "r": "KR"
   },
   "S16": {
    "t": "다나와 검색 ‘가습기’ 인기상품순",
-   "u": "https://search.danawa.com/dsearch.php?query=%EA%B0%80%EC%8A%B5%EA%B8%B0&sort=saveDESC"
+   "u": "https://search.danawa.com/dsearch.php?query=%EA%B0%80%EC%8A%B5%EA%B8%B0&sort=saveDESC",
+   "r": "KR"
   },
   "S17": {
    "t": "다나와 검색 ‘전기히터’ 인기상품순",
-   "u": "https://search.danawa.com/dsearch.php?query=%EC%A0%84%EA%B8%B0%ED%9E%88%ED%84%B0&sort=saveDESC"
+   "u": "https://search.danawa.com/dsearch.php?query=%EC%A0%84%EA%B8%B0%ED%9E%88%ED%84%B0&sort=saveDESC",
+   "r": "KR"
   },
   "S18": {
    "t": "다나와 검색 ‘음식물처리기’ 인기상품순",
-   "u": "https://search.danawa.com/dsearch.php?query=%EC%9D%8C%EC%8B%9D%EB%AC%BC%EC%B2%98%EB%A6%AC%EA%B8%B0&sort=saveDESC"
+   "u": "https://search.danawa.com/dsearch.php?query=%EC%9D%8C%EC%8B%9D%EB%AC%BC%EC%B2%98%EB%A6%AC%EA%B8%B0&sort=saveDESC",
+   "r": "KR"
   },
   "S19": {
    "t": "다나와 검색 ‘로봇청소기’ 인기상품순",
-   "u": "https://search.danawa.com/dsearch.php?query=%EB%A1%9C%EB%B4%87%EC%B2%AD%EC%86%8C%EA%B8%B0&sort=saveDESC"
+   "u": "https://search.danawa.com/dsearch.php?query=%EB%A1%9C%EB%B4%87%EC%B2%AD%EC%86%8C%EA%B8%B0&sort=saveDESC",
+   "r": "KR"
   },
   "S20": {
    "t": "다나와 검색 ‘헤어드라이어’ 인기상품순",
-   "u": "https://search.danawa.com/dsearch.php?query=%ED%97%A4%EC%96%B4%EB%93%9C%EB%9D%BC%EC%9D%B4%EC%96%B4&sort=saveDESC"
+   "u": "https://search.danawa.com/dsearch.php?query=%ED%97%A4%EC%96%B4%EB%93%9C%EB%9D%BC%EC%9D%B4%EC%96%B4&sort=saveDESC",
+   "r": "KR"
   },
   "S21": {
    "t": "다나와 검색 ‘닌자’ 인기상품순",
-   "u": "https://search.danawa.com/dsearch.php?query=%EB%8B%8C%EC%9E%90&sort=saveDESC"
+   "u": "https://search.danawa.com/dsearch.php?query=%EB%8B%8C%EC%9E%90&sort=saveDESC",
+   "r": "KR"
   },
   "S22": {
    "t": "다나와 검색 ‘무선청소기’ 인기상품순",
-   "u": "https://search.danawa.com/dsearch.php?query=%EB%AC%B4%EC%84%A0%EC%B2%AD%EC%86%8C%EA%B8%B0&sort=saveDESC"
+   "u": "https://search.danawa.com/dsearch.php?query=%EB%AC%B4%EC%84%A0%EC%B2%AD%EC%86%8C%EA%B8%B0&sort=saveDESC",
+   "r": "KR"
   },
   "S23": {
    "t": "SharkNinja, Ninja PREPi 출시 보도자료(2026.10.02)",
-   "u": "https://www.webull.com/news/15678799031780352"
+   "u": "https://www.webull.com/news/15678799031780352",
+   "r": "US"
   },
   "S24": {
    "t": "SharkNinja Newsroom, Ninja Crispi Microwave 출시",
-   "u": "https://newsroom.sharkninja.com/ninja-launches-its-first-ever-microwave-that-crisps-like-an-air-fryer/"
+   "u": "https://newsroom.sharkninja.com/ninja-launches-its-first-ever-microwave-that-crisps-like-an-air-fryer/",
+   "r": "US"
   },
   "S25": {
    "t": "Business Wire via Finviz, Ninja HydraSense 출시(2026.08.13)",
-   "u": "https://finviz.com/news/381886/ninja-raises-the-standard-for-home-water-with-the-launch-of-ninja-hydrasense"
+   "u": "https://finviz.com/news/381886/ninja-raises-the-standard-for-home-water-with-the-launch-of-ninja-hydrasense",
+   "r": "US"
   },
   "S26": {
    "t": "SharkNinja IR, Ninja SLUSHi Twist 출시(2026.05.19)",
-   "u": "https://ir.sharkninja.com/news/news-details/2026/Ninja-Launches-SLUSHi-Twist-the-Dual-Flavor-Frozen-Drink-Maker-Built-for-Summer-Entertaining/default.aspx"
+   "u": "https://ir.sharkninja.com/news/news-details/2026/Ninja-Launches-SLUSHi-Twist-the-Dual-Flavor-Frozen-Drink-Maker-Built-for-Summer-Entertaining/default.aspx",
+   "r": "US"
   },
   "S27": {
    "t": "Business Wire, Ninja Luxe Café 한정 컬러(2026.04.16)",
-   "u": "https://www.businesswire.com/news/home/20260416599592/en/David"
+   "u": "https://www.businesswire.com/news/home/20260416599592/en/David",
+   "r": "US"
   },
   "S28": {
    "t": "Net Influencer(Kalodata), TikTok Shop 2026년 3월 판매 Top 10",
-   "u": "https://www.netinfluencer.com/?p=45540"
+   "u": "https://www.netinfluencer.com/?p=45540",
+   "r": "US"
   },
   "S29": {
    "t": "FastMoss, TikTok Shop US 2026년 1분기 Top 10",
-   "u": "https://www.fastmoss.com/blog/top-selling-products-tiktok-shop-us-q1-2026/"
+   "u": "https://www.fastmoss.com/blog/top-selling-products-tiktok-shop-us-q1-2026/",
+   "r": ""
   },
   "S30": {
    "t": "FastMoss, TikTok Shop US 2026년 2분기 Top 10(eMarketer 전망 인용)",
-   "u": "https://www.fastmoss.com/blog/best-selling-tiktok-shop-products-us-q2-2026/"
+   "u": "https://www.fastmoss.com/blog/best-selling-tiktok-shop-products-us-q2-2026/",
+   "r": ""
   },
   "S31": {
    "t": "Boston 25 News, TikTok kitchen: viral videos and purchases",
-   "u": "https://www.boston25news.com/news/tiktok-kitchen-how/ANGAOYH5XY4KHFRFOQUXDTSIUI/?outputType=amp"
+   "u": "https://www.boston25news.com/news/tiktok-kitchen-how/ANGAOYH5XY4KHFRFOQUXDTSIUI/?outputType=amp",
+   "r": "US"
   },
   "S32": {
    "t": "TT123, TikTok 미국 초음파 세척기 월매출 23.53만 달러(2026.02.14)",
-   "u": "https://www.tt123.com/kx/AyIfvZId"
+   "u": "https://www.tt123.com/kx/AyIfvZId",
+   "r": "CN"
   },
   "S33": {
    "t": "Mordor Intelligence, 미국 소형가전 시장",
-   "u": "https://www.mordorintelligence.kr/industry-reports/united-states-small-home-appliances-market"
+   "u": "https://www.mordorintelligence.kr/industry-reports/united-states-small-home-appliances-market",
+   "r": "IN"
   },
   "S34": {
    "t": "@DIME, 2026 히트 ‘에어프라이어’와 ‘스프 블렌더’(2026.08.31)",
-   "u": "https://dime.jp/genre/2138147/"
+   "u": "https://dime.jp/genre/2138147/",
+   "r": "JP"
   },
   "S35": {
    "t": "@DIME, 샤크닌자 가전이 잘 팔리는 이유(2026.11.15)",
-   "u": "https://dime.jp/genre/2166543/"
+   "u": "https://dime.jp/genre/2166543/",
+   "r": "JP"
   },
   "S36": {
    "t": "가격.com 가전 카테고리 랭킹(2026.11.03–11.09)",
-   "u": "https://kakaku.com/ranking/kaden/"
+   "u": "https://kakaku.com/ranking/kaden/",
+   "r": "JP"
   },
   "S37": {
    "t": "Ameba Choice, 2026년 최신 가전",
-   "u": "https://choice.ameba.jp/articles/latest-home-appliances/"
+   "u": "https://choice.ameba.jp/articles/latest-home-appliances/",
+   "r": "JP"
   },
   "S38": {
    "t": "21세기경제보도, 2026 쌍11 가전 결산(2026.11.17)",
-   "u": "https://www.sfccn.com/2026/11-17/4NMDE0MDdfMjMwODY4Ng.html"
+   "u": "https://www.sfccn.com/2026/11-17/4NMDE0MDdfMjMwODY4Ng.html",
+   "r": "CN"
   },
   "S39": {
    "t": "신랑과기, 2026 상반기 주방 소형가전 ‘량축가승’(2026.08.05)",
-   "u": "https://finance.sina.cn/tech/2026-08-05/detail-inimhawm4663142.d.html?vt=4"
+   "u": "https://finance.sina.cn/tech/2026-08-05/detail-inimhawm4663142.d.html?vt=4",
+   "r": "CN"
   },
   "S40": {
    "t": "푸단대 소비빅데이터실험실, 2026 쌍11 온라인 소비(2026.11.17)",
-   "u": "https://fddi.fudan.edu.cn/34/78/c19047a799864/page.htm"
+   "u": "https://fddi.fudan.edu.cn/34/78/c19047a799864/page.htm",
+   "r": "CN"
   },
   "S41": {
    "t": "퉁화순, 2026 티몰 쌍11 신제품·신트랙(2026.11.12)",
-   "u": "https://news.10jqka.com.cn/20261112/c681748703.shtml"
+   "u": "https://news.10jqka.com.cn/20261112/c681748703.shtml",
+   "r": "CN"
   },
   "S42": {
    "t": "중국신문망, 소형가전 실적 둔화와 보조금 축소(2026.08.18)",
-   "u": "https://www.chinanews.com.cn/cj/2026/08-18/10679621.shtml"
+   "u": "https://www.chinanews.com.cn/cj/2026/08-18/10679621.shtml",
+   "r": "CN"
   },
   "S43": {
    "t": "즈후, 2026 소형가전 세대교체(스팀 에어프라이어)",
-   "u": "https://www.zhihu.com/tardis/jm/ans/1997682309680345801"
+   "u": "https://www.zhihu.com/tardis/jm/ans/1997682309680345801",
+   "r": "CN"
   },
   "S44": {
    "t": "IFA Berlin 보도자료, IFA Media Days 2026(2026.09.02)",
-   "u": "https://www.ifa-berlin.com/press-releases/ifa2026-started-media-days"
+   "u": "https://www.ifa-berlin.com/press-releases/ifa2026-started-media-days",
+   "r": "DE"
   },
   "S45": {
    "t": "NIQ, Home Appliances Outlook 2026: Western Europe",
-   "u": "https://nielseniq.com/global/en/insights/report/2025/home-appliances-outlook-2026-western-europe/"
+   "u": "https://nielseniq.com/global/en/insights/report/2025/home-appliances-outlook-2026-western-europe/",
+   "r": "US"
   },
   "S46": {
    "t": "Euromonitor, IFA 2026: AI, robotics and blurring product lines",
-   "u": "https://www.euromonitor.com/article/ifa-2026-ai-robotics-and-blurring-product-lines"
+   "u": "https://www.euromonitor.com/article/ifa-2026-ai-robotics-and-blurring-product-lines",
+   "r": "GB"
   },
   "S47": {
    "t": "ChannelNews, IFA 2026 AEG 소형가전 Design Collection",
-   "u": "https://www.channelnews.com.au/ifa-2026-aeg-unveils-first-pasta-hob-and-new-floorcare-range/"
+   "u": "https://www.channelnews.com.au/ifa-2026-aeg-unveils-first-pasta-hob-and-new-floorcare-range/",
+   "r": "AU"
   },
   "S48": {
    "t": "ChannelNews, IFA 2026 Miele 컴팩트 리빙",
-   "u": "https://www.channelnews.com.au/ifa-2026-miele-showcases-ai-cooking-self-cleaning-floorcare-and-compact-living/"
+   "u": "https://www.channelnews.com.au/ifa-2026-miele-showcases-ai-cooking-self-cleaning-floorcare-and-compact-living/",
+   "r": "AU"
   },
   "S49": {
    "t": "LinkedIn(Kalodata 추정), 독일 TikTok Shop 가전 브랜드 Top 5",
-   "u": "https://at.linkedin.com/in/martinradimsky"
+   "u": "https://at.linkedin.com/in/martinradimsky",
+   "r": "US"
   },
   "S50": {
    "t": "Mordor Intelligence, 글로벌 소형가전 시장",
-   "u": "https://www.mordorintelligence.kr/industry-reports/small-home-appliances-market"
+   "u": "https://www.mordorintelligence.kr/industry-reports/small-home-appliances-market",
+   "r": "IN"
   },
   "S51": {
    "t": "오늘의집 가전·디지털 카테고리",
-   "u": "https://ohou.se/store/category?category_id=14000000"
+   "u": "https://ohou.se/store/category?category_id=14000000",
+   "r": "KR"
   },
   "S52": {
    "t": "YTN, 폭염 속 ‘미니 가전’ 인기(2026.07.27)",
-   "u": "https://www.ytn.co.kr/_ln/0102_202607271431178104"
+   "u": "https://www.ytn.co.kr/_ln/0102_202607271431178104",
+   "r": "KR"
   },
   "S53": {
    "t": "SBS Biz, 다이슨 AI 로봇청소기 공개(2026.01.23)",
-   "u": "https://biz.sbs.co.kr/amp/article/20000286914"
+   "u": "https://biz.sbs.co.kr/amp/article/20000286914",
+   "r": "KR"
   },
   "S54": {
    "t": "다나와 검색 ‘침구청소기’ 인기상품순",
-   "u": "https://search.danawa.com/dsearch.php?query=%EC%B9%A8%EA%B5%AC%EC%B2%AD%EC%86%8C%EA%B8%B0&sort=saveDESC"
+   "u": "https://search.danawa.com/dsearch.php?query=%EC%B9%A8%EA%B5%AC%EC%B2%AD%EC%86%8C%EA%B8%B0&sort=saveDESC",
+   "r": "KR"
   },
   "S55": {
    "t": "전자신문, KES 2026 삼성 ‘일상 속 AI’·LG ‘산업까지 확장’(2026.10.13)",
-   "u": "https://etnews.com/20261013000179"
+   "u": "https://etnews.com/20261013000179",
+   "r": "KR"
   },
   "S56": {
    "t": "비즈워치, LG전자 3분기 HS사업본부 실적(2026.10.28)",
-   "u": "https://news.bizwatch.co.kr/article/industry/2026/10/28/0047"
+   "u": "https://news.bizwatch.co.kr/article/industry/2026/10/28/0047",
+   "r": "KR"
   },
   "S57": {
    "t": "연합뉴스(한민족센터), LG전자 3분기 실적·AIDC 냉각 수주 3조(2026.10.28)",
-   "u": "https://www.koreancenter.or.kr/news/articleView.html?idxno=1431044"
+   "u": "https://www.koreancenter.or.kr/news/articleView.html?idxno=1431044",
+   "r": "KR"
   },
   "S58": {
    "t": "CEO스코어데일리, CES 2026 삼성 비스포크 AI 패밀리허브 제미나이 탑재(2026.01.05)",
-   "u": "https://ceoscoredaily.com/page/view/2026010517300994675"
+   "u": "https://ceoscoredaily.com/page/view/2026010517300994675",
+   "r": "KR"
   },
   "S59": {
    "t": "한국경제, 2026년형 무풍·휘센 오브제컬렉션 AI 냉방(2026.05.12)",
-   "u": "https://www.hankyung.com/article/2026051201781"
+   "u": "https://www.hankyung.com/article/2026051201781",
+   "r": "KR"
   },
   "S60": {
    "t": "Finanznachrichten(PR Newswire), Whirlpool 2026년 3분기 실적(2026.10.26)",
-   "u": "https://www.finanznachrichten.de/nachrichten-2026-10/69944018-whirlpool-corporation-announces-third-quarter-results-008.htm"
+   "u": "https://www.finanznachrichten.de/nachrichten-2026-10/69944018-whirlpool-corporation-announces-third-quarter-results-008.htm",
+   "r": "DE"
   },
   "S61": {
    "t": "TradingKey, Whirlpool Q3 2026: 매출 감소·소형가전 마진 확대(2026.10.26)",
-   "u": "https://www.tradingkey.com/news/earnings/262240253-tradingkey"
+   "u": "https://www.tradingkey.com/news/earnings/262240253-tradingkey",
+   "r": ""
   },
   "S62": {
    "t": "FIRSTonline, Electrolux 2026년 3분기 실적",
-   "u": "https://firstonline.info/en/Electrolux-beats-operating-profit-expectations-but-falls-back-into-the-red-and-revises-2026-forecasts/"
+   "u": "https://firstonline.info/en/Electrolux-beats-operating-profit-expectations-but-falls-back-into-the-red-and-revises-2026-forecasts/",
+   "r": "IT"
   },
   "S63": {
    "t": "신화망, 하이얼 쌍11 AI 가전 성과(2026.11.13)",
-   "u": "https://www.news.cn/tech/20261113/2b597819b9014e9dbbcdd087fafffd4e/c.html"
+   "u": "https://www.news.cn/tech/20261113/2b597819b9014e9dbbcdd087fafffd4e/c.html",
+   "r": "CN"
   },
   "S64": {
    "t": "환구망, AWE2026 하이얼 ‘AI의 눈’ 2.0",
-   "u": "https://tech.huanqiu.com/article/4QukAPkWiwl"
+   "u": "https://tech.huanqiu.com/article/4QukAPkWiwl",
+   "r": "CN"
   },
   "S65": {
    "t": "퉁화순(루왕), 중국 냉장고 신 에너지효율 국가표준 시행(2026.11.09)",
-   "u": "https://stock.10jqka.com.cn/20261109/c681627232.shtml"
+   "u": "https://stock.10jqka.com.cn/20261109/c681627232.shtml",
+   "r": "CN"
   },
   "S66": {
    "t": "Digit, IFA 2026 주목할 신가전(Siemens iQ700 등)",
-   "u": "https://www.digit.in/features/home-appliances/ifa-2026-from-ai-washers-to-smart-robot-cleaners-these-are-the-most-interesting-new-appliances.html"
+   "u": "https://www.digit.in/features/home-appliances/ifa-2026-from-ai-washers-to-smart-robot-cleaners-these-are-the-most-interesting-new-appliances.html",
+   "r": "IN"
   },
   "S67": {
    "t": "디지털데일리, LG전자 로보틱스사업센터 신설(2026.07.02)",
-   "u": "https://m.ddaily.co.kr/page/view/2026070214533009888"
+   "u": "https://m.ddaily.co.kr/page/view/2026070214533009888",
+   "r": "KR"
   },
   "S68": {
    "t": "하이얼, 대형가전 글로벌 혁신대회 AI 냉장고 신품류(2026.11.10)",
-   "u": "https://www.haier.com/about_haier/xinwen/20261110_296289.shtml"
+   "u": "https://www.haier.com/about_haier/xinwen/20261110_296289.shtml",
+   "r": "CN"
   },
   "S69": {
    "t": "코리아헤럴드, 밀레 주방가전 4종 출시(2026.11.02)",
-   "u": "https://mbiz.heraldcorp.com/article/10922190"
+   "u": "https://mbiz.heraldcorp.com/article/10922190",
+   "r": "KR"
   },
   "S70": {
    "t": "다나와 검색 ‘다이슨 스팟앤스크럽’",
-   "u": "https://search.danawa.com/dsearch.php?query=%EB%8B%A4%EC%9D%B4%EC%8A%A8+%EC%8A%A4%ED%8C%9F%EC%95%A4%EC%8A%A4%ED%81%AC%EB%9F%BD"
+   "u": "https://search.danawa.com/dsearch.php?query=%EB%8B%A4%EC%9D%B4%EC%8A%A8+%EC%8A%A4%ED%8C%9F%EC%95%A4%EC%8A%A4%ED%81%AC%EB%9F%BD",
+   "r": "KR"
   },
   "S71": {
    "t": "다나와 제품 페이지 ‘비스포크 AI 스팀 울트라 VR90F01AAG’",
-   "u": "https://prod.danawa.com/info/?pcode=124075114"
+   "u": "https://prod.danawa.com/info/?pcode=124075114",
+   "r": "KR"
   },
   "S72": {
    "t": "Kohl's, Shark PowerPro Flex Reveal Plus IZ382H 상품 페이지",
-   "u": "https://www.kohls.com/product/prd-7647696/shark-powerpro-flex-reveal-plus-cordless-vacuum-iz382h.jsp"
+   "u": "https://www.kohls.com/product/prd-7647696/shark-powerpro-flex-reveal-plus-cordless-vacuum-iz382h.jsp",
+   "r": "US"
   },
   "S73": {
    "t": "다나와, ‘AI녹음기’ 검색 인기상품순 · 스마트스토어 리뷰 표기 포함 (수집 2026.11.22)",
-   "u": "https://search.danawa.com/dsearch.php?query=AI%EB%85%B9%EC%9D%8C%EA%B8%B0"
+   "u": "https://search.danawa.com/dsearch.php?query=AI%EB%85%B9%EC%9D%8C%EA%B8%B0",
+   "r": "KR"
   },
   "S74": {
    "t": "다나와, AI 스마트안경 카테고리 인기상품순 (수집 2026.11.22)",
-   "u": "https://prod.danawa.com/list/?cate=12257029"
+   "u": "https://prod.danawa.com/list/?cate=12257029",
+   "r": "KR"
   },
   "S75": {
    "t": "다나와, 플라우드 노트 프로 (정품) 제품 페이지",
-   "u": "https://prod.danawa.com/info/?pcode=108229562"
+   "u": "https://prod.danawa.com/info/?pcode=108229562",
+   "r": "KR"
   },
   "S76": {
    "t": "다나와, 플라우드 노트 핀 S (정품) 제품 페이지",
-   "u": "https://prod.danawa.com/info/?pcode=122724762"
+   "u": "https://prod.danawa.com/info/?pcode=122724762",
+   "r": "KR"
   },
   "S77": {
    "t": "다나와, 메타 레이밴 웨이페어러 3세대 RW4011 제품 페이지",
-   "u": "https://prod.danawa.com/info/?pcode=124569231"
+   "u": "https://prod.danawa.com/info/?pcode=124569231",
+   "r": "KR"
   },
   "S78": {
    "t": "다나와, Rokid AI 글래스 (정품) 제품 페이지",
-   "u": "https://prod.danawa.com/info/?pcode=123803984"
+   "u": "https://prod.danawa.com/info/?pcode=123803984",
+   "r": "KR"
   },
   "S79": {
    "t": "다나와, 이븐리얼리티스 G2 AI글래스 A타입 제품 페이지",
-   "u": "https://prod.danawa.com/info/?pcode=124921931"
+   "u": "https://prod.danawa.com/info/?pcode=124921931",
+   "r": "KR"
   },
   "S80": {
    "t": "다나와, ANKER Soundcore 워크 AI 녹음기 D3200 제품 페이지",
-   "u": "https://prod.danawa.com/info/?pcode=123134941"
+   "u": "https://prod.danawa.com/info/?pcode=123134941",
+   "r": "KR"
   },
   "S81": {
    "t": "CEO스코어데일리, 삼성 구글 협업 AI 안경 30종 공개…다음달 10일 국내 공식 출시 (2026.11.13)",
-   "u": "https://ceoscoredaily.com/page/view/2026111314033819732"
+   "u": "https://ceoscoredaily.com/page/view/2026111314033819732",
+   "r": "KR"
   },
   "S82": {
    "t": "Impress Watch, 구글 Gemini 스마트 안경 ‘Intelligent Eyewear’ 395달러부터 (2026.11.13)",
-   "u": "https://www.watch.impress.co.jp/docs/news/2156222.html"
+   "u": "https://www.watch.impress.co.jp/docs/news/2156222.html",
+   "r": "JP"
   },
   "S83": {
    "t": "Android Authority, Samsung smart glasses launch date · 카운터포인트 집계 인용 (2026.10.01)",
-   "u": "https://androidauthority.com/samsung-smart-glasses-launch-date-3717873"
+   "u": "https://androidauthority.com/samsung-smart-glasses-launch-date-3717873",
+   "r": "US"
   },
   "S84": {
    "t": "第一财经, 双11智能眼镜热度延续 千元级AR眼镜成热点 (2026.11.12)",
-   "u": "https://www.yicai.com/news/103438703.html"
+   "u": "https://www.yicai.com/news/103438703.html",
+   "r": "CN"
   },
   "S85": {
    "t": "Sammyfans, Samsung to begin US pre-orders for Intelligent Eyewear (2026.11.06)",
-   "u": "https://www.sammyfans.com/2026/11/06/samsung-to-begin-us-pre-orders-for-ai-intelligent-eyewear-glasses-next-week/"
+   "u": "https://www.sammyfans.com/2026/11/06/samsung-to-begin-us-pre-orders-for-ai-intelligent-eyewear-glasses-next-week/",
+   "r": "IN"
   },
   "S86": {
    "t": "TechRepublic, Nothing’s First AI Device Is Coming in December (2026.11.06)",
-   "u": "https://www.techrepublic.com/article/news-nothing-ai-device-december-2026-launch/"
+   "u": "https://www.techrepublic.com/article/news-nothing-ai-device-december-2026-launch/",
+   "r": "US"
   },
   "S87": {
    "t": "MIXED, EssilorLuxottica’s AI glasses and hearing glasses grew revenue 20% in Q3",
-   "u": "https://mixed-news.com/en/essilorluxottica-q3-2026-wearables-revenue-up-20-percent/"
+   "u": "https://mixed-news.com/en/essilorluxottica-q3-2026-wearables-revenue-up-20-percent/",
+   "r": "DE"
   },
   "S88": {
    "t": "Plaud, Plaud One AI earbuds sell out U.S. pre-sale in one day (2026.08.27)",
-   "u": "https://www.plaud.ai/blogs/articles/plaud-one-ai-earbuds-sell-out-u-s-pre-sale-in-one-day"
+   "u": "https://www.plaud.ai/blogs/articles/plaud-one-ai-earbuds-sell-out-u-s-pre-sale-in-one-day",
+   "r": "US"
   },
   "S89": {
    "t": "ケータイ Watch, Meta AI 안경 ‘Meta Glasses’ 일본 발매, 5만 600엔부터 (2026.08.26)",
-   "u": "https://k-tai.watch.impress.co.jp/docs/news/2135750.html"
+   "u": "https://k-tai.watch.impress.co.jp/docs/news/2135750.html",
+   "r": "JP"
   },
   "S91": {
    "t": "my-best, PLAUD NOTE 검증 리뷰 · 무료 월 300분, 프로 플랜 월 1,200분 (2026.03.31)",
-   "u": "https://my-best.com/products/2370838"
+   "u": "https://my-best.com/products/2370838",
+   "r": "JP"
   },
   "S90": {
    "t": "Luxury Tribune, EssilorLuxottica Exceeds Expectations in the Third Quarter (2026.10.21)",
-   "u": "https://www.luxurytribune.com/en/essilorluxottica-exceeds-expectations-in-the-third-quarter"
+   "u": "https://www.luxurytribune.com/en/essilorluxottica-exceeds-expectations-in-the-third-quarter",
+   "r": "CH"
+  },
+  "S92": {
+   "t": "빅카메라, Toffy 오토 스프 블렌더 세라믹 코트 타입 K-AS2-GE 상품 페이지 (9,900엔)",
+   "u": "https://www.biccamera.com/bc/item/14731377/",
+   "r": "JP"
   }
  },
  "cover": {
@@ -1450,7 +1546,7 @@
    "mk": "JP",
    "icon": "soup",
    "brand": "Toffy",
-   "name": "Toffy 오토 스프 블렌더 (세라믹 코트)",
+   "name": "Toffy 오토 스프 블렌더 세라믹 코트 K-AS2",
    "price": "¥9,900",
    "rev": "수집 전",
    "rate": "—",
@@ -1460,7 +1556,8 @@
    "target": "아침 대용식을 찾는 1~2인 가구, 이유식 가정",
    "usp": "자동 메뉴로 수프를 만드는 1만 엔대 블렌더",
    "src": [
-    "S34"
+    "S34",
+    "S92"
    ],
    "sc": [
     4,
@@ -1479,7 +1576,9 @@
     "국내 유통 미확인",
     "1만 엔대·차별화 가능"
    ],
-   "cp": "https://link.coupang.com/a/iSasl2iXPo"
+   "cp": "https://link.coupang.com/a/iSasl2iXPo",
+   "img": "issues/img/toffy_kas2.jpg",
+   "imgc": "빅카메라 상품 이미지 (모델 K-AS2 세라믹 코트 타입)"
   },
   {
    "id": "p10",
@@ -2007,5 +2106,12 @@
    "u": "https://www.tiktok.com/search?q=small%20appliance",
    "ul": "틱톡 검색"
   }
- ]
+ ],
+ "mail": {
+  "hook": "AI 안경 출하 263% 증가, 삼성·구글은 12월 10일 국내 출시",
+  "num": {
+   "stat": "+263%",
+   "sl": "AI 안경 상반기 글로벌 출하 증가율(카운터포인트)"
+  }
+ }
 }
