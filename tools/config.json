@@ -1,5 +1,22 @@
 {
  "form": null,
- "stats": {"subscribers": 2, "visitors": null, "asof": "2026.11.22"},
- "ads": {"client": "", "slots": {"top": "", "mid": ""}}
+ "stats": {
+  "subscribers": 2,
+  "visitors": null,
+  "asof": "2026.11.22"
+ },
+ "ads": {
+  "client": "",
+  "slots": {
+   "top": "",
+   "mid": ""
+  }
+ },
+ "sender": {
+  "name": "가전레이더",
+  "email": "newyangs007@gmail.com",
+  "phone": "",
+  "addr": ""
+ },
+ "verify": []
 }

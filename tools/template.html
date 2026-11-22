@@ -3,23 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>아틀리에 일렉트로 소형가전 매거진</title>
-<meta name="description" content="AI가전·AI디바이스·소형·대형 가전 트렌드와 매일 아침 소싱 픽. 모든 수치에 출처와 날짜를 붙이는 가전 매거진 Atelier Électro.">
-<meta property="og:title" content="Atelier Électro — 가전 트렌드 & 소싱 매거진">
-<meta property="og:description" content="매일 아침 8시, AI·소형·대형 가전 뉴스와 추천템을 출처와 함께.">
+<title>가전레이더 | AI가전·소형가전 트렌드와 MD 추천템, 매일 아침 8시</title>
+<meta name="description" content="가전레이더(GAJEON RADAR)는 AI가전·AI디바이스·소형가전·대형가전 뉴스와 다나와 인기순위로 고른 MD 추천템을 매일 아침 8시에 출처와 함께 정리하는 가전 매거진입니다.">
+<meta name="keywords" content="가전레이더, AI가전, AI가전 추천, 소형가전 추천, 가전 트렌드, 가전 신제품, 로봇청소기 추천, 김치냉장고 추천, 냉장고 추천, AI 안경, AI 녹음기, 가전 소싱, 가전 뉴스레터">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:title" content="가전레이더 — AI가전·소형가전 트렌드와 MD 추천템">
+<meta property="og:description" content="매일 아침 8시, AI가전·AI디바이스·소형·대형 가전 뉴스와 추천템을 출처와 함께.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://newyangs007.github.io/atelier-electro/">
 <meta property="og:image" content="https://newyangs007.github.io/atelier-electro/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:site_name" content="Atelier Électro">
+<meta property="og:site_name" content="가전레이더">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://newyangs007.github.io/atelier-electro/">
+<link rel="alternate" hreflang="ko" href="https://newyangs007.github.io/atelier-electro/">
+<link rel="alternate" hreflang="en" href="https://newyangs007.github.io/atelier-electro/en/">
+<link rel="alternate" hreflang="x-default" href="https://newyangs007.github.io/atelier-electro/">
+<link rel="alternate" type="application/rss+xml" title="가전레이더" href="https://newyangs007.github.io/atelier-electro/rss.xml">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<!--__JSONLD__-->
 <!--__VERIFY__-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@400;600;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@400;600;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
 <style>
 :root{
   /* Layout idea: fixed index bar, cover band, then photo-led product cards and boxed data; five skins share one structure; numbers in a condensed heavy grotesk. */
@@ -58,7 +67,7 @@ p{margin:0}
 .topbar{position:sticky;top:0;z-index:40;background:var(--cv-bg);color:var(--cv-fg);border-bottom:1px solid var(--cv-line)}
 :root[data-skin="blanc"] .topbar,:root[data-skin="monocle"] .topbar{border-bottom:1px solid var(--ink)}
 .topbar .wrap{display:flex;align-items:center;gap:20px;height:64px}
-.topbar .logo{font-family:var(--mast-font);font-style:var(--mast-style);font-weight:var(--mast-weight);font-stretch:var(--mast-stretch);font-size:22px;letter-spacing:-.02em;white-space:nowrap}
+.topbar .logo{font-family:var(--mast-font),"Noto Sans KR",sans-serif;font-style:var(--mast-style);font-weight:var(--mast-weight);font-stretch:var(--mast-stretch);font-size:22px;letter-spacing:-.02em;white-space:nowrap}
 .topbar nav{display:flex;gap:4px 18px;overflow-x:auto;flex:1;scrollbar-width:none;padding:0 6px;min-width:0}
 html,body{overflow-x:clip}
 .topbar nav::-webkit-scrollbar{display:none}
@@ -70,12 +79,16 @@ html,body{overflow-x:clip}
 .ctl select{appearance:none;background:transparent;color:var(--cv-fg);border:1px solid var(--cv-line);font-size:12.5px;padding:6px 28px 6px 12px;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--cv-accent) 50%),linear-gradient(135deg,var(--cv-accent) 50%,transparent 50%);background-position:calc(100% - 14px) 50%,calc(100% - 9px) 50%;background-size:5px 5px;background-repeat:no-repeat}
 :root[data-skin="blanc"] .ctl select,:root[data-skin="monocle"] .ctl select{border-color:var(--ink)}
 .ctl select option{color:#111;background:#fff}
+.lang{display:flex;border:1px solid var(--cv-line);font-size:12px;margin-right:4px}
+.lang a{color:var(--cv-mut);text-decoration:none;padding:5px 9px;letter-spacing:.06em;line-height:1.2}
+.lang a[aria-current]{color:var(--cv-bg);background:var(--cv-fg)}
+:root[data-skin="blanc"] .lang,:root[data-skin="monocle"] .lang{border-color:var(--ink)}
 
 /* cover band */
 .band{background:var(--cv-bg);color:var(--cv-fg)}
 :root[data-skin="monocle"] .band{border-bottom:3px double var(--ink)}
 .mast{padding:48px 0 28px}
-.mast-name{font-family:var(--mast-font);font-style:var(--mast-style);font-weight:var(--mast-weight);font-stretch:var(--mast-stretch);font-size:clamp(54px,12vw,176px);line-height:.84;letter-spacing:-.045em;margin:0}
+.mast-name{font-family:var(--mast-font),"Noto Sans KR",sans-serif;font-style:var(--mast-style);font-weight:var(--mast-weight);font-stretch:var(--mast-stretch);font-size:clamp(54px,12vw,176px);line-height:.84;letter-spacing:-.045em;margin:0}
 :root[data-skin="monocle"] .mast-name{font-size:clamp(44px,8.6vw,120px);letter-spacing:-.03em;text-align:center}
 :root[data-skin="wallpaper"] .mast-name{text-transform:uppercase;letter-spacing:-.02em}
 .mast-name span{font-style:normal}
@@ -83,6 +96,8 @@ html,body{overflow-x:clip}
 .mast-row .tag{font-family:var(--head-font);font-size:17px;color:var(--cv-fg)}
 .mast-row .tag i{font-style:normal;color:var(--cv-accent)}
 .mast-row b{color:var(--cv-accent);font-weight:500}
+.mast-intro{font-size:14px;line-height:1.7;color:var(--cv-mut);margin:0 0 26px;max-width:760px;word-break:keep-all}
+.mast-intro b{color:var(--cv-fg);font-weight:500}
 .ticker{overflow:hidden;border-top:1px solid var(--cv-line);border-bottom:1px solid var(--cv-line)}
 .ticker-track{display:flex;gap:64px;padding:14px 0;width:max-content;animation:tick 90s linear infinite;font-size:14px;color:var(--cv-fg)}
 .ticker:hover .ticker-track{animation-play-state:paused}
@@ -272,6 +287,22 @@ table.launch td.pr{font-size:15px;white-space:nowrap}
 .foot-links{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px;font-size:12px}.foot-links a{color:inherit}
 .adslot{margin:24px 0;padding-top:8px;border-top:1px solid var(--rule);min-height:90px}.adlabel{display:block;font-size:10px;letter-spacing:.12em;color:var(--ink-2);margin-bottom:6px}
 .adnote{font-size:12px;color:var(--ink-2);margin:-6px 0 22px;letter-spacing:.01em}
+.aisel{border:1px solid var(--ink);padding:22px 24px 26px;margin:0 0 56px}
+.aisel-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 24px;margin-bottom:18px}
+.aisel-head h3{font-family:var(--head-font);font-size:20px;font-weight:800;margin:0;letter-spacing:-.02em}
+.aisel-head p{font-size:12px;color:var(--ink-2);margin:0}
+.aisel-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.ais{display:flex;flex-direction:column;gap:8px;min-width:0}
+.ais .im{aspect-ratio:1/1;background:#fff;border:1px solid var(--rule);display:grid;place-items:center;cursor:pointer;padding:0}
+.ais .im img{width:82%;height:82%;object-fit:contain}
+.ais .nm{font-weight:600;font-size:14px;line-height:1.4;margin:4px 0 0}
+.ais .mdl{font-size:12.5px;line-height:1.55;color:var(--ink-2);margin:0;word-break:keep-all}
+.ais .meta{font-size:12px;color:var(--ink-2)}
+.ais .pr{font-size:17px}
+.ais .btns{display:flex;gap:6px;margin-top:auto}
+.ais .btns a,.ais .btns button{flex:1;text-align:center;font-size:12.5px;padding:8px 6px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);text-decoration:none;cursor:pointer;font-family:inherit}
+.ais .btns button{background:transparent;color:var(--ink)}
+@media(max-width:860px){.aisel-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* channels */
 .chans{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:48px 36px}
@@ -347,6 +378,14 @@ table.srct tr:target{background:var(--bg-2)}
 .sub-row button{background:var(--cv-fg);color:var(--cv-bg);border:0;font:inherit;font-size:14px;font-weight:600;letter-spacing:.04em;padding:0 26px;cursor:pointer;transition:opacity .2s}
 .sub-row button:hover{opacity:.85}.sub-row button[disabled]{opacity:.5;cursor:default}
 .sub-row:focus-within{border-bottom-color:var(--cv-accent)}
+.faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
+.faq details{border-top:1px solid var(--ink);padding:16px 0}
+.faq summary{font-weight:600;font-size:16px;cursor:pointer;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--ink-2)}
+.faq details[open] summary::after{content:"−"}
+.faq p{font-size:14px;line-height:1.75;color:var(--ink-2);margin:10px 0 0;word-break:keep-all}
+@media(max-width:860px){.faq{grid-template-columns:1fr}}
 .sub-agree{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--cv-fg);margin-top:18px;cursor:pointer}
 .sub-agree input{accent-color:var(--cv-accent);width:15px;height:15px}
 .sub-fine{font-size:12px;color:var(--cv-mut);line-height:1.6;margin:8px 0 0;word-break:keep-all}
@@ -390,7 +429,7 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
 
 <header class="topbar">
   <div class="wrap">
-    <span class="logo">Atelier Électro</span>
+    <a class="logo" href="./" style="text-decoration:none;color:inherit">가전레이더</a>
     <nav aria-label="목차" id="toc">
       <a href="#trends"><span class="n">01</span>트렌드</a>
       <a href="#wire"><span class="n">02</span>뉴스</a>
@@ -403,6 +442,7 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
       <a href="#subscribe"><span class="n">09</span>구독</a>
     </nav>
     <div class="ctl">
+      <div class="lang" role="navigation" aria-label="언어"><a href="./" aria-current="true" hreflang="ko" lang="ko" title="한국어">KO</a><a href="en/" hreflang="en" lang="en" title="English">EN</a></div>
       <label for="issue-select">호 선택</label><select id="issue-select"></select>
       <label for="skin-select">디자인 시안</label>
       <select id="skin-select">
@@ -419,12 +459,13 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
 
 <div class="band">
   <div class="mast"><div class="wrap">
-    <p class="mast-name">Atelier <span>Électro</span></p>
+    <p class="mast-name">가전<span>레이더</span></p>
     <div class="mast-row">
-      <span class="tag">가전 트렌드 &amp; 소싱 매거진 <i>·</i> AI · 디바이스 · 소형 · 대형</span>
+      <span class="tag">GAJEON RADAR <i>·</i> AI가전 · AI디바이스 · 소형가전 · 대형가전 트렌드 &amp; MD 추천</span>
       <span><span id="edition-line"></span> · 매일 <b>08:00 KST</b> 발행</span>
     </div>
   </div></div>
+  <div class="wrap"><p class="mast-intro">가전레이더는 국내외 가전 뉴스와 신제품, 다나와 인기순위·리뷰로 고른 <b>AI가전·소형가전 MD 추천템</b>을 매일 아침 8시에 정리합니다. 모든 수치에 매체와 날짜를 붙입니다.</p></div>
   <div class="ticker" aria-label="주요 수치"><div class="ticker-track" id="ticker"></div></div>
   <section class="cover" id="cover"><div class="wrap">
     <div>
@@ -467,6 +508,10 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
 <section class="sec" id="picks"><div class="wrap">
   <div class="sec-head"><div><span class="eyebrow">04 · Sourcing Picks</span><h2>오늘의 소싱 픽</h2></div><p>사진을 누르면 상세·점수 근거·구매처가 열립니다.</p></div>
   <p class="adnote">[광고] 이 섹션의 ‘쿠팡에서 구매’ 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+  <div class="aisel" id="ai-select-wrap">
+    <div class="aisel-head"><h3>AI가전 MD 셀렉트</h3><p>선정 기준: 다나와 카테고리 인기 5위 이내 · 리뷰 100건 이상 · 평점 4.7 이상 · 제조사가 밝힌 AI 기능</p></div>
+    <div class="aisel-list" id="ai-select"></div>
+  </div>
   <div class="bar stack">
     <div class="seg" id="f-pv" role="group" aria-label="보기"></div>
     <div class="seg" id="f-pm" role="group" aria-label="국가"></div>
@@ -530,6 +575,11 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
   </div>
 </div></section>
 
+<section class="sec" id="faq"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">FAQ</span><h2>자주 묻는 질문</h2></div><p>가전레이더가 무엇을, 어떤 기준으로 고르는지.</p></div>
+  <div class="faq"><!--__FAQ__--></div>
+</div></section>
+
 <section class="sub" id="subscribe"><div class="wrap">
   <div class="sub-in">
     <div class="sub-copy">
@@ -546,21 +596,24 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
       </div>
       <div class="sub-who">
         <fieldset class="sub-g"><legend>성별</legend><label><input type="radio" name="sub-g" value="남성"> 남성</label><label><input type="radio" name="sub-g" value="여성"> 여성</label></fieldset>
+        <label class="sub-age"><span>독자 유형</span><select id="sub-type"><option value="">선택 안 함</option><option>가전 관심 소비자</option><option>유통·MD·바이어</option><option>제조·브랜드</option><option>온라인 셀러·리셀러</option><option>미디어·크리에이터</option><option>기타</option></select></label>
         <label class="sub-age"><span>나이대</span><select id="sub-age"><option value="">선택</option><option>10대 (만 14세 이상)</option><option>20대</option><option>30대</option><option>40대</option><option>50대</option><option>60대 이상</option></select></label>
       </div>
       <fieldset class="sub-int" id="sub-int"><legend>관심 분야 (선택)</legend>
         <label><input type="checkbox" value="AI가전"> AI가전</label><label><input type="checkbox" value="AI디바이스"> AI디바이스</label><label><input type="checkbox" value="주방"> 주방</label><label><input type="checkbox" value="청소"> 청소</label><label><input type="checkbox" value="난방·가습"> 난방·가습</label><label><input type="checkbox" value="뷰티"> 뷰티</label>
       </fieldset>
-      <label class="sub-agree"><input type="checkbox" id="sub-agree"> 개인정보 수집·이용에 동의합니다</label>
-      <p class="sub-fine">수집 항목: 이메일·성별·나이대·관심 분야 · 목적: 매거진 발송, 맞춤 추천, 독자 통계 · 보유: 구독 해지 시까지(해지 즉시 파기). 만 14세 미만은 구독할 수 없습니다. 해지는 메일 하단의 ‘구독 해지’ 링크로 할 수 있습니다. <a href="privacy.html" style="color:inherit">개인정보처리방침</a></p>
+      <label class="sub-agree"><input type="checkbox" id="sub-agree"> [필수] 개인정보 수집·이용과 뉴스레터 수신에 동의합니다</label>
+      <p class="sub-fine">수집 항목: 이메일·성별·나이대·독자 유형·관심 분야 · 목적: 매일 아침 뉴스레터 발송(쿠팡 파트너스 등 제휴 링크 포함), 맞춤 추천, 독자 통계 · 보유: 구독 해지 시까지(해지 즉시 파기). 만 14세 미만은 구독할 수 없습니다.</p>
+      <label class="sub-agree"><input type="checkbox" id="sub-mkt"> [선택] 공동구매·특가·유튜브 쇼핑 영상 등 광고성 정보 수신에 동의합니다</label>
+      <p class="sub-fine">동의하지 않아도 뉴스레터는 받을 수 있습니다. 동의는 메일 하단 링크로 언제든 철회할 수 있습니다. <a href="privacy.html" style="color:inherit">개인정보처리방침</a></p>
       <p class="sub-msg" id="sub-msg" role="status" aria-live="polite"></p>
     </form>
   </div>
 </div></section>
 
 <footer><div class="wrap">
-  <div class="colo"><span class="m">Atelier Électro</span><span id="colophon"></span></div>
-  <div class="foot-links"><span id="foot-stats"></span><a href="privacy.html">개인정보처리방침</a><a href="unsubscribe.html">구독 해지</a><a href="https://github.com/newyangs007/atelier-electro" target="_blank" rel="noopener">GitHub</a></div>
+  <div class="colo"><span class="m">가전레이더 GAJEON RADAR</span><span id="colophon"></span></div>
+  <div class="foot-links"><span id="foot-stats"></span><a href="privacy.html">개인정보처리방침</a><a href="unsubscribe.html">구독 해지</a><a href="en/" hreflang="en">English</a><a href="rss.xml">RSS</a><a href="llms.txt">llms.txt</a><a href="https://github.com/newyangs007/atelier-electro" target="_blank" rel="noopener">GitHub</a></div>
 </div></footer>
 
 <button type="button" class="totop" id="totop" aria-label="맨 위로">↑</button>
@@ -688,6 +741,11 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
     var cats=[];D.picks.forEach(function(p){if(cats.indexOf(p.cat)<0)cats.push(p.cat);});
     chips($('f-pc'),'카테고리',[['all','전체']].concat(cats.map(function(c){return [c,c,D.picks.filter(function(p){return p.cat===c;}).length];})),'all',function(f){pState.c=f;applyPicks();});
     applyPicks();
+    /* AI가전 MD 셀렉트 */
+    var sel=D.picks.map(function(p,i){return {p:p,i:i};}).filter(function(x){return x.p.md;}).sort(function(a,b){return (b.p.sc[0]-a.p.sc[0])||(b.p.sc[1]-a.p.sc[1]);});
+    $('ai-select-wrap').hidden=!sel.length;
+    $('ai-select').innerHTML=sel.map(function(x){var p=x.p;return '<div class="ais"><button type="button" class="im" data-i="'+x.i+'" aria-label="'+esc(p.name)+' 상세 보기">'+(p.img?'<img src="'+esc(p.img)+'" alt="'+esc(p.name)+'" loading="lazy">':icon(p.icon))+'</button><p class="meta">'+esc(p.ch)+'</p><p class="nm">'+esc(p.name)+'</p><p class="mdl">'+esc(p.md)+'</p><p class="pr num">'+esc(p.price)+'</p><div class="btns">'+(p.cp?'<a class="cp" data-id="'+esc(p.id)+'" href="'+esc(p.cp)+'" target="_blank" rel="noopener sponsored">쿠팡에서 보기</a>':'')+'<button type="button" data-i="'+x.i+'">상세</button></div></div>';}).join('');
+    $('ai-select').onclick=function(e){var b=e.target.closest('button[data-i]');if(!b)return;var i=+b.dataset.i;openQV(D.picks[i],i);};
 
     $('chan-list').innerHTML=D.channels.map(function(c,i){return '<div class="chan" id="chan-'+(i+1)+'"><h3>'+esc(c.n)+'</h3><span class="stt '+(c.st==='ok'?'ok':'lim')+'">'+(c.st==='ok'?'● 수치 확보':'○ 링크만')+'</span><p>'+numify(c.sig)+'</p>'+(c.s?cite(c.s):'')+'<a class="go" href="'+esc(c.u)+'" target="_blank" rel="noopener">'+esc(c.ul)+' ↗</a></div>';}).join('');
     $('source-rows').innerHTML=order.map(function(k){var m=srcMeta(k);var rc=S[k].r||'';return '<tr id="src-'+m.no+'" data-pg="'+Math.floor((m.no-1)/SRC_PER)+'"><td class="n">'+m.no+'</td><td class="rg">'+(rc?'<b>'+esc(rc)+'</b>'+esc(CTRY[rc]||rc):'<span style="opacity:.6">확인 중</span>')+'</td><td class="md">'+esc(m.media)+'</td><td>'+esc(m.title)+'</td><td class="dt">'+esc(m.date)+'<small>'+(m.kind==='col'?'수집일 (발행일 미표기)':'발행일')+'</small></td><td><a href="'+esc(m.u)+'" target="_blank" rel="noopener">열기 ↗</a></td></tr>';}).join('');
@@ -874,8 +932,10 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
     function gender(){var x=document.querySelector('input[name="sub-g"]:checked');return x?x.value:'';}
     function age(){return document.getElementById('sub-age').value;}
     function interests(){return [].slice.call(document.querySelectorAll('#sub-int input:checked')).map(function(x){return x.value;});}
+    function rtype(){return document.getElementById('sub-type').value;}
+    function mkt(){return document.getElementById('sub-mkt').checked?'동의':'미동의';}
     function mailFallback(v){
-      var u='mailto:newyangs007@gmail.com?subject='+encodeURIComponent('[Atelier Électro] 구독 신청')+'&body='+encodeURIComponent('구독 이메일: '+v+'\n성별: '+gender()+'\n나이대: '+age()+'\n관심 분야: '+(interests().join(', ')||'전체'));
+      var u='mailto:newyangs007@gmail.com?subject='+encodeURIComponent('[가전레이더] 구독 신청')+'&body='+encodeURIComponent('구독 이메일: '+v+'\n성별: '+gender()+'\n나이대: '+age()+'\n독자 유형: '+(rtype()||'미선택')+'\n관심 분야: '+(interests().join(', ')||'전체')+'\n광고성 정보 수신: '+mkt()+'\n신청 시각: '+new Date().toISOString());
       say('메일 앱이 열리면 보내기만 누르시면 신청됩니다.');location.href=u;
     }
     f.addEventListener('submit',function(ev){
@@ -887,12 +947,12 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
       if(!ag.checked){say('개인정보 수집·이용에 동의해 주세요.');return;}
       btn.disabled=true;say('신청 중…');
       var done=false,timer=setTimeout(function(){if(!done){done=true;btn.disabled=false;mailFallback(v);}},10000);
-      if(window.AE_FORM){var F=window.AE_FORM,fd=new URLSearchParams();fd.append(F.f.type,'subscribe');fd.append(F.f.email,v);fd.append(F.f.interest,interests().join(', '));if(F.f.gender)fd.append(F.f.gender,gender());if(F.f.age)fd.append(F.f.age,age());
-        fetch(F.url,{method:'POST',mode:'no-cors',body:fd}).then(function(){done=true;clearTimeout(timer);btn.disabled=false;try{localStorage.setItem('ae-sub',v);}catch(e){}em.value='';ag.checked=false;say('구독 신청이 완료됐습니다. 다음 날 아침 8시부터 보내 드립니다.');}).catch(function(){done=true;clearTimeout(timer);btn.disabled=false;mailFallback(v);});return;}
+      if(window.AE_FORM){var F=window.AE_FORM,fd=new URLSearchParams();fd.append(F.f.type,'subscribe');fd.append(F.f.email,v);fd.append(F.f.interest,interests().join(', '));if(F.f.gender)fd.append(F.f.gender,gender());if(F.f.age)fd.append(F.f.age,age());if(F.f.rtype)fd.append(F.f.rtype,rtype());if(F.f.mkt)fd.append(F.f.mkt,mkt());
+        fetch(F.url,{method:'POST',mode:'no-cors',body:fd}).then(function(){done=true;clearTimeout(timer);btn.disabled=false;try{localStorage.setItem('ae-sub',v);}catch(e){}em.value='';ag.checked=false;document.getElementById('sub-mkt').checked=false;say('구독 신청이 완료됐습니다. 다음 날 아침 8시부터 보내 드립니다.');}).catch(function(){done=true;clearTimeout(timer);btn.disabled=false;mailFallback(v);});return;}
       Promise.all([dbP||Promise.resolve(null),usP||Promise.resolve(null)]).then(function(r){
         var db=r[0],us=r[1];
         if(!db||!us)throw new Error('nodb');
-        return us.id().then(function(id){return db.doc('subscribers/'+id).set({email:v,gender:gender(),age:age(),interests:interests(),at:new Date().toISOString(),src:'web'});});
+        return us.id().then(function(id){return db.doc('subscribers/'+id).set({email:v,gender:gender(),age:age(),rtype:rtype(),mkt:mkt(),interests:interests(),at:new Date().toISOString(),src:'web'});});
       }).then(function(){
         if(done)return;done=true;clearTimeout(timer);btn.disabled=false;
         try{localStorage.setItem('ae-sub',v);}catch(e){}

@@ -1,4 +1,4 @@
-# Atelier Électro
+# 가전레이더 (GAJEON RADAR) — 구 Atelier Électro
 
 AI·소형·대형 가전 트렌드와 소싱 픽을 매일 아침 8시(KST)에 발행하는 매거진입니다.
 

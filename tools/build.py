@@ -1,7 +1,9 @@
 """Build the magazine: index.html (+ product pages, sitemap, robots).
 Run from the site root. Works with either tools/ (GitHub repo) or build/ (local) layout.
 """
-import json, re, glob, os, html
+import json, re, glob, os, html, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import static as ST
 
 T = 'tools' if os.path.exists('tools/template.html') else 'build'
 SITE = 'https://newyangs007.github.io/atelier-electro/'
@@ -9,8 +11,10 @@ e = html.escape
 strip = lambda s: re.sub('<[^>]+>', '', s)
 
 issues = []
+FULL = {}
 for f in sorted(glob.glob('issues/*.json')):
     j = json.load(open(f, encoding='utf-8'))
+    FULL[j['edition']['date']] = j
     issues.append({"date": j['edition']['date'], "no": j['edition']['no'], "title": strip(j['cover']['title'])})
 issues.sort(key=lambda a: a['date'], reverse=True)
 latest = json.load(open('issues/%s.json' % issues[0]['date'], encoding='utf-8'))
@@ -53,6 +57,9 @@ t = t.replace('/*__BRANDS__*/', open(T + '/brands.json', encoding='utf-8').read(
 t = t.replace('/*__ICONS__*/', open(T + '/icons.txt', encoding='utf-8').read())
 t = t.replace('/*__ARCHIVE__*/', dump(issues)).replace('/*__ISSUE__*/', dump(latest))
 t = t.replace('<!--__VERIFY__-->', '\n'.join(cfg.get('verify', [])) + '\n<script>window.AE_FORM=%s;window.AE_STATS=%s;window.AE_ADS=%s;</script>' % (dump(cfg.get('form')), dump(cfg.get('stats')), dump(cfg.get('ads'))))
+t = t.replace('<!--__JSONLD__-->', ST.jsonld_index(latest))
+t = t.replace('<!--__FAQ__-->', ST.faq_html(ST.faq(latest, 'ko')))
+t = ST.inject(t, ST.ssr_index(latest))
 open('index.html', 'w', encoding='utf-8').write(t)
 
 # ---- product pages ----
@@ -88,14 +95,47 @@ for p in latest['picks']:
         '{{URL}}': e(SITE + p['page']), '{{BUY}}': buy, '{{DANAWA}}': dan,
         '{{DISC}}': '이 페이지의 ‘쿠팡에서 구매’ 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.' if p.get('cp') else '',
         '{{EDITION}}': e(latest['edition']['label']), '{{DESC}}': e(p['why'] + ' ' + p['usp'])[:160],
+        '{{JSONLD}}': ST.jsonld_product(p, latest),
     }.items():
         out = out.replace(k, val)
     open(p['page'], 'w', encoding='utf-8').write(out)
     urls.append(SITE + p['page'])
 
 today = latest['edition']['date']
+# ---- static issue pages (KO + EN), English home, markdown copies, RSS, llms.txt ----
+os.makedirs('issue', exist_ok=True)
+os.makedirs('en/issue', exist_ok=True)
+pairs = [(SITE, SITE + 'en/')]
+for d, j in FULL.items():
+    for p in j['picks']:
+        p.setdefault('page', slug(p))
+    ko_u, en_u = SITE + 'issue/%s.html' % d, SITE + 'en/issue/%s.html' % d
+    open('issue/%s.html' % d, 'w', encoding='utf-8').write(ST.page(j, 'ko', '../', ko_u, en_u))
+    open('en/issue/%s.html' % d, 'w', encoding='utf-8').write(ST.page(j, 'en', '../../', en_u, ko_u))
+    open('issue/%s.md' % d, 'w', encoding='utf-8').write(ST.markdown(j, 'ko'))
+    open('en/issue/%s.md' % d, 'w', encoding='utf-8').write(ST.markdown(j, 'en'))
+    pairs.append((ko_u, en_u))
+open('en/index.html', 'w', encoding='utf-8').write(ST.page(latest, 'en', '../', SITE + 'en/', SITE))
+full_sorted = [FULL[a['date']] for a in issues]
+open('rss.xml', 'w', encoding='utf-8').write(ST.rss(full_sorted, 'ko'))
+open('en/rss.xml', 'w', encoding='utf-8').write(ST.rss(full_sorted, 'en'))
+open('llms.txt', 'w', encoding='utf-8').write(ST.llms_txt(latest, issues))
+alt = {}
+for k, v in pairs:
+    alt[k] = (k, v)
+    alt[v] = (k, v)
+urls = urls + [u for pr in pairs for u in pr if u not in urls]
+
+
+def sm(u):
+    x = '  <url><loc>%s</loc><lastmod>%s</lastmod>' % (u, today)
+    if u in alt:
+        x += '<xhtml:link rel="alternate" hreflang="ko" href="%s"/><xhtml:link rel="alternate" hreflang="en" href="%s"/>' % alt[u]
+    return x + '</url>\n'
+
+
 open('sitemap.xml', 'w', encoding='utf-8').write(
-    '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-    ''.join('  <url><loc>%s</loc><lastmod>%s</lastmod></url>\n' % (u, today) for u in urls) + '</urlset>\n')
+    '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' +
+    ''.join(sm(u) for u in urls) + '</urlset>\n')
 open('robots.txt', 'w', encoding='utf-8').write('User-agent: *\nAllow: /\nSitemap: %ssitemap.xml\n' % SITE)
-print(issues[:1], len(urls) - 1, 'product pages')
+print(issues[:1], len(latest['picks']), 'product pages', len(urls), 'urls')

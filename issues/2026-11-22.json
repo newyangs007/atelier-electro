@@ -466,6 +466,46 @@
    "t": "빅카메라, Toffy 오토 스프 블렌더 세라믹 코트 타입 K-AS2-GE 상품 페이지 (9,900엔)",
    "u": "https://www.biccamera.com/bc/item/14731377/",
    "r": "JP"
+  },
+  "S93": {
+   "t": "다나와 김치냉장고(스탠드형) 인기상품순 (2026.11.22 11:40 수집)",
+   "u": "https://prod.danawa.com/list/?cate=10356200",
+   "r": "KR"
+  },
+  "S94": {
+   "t": "다나와 냉장고 인기상품순 (2026.11.22 11:40 수집)",
+   "u": "https://prod.danawa.com/list/?cate=102110",
+   "r": "KR"
+  },
+  "S95": {
+   "t": "다나와 올인원 세탁건조기 인기상품순 (2026.11.22 11:40 수집)",
+   "u": "https://prod.danawa.com/list/?cate=10253217",
+   "r": "KR"
+  },
+  "S96": {
+   "t": "다나와 로봇청소기 인기상품순 (2026.11.22 11:40 수집)",
+   "u": "https://prod.danawa.com/list/?cate=10243069",
+   "r": "KR"
+  },
+  "S97": {
+   "t": "다나와, LG전자 디오스 AI 오브제컬렉션 김치톡톡 Z490MEEF11 제품 정보",
+   "u": "https://prod.danawa.com/info/?pcode=99125183",
+   "r": "KR"
+  },
+  "S98": {
+   "t": "다나와, LG전자 디오스 AI 오브제컬렉션 T876MEE1H1 제품 정보",
+   "u": "https://prod.danawa.com/info/?pcode=122666101",
+   "r": "KR"
+  },
+  "S99": {
+   "t": "다나와, 삼성전자 비스포크 AI 콤보 WD80H25BHW 제품 정보",
+   "u": "https://prod.danawa.com/info/?pcode=108693731",
+   "r": "KR"
+  },
+  "S100": {
+   "t": "다나와, 로보락 S10 MaxV Ultra Steam 제품 정보",
+   "u": "https://prod.danawa.com/info/?pcode=124468606",
+   "r": "KR"
   }
  },
  "cover": {
@@ -1735,7 +1775,8 @@
    "pc": "124075114",
    "q": "비스포크 AI 스팀 울트라",
    "img": "issues/img/124075114.jpg",
-   "cp": "https://link.coupang.com/a/iSarAIh9aK"
+   "cp": "https://link.coupang.com/a/iSarAIh9aK",
+   "md": "사물·투명 액체 인식이 강점. 직배수형(VR90F01SAG)은 설치 여건을 먼저 확인하세요."
   },
   {
    "id": "p14",
@@ -2020,6 +2061,169 @@
    "q": "이븐리얼리티스 G2",
    "img": "issues/img/124921931.jpg",
    "cp": "https://link.coupang.com/a/iSk0wZmrJY"
+  },
+  {
+   "id": "p21",
+   "ai": true,
+   "cat": "대형가전",
+   "mk": "KR",
+   "icon": "fridge",
+   "brand": "LG전자",
+   "name": "LG 디오스 AI 오브제컬렉션 김치톡톡 Z490MEEF11",
+   "price": "1,960,240원",
+   "rev": "464",
+   "rate": "4.9",
+   "reg": "2024.09",
+   "ch": "다나와 김치냉장고(스탠드형) 인기 3위 · 김장철",
+   "why": "김장철 김치냉장고 인기 3위. 491L 4도어, 구입김치 스캔 보관·다목적 맞춤 보관, 에너지 1등급.",
+   "target": "김장하는 3~4인 가구, 혼수·이사로 김치냉장고를 바꾸는 집",
+   "usp": "491L 4도어 4룸 · 구입김치스캔보관 · 다목적맞춤보관 · 에너지 1등급",
+   "src": [
+    "S93",
+    "S97"
+   ],
+   "sc": [
+    4,
+    4,
+    5,
+    2,
+    2
+   ],
+   "scw": [
+    "김치냉장고 인기 3위",
+    "리뷰 464·4.9",
+    "김장철 성수기",
+    "대기업 공식 유통",
+    "고단가·380몰 가격경쟁"
+   ],
+   "note": "같은 AI 라인 Z490MPSF11(인기 6위, 리뷰 548)도 순위권입니다. 대기업 공식 유통이라 직소싱은 어렵고, 김장철(11~12월) 제휴 판매·공동구매의 기준 모델로 적합합니다. 가격은 11:40 다나와 기준이며 판매처별 차이가 큽니다.",
+   "md": "지금이 김장철 성수기. 설치 폭 835mm와 기본 김치통 8개 구성을 먼저 확인하세요.",
+   "pc": "99125183",
+   "q": "LG 김치톡톡 Z490MEEF11",
+   "img": "issues/img/99125183.jpg",
+   "cp": "https://link.coupang.com/a/iSoubGz696"
+  },
+  {
+   "id": "p22",
+   "ai": true,
+   "cat": "대형가전",
+   "mk": "KR",
+   "icon": "fridge",
+   "brand": "LG전자",
+   "name": "LG 디오스 AI 오브제컬렉션 냉장고 T876MEE1H1",
+   "price": "1,827,870원",
+   "rev": "945",
+   "rate": "4.8",
+   "reg": "2026.04",
+   "ch": "다나와 냉장고 인기 1위",
+   "why": "다나와 냉장고 인기 1위. 870L 4도어, 사용 패턴을 학습해 온도를 맞추는 AI 절약 모드, 에너지 1등급.",
+   "target": "혼수·이사 수요, 대용량으로 바꾸려는 4인 가구",
+   "usp": "870L 4도어 · AI절약모드·AI세이빙모드 · UV청정+ · 에너지 1등급",
+   "src": [
+    "S94",
+    "S98"
+   ],
+   "sc": [
+    5,
+    5,
+    3,
+    2,
+    2
+   ],
+   "scw": [
+    "냉장고 인기 1위",
+    "리뷰 945·4.8",
+    "연중 상시",
+    "대기업 공식 유통",
+    "고단가·가격경쟁"
+   ],
+   "note": "대기업 공식 유통 제품이라 직소싱보다 제휴 판매·혼수 패키지 기획에 맞습니다. 가격은 11:40 다나와 기준입니다.",
+   "md": "다나와 냉장고 인기 1위의 AI 모델. 폭 914mm가 들어갈 자리부터 재 보세요.",
+   "pc": "122666101",
+   "q": "LG 디오스 T876MEE1H1",
+   "img": "issues/img/122666101.jpg",
+   "cp": "https://link.coupang.com/a/iSovLhz89c"
+  },
+  {
+   "id": "p23",
+   "ai": true,
+   "cat": "대형가전",
+   "mk": "KR",
+   "icon": "washer",
+   "brand": "삼성전자",
+   "name": "삼성 비스포크 AI 콤보 세탁건조기 WD80H25BHW",
+   "price": "2,610,710원",
+   "rev": "44",
+   "rate": "4.8",
+   "reg": "2026.03",
+   "ch": "다나와 올인원 세탁건조기 인기 2위",
+   "why": "세탁 25kg·건조 18kg을 한 대로 끝내는 올인원. AI 세탁건조·AI 에너지 절약·세제 스캔 정량 투입.",
+   "target": "세탁기·건조기를 나란히 둘 공간이 없는 신혼·소형 평형",
+   "usp": "세탁 25kg·건조 18kg 올인원 · AI 세탁건조 · 인버터 히트펌프 · 에너지 1등급",
+   "src": [
+    "S95",
+    "S99"
+   ],
+   "sc": [
+    4,
+    2,
+    3,
+    2,
+    2
+   ],
+   "scw": [
+    "올인원 세탁건조기 인기 2위",
+    "리뷰 44·4.8",
+    "연중 상시",
+    "대기업 공식 유통",
+    "고단가·가격경쟁"
+   ],
+   "note": "리뷰가 44건으로 아직 적어 관망입니다. 같은 카테고리 1위는 LG 트롬 오브제컬렉션 워시콤보 FC2521SX6C(4,110,800원)입니다. 가격은 11:40 다나와 기준입니다.",
+   "pc": "108693731",
+   "q": "삼성 비스포크 AI 콤보 WD80H25BHW",
+   "img": "issues/img/108693731.jpg",
+   "cp": "https://link.coupang.com/a/iSow2idsZ2"
+  },
+  {
+   "id": "p24",
+   "ai": true,
+   "cat": "청소",
+   "mk": "KR",
+   "icon": "robot",
+   "brand": "로보락",
+   "name": "로보락 S10 MaxV Ultra Steam 로봇청소기",
+   "price": "1,637,990원",
+   "rev": "499",
+   "rate": "4.8",
+   "reg": "2026.10",
+   "ch": "다나와 로봇청소기 인기 5위 · 10월 신제품",
+   "why": "흡입력 36,000Pa, 카메라·3D 인식 기반 AI 사물 인식, 물걸레 스팀 살균 스테이션.",
+   "target": "반려동물·영유아 가정, 프리미엄 로봇청소기 교체층",
+   "usp": "AI 사물 인식 · 물걸레 스팀 살균 · 온수 세척·온풍 건조 · 문턱 4.5cm(최대 8.8cm)",
+   "src": [
+    "S96",
+    "S100"
+   ],
+   "sc": [
+    3,
+    4,
+    4,
+    3,
+    3
+   ],
+   "scw": [
+    "로봇청소기 인기 5위",
+    "리뷰 499·4.8",
+    "신제품·연말 선물",
+    "수입사 경유",
+    "스팀 살균으로 차별화"
+   ],
+   "note": "10월 등록 신제품인데 리뷰가 499건까지 쌓였습니다. 같은 카테고리 1위 모바 P70 Pro Ultra(510,570원)와 가격대가 달라 프리미엄 수요를 겨냥합니다. 가격은 11:40 다나와 기준입니다.",
+   "md": "스팀 살균 스테이션이 차별점. 문턱이 많은 집이라면 최대 8.8cm 넘기 기능이 유리합니다.",
+   "pc": "124468606",
+   "q": "로보락 S10 MaxV Ultra Steam",
+   "img": "issues/img/124468606.jpg",
+   "cp": "https://link.coupang.com/a/iSoyduaDts"
   }
  ],
  "channels": [
@@ -2112,6 +2316,526 @@
   "num": {
    "stat": "+263%",
    "sl": "AI 안경 상반기 글로벌 출하 증가율(카운터포인트)"
+  }
+ },
+ "en": {
+  "cover": {
+   "title": "Buy less, <em>buy better</em>",
+   "deck": "The common grammar of appliances in 2026: units fall, prices rise.\nBig appliances are defending margins, small appliances are going premium and single-household, and AI ties the two together.",
+   "figs": [
+    "Avg. price of small kitchen appliances, China (H1)",
+    "China Double 11 appliance online sales",
+    "Global small appliances, H1 growth",
+    "Whirlpool Q3 revenue",
+    "LG Electronics appliances (HS) Q3 operating margin",
+    "Korea appliances & durables, H1 growth"
+   ]
+  },
+  "ticker": [
+   "KES 2026 · Samsung 'AI in daily life', LG 'AI into industry'",
+   "LG Electronics HS Q3 revenue KRW 7.04T",
+   "Whirlpool Q3 revenue $3.677B, −8.8%",
+   "Danawa No.1 heater: Shinil Cube Heater",
+   "Coupang appliances & digital Black Friday 11/16–11/29",
+   "Haier 'AI Eye' fridge recognizes 300+ foods",
+   "Double 11 small appliance top 3: Midea, Roborock, Supor",
+   "BRUNO glass air fryer at 510% of plan",
+   "Samsung·Google AI glasses launch in Korea 12/10, KRW 650k–700k",
+   "AI glasses H1 shipments +263% (Counterpoint)"
+  ],
+  "trends": [
+   {
+    "t": "Fewer units, higher prices",
+    "sl": "Avg. price, small kitchen appliances in China",
+    "line": "Prices rose even as unit sales fell 14.6%. On Korean TV shopping, Roborock hit KRW 45B and Dyson hair KRW 30B."
+   },
+   {
+    "t": "Glass and steel instead of coatings",
+    "sl": "BRUNO glass air fryer sales vs. plan",
+    "line": "From Ninja Crispi to Ainic all-stainless, 'see-through cooking' is the trend."
+   },
+   {
+    "t": "AI redesigns big appliances",
+    "sl": "Foods recognized by Haier's AI fridge",
+    "line": "Samsung Family Hub now runs Gemini; LG set up a robotics business center."
+   },
+   {
+    "t": "Single-person, mini, studio",
+    "sl": "Monthly searches for 'mini/compact' appliances",
+    "line": "61% female, rising inflow from people in their 20s. Searches for 'mini air cooler' hit a record."
+   },
+   {
+    "t": "Heat only my spot",
+    "sl": "Cumulative sales, Shinil Cube heater line",
+    "line": "Danawa's No.1 and No.2 electric heaters are both from the same line."
+   },
+   {
+    "t": "AI moves onto your face",
+    "sl": "Global AI glasses shipment growth, H1",
+    "line": "96% are display-less models. Samsung and Google launch in Korea on December 10."
+   }
+  ],
+  "news": [
+   [
+    "KES 2026: Samsung's 'AI in daily life' vs LG's 'AI into industry'",
+    "Samsung showed a connected appliance-mobile ecosystem; LG split its booth into home and industry."
+   ],
+   [
+    "LG Electronics appliances post KRW 7.04T in Q3 revenue",
+    "Revenue stayed above KRW 7T for a second quarter; operating margin fell from 9.7% to 3.7%."
+   ],
+   [
+    "LG's AI data-center cooling orders top KRW 3T",
+    "Up more than fivefold in one quarter from KRW 600B in the first half."
+   ],
+   [
+    "Bespoke AI Family Hub becomes the first appliance with Gemini",
+    "Samsung unveiled a fridge with wider food recognition at CES 2026."
+   ],
+   [
+    "Korea appliances & durables reach KRW 11.23T in H1",
+    "+9.5%. Marketplace sales grew about 25%."
+   ],
+   [
+    "Small appliance searches: more people in their 20s and more women",
+    "Over two years, only air coolers and food waste disposers grew in search volume."
+   ],
+   [
+    "Coupang appliances & digital Black Friday",
+    "Nov 16–29, with Samsung, LG and others taking part."
+   ],
+   [
+    "Whirlpool Q3 revenue −8.8%, swings to a loss",
+    "Weak North American major appliance demand; small domestic appliances (SDA) flat in sales with higher margins."
+   ],
+   [
+    "TikTok Shop US forecast at $23.4B this year",
+    "eMarketer forecast. Appliances made the Q2 top 10."
+   ],
+   [
+    "SharkNinja rolls out a string of H2 launches",
+    "Crispi Microwave $449 · HydraSense $199.99 · PREPi $179."
+   ],
+   [
+    "71% of consumers have bought or considered viral products",
+    "A single-dose grinder's sales rose 22% after going viral on TikTok."
+   ],
+   [
+    "Japan's hit of the year: 'set-and-forget' cooking appliances",
+    "Glass air fryer at 510% of plan; auto soup blender sales about 4x."
+   ],
+   [
+    "SharkNinja Japan keeps landing hits through user research",
+    "ChillPill handy fan raised over JPY 110M in crowdfunding."
+   ],
+   [
+    "Rice cookers rank 4th in Kakaku.com appliance ranking",
+    "Category ranking for Nov 3–9."
+   ],
+   [
+    "China Double 11 appliance online sales −14%",
+    "Haier, Midea and Little Swan led big appliances; Midea, Roborock and Supor led small appliances."
+   ],
+   [
+    "Haier 'AI Eye' 2.0: the fridge recognizes 300+ foods",
+    "Haier showed its Seeker series of fridges, washers and air conditioners at AWE2026."
+   ],
+   [
+    "Haier keeps the lead in Double 11 big-appliance share",
+    "Its AI lineup ranked near the top in several categories."
+   ],
+   [
+    "China's new refrigerator energy-efficiency standard takes effect",
+    "From June 1, 2026, power-consumption limits tighten by 30–40%."
+   ],
+   [
+    "Tmall Double 11: Roborock reaches No.1 in small appliances",
+    "New products were the main growth driver."
+   ],
+   [
+    "Small appliances lead the market with +5% in H1",
+    "NIQ/GfK global Tech & Durables data."
+   ],
+   [
+    "IFA 2026: AI ties the appliance ecosystem together",
+    "Dreame showed about 100 products across 16 categories."
+   ],
+   [
+    "Siemens iQ700 oven recognizes 100+ dishes",
+    "Unveiled at IFA 2026; suggests cooking settings automatically."
+   ],
+   [
+    "Electrolux Q3 revenue +5%, net loss",
+    "Pressured by raw-material and logistics costs and US tariffs."
+   ],
+   [
+    "Western Europe small appliances forecast +5–7% in 2026",
+    "45% of small appliance sales are online."
+   ],
+   [
+    "Samsung·Google: 30 AI glasses, Korean launch on December 10",
+    "In Korea only 16 Gentle Monster models go on sale, priced KRW 650k–700k."
+   ],
+   [
+    "AI glasses shipments up 263% in H1",
+    "Counterpoint data. 96% are display-less models, and Meta holds 94% of those."
+   ],
+   [
+    "JD.com Double 11 AI glasses GMV +150%",
+    "Display models roughly tripled. An industry insider said 95% of sales are online."
+   ],
+   [
+    "Baidu teases 38g AR glasses for December",
+    "Expected price CNY 1,699, with translation and meeting-notes features."
+   ],
+   [
+    "Google AI glasses from $395; Japan launch undecided",
+    "Gentle Monster models start at $449, on sale December 10."
+   ],
+   [
+    "Warby Parker AI glasses open US pre-orders on November 12",
+    "Shipping starts mid-December."
+   ],
+   [
+    "Nothing to launch its first AI device in December",
+    "Name, price and features have not been disclosed."
+   ],
+   [
+    "EssilorLuxottica wearables revenue +20% in Q3",
+    "Combines AI glasses made with Meta and hearing glasses."
+   ],
+   [
+    "Plaud holds Danawa's No.1 and No.2 AI voice recorders",
+    "Note Pro KRW 298,000; NotePin S KRW 279,000."
+   ]
+  ],
+  "picks": {
+   "p1": [
+    "Shinil Eco Fan Cube Heater SEH-H800V",
+    "Danawa electric heaters, No.1",
+    "Danawa's No.1 electric heater. The same line is No.2 (999+ reviews), KRW 26B cumulative.",
+    "Studio and single households, design-conscious 20s–30s, pet owners",
+    "Retro TV-like cube design, reflector heater"
+   ],
+   "p2": [
+    "Zojirushi STAN Humidifier EE-FAH50K",
+    "Danawa humidifiers, No.1",
+    "Danawa's No.1 humidifier. Online humidifier purchases peak in early November.",
+    "Families with infants, hygiene-minded 30s–40s",
+    "Humidifier from Zojirushi's STAN design line, premium price"
+   ],
+   "p3": [
+    "Freeom 9L Air Fryer",
+    "Danawa air fryers, No.6",
+    "Listed in April, already 396 reviews and a 4.9 rating.",
+    "3–4 person households needing capacity, value buyers",
+    "9L capacity at around KRW 60,000"
+   ],
+   "p4": [
+    "Blaupunkt Air Easy Pro BLP-HD7300",
+    "Danawa hair dryers, No.4",
+    "No.4 right after Dyson at No.2 and No.3 — the KRW 60,000 alternative.",
+    "Women in their 20s–30s wanting a high-speed dryer, gift buyers",
+    "High-speed dryer at around KRW 60,000, high rating"
+   ],
+   "p5": [
+    "Ninja Crispi FN100KR",
+    "Danawa 'Ninja' No.6 · hit in Japan",
+    "Cook and store in glass containers. A hit in Japan, 163 reviews in Korea.",
+    "1–2 person households, meal-preppers, people avoiding coatings",
+    "One glass container to cook, store and reheat"
+   ],
+   "p6": [
+    "Pulmuone Steam Cook Master Dual Steam AV20F11",
+    "Danawa air fryers, No.5",
+    "Steam plus air fry — China is moving the same way.",
+    "3–4 person households wanting moist, healthy cooking, 40s–50s",
+    "Dual steam + air fry combination"
+   ],
+   "p7": [
+    "Minix The Plender mini MNFD-300G",
+    "Danawa food waste disposers, No.5",
+    "Food waste disposers grew in search over two years; a compact model from a proven line.",
+    "1–2 person households with small kitchens",
+    "Compact model of the proven Plender line"
+   ],
+   "p8": [
+    "Mova P70 Pro Ultra Robot Vacuum",
+    "Danawa robot vacuums, No.1",
+    "No.1 robot vacuum at about a third of the No.2's price.",
+    "Dual-income families in their 30s–40s wanting a value all-in-one",
+    "The only top-ranked model at around KRW 500,000"
+   ],
+   "p9": [
+    "Toffy Auto Soup Blender Ceramic Coat K-AS2",
+    "Japan DIME 2026 hit",
+    "Sales about 4x in four months, in step with winter soup season.",
+    "1–2 person households wanting a breakfast substitute, baby-food families",
+    "A JPY 10,000-class blender that makes soup on auto programs"
+   ],
+   "p10": [
+    "Shark PowerPro Flex Reveal Plus Cordless Vacuum",
+    "TikTok Shop US monthly No.1",
+    "Overall No.1 on TikTok Shop in March, $6.12M in the month.",
+    "US short-video shoppers, pet owners",
+    "Cordless vacuum paired with TikTok demo videos"
+   ],
+   "p11": [
+    "Ninja PREPi Prep + Storage System",
+    "New in the US",
+    "Launched in October — the 'one container' trend extended to food prep.",
+    "Meal-preppers, office workers who make their own salads and lunches",
+    "One bowl to prep, serve, store and carry"
+   ],
+   "p12": [
+    "Ainic 4th-gen All-Stainless Air Fryer iSA6L",
+    "Danawa air fryers, No.3",
+    "A steady seller with 934 reviews and an all-stainless interior.",
+    "40s–50s worried about peeling coatings, hygiene-minded homes",
+    "All-stainless interior at around KRW 80,000"
+   ],
+   "p13": [
+    "Samsung Bespoke AI Steam Ultra VR90F01AAG",
+    "Danawa robot vacuums, No.2 · CES 2026 AI features",
+    "An AI robot vacuum whose camera recognizes objects and even clear liquids; 763 reviews.",
+    "Homes with infants or pets, premium robot vacuum buyers",
+    "3D object recognition · clear-liquid detection · 100℃ steam sterilization",
+    "Its strength is recognizing objects and clear liquids. For the auto water-drain model (VR90F01SAG), check your installation conditions first."
+   ],
+   "p14": [
+    "Dyson Spot+Scrub AI Robot Vacuum",
+    "Listed on Danawa 2026.01 · MSRP KRW 1.79M",
+    "AI tells wet spills from dry debris to vacuum and mop in one pass.",
+    "Premium buyers who want one machine for vacuuming and mopping",
+    "AI dirt detection + vacuum/wet-clean combo"
+   ],
+   "p15": [
+    "Plaud Note Pro AI Voice Recorder",
+    "Danawa AI recorders, No.1",
+    "Danawa's No.1 AI recorder; 999+ reviews and a 4.82 rating on the official store.",
+    "Office workers with many meetings, lectures and calls; reporters and sales reps",
+    "Card-type · 4 mics · 5m pickup · transcription & summaries in 112 languages"
+   ],
+   "p16": [
+    "Plaud NotePin S AI Voice Recorder",
+    "Danawa AI recorders, No.2",
+    "Danawa's No.2 AI recorder; 999+ reviews and a 4.77 rating on the official store.",
+    "Solo business owners and students who record on the go",
+    "Capsule wearable · physical button · 17.5g"
+   ],
+   "p17": [
+    "Ray-Ban Meta Wayfarer Gen 3 RW4011",
+    "Danawa AI smart glasses, No.1",
+    "Danawa's No.1 AI smart glasses. Meta has 94% of display-less AI glasses shipments.",
+    "Early adopters, 20s–40s who shoot lots of photos and video",
+    "Meta AI · 2 speakers · 6 mics · 32GB"
+   ],
+   "p18": [
+    "Rokid AI Glasses",
+    "Danawa AI smart glasses, No.2",
+    "Danawa's No.2 AI smart glasses. Supports both ChatGPT and Gemini.",
+    "Office workers who travel abroad often",
+    "49g · 12MP · choose ChatGPT or Gemini"
+   ],
+   "p19": [
+    "Anker Soundcore Work AI Recorder D3200",
+    "Danawa AI recorders, No.4",
+    "Danawa's No.4 AI recorder, a wearable around KRW 100,000.",
+    "First-time AI recorder users",
+    "Ultra-compact wearable · around KRW 100,000"
+   ],
+   "p20": [
+    "Even Realities G2 AI Glasses Type A",
+    "Danawa AI smart glasses, No.3 · listed this month",
+    "Listed in November and straight to No.3. A display model that shows translation and directions on the lens.",
+    "Presenters needing interpretation or a prompter, frequent business travelers",
+    "Built-in display · live translation · automatic meeting notes"
+   ],
+   "p21": [
+    "LG DIOS AI Objet Collection Kimchi Refrigerator Z490MEEF11",
+    "Danawa kimchi refrigerators (stand), No.3 · kimchi-making season",
+    "No.3 kimchi refrigerator in kimjang season. 491L 4-door, store-bought kimchi scan storage, multi-purpose custom storage, energy grade 1.",
+    "3–4 person households that make kimchi, homes replacing a kimchi fridge for a wedding or move",
+    "491L 4-door 4-room · kimchi scan storage · multi-purpose storage · energy grade 1",
+    "Kimjang season is on now. Check the 835mm width and the 8 included kimchi containers first."
+   ],
+   "p22": [
+    "LG DIOS AI Objet Collection Refrigerator T876MEE1H1",
+    "Danawa refrigerators, No.1",
+    "Danawa's No.1 refrigerator. 870L 4-door with an AI saving mode that learns usage patterns to set temperatures, energy grade 1.",
+    "Newlyweds and movers, 4-person households upgrading to large capacity",
+    "870L 4-door · AI saving modes · UV clean+ · energy grade 1",
+    "Danawa's No.1 refrigerator, an AI model. Measure for its 914mm width first."
+   ],
+   "p23": [
+    "Samsung Bespoke AI Combo Washer-Dryer WD80H25BHW",
+    "Danawa all-in-one washer-dryers, No.2",
+    "An all-in-one that washes 25kg and dries 18kg in one machine. AI wash & dry, AI energy saving, detergent-scan dosing.",
+    "Newlyweds and small homes without room for a washer and dryer side by side",
+    "25kg wash / 18kg dry all-in-one · AI wash & dry · inverter heat pump · energy grade 1"
+   ],
+   "p24": [
+    "Roborock S10 MaxV Ultra Steam Robot Vacuum",
+    "Danawa robot vacuums, No.5 · new in October",
+    "36,000Pa suction, AI object recognition with camera and 3D sensing, steam-sterilizing mop station.",
+    "Homes with pets or infants, premium robot vacuum upgraders",
+    "AI object recognition · steam mop sterilization · hot-water wash & warm-air dry · 4.5cm (max 8.8cm) thresholds",
+    "The steam-sterilizing station is the differentiator. Climbing up to 8.8cm helps in homes with many thresholds."
+   ]
+  },
+  "launches": [
+   [
+    "Refrigerator",
+    "New AI refrigerator lineup (global big-appliance innovation event)"
+   ],
+   [
+    "4 kitchen appliances",
+    "4 kitchen appliances with more cooking and cleaning automation"
+   ],
+   [
+    "Electric heater",
+    "SEH-H1800WHS"
+   ],
+   [
+    "Electric heater",
+    "Eco Fan Cube Heater new edition"
+   ],
+   [
+    "Washer-dryer",
+    "Bespoke AI Combo 'AI Custom+' (KES 2026)"
+   ],
+   [
+    "Humidifier",
+    "PuriCare Hydro Tower HY706RSUA"
+   ],
+   [
+    "Humidifier",
+    "MIST TOWER PRO"
+   ],
+   [
+    "Air fryer",
+    "Rafal KAEK-ST0604S"
+   ],
+   [
+    "Food processor",
+    "PREPi Prep + Storage System"
+   ],
+   [
+    "Humidifier",
+    "STAN EE-FAH50K"
+   ],
+   [
+    "Food waste disposer",
+    "Eco Whale Cube Mega CFD-FNL301DCGW"
+   ],
+   [
+    "Oven",
+    "iQ700 oven (recognizes 100+ dishes)"
+   ],
+   [
+    "Multi-category",
+    "About 100 products shown at IFA"
+   ],
+   [
+    "Food waste disposer",
+    "Eco Whale Mega CFD-ENL301DCGW"
+   ],
+   [
+    "Glass cooker",
+    "Ninja Crispi FN100KR"
+   ],
+   [
+    "Water purifier",
+    "HydraSense"
+   ],
+   [
+    "Microwave",
+    "Crispi Microwave"
+   ],
+   [
+    "Slushie maker",
+    "SLUSHi Twist"
+   ],
+   [
+    "Handheld fan",
+    "Dyson's first handheld fan (upcoming)"
+   ],
+   [
+    "Air conditioner",
+    "WHISEN Objet Collection 2026 (AI Cold-Free)"
+   ],
+   [
+    "Robot vacuum",
+    "Bespoke AI Steam Ultra"
+   ],
+   [
+    "Espresso machine",
+    "Luxe Café limited colors (rolling out Mar–May)"
+   ],
+   [
+    "Robot vacuum",
+    "Spot+Scrub AI Robot Vacuum"
+   ],
+   [
+    "Refrigerator",
+    "Bespoke AI Family Hub (Gemini)"
+   ],
+   [
+    "AI glasses",
+    "30 intelligent eyewear models (Korea launch 12.10)"
+   ],
+   [
+    "AR glasses",
+    "38g AR glasses announced (December launch planned)"
+   ],
+   [
+    "AI glasses",
+    "G2 AI Glasses Type A (with display)"
+   ],
+   [
+    "AI glasses",
+    "Ray-Ban Meta Wayfarer Gen 3 RW4011"
+   ],
+   [
+    "AI earbuds",
+    "Plaud One Explorer Edition (ships Q4)"
+   ],
+   [
+    "AI glasses",
+    "Meta Glasses launch in Japan (26 styles)"
+   ],
+   [
+    "AI glasses",
+    "Rokid AI Glasses (official)"
+   ]
+  ],
+  "brands": {
+   "신일전자": "Shinil",
+   "조지루시": "Zojirushi",
+   "프리옴": "Freeom",
+   "블라우풍트": "Blaupunkt",
+   "샤크닌자": "SharkNinja",
+   "풀무원건강생활": "Pulmuone",
+   "미닉스": "Minix",
+   "모바": "Mova",
+   "아이닉": "Ainic",
+   "삼성전자": "Samsung",
+   "다이슨": "Dyson",
+   "플라우드": "Plaud",
+   "메타": "Meta",
+   "앤커": "Anker",
+   "이븐리얼리티스": "Even Realities",
+   "LG전자": "LG",
+   "로보락": "Roborock",
+   "하이얼": "Haier",
+   "밀레": "Miele",
+   "루메나": "Lumena",
+   "키친아트": "Kitchenart",
+   "쿠쿠전자": "Cuckoo",
+   "바이두": "Baidu"
+  },
+  "mail": {
+   "hook": "AI glasses shipments up 263%; Samsung·Google launch in Korea on Dec 10"
   }
  }
 }

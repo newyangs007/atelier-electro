@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>구독 해지 | Atelier Électro</title>
+<title>구독 해지 | 가전레이더</title>
 <style>
 body{margin:0;background:#0c0c0e;color:#f4f2ee;font-family:"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center;word-break:keep-all}
 .box{max-width:460px;padding:40px 28px}
@@ -18,7 +18,7 @@ button,a.btn{display:inline-block;margin-top:20px;background:#f4f2ee;color:#0c0c
 </head>
 <body>
 <div class="box">
-  <a class="logo" href="./">Atelier Électro</a>
+  <a class="logo" href="./">가전레이더</a>
   <h1>구독 해지</h1>
   <p>아래 주소로 보내던 아침 메일을 멈춥니다. 해지 후에는 다음 발송부터 메일이 가지 않습니다.</p>
   <form id="f"><input type="email" id="e" placeholder="이메일 주소" required autocomplete="email"><button type="submit">구독 해지하기</button></form>
@@ -28,7 +28,7 @@ button,a.btn{display:inline-block;margin-top:20px;background:#f4f2ee;color:#0c0c
 (function(){
   var e=document.getElementById('e'),msg=document.getElementById('msg');
   try{var q=new URLSearchParams(location.search).get('e');if(q)e.value=q;}catch(x){}
-  function viaMail(v){location.href='mailto:newyangs007@gmail.com?subject='+encodeURIComponent('[Atelier Électro] 구독 해지')+'&body='+encodeURIComponent('해지 이메일: '+v);msg.textContent='메일 앱이 열리면 보내기만 누르시면 해지됩니다.';}
+  function viaMail(v){location.href='mailto:newyangs007@gmail.com?subject='+encodeURIComponent('[가전레이더] 구독 해지')+'&body='+encodeURIComponent('해지 이메일: '+v);msg.textContent='메일 앱이 열리면 보내기만 누르시면 해지됩니다.';}
   document.getElementById('f').onsubmit=function(ev){ev.preventDefault();var v=(e.value||'').trim();if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){msg.textContent='이메일 주소를 확인해 주세요.';return;}
     fetch('tools/config.json').then(function(r){return r.ok?r.json():{};}).catch(function(){return {};}).then(function(c){var F=c&&c.form;if(!F){viaMail(v);return;}
       var fd=new URLSearchParams();fd.append(F.f.type,'unsubscribe');fd.append(F.f.email,v);

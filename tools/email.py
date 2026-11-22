@@ -8,6 +8,8 @@ import json, re, sys, html, os, argparse
 from urllib.parse import quote
 
 SITE = "https://newyangs007.github.io/atelier-electro/"
+_T = "tools" if os.path.exists("tools/config.json") else "build"
+SND = (json.load(open(_T + "/config.json", encoding="utf-8")) if os.path.exists(_T + "/config.json") else {}).get("sender", {})
 ap = argparse.ArgumentParser()
 ap.add_argument('issue')
 ap.add_argument('--to', default='')
@@ -40,11 +42,14 @@ CATMAP = {"AI가전": lambda p: p.get("ai") and p["cat"] != "AI디바이스", "A
 ints = [x.strip() for x in a.interests.split(",") if x.strip() in CATMAP]
 picks = sorted(j["picks"], key=lambda p: -score(p))
 chosen = []
-if ints:  # one best match per interest first (조건부 이상), then general picks
-    for it in ints:
-        for p in picks:
-            if CATMAP[it](p) and score(p) >= 3.5 and p not in chosen:
-                chosen.append(p); break
+if ints:  # round-robin over interests (조건부 이상) until 3, then general picks
+    pools = [[p for p in picks if CATMAP[it](p) and score(p) >= 3.5] for it in ints]
+    while len(chosen) < 3 and any(pools):
+        for pool in pools:
+            while pool and pool[0] in chosen:
+                pool.pop(0)
+            if pool and len(chosen) < 3:
+                chosen.append(pool.pop(0))
 for p in picks:
     if len(chosen) >= 3: break
     if p not in chosen: chosen.append(p)
@@ -123,7 +128,7 @@ body = f'''<!doctype html><html><body style="margin:0;background:#e9e6df">
 <table role="presentation" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;background:#f4f2ee;font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;color:#121214">
 <tr><td style="padding:12px 28px;font-size:11px;color:#5b5b61">[광고] 이 메일의 쿠팡 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</td></tr>
 <tr><td style="background:#0c0c0e;padding:32px 28px 30px">
-<div style="font-family:Georgia,serif;font-style:italic;font-size:26px;color:#f4f2ee">Atelier Électro</div>
+<div style="font-size:26px;font-weight:900;letter-spacing:-.02em;color:#f4f2ee">가전레이더 <span style="font-size:12px;font-weight:600;letter-spacing:.14em;color:#e0301e">GAJEON RADAR</span></div>
 <div style="font-size:11px;letter-spacing:.16em;color:#c9a96e;margin-top:6px">{e(ed["label"])} · 3분 읽기</div>
 <div style="font-family:Georgia,'Noto Serif KR',serif;font-size:25px;line-height:1.3;color:#f4f2ee;margin-top:20px">{e(title)}</div>
 {('<div style="margin-top:18px;padding-top:16px;border-top:1px solid #2a2a2e"><span style="font-size:30px;font-weight:700;color:#c9a96e">%s</span> <span style="font-size:13px;color:#b9b6ae">%s</span></div>' % (e(num["stat"]), e(num["sl"]))) if num else ''}
@@ -133,13 +138,17 @@ body = f'''<!doctype html><html><body style="margin:0;background:#e9e6df">
 <tr><td style="padding:24px 28px 30px"><a href="{SITE}" style="display:block;text-align:center;padding:14px;background:#121214;color:#f4f2ee;text-decoration:none;font-size:14px">소싱 픽 전체 · 신제품 · 출처는 홈페이지에서 &rarr;</a></td></tr>
 <tr><td style="padding:18px 28px 26px;border-top:1px solid #d6d2c9;font-size:11px;line-height:1.7;color:#5b5b61">
 가격·리뷰는 수집 시점({e(ed.get("collected", ""))}) 공개 자료 기준이며 판매처마다 다를 수 있습니다. 모든 수치의 출처는 홈페이지 ‘출처’ 섹션에 있습니다.<br>
-더 이상 받지 않으려면 <a href="{e(unsub)}" style="color:#5b5b61">구독 해지</a> · {e(ed.get("next", ""))}</td></tr>
+전송자: {e(SND.get("name") or "가전레이더")} · <a href="mailto:{e(SND.get("email") or "newyangs007@gmail.com")}" style="color:#5b5b61">{e(SND.get("email") or "newyangs007@gmail.com")}</a>{(" · " + e(SND["phone"])) if SND.get("phone") else ""}{(" · " + e(SND["addr"])) if SND.get("addr") else ""}<br>
+더 이상 받지 않으려면 <a href="{e(unsub)}" style="color:#5b5b61">수신 거부(구독 해지)</a>를 누르세요. 수신 거부에 비용이 들지 않습니다.<br>
+If you no longer wish to receive this email, click <a href="{e(unsub)}" style="color:#5b5b61">Unsubscribe</a>. Unsubscribing is free of charge.<br>{e(ed.get("next", ""))}</td></tr>
 </table></td></tr></table></body></html>'''
 
-txt = "%s · 3분 읽기\n%s\n\n오늘의 추천 3\n%s\n\n뉴스 3\n%s\n\n홈페이지: %s\n\n[광고] 쿠팡 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.\n구독 해지: %s" % (
+txt = "%s · 3분 읽기\n%s\n\n오늘의 추천 3\n%s\n\n뉴스 3\n%s\n\n홈페이지: %s\n\n[광고] 쿠팡 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.\n수신 거부(구독 해지) / Unsubscribe: %s\n전송자: %s" % (
     ed["label"], title,
     "\n".join("- %s %s (★%.1f) %s" % (p["name"], p["price"], score(p), p.get("cp") or SITE + slug(p)) for p in chosen),
-    "\n".join("- %s" % n["h"] for n in news3), SITE, unsub)
+    "\n".join("- %s" % n["h"] for n in news3), SITE, unsub, " · ".join(x for x in [SND.get("name") or "가전레이더", SND.get("email") or "newyangs007@gmail.com", SND.get("phone", ""), SND.get("addr", "")] if x))
 open("out/email.html", "w", encoding="utf-8").write(body)
 open("out/email.txt", "w", encoding="utf-8").write(txt)
-print(json.dumps({"subject": "(광고) %s · Atelier Électro %s" % (hook, no), "preheader": pre, "images": imgs}, ensure_ascii=False))
+miss = [k for k in ("phone", "addr") if not SND.get(k)]
+print(json.dumps({"subject": "(광고) %s · 가전레이더 %s" % (hook, no), "preheader": pre, "images": imgs,
+                  "warn": ("config.sender에 %s가 비어 있습니다(정보통신망법 시행령 별표 6: 전송자 명칭·이메일·전화번호·주소 표시)" % ", ".join(miss)) if miss else ""}, ensure_ascii=False))

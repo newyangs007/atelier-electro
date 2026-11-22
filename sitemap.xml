@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://newyangs007.github.io/atelier-electro/</loc><lastmod>2026-11-22</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://newyangs007.github.io/atelier-electro/</loc><lastmod>2026-11-22</lastmod><xhtml:link rel="alternate" hreflang="ko" href="https://newyangs007.github.io/atelier-electro/"/><xhtml:link rel="alternate" hreflang="en" href="https://newyangs007.github.io/atelier-electro/en/"/></url>
   <url><loc>https://newyangs007.github.io/atelier-electro/privacy.html</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://newyangs007.github.io/atelier-electro/p/124871036.html</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://newyangs007.github.io/atelier-electro/p/124298665.html</loc><lastmod>2026-11-22</lastmod></url>
@@ -22,4 +22,11 @@
   <url><loc>https://newyangs007.github.io/atelier-electro/p/123803984.html</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://newyangs007.github.io/atelier-electro/p/123134941.html</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://newyangs007.github.io/atelier-electro/p/124921931.html</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://newyangs007.github.io/atelier-electro/p/99125183.html</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://newyangs007.github.io/atelier-electro/p/122666101.html</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://newyangs007.github.io/atelier-electro/p/108693731.html</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://newyangs007.github.io/atelier-electro/p/124468606.html</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://newyangs007.github.io/atelier-electro/en/</loc><lastmod>2026-11-22</lastmod><xhtml:link rel="alternate" hreflang="ko" href="https://newyangs007.github.io/atelier-electro/"/><xhtml:link rel="alternate" hreflang="en" href="https://newyangs007.github.io/atelier-electro/en/"/></url>
+  <url><loc>https://newyangs007.github.io/atelier-electro/issue/2026-11-22.html</loc><lastmod>2026-11-22</lastmod><xhtml:link rel="alternate" hreflang="ko" href="https://newyangs007.github.io/atelier-electro/issue/2026-11-22.html"/><xhtml:link rel="alternate" hreflang="en" href="https://newyangs007.github.io/atelier-electro/en/issue/2026-11-22.html"/></url>
+  <url><loc>https://newyangs007.github.io/atelier-electro/en/issue/2026-11-22.html</loc><lastmod>2026-11-22</lastmod><xhtml:link rel="alternate" hreflang="ko" href="https://newyangs007.github.io/atelier-electro/issue/2026-11-22.html"/><xhtml:link rel="alternate" hreflang="en" href="https://newyangs007.github.io/atelier-electro/en/issue/2026-11-22.html"/></url>
 </urlset>
