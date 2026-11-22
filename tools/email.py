@@ -88,6 +88,8 @@ txt = "%s\n%s\n\n오늘의 추천템\n%s\n\nAI가전 픽\n%s\n\n전체 보기: %
     "\n".join("- %s %s (★%.1f) %s" % (p["name"], p["price"], score(p), p.get("cp", "")) for p in rec),
     "\n".join("- %s %s (★%.1f) %s" % (p["name"], p["price"], score(p), p.get("cp", "")) for p in ai),
     ARTIFACT_URL)
+import os
+os.makedirs("out", exist_ok=True)
 open("out/email.html", "w", encoding="utf-8").write(body)
 open("out/email.txt", "w", encoding="utf-8").write(txt)
 print(json.dumps({"subject": "(광고) Atelier Électro %s · %s" % (ed["label"].split(" · ")[1] if " · " in ed["label"] else ed["date"], title), "images": imgs}, ensure_ascii=False))
