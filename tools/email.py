@@ -19,7 +19,7 @@ def score(p):
 
 picks = j["picks"]
 rec = [p for p in picks if score(p) >= 4.0][:4]
-ai = [p for p in picks if p.get("ai")][:3]
+ai = sorted([p for p in picks if p.get("ai") and p not in rec], key=lambda p: -score(p))[:4]
 imgs = []
 
 
@@ -53,8 +53,8 @@ trend_rows = "".join(
     ' <span style="font-size:12px;color:#5b5b61">%s</span><div style="font-size:15px;font-weight:600;color:#121214;margin-top:4px">%s</div>'
     '<div style="font-size:13px;color:#5b5b61;line-height:1.6">%s</div></td></tr>' % (e(t["stat"]), e(t.get("sl", "")), e(t["t"]), e(t["line"]))
     for t in j["trends"][:3])
-order = {"AI": 0, "소형": 1, "대형": 2}
-pts = sorted([n for n in j["news"] if n.get("pt")], key=lambda n: order.get(n["c"], 3))[:5]
+order = {"AI": 0, "디바이스": 1, "소형": 2, "대형": 3}
+pts = sorted([n for n in j["news"] if n.get("pt")], key=lambda n: order.get(n["c"], 4))[:6]
 news_rows = "".join(
     '<tr><td style="padding:12px 0;border-top:1px solid #d6d2c9"><span style="font-size:11px;letter-spacing:.1em;color:#9c7a43">%s · %s</span>'
     '<div style="font-size:15px;font-weight:600;color:#121214;margin-top:4px">%s</div><div style="font-size:13px;color:#5b5b61;line-height:1.6">%s</div></td></tr>'
@@ -74,7 +74,7 @@ body = f'''<!doctype html><html><body style="margin:0;background:#e9e6df">
 <a href="{ARTIFACT_URL}" style="display:inline-block;margin-top:24px;padding:12px 22px;border:1px solid #c9a96e;color:#c9a96e;text-decoration:none;font-size:13px;letter-spacing:.04em">오늘 호 전체 보기 &rarr;</a>
 </td></tr>
 {sec("오늘의 추천템", "SOURCING PICKS", "".join(card(p) for p in rec))}
-{sec("AI가전 픽", "AI APPLIANCES", "".join(card(p) for p in ai))}
+{sec("AI가전·디바이스 픽", "AI APPLIANCES & DEVICES", "".join(card(p) for p in ai))}
 {sec("숫자로 본 트렌드", "TRENDS", trend_rows)}
 {sec("놓치면 안 될 뉴스", "POINT NEWS", news_rows)}
 <tr><td style="padding:30px 32px 36px"><a href="{ARTIFACT_URL}" style="display:block;text-align:center;padding:14px;background:#121214;color:#f4f2ee;text-decoration:none;font-size:14px">신제품 · 채널 · 출처까지 매거진에서 보기 &rarr;</a></td></tr>
@@ -83,7 +83,7 @@ body = f'''<!doctype html><html><body style="margin:0;background:#e9e6df">
 수신을 원하지 않으시면 이 메일에 ‘구독 해지’라고 답장해 주세요. · {e(ed.get("next",""))}</td></tr>
 </table></td></tr></table></body></html>'''
 
-txt = "%s\n%s\n\n오늘의 추천템\n%s\n\nAI가전 픽\n%s\n\n전체 보기: %s\n\n[광고] 쿠팡 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.\n수신 거부: '구독 해지'로 답장" % (
+txt = "%s\n%s\n\n오늘의 추천템\n%s\n\nAI가전·디바이스 픽\n%s\n\n전체 보기: %s\n\n[광고] 쿠팡 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.\n수신 거부: '구독 해지'로 답장" % (
     ed["label"], title,
     "\n".join("- %s %s (★%.1f) %s" % (p["name"], p["price"], score(p), p.get("cp", "")) for p in rec),
     "\n".join("- %s %s (★%.1f) %s" % (p["name"], p["price"], score(p), p.get("cp", "")) for p in ai),

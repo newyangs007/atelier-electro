@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>아틀리에 일렉트로 소형가전 매거진</title>
-<meta name="description" content="AI·소형·대형 가전 트렌드와 매일 아침 소싱 픽. 모든 수치에 출처와 날짜를 붙이는 가전 매거진 Atelier Électro.">
+<meta name="description" content="AI가전·AI디바이스·소형·대형 가전 트렌드와 매일 아침 소싱 픽. 모든 수치에 출처와 날짜를 붙이는 가전 매거진 Atelier Électro.">
 <meta property="og:title" content="Atelier Électro — 가전 트렌드 & 소싱 매거진">
 <meta property="og:description" content="매일 아침 8시, AI·소형·대형 가전 뉴스와 추천템을 출처와 함께.">
 <meta property="og:type" content="website">
@@ -150,7 +150,7 @@ section.sec+section.sec{border-top:1px solid var(--rule)}
 .story.pt{border-top:2px solid var(--accent)}
 .story .meta{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;color:var(--ink-2);margin-bottom:12px}
 .cat{display:inline-block;font-family:var(--font-body);font-size:11px;padding:1px 10px;border-radius:999px;border:1px solid currentColor;font-weight:500;letter-spacing:.02em}
-.c-AI{color:#34508f}.c-소형{color:#3f6150}.c-대형{color:#7a4c37}
+.c-AI{color:#34508f}.c-디바이스{color:#6a3f8f}.c-소형{color:#3f6150}.c-대형{color:#7a4c37}
 .story h3{font-family:var(--head-font);font-weight:800;font-size:19.5px;line-height:1.45;letter-spacing:-.02em;margin-bottom:10px}
 .story p{font-size:13.5px;color:var(--ink-2)}
 .story .point{margin-bottom:10px}
@@ -388,7 +388,7 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
   <div class="mast"><div class="wrap">
     <p class="mast-name">Atelier <span>Électro</span></p>
     <div class="mast-row">
-      <span class="tag">가전 트렌드 &amp; 소싱 매거진 <i>·</i> AI · 소형 · 대형</span>
+      <span class="tag">가전 트렌드 &amp; 소싱 매거진 <i>·</i> AI · 디바이스 · 소형 · 대형</span>
       <span><span id="edition-line"></span> · 매일 <b>08:00 KST</b> 발행</span>
     </div>
   </div></div>
@@ -410,7 +410,7 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
 </div></section>
 
 <section class="sec" id="wire"><div class="wrap">
-  <div class="sec-head"><div><span class="eyebrow">02 · The Wire</span><h2>AI · 소형 · 대형가전 뉴스</h2></div><p>선이 굵은 기사가 POINT입니다.</p></div>
+  <div class="sec-head"><div><span class="eyebrow">02 · The Wire</span><h2>AI가전 · AI디바이스 · 소형 · 대형 뉴스</h2></div><p>선이 굵은 기사가 POINT입니다.</p></div>
   <div class="bar">
     <div class="seg" id="f-cat" role="group" aria-label="분야"></div>
     <div class="seg" id="f-reg" role="group" aria-label="국가"></div>
@@ -563,7 +563,7 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
   function verdict(v){return v>=4?['추천템','v-go']:(v>=3.5?['조건부','v-cond']:['관망','v-watch']);}
   function stars(v){return '<span class="stars"><span class="st" aria-label="5점 만점에 '+v+'점">★★★★★<i style="width:'+(v/5*100)+'%">★★★★★</i></span><span class="num">'+v.toFixed(1)+'</span></span>';}
   var LBL=['수요','검증','타이밍','접근성','마진'];
-  var CATN={'AI':'AI가전','소형':'소형가전','대형':'대형가전'};
+  var CATN={'AI':'AI가전','디바이스':'AI디바이스','소형':'소형가전','대형':'대형가전'};
   var REGN={KR:'한국',US:'미국',JP:'일본',CN:'중국',EU:'유럽'};
   function chips(el,label,defs,initial,cb){
     el.innerHTML='<span class="seg-label">'+label+'</span>'+defs.map(function(f){return '<button type="button" class="chip" data-f="'+esc(f[0])+'" aria-pressed="'+(f[0]===initial)+'">'+esc(f[1])+(f[2]!=null?'<span class="c">'+f[2]+'</span>':'')+'</button>';}).join('');
@@ -595,7 +595,7 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
     var fc='AI',fr='all';
     function cnt(c){return D.news.filter(function(n){return c==='all'||n.c===c;}).length;}
     function applyWire(){var shown=0;$('wire-list').querySelectorAll('.story').forEach(function(el){var ok=(fc==='all'||el.dataset.c===fc)&&(fr==='all'||el.dataset.r===fr);el.style.display=ok?'':'none';if(ok){shown++;fadeIn(el);}});$('wire-empty').hidden=shown>0;}
-    chips($('f-cat'),'분야',[['AI','AI가전',cnt('AI')],['소형','소형가전',cnt('소형')],['대형','대형가전',cnt('대형')],['all','전체',cnt('all')]],fc,function(f){fc=f;applyWire();});
+    chips($('f-cat'),'분야',[['AI','AI가전',cnt('AI')],['디바이스','AI디바이스',cnt('디바이스')],['소형','소형가전',cnt('소형')],['대형','대형가전',cnt('대형')],['all','전체',cnt('all')]],fc,function(f){fc=f;applyWire();});
     chips($('f-reg'),'국가',[['all','전체'],['KR','한국'],['US','미국'],['JP','일본'],['CN','중국'],['EU','유럽']],fr,function(f){fr=f;applyWire();});
     applyWire();
 
@@ -624,7 +624,7 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
         '<span class="row"><span class="price num">'+esc(p.price)+'</span><span style="display:flex;gap:8px;align-items:center">'+stars(v)+'<span class="verdict '+vd[1]+'">'+vd[0]+'</span></span></span></button>';
     }).join('')+'<div class="empty-note" id="pick-empty" hidden>조건에 맞는 제품이 없습니다. ‘전체’를 눌러 보세요.</div>';
     var nGo=D.picks.filter(function(p){return overall(p.sc)>=4;}).length;
-    chips($('f-pv'),'보기',[['go','추천템',nGo],['ai','AI가전',D.picks.filter(function(p){return p.ai;}).length],['all','전체',D.picks.length]],'go',function(f){pState.v=f;applyPicks();});
+    chips($('f-pv'),'보기',[['go','추천템',nGo],['ai','AI가전·디바이스',D.picks.filter(function(p){return p.ai;}).length],['all','전체',D.picks.length]],'go',function(f){pState.v=f;applyPicks();});
     var mks=[];D.picks.forEach(function(p){if(mks.indexOf(p.mk)<0)mks.push(p.mk);});
     chips($('f-pm'),'국가',[['all','전체']].concat(mks.map(function(m){return [m,REGN[m]||m,D.picks.filter(function(p){return p.mk===m;}).length];})),'all',function(f){pState.m=f;applyPicks();});
     var cats=[];D.picks.forEach(function(p){if(cats.indexOf(p.cat)<0)cats.push(p.cat);});
@@ -741,7 +741,7 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
   }
   $('search-form').onsubmit=function(e){e.preventDefault();search($('q').value);};
   $('q').oninput=function(){search(this.value);};
-  $('quick-tags').innerHTML=['AI','냉장고','에어프라이어','가습기','히터','로봇청소기','추천템','대형가전','일본','중국'].map(function(t){return '<button type="button" data-q="'+t+'">#'+t+'</button>';}).join('');
+  $('quick-tags').innerHTML=['AI','AI안경','AI녹음기','냉장고','에어프라이어','가습기','히터','로봇청소기','추천템','대형가전','일본','중국'].map(function(t){return '<button type="button" data-q="'+t+'">#'+t+'</button>';}).join('');
   $('quick-tags').onclick=function(e){var b=e.target.closest('button');if(!b)return;$('q').value=b.dataset.q;search(b.dataset.q);};
   $('brand-index').addEventListener('click',function(e){var b=e.target.closest('.q');if(!b)return;$('q').value=b.dataset.q;search(b.dataset.q);$('results').scrollIntoView({block:'nearest',behavior:'smooth'});});
 
