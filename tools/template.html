@@ -861,7 +861,7 @@ footer .colo span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1e
     $('foot-stats').textContent='구독자 '+(st.subscribers!=null?f(st.subscribers)+'명':'—')+' · 누적 방문자 '+(st.visitors!=null?f(st.visitors)+'명':'집계 준비 중');})();
   try{if(window.AE_FORM&&!sessionStorage.getItem('ae-visit')){sessionStorage.setItem('ae-visit','1');track('visit',{where:location.pathname});}}catch(e){}
   /* ads (on when AE_ADS.client is set) */
-  (function(){var A=window.AE_ADS;if(!A||!A.client)return;var s=document.createElement('script');s.async=true;s.crossOrigin='anonymous';s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='+encodeURIComponent(A.client);document.head.appendChild(s);
+  (function(){var A=window.AE_ADS;if(!A||!A.client)return;if(!document.querySelector('script[src*="adsbygoogle.js"]')){var s=document.createElement('script');s.async=true;s.crossOrigin='anonymous';s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='+encodeURIComponent(A.client);document.head.appendChild(s);}
     document.querySelectorAll('.adslot').forEach(function(el){var slot=(A.slots||{})[el.dataset.slot];if(!slot)return;el.innerHTML='<span class="adlabel">광고</span><ins class="adsbygoogle" style="display:block" data-ad-client="'+esc(A.client)+'" data-ad-slot="'+esc(slot)+'" data-ad-format="auto" data-full-width-responsive="true"></ins>';el.hidden=false;try{(window.adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}});})();
 
   /* index */

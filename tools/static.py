@@ -7,6 +7,7 @@ import json, re, html
 
 e = html.escape
 SITE = 'https://newyangs007.github.io/atelier-electro/'
+ADS_HEAD = ''  # set by build.py from tools/config.json
 BRAND = {'ko': '가전레이더', 'en': 'Gajeon Radar'}
 strip = lambda s: re.sub('<[^>]+>', '', s or '')
 LBL = {'ko': ['수요', '검증', '타이밍', '접근성', '마진'], 'en': ['Demand', 'Proof', 'Timing', 'Access', 'Margin']}
@@ -304,7 +305,7 @@ def page(issue, L, depth, url, alt_url, canonical=None):
              '<meta property="article:published_time" content="%sT08:00:00+09:00">' % (e(title), e(desc), e(canonical or url), SITE, 'ko_KR' if L == 'ko' else 'en_US', d))
     head += '<link rel="icon" href="%sfavicon.svg" type="image/svg+xml"><link rel="alternate" type="application/rss+xml" title="가전레이더" href="%srss.xml">' % (R, SITE)
     head += '<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono&family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">'
-    head += '<style>%s</style>%s</head>' % (CSS, jsonld_issue(issue, L, canonical or url))
+    head += ADS_HEAD + '<style>%s</style>%s</head>' % (CSS, jsonld_issue(issue, L, canonical or url))
     nav = ''.join('<a href="%s">%s</a>' % (a, b) for a, b in U['nav'])
     lang = ('<nav class="lang"><a href="%s" %s>한국어</a><a href="%s" %s>EN</a></nav>'
             % ((e(alt_ko), 'aria-current="true"' if L == 'ko' else 'hreflang="ko"', e(alt_en), 'aria-current="true"' if L == 'en' else 'hreflang="en"')))

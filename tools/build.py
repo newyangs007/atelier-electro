@@ -56,7 +56,9 @@ t = open(T + '/template.html', encoding='utf-8').read()
 t = t.replace('/*__BRANDS__*/', open(T + '/brands.json', encoding='utf-8').read())
 t = t.replace('/*__ICONS__*/', open(T + '/icons.txt', encoding='utf-8').read())
 t = t.replace('/*__ARCHIVE__*/', dump(issues)).replace('/*__ISSUE__*/', dump(latest))
-t = t.replace('<!--__VERIFY__-->', '\n'.join(cfg.get('verify', [])) + '\n<script>window.AE_FORM=%s;window.AE_STATS=%s;window.AE_ADS=%s;</script>' % (dump(cfg.get('form')), dump(cfg.get('stats')), dump(cfg.get('ads'))))
+ADS = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=%s"\n     crossorigin="anonymous"></script>' % cfg['ads']['client']) if (cfg.get('ads') or {}).get('client') else ''
+ST.ADS_HEAD = ADS
+t = t.replace('<!--__VERIFY__-->', ADS + '\n' + '\n'.join(cfg.get('verify', [])) + '\n<script>window.AE_FORM=%s;window.AE_STATS=%s;window.AE_ADS=%s;</script>' % (dump(cfg.get('form')), dump(cfg.get('stats')), dump(cfg.get('ads'))))
 t = t.replace('<!--__JSONLD__-->', ST.jsonld_index(latest))
 t = t.replace('<!--__FAQ__-->', ST.faq_html(ST.faq(latest, 'ko')))
 t = ST.inject(t, ST.ssr_index(latest))
@@ -96,6 +98,7 @@ for p in latest['picks']:
         '{{DISC}}': '이 페이지의 ‘쿠팡에서 구매’ 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.' if p.get('cp') else '',
         '{{EDITION}}': e(latest['edition']['label']), '{{DESC}}': e(p['why'] + ' ' + p['usp'])[:160],
         '{{JSONLD}}': ST.jsonld_product(p, latest),
+        '{{ADS}}': ADS,
     }.items():
         out = out.replace(k, val)
     open(p['page'], 'w', encoding='utf-8').write(out)
