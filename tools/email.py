@@ -103,11 +103,11 @@ def sec(title, eyebrow, rows):
             '<table role="presentation" cellpadding="0" cellspacing="0" width="100%%">%s</table></td></tr>' % (eyebrow, title, rows))
 
 
-order = {"AI": 0, "IT": 1, "로봇": 2, "디바이스": 3, "소형": 4, "대형": 5}
+order = {"AI": 0, "TV": 1, "IT": 2, "로봇": 3, "디바이스": 4, "소형": 5, "대형": 6}
 pts = sorted([n for n in j["news"] if n.get("pt")], key=lambda n: (-(n.get("imp") or 0), order.get(n["c"], 9)))
 news3 = pts[:5]  # 중요도(imp) 순 상위 5
 REGK = {"KR": "한국", "US": "미국", "JP": "일본", "CN": "중국", "EU": "유럽"}
-CAT = {"AI": "AI가전", "IT": "IT·모바일", "로봇": "로봇", "디바이스": "AI디바이스", "소형": "소형가전", "대형": "대형가전"}
+CAT = {"AI": "AI가전", "TV": "TV", "IT": "IT·모바일", "로봇": "로봇", "디바이스": "AI디바이스", "소형": "소형가전", "대형": "대형가전"}
 news_rows = "".join(
     '<tr><td style="padding:14px 0;border-top:1px solid #e5e5e5"><div style="font-size:12px;font-weight:700;color:#b42318">%s · %s</div>'
     '<div style="font-size:16px;font-weight:700;color:#111111;margin-top:4px;line-height:1.45">%s</div><div style="font-size:14px;color:#333333;line-height:1.6;margin-top:4px">%s</div></td></tr>'

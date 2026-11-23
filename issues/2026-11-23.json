@@ -771,6 +771,26 @@
    "t": "다나와, LG전자 올레드 evo AI OLED48C6KNA 제품 정보 (2026.11.23 확인)",
    "u": "https://prod.danawa.com/info/?pcode=108401885",
    "r": "KR"
+  },
+  "S261": {
+   "t": "LG전자 뉴스룸, LG 올레드 TV, 5년 연속 CES 최고 혁신상 수상 (2026.11.10)",
+   "u": "https://www.lge.co.kr/story/newsroom/236236",
+   "r": "KR"
+  },
+  "S262": {
+   "t": "LG전자, 2026년 3분기 경영실적 발표 (2026.10.28)",
+   "u": "https://lg.co.kr/media/release/30725",
+   "r": "KR"
+  },
+  "S263": {
+   "t": "MacRumors, Black Friday TV Deals 2026 (2026.11.16)",
+   "u": "https://www.macrumors.com/2026/11/16/black-friday-tv-deals-2026/",
+   "r": "US"
+  },
+  "S264": {
+   "t": "TrendForce, Global TV Shipments Decline 3.6% YoY in 3Q26 (2026.11.16)",
+   "u": "https://www.trendforce.com/presscenter/news/20261116-13306.html",
+   "r": "EU"
   }
  },
  "cover": {
@@ -1000,6 +1020,43 @@
   },
   {
    "r": "KR",
+   "c": "TV",
+   "pt": true,
+   "imp": 4,
+   "h": "LG전자 TV 사업 3분기 흑자 전환, 영업이익 1,467억 원",
+   "p": "MS사업본부 매출 5조 215억 원. 전년 동기 3,026억 원 적자에서 돌아섰고, 4분기는 원가 부담·소비 위축으로 TV 수요가 줄 것으로 내다봤습니다.",
+   "d": "2026.10.28",
+   "s": "S262"
+  },
+  {
+   "r": "KR",
+   "c": "TV",
+   "imp": 3,
+   "h": "LG 투명·무선 '시그니처 올레드 T', CES 2027 최고 혁신상",
+   "p": "LG 올레드 TV는 5년 연속 CES 최고 혁신상을 받았고, 13년 연속 글로벌 올레드 TV 1위를 이어 가고 있습니다.",
+   "d": "2026.11.10",
+   "s": "S261"
+  },
+  {
+   "r": "US",
+   "c": "TV",
+   "imp": 3,
+   "h": "미국 블프 TV 특가: 삼성 더 프레임 65형 999.99달러",
+   "p": "블랙프라이데이(11/27)를 앞두고 2026년형 더 프레임 65형이 500달러, 더 프레임 프로 85형이 1,000달러 내렸습니다.",
+   "d": "2026.11.16",
+   "s": "S263"
+  },
+  {
+   "r": "CN",
+   "c": "TV",
+   "imp": 3,
+   "h": "3분기 TV 출하 2·3위 TCL 748만 대·하이센스 745만 대",
+   "p": "트렌드포스 집계로 1위 삼성(840만 대)과의 격차는 100만 대 안쪽입니다. 올해 RGB 미니LED TV 출하는 200만 대를 넘을 전망입니다.",
+   "d": "2026.11.16",
+   "s": "S264"
+  },
+  {
+   "r": "KR",
    "c": "IT",
    "pt": true,
    "h": "3분기 스마트폰 출하 −20%, 삼성 5,780만 대로 1위",
@@ -1047,7 +1104,7 @@
   },
   {
    "r": "EU",
-   "c": "IT",
+   "c": "TV",
    "pt": true,
    "h": "3분기 TV 출하 4,794만 대(−3.6%), 삼성 840만 대 1위",
    "p": "트렌드포스 집계. 올해 미니LED TV 출하는 2,878만 대(+116%)로 보급률 15%에 근접할 전망입니다.",
@@ -3611,6 +3668,22 @@
    [
     "Narwal Flow 2 robot vacuum sales up 305% in the US",
     "The company says it hit No.1 in Amazon US new robot vacuums within 24 hours of launch."
+   ],
+   [
+    "LG's TV business swings to a Q3 profit of KRW 146.7B",
+    "The MS Company posted revenue of KRW 5.0215T, recovering from a KRW 302.6B loss a year earlier; LG expects Q4 TV demand to fall on cost pressure and weak consumer sentiment."
+   ],
+   [
+    "LG's transparent, wireless 'Signature OLED T' wins a CES 2027 Best of Innovation award",
+    "LG OLED TV has won a CES Best of Innovation award five years running and has been the global OLED TV leader for 13 straight years."
+   ],
+   [
+    "US Black Friday TV deals: Samsung's 65-inch The Frame at $999.99",
+    "Ahead of Black Friday (Nov 27), the 2026 65-inch The Frame is $500 off and the 85-inch The Frame Pro is $1,000 off."
+   ],
+   [
+    "Q3 TV shipments: No.2 TCL at 7.48M, No.3 Hisense at 7.45M",
+    "Per TrendForce, both are within 1 million units of leader Samsung (8.4M). RGB Mini LED TV shipments are expected to top 2 million units this year."
    ],
    [
     "Q3 smartphone shipments −20%; Samsung No.1 at 57.8M",
