@@ -566,7 +566,7 @@ footer a{text-decoration:none}
     function reset(){em.value='';ag.checked=false;$('sub-mkt').checked=false;}
     function mailFallback(v){
       var u='mailto:newyangs007@gmail.com?subject='+encodeURIComponent('[가전레이더] 구독 신청')+'&body='+encodeURIComponent('구독 이메일: '+v+'\n성별: '+gender()+'\n나이대: '+age()+'\n독자 유형: '+(rtype()||'미선택')+'\n관심 분야: '+(interests().join(', ')||'전체')+'\n광고성 정보 수신: '+mkt()+'\n신청 시각: '+new Date().toISOString());
-      location.href=u;say('메일 앱이 열리면 그대로 보내 주세요. 보내 주신 주소로 다음 날 아침 7시부터 발송합니다.');
+      location.href=u;say('메일 앱이 열리면 그대로 보내 주세요. 접수되면 구독 완료 메일을 보내 드리고, 다음 날 아침 7시부터 발송합니다.');
     }
     f.onsubmit=function(e){
       e.preventDefault();var v=em.value.trim();
@@ -576,7 +576,7 @@ footer a{text-decoration:none}
       if(!ag.checked){say('[필수] 항목에 동의해 주세요.');ag.focus();return;}
       var F=AE_FORM;
       if(F){btn.disabled=true;var fd=new URLSearchParams();fd.append(F.f.type,'subscribe');fd.append(F.f.email,v);if(F.f.interest)fd.append(F.f.interest,interests().join(', '));if(F.f.gender)fd.append(F.f.gender,gender());if(F.f.age)fd.append(F.f.age,age());if(F.f.rtype)fd.append(F.f.rtype,rtype());if(F.f.mkt)fd.append(F.f.mkt,mkt());
-        fetch(F.url,{method:'POST',mode:'no-cors',body:fd}).then(function(){btn.disabled=false;reset();say('구독 신청이 완료됐어요. 다음 날 아침 7시부터 보내 드립니다.');}).catch(function(){btn.disabled=false;mailFallback(v);});return;}
+        fetch(F.url,{method:'POST',mode:'no-cors',body:fd}).then(function(){btn.disabled=false;reset();say('구독 신청이 완료됐어요. 1시간 안에 구독 완료 메일을 보내 드리고, 다음 날 아침 7시부터 발송합니다.');}).catch(function(){btn.disabled=false;mailFallback(v);});return;}
       mailFallback(v);
     };
   })();
