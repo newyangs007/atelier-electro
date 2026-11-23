@@ -134,11 +134,16 @@ body = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="color-sc
 <table role="presentation" cellpadding="0" cellspacing="0" width="100%" bgcolor="#f2f2f2" style="background:#f2f2f2"><tr><td align="center" style="padding:16px 8px">
 <table role="presentation" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff" style="max-width:600px;width:100%;table-layout:fixed;word-break:keep-all;overflow-wrap:anywhere;background:#ffffff;font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;color:#111111;border-top:6px solid #e0301e">
 <tr><td style="padding:10px 24px;font-size:12px;line-height:1.5;color:#444444;border-bottom:1px solid #eeeeee">[광고] 이 메일의 쿠팡 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</td></tr>
-<tr><td style="padding:22px 24px 6px">
-<div style="font-size:14px;font-weight:800;color:#e0301e;letter-spacing:.02em">가전 전문 매거진</div>
-<div style="font-size:34px;font-weight:900;color:#111111;letter-spacing:-.04em;line-height:1.2;margin-top:2px">가전레이더 <span style="font-size:13px;font-weight:800;letter-spacing:.12em;color:#e0301e">GAJEON RADAR</span></div>
-<div style="font-size:14px;color:#333333;line-height:1.55;margin-top:6px">AI가전·생활가전·대형가전·TV·IT 트렌드와 MD 추천템을 매일 아침 7시에</div>
-<div style="font-size:13px;font-weight:700;color:#555555;margin-top:12px;padding-top:10px;border-top:1px solid #e5e5e5">{e(ed["label"])} · 3분 읽기</div>
+<tr><td align="center" style="padding:26px 24px 8px;text-align:center">
+<div style="font-size:11px;font-weight:700;letter-spacing:.38em;color:#e0301e">THE APPLIANCE MAGAZINE</div>
+<div style="font-size:44px;font-weight:900;color:#111111;letter-spacing:-.05em;line-height:1.1;margin-top:10px;white-space:nowrap">가전레이더</div>
+<div style="font-size:13px;font-weight:800;letter-spacing:.42em;color:#111111;margin-top:8px;white-space:nowrap">GAJEON RADAR</div>
+<div style="font-size:16px;font-weight:600;color:#222222;line-height:1.5;margin-top:14px;white-space:nowrap">가전의 내일을 가장 먼저 읽다</div>
+<div style="font-size:12px;font-weight:800;color:#e0301e;margin-top:4px;white-space:nowrap">가전 전문 매거진 · 매일 아침 7시</div>
+<table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="margin-top:16px;border-top:2px solid #111111;border-bottom:1px solid #111111"><tr>
+<td align="left" style="padding:8px 0;font-size:12px;font-weight:800;color:#111111;letter-spacing:.04em">{e(no)}</td>
+<td align="center" style="padding:8px 0;font-size:12px;font-weight:700;color:#111111">{e(ed['label'].split(' · ')[0])}</td>
+<td align="right" style="padding:8px 0;font-size:12px;font-weight:700;color:#111111">3분 읽기</td></tr></table>
 </td></tr>
 <tr><td style="padding:14px 24px 4px">
 <div style="font-size:26px;font-weight:800;line-height:1.35;color:#111111;letter-spacing:-.03em">{e(title)}</div>
@@ -155,7 +160,7 @@ body = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="color-sc
 If you no longer wish to receive this email, click <a href="{e(unsub)}" style="color:#555555">Unsubscribe</a>. Unsubscribing is free of charge.<br>{e(ed.get("next", ""))}</td></tr>
 </table></td></tr></table></body></html>'''
 
-txt = "가전 전문 매거진 가전레이더\n%s · 3분 읽기\n%s\n\n오늘의 추천템 3\n%s\n\n주요 뉴스 5\n%s\n\n홈페이지: %s\n\n[광고] 쿠팡 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.\n수신 거부(구독 해지) / Unsubscribe: %s\n전송자: %s" % (
+txt = "가전레이더 GAJEON RADAR\n가전의 내일을 가장 먼저 읽다 · 가전 전문 매거진\n%s · 3분 읽기\n%s\n\n오늘의 추천템 3\n%s\n\n주요 뉴스 5\n%s\n\n홈페이지: %s\n\n[광고] 쿠팡 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.\n수신 거부(구독 해지) / Unsubscribe: %s\n전송자: %s" % (
     ed["label"], title,
     "\n".join("- %s %s (★%.1f) %s" % (p["name"], p["price"], score(p), p.get("cp") or SITE + slug(p)) for p in chosen),
     "\n".join("- %s" % n["h"] for n in news3), SITE, unsub, " · ".join(x for x in [SND.get("name") or "가전레이더", SND.get("email") or "newyangs007@gmail.com", SND.get("phone", ""), SND.get("addr", "")] if x))
