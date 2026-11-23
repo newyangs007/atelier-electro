@@ -59,8 +59,34 @@ button,select,input{font:inherit;color:inherit}
 .lang a[aria-current]{background:#fff;color:#000}
 .btn-sub{background:var(--acc);color:#fff;border:0;border-radius:999px;padding:7px 14px;font-weight:600;font-size:13px;text-decoration:none;white-space:nowrap}
 .tabs{background:#000;border-top:1px solid #222}
-.tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;height:46px;align-items:center}
-.tabs .wrap::-webkit-scrollbar{display:none}
+.tabs .tw{display:flex;align-items:center;gap:8px;height:46px}
+.ed-chip{flex:none;display:flex;align-items:center;gap:6px;background:#fff;color:#000;border:0;border-radius:999px;padding:7px 12px;font:600 13px/1.1 inherit;font-family:inherit;cursor:pointer;white-space:nowrap}
+.ed-chip .cal{width:14px;height:14px}.ed-chip .cv{font-size:10px;opacity:.6}
+.ed-chip.old{background:#ffd54f}
+@media(max-width:759px){.ed-chip .wd{display:none}}
+.toc{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0;align-items:center;border-left:1px solid #333;padding-left:6px}
+.toc::-webkit-scrollbar{display:none}
+/* 과월호 시트 */
+.arc .qv-b{padding:12px 16px 16px}
+.ar-nav{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.ar-nav button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 4px;font:600 13px/1.2 inherit;font-family:inherit;cursor:pointer}
+.ar-nav button:disabled{opacity:.35;cursor:default}
+.ar-seg{display:grid;grid-template-columns:repeat(4,1fr);background:var(--soft);border-radius:10px;padding:3px;margin:12px 0 10px}
+.ar-seg button{border:0;background:none;border-radius:8px;padding:8px 0;font:600 13px/1 inherit;font-family:inherit;color:#555;cursor:pointer}
+.ar-seg button[aria-pressed=true]{background:#fff;color:#000;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.ar-find{display:flex;gap:8px;align-items:center;font-size:13px;color:#555;margin-bottom:8px}
+.ar-find input{flex:1;min-width:0;border:1px solid var(--line);border-radius:8px;padding:7px 8px;font:inherit}
+.ar-msg{font-size:12.5px;color:#a15c00;min-height:0;margin:0 0 6px}
+.ar-g{border-top:1px solid var(--line)}
+.ar-g>summary{list-style:none;display:flex;justify-content:space-between;padding:11px 2px;font-weight:700;font-size:14.5px;cursor:pointer}
+.ar-g>summary::-webkit-details-marker{display:none}
+.ar-g>summary small{color:#888;font-weight:500}
+.ar-sub{font-size:12px;font-weight:700;color:var(--acc);margin:6px 2px 4px}
+.ar-i{display:grid;grid-template-columns:64px 84px 1fr;gap:6px;align-items:baseline;width:100%;text-align:left;border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px;margin:0 0 6px;font:inherit;font-size:13.5px;cursor:pointer;color:#111}
+.ar-i b{font-weight:800}.ar-i .ad{color:#666;font-size:12.5px}.ar-i .at{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500}
+.ar-i[aria-current=true]{border-color:#000;box-shadow:inset 3px 0 0 var(--acc)}
+.ar-more{width:100%;border:1px dashed var(--line);background:#fff;border-radius:10px;padding:10px;font:inherit;cursor:pointer}
+.ar-all{display:block;text-align:center;margin-top:10px;padding:12px;border:2px solid #000;border-radius:10px;font-weight:700;text-decoration:none;color:#000}
 .tabs a{color:#bbb;text-decoration:none;font-size:14px;padding:8px 12px;border-radius:999px;white-space:nowrap;flex:none}
 .tabs a.on{background:#fff;color:#000;font-weight:600}
 
@@ -301,15 +327,16 @@ footer a{text-decoration:none}
     <div class="lang" role="navigation" aria-label="언어"><a href="./" aria-current="true" hreflang="ko" lang="ko" title="한국어">KO</a><a href="en/" hreflang="en" lang="en" title="English">EN</a></div>
     <a class="btn-sub" href="#subscribe">구독</a>
   </div>
-  <nav class="tabs" aria-label="목차"><div class="wrap" id="toc">
-    <a href="#top3">추천템</a><a href="#deals-sec">특가</a><a href="#products">제품</a><a href="#news">뉴스</a><a href="#trends">트렌드</a><a href="#launches">신제품</a><a href="#subscribe">구독</a>
+  <nav class="tabs" aria-label="호수·목차"><div class="wrap tw">
+    <button type="button" class="ed-chip" id="ed-chip" aria-haspopup="dialog" aria-controls="arc" title="호수 선택·과월호"><svg class="cal" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="3" width="13" height="11.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M1.5 6.5h13M5 1.5v3M11 1.5v3" stroke="currentColor" stroke-width="1.6"/></svg><span id="ed-chip-t">No.</span><span class="cv">▼</span></button>
+    <div class="toc" id="toc"><a href="#top3">추천템</a><a href="#deals-sec">특가</a><a href="#products">제품</a><a href="#news">뉴스</a><a href="#trends">트렌드</a><a href="#launches">신제품</a><a href="#subscribe">구독</a></div>
   </div></nav>
 </header>
 <div class="past" id="past"><div class="wrap" id="past-in"></div></div>
 
 <main>
 <section class="hero" aria-labelledby="hero-title"><div class="wrap">
-  <div class="meta-line"><b id="ed-label"></b><span>매일 아침 7시 발행</span><label class="sr" for="issue">지난 호 보기</label><select id="issue"></select></div>
+  <div class="meta-line"><b id="ed-label"></b><span>매일 아침 7시 발행</span><a href="archive.html" id="arc-open2" style="color:#fff">과월호 보기 →</a></div>
   <h1 id="hero-title">블프 마지막 주, <em>AI 안경은 이미 품절</em></h1>
   <p class="deck" id="hero-deck">삼성·젠틀몬스터 AI 안경 16종이 출시 전에 모두 품절됐습니다.
 반면 중국 가전 소매판매는 3분기 −10.1%. 신기기는 뜨겁고, 큰 가전은 할인으로 버팁니다.</p>
@@ -398,11 +425,19 @@ footer a{text-decoration:none}
 
 <footer><div class="wrap">
   <div><b>가전레이더 GAJEON RADAR</b> · 매일 아침 7시 가전 트렌드와 추천템</div>
-  <div class="links"><span id="foot-stats"></span><a href="privacy.html">개인정보처리방침</a><a href="unsubscribe.html">구독 해지</a><a href="en/" hreflang="en">English</a><a href="rss.xml">RSS</a><a href="llms.txt">llms.txt</a></div>
+  <div class="links"><span id="foot-stats"></span><a href="privacy.html">개인정보처리방침</a><a href="archive.html">과월호</a><a href="unsubscribe.html">구독 해지</a><a href="en/" hreflang="en">English</a><a href="rss.xml">RSS</a><a href="llms.txt">llms.txt</a></div>
 </div></footer>
 
 <button type="button" class="totop" id="totop" aria-label="맨 위로">↑</button>
 <div class="veil" id="veil"></div>
+<aside class="qv arc" id="arc" role="dialog" aria-modal="true" aria-labelledby="arc-title" aria-hidden="true"><div class="qv-h"><b id="arc-title">호수 선택 · 과월호</b><button type="button" id="arc-x" aria-label="닫기">×</button></div><div class="qv-b">
+  <div class="ar-nav"><button type="button" id="ar-older">← 이전 호</button><button type="button" id="ar-latest">최신 호</button><button type="button" id="ar-newer">다음 호 →</button></div>
+  <div class="ar-seg" role="group" aria-label="보기 방식"><button type="button" data-v="day" aria-pressed="true">일별</button><button type="button" data-v="week" aria-pressed="false">주차별</button><button type="button" data-v="month" aria-pressed="false">월별</button><button type="button" data-v="year" aria-pressed="false">연도별</button></div>
+  <label class="ar-find">날짜로 찾기 <input type="date" id="ar-date"></label>
+  <p class="ar-msg" id="ar-msg"></p>
+  <div id="ar-list"></div>
+  <a class="ar-all" href="archive.html">과월호 전체 페이지 열기 ↗</a>
+</div></aside>
 <aside class="qv" id="qv" role="dialog" aria-modal="true" aria-labelledby="qv-title" aria-hidden="true"><div class="qv-h"><b>제품 상세</b><button type="button" id="qv-x" aria-label="닫기">×</button></div><div class="qv-b" id="qv-b"></div></aside>
 
 <script id="brand-data" type="application/json">{
@@ -728,11 +763,43 @@ footer a{text-decoration:none}
   $('launch-more').onclick=function(){lshown+=10;renderLaunches();};
   var roll=$('roll');roll.addEventListener('touchstart',function(){roll.classList.toggle('hold');},{passive:true});
 
-  /* 지난 호 */
-  var sel=$('issue'),cache={};cache[LATEST.edition.date]=LATEST;
-  sel.innerHTML=ARCH.map(function(a){return '<option value="'+esc(a.date)+'">No.'+String(a.no).padStart(3,'0')+' · '+esc(a.date)+'</option>';}).join('');
-  sel.onchange=function(){var d=sel.value;function show(j){render(j);var p=$('past');if(d!==LATEST.edition.date){p.classList.add('on');$('past-in').innerHTML='지난 호('+esc(d)+')를 보고 있어요. 가격·순위는 그날 기준입니다. <a href="#" id="back-latest">최신 호로</a>';$('back-latest').onclick=function(e){e.preventDefault();sel.value=LATEST.edition.date;sel.onchange();};}else p.classList.remove('on');}
-    if(cache[d])return show(cache[d]);fetch('issues/'+d+'.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(j){cache[d]=j;show(j);}).catch(function(){$('past').classList.add('on');$('past-in').textContent=d+' 호를 불러오지 못했어요. 잠시 후 다시 시도해 주세요.';});};
+  /* 호수 선택·과월호: 일별·주차별·월별·연도별 */
+  var cache={},CUR=LATEST.edition.date,ORD=ARCH.map(function(a){return a.date;}),AV='day',AN=20,WDK='일월화수목금토';
+  cache[CUR]=LATEST;
+  function pdt(d){var a=d.split('-');return new Date(+a[0],+a[1]-1,+a[2]);}
+  function p2(n){return (n<10?'0':'')+n;}
+  function mdk(t){return p2(t.getMonth()+1)+'.'+p2(t.getDate());}
+  function wkOf(d){var t=pdt(d),mon=new Date(t);mon.setDate(t.getDate()-(t.getDay()+6)%7);var th=new Date(mon);th.setDate(mon.getDate()+3);var f=new Date(th.getFullYear(),th.getMonth(),1);var ft=new Date(f);ft.setDate(1+(3-(f.getDay()+6)%7+7)%7);var sun=new Date(mon);sun.setDate(mon.getDate()+6);return {y:th.getFullYear(),m:th.getMonth()+1,n:Math.round((th-ft)/864e5/7)+1,mon:mon,sun:sun};}
+  function noS(n){return 'No.'+String(n).padStart(3,'0');}
+  function item(a){var t=pdt(a.date);return '<button type="button" class="ar-i" data-d="'+esc(a.date)+'"'+(a.date===CUR?' aria-current="true"':'')+'><b>'+noS(a.no)+'</b><span class="ad">'+mdk(t)+' ('+WDK[t.getDay()]+')</span><span class="at">'+esc(a.title)+'</span></button>';}
+  function groups(keyf){var G=[],idx={};ARCH.forEach(function(a){var k=keyf(a);if(!(k.id in idx)){idx[k.id]=G.length;G.push({id:k.id,label:k.label,items:[]});}G[idx[k.id]].items.push(a);});return G;}
+  function grpHtml(G,inner){return G.map(function(g,i){var on=g.items.some(function(a){return a.date===CUR;})||i===0;return '<details class="ar-g"'+(on?' open':'')+'><summary>'+esc(g.label)+'<small>'+g.items.length+'호</small></summary>'+(inner?inner(g.items):g.items.map(item).join(''))+'</details>';}).join('');}
+  function renderArc(){var L=$('ar-list'),h='';
+    if(AV==='day'){h=ARCH.slice(0,AN).map(item).join('')+(ARCH.length>AN?'<button type="button" class="ar-more" id="ar-more">더 보기 ('+(ARCH.length-AN)+'호 남음)</button>':'');}
+    else if(AV==='week'){h=grpHtml(groups(function(a){var w=wkOf(a.date);return {id:w.y+'-'+w.m+'-'+w.n,label:w.y+'년 '+w.m+'월 '+w.n+'주차 · '+mdk(w.mon)+'–'+mdk(w.sun)};}));}
+    else if(AV==='month'){h=grpHtml(groups(function(a){var t=pdt(a.date);return {id:t.getFullYear()+'-'+t.getMonth(),label:t.getFullYear()+'년 '+(t.getMonth()+1)+'월'};}));}
+    else{h=grpHtml(groups(function(a){return {id:a.date.slice(0,4),label:a.date.slice(0,4)+'년'};}),function(items){var out='',last='';items.forEach(function(a){var m=+a.date.slice(5,7);if(m!==last){out+='<div class="ar-sub">'+m+'월</div>';last=m;}out+=item(a);});return out;});}
+    L.innerHTML=h;var i=ORD.indexOf(CUR);$('ar-older').disabled=i>=ORD.length-1;$('ar-newer').disabled=i<=0;$('ar-latest').disabled=i===0;}
+  function setChip(){var a=ARCH[ORD.indexOf(CUR)]||ARCH[0],t=pdt(a.date);$('ed-chip-t').innerHTML=noS(a.no)+' · '+mdk(t)+'<span class="wd"> '+WDK[t.getDay()]+'</span>';$('ed-chip').classList.toggle('old',CUR!==ORD[0]);}
+  function openArc(){lastFocus=document.activeElement;renderArc();$('ar-msg').textContent='';$('arc').classList.add('on');$('veil').classList.add('on');$('arc').setAttribute('aria-hidden','false');document.body.style.overflow='hidden';$('arc-x').focus();}
+  function closeArc(){$('arc').classList.remove('on');if(!$('qv').classList.contains('on'))$('veil').classList.remove('on');$('arc').setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  function openIssue(d,keep){function show(j){CUR=d;render(j);setChip();var p=$('past');
+      try{history.replaceState(null,'',d===ORD[0]?location.pathname:location.pathname+'?issue='+d);}catch(x){}
+      if(d!==ORD[0]){p.classList.add('on');$('past-in').innerHTML='지난 호('+esc(noS(j.edition.no))+' · '+esc(d)+')를 보고 있어요. 가격·순위는 그날 기준입니다. <a href="#" id="back-latest">최신 호로</a> · <a href="#" id="past-arc">다른 호 보기</a>';$('back-latest').onclick=function(e){e.preventDefault();openIssue(ORD[0]);};$('past-arc').onclick=function(e){e.preventDefault();openArc();};}else p.classList.remove('on');
+      if(!keep){closeArc();window.scrollTo(0,0);}}
+    if(cache[d])return show(cache[d]);fetch('issues/'+d+'.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(j){cache[d]=j;show(j);}).catch(function(){$('ar-msg').textContent=d+' 호를 불러오지 못했어요. 잠시 후 다시 시도해 주세요.';});}
+  $('ed-chip').onclick=openArc;$('arc-open2').onclick=function(e){e.preventDefault();openArc();};
+  $('arc-x').onclick=closeArc;$('veil').addEventListener('click',closeArc);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeArc();});
+  $('ar-older').onclick=function(){var i=ORD.indexOf(CUR);if(i<ORD.length-1)openIssue(ORD[i+1]);};
+  $('ar-newer').onclick=function(){var i=ORD.indexOf(CUR);if(i>0)openIssue(ORD[i-1]);};
+  $('ar-latest').onclick=function(){openIssue(ORD[0]);};
+  [].forEach.call(document.querySelectorAll('.ar-seg button'),function(b){b.onclick=function(){AV=b.dataset.v;[].forEach.call(document.querySelectorAll('.ar-seg button'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});renderArc();};});
+  $('ar-list').addEventListener('click',function(e){var b=e.target.closest('.ar-i');if(b){openIssue(b.dataset.d);return;}if(e.target.id==='ar-more'){AN+=20;renderArc();}});
+  var dt=$('ar-date');dt.min=ORD[ORD.length-1];dt.max=ORD[0];
+  dt.onchange=function(){var v=dt.value;if(!v)return;if(ORD.indexOf(v)>=0)return openIssue(v);var near=ORD.filter(function(d){return d<=v;})[0];if(near){$('ar-msg').textContent=v+' 에는 발행된 호가 없어 가장 가까운 지난 호('+near+')를 엽니다.';openIssue(near,true);renderArc();}else $('ar-msg').textContent='그 날짜 이전에는 발행된 호가 없어요. 첫 호는 '+ORD[ORD.length-1]+' 입니다.';};
+  setChip();
+  (function(){var q=null;try{q=new URLSearchParams(location.search).get('issue');}catch(x){}if(q&&q!==ORD[0]&&ORD.indexOf(q)>=0)openIssue(q,true);})();
 
   /* 통계·추적 */
   function track(type,o){if(!AE_FORM)return;try{var fd=new URLSearchParams();fd.append(AE_FORM.f.type,type);Object.keys(o||{}).forEach(function(k){if(AE_FORM.f[k])fd.append(AE_FORM.f[k],o[k]);});fetch(AE_FORM.url,{method:'POST',mode:'no-cors',body:fd});}catch(e){}}
@@ -779,7 +846,6 @@ footer a{text-decoration:none}
   tt.onclick=function(){scrollTo({top:0,behavior:'smooth'});};
 
   render(LATEST);
-  sel.value=LATEST.edition.date;
 })();
 </script>
 </body>

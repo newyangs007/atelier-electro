@@ -105,6 +105,73 @@ for p in latest['picks']:
     urls.append(SITE + p['page'])
 
 today = latest['edition']['date']
+# ---- 과월호(archive.html): 연도 → 월 → 주차 → 일 ----
+import datetime as _dt
+_order = [a['date'] for a in issues]  # newest first
+for i, d in enumerate(_order):
+    ST.NEIGHBORS[d] = (_order[i + 1] if i + 1 < len(_order) else None, _order[i - 1] if i > 0 else None)
+WD = '월화수목금토일'
+
+
+def week_of(d):
+    """한국식 월 주차: 월요일 시작, 그 주의 목요일이 속한 달·순번."""
+    t = _dt.date.fromisoformat(d)
+    mon = t - _dt.timedelta(days=t.weekday())
+    th = mon + _dt.timedelta(days=3)
+    first = th.replace(day=1)
+    first_thu = first + _dt.timedelta(days=(3 - first.weekday()) % 7)
+    return th.year, th.month, (th - first_thu).days // 7 + 1, mon, mon + _dt.timedelta(days=6)
+
+
+def md(x):
+    return '%02d.%02d' % (x.month, x.day)
+
+
+def archive_html():
+    tree = {}
+    for a in issues:
+        y, m, n, mon, sun = week_of(a['date'])
+        tree.setdefault(y, {}).setdefault(m, {}).setdefault((n, mon, sun), []).append(a)
+    body = []
+    for y in sorted(tree, reverse=True):
+        cnt = sum(len(v) for mm in tree[y].values() for v in mm.values())
+        body.append('<section class="yr"><h2 id="y%d">%d년 <small>%d호</small></h2>' % (y, y, cnt))
+        for m in sorted(tree[y], reverse=True):
+            mc = sum(len(v) for v in tree[y][m].values())
+            body.append('<details class="mo" open><summary id="m%d-%02d">%d월 <small>%d호</small></summary>' % (y, m, m, mc))
+            for (n, mon, sun) in sorted(tree[y][m], key=lambda k: k[1], reverse=True):
+                body.append('<div class="wk"><h3>%d주차 <small>%s–%s</small></h3><ul>' % (n, md(mon), md(sun)))
+                for a in tree[y][m][(n, mon, sun)]:
+                    t = _dt.date.fromisoformat(a['date'])
+                    body.append('<li><a href="issue/%s.html"><b>No.%03d</b><span class="d">%s (%s)</span><span class="t">%s</span></a></li>' % (
+                        a['date'], a['no'], md(t), WD[t.weekday()], e(a['title'])))
+                body.append('</ul></div>')
+            body.append('</details>')
+        body.append('</section>')
+    jump = ''.join('<a href="#m%d-%02d">%d.%02d</a>' % (y, m, y, m) for y in sorted(tree, reverse=True) for m in sorted(tree[y], reverse=True))
+    return ('<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+            '<title>과월호 전체 보기 · 가전레이더 GAJEON RADAR</title><meta name="description" content="가전 전문 매거진 가전레이더의 지난 호를 연도·월·주차·날짜별로 모아 봅니다.">'
+            '<link rel="canonical" href="%sarchive.html"><link rel="icon" href="favicon.svg">%s<style>'
+            'body{margin:0;font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:#111;background:#fafafa;word-break:keep-all}'
+            '.top{position:sticky;top:0;z-index:5;background:#000;color:#fff}.w{max-width:820px;margin:0 auto;padding:0 16px}'
+            '.top .w{display:flex;align-items:center;gap:12px;height:52px}.top a{color:#fff;text-decoration:none}.logo{font-weight:900;font-size:20px;flex:1}'
+            '.jump{position:sticky;top:52px;z-index:4;background:#111}.jump .w{display:flex;gap:6px;overflow-x:auto;height:44px;align-items:center;scrollbar-width:none}'
+            '.jump a{color:#fff;text-decoration:none;border:1px solid #444;border-radius:999px;padding:5px 11px;font-size:13px;white-space:nowrap}'
+            'h1{font-size:26px;margin:22px 0 4px}.lead{color:#555;margin:0 0 14px;font-size:14px}h2{font-size:22px;border-bottom:2px solid #111;padding-bottom:6px;margin:26px 0 8px}'
+            'small{font-weight:500;color:#888;font-size:.7em;margin-left:4px}summary{font-size:18px;font-weight:800;padding:10px 0;cursor:pointer;scroll-margin-top:100px}'
+            '.wk h3{font-size:14px;color:#e0301e;margin:8px 0 4px}ul{list-style:none;margin:0 0 6px;padding:0}'
+            'li a{display:grid;grid-template-columns:72px 92px 1fr;gap:8px;align-items:baseline;padding:11px 12px;background:#fff;border:1px solid #e5e5e5;border-radius:10px;margin-bottom:6px;color:#111;text-decoration:none}'
+            'li a:hover{border-color:#111}.d{color:#666;font-size:13px}.t{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}'
+            '@media(max-width:520px){li a{grid-template-columns:64px 1fr}.t{grid-column:1/-1;white-space:normal}}'
+            'footer{padding:30px 0;color:#777;font-size:12px}</style></head><body>'
+            '<header class="top"><div class="w"><a class="logo" href="./">가전레이더</a><a href="./">최신 호</a><a href="./#subscribe">구독</a></div></header>'
+            '<nav class="jump" aria-label="월별 바로가기"><div class="w">%s</div></nav>'
+            '<main class="w"><h1>과월호 전체 보기</h1><p class="lead">가전 전문 매거진 가전레이더 · 전체 %d호 · 연도 → 월 → 주차 → 날짜 순. 주차는 월요일 시작, 목요일이 속한 달 기준입니다.</p>%s</main>'
+            '<footer class="w">가전레이더 GAJEON RADAR · 매일 아침 7시 발행</footer></body></html>') % (SITE, ADS, jump, len(issues), ''.join(body))
+
+
+open('archive.html', 'w', encoding='utf-8').write(archive_html())
+urls.append(SITE + 'archive.html')
 # ---- static issue pages (KO + EN), English home, markdown copies, RSS, llms.txt ----
 os.makedirs('issue', exist_ok=True)
 os.makedirs('en/issue', exist_ok=True)

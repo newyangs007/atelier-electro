@@ -222,12 +222,14 @@ def inject(t, frag):
 
 
 # ---------------------------------------------------------------- full static issue page (KO / EN)
+NEIGHBORS = {}  # date -> (older, newer), set by build.py
+
 CSS = '''
 :root{--bg:#fff;--ink:#000;--ink2:#555;--rule:#ddd;--acc:#e0301e}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;line-height:1.6;word-break:keep-all}
 a{color:inherit}.w{max-width:1180px;margin:0 auto;padding:0 24px}
-.top{position:sticky;top:0;z-index:5;background:#000;color:#fff}.top .w{display:flex;gap:18px;align-items:center;height:52px;overflow-x:auto;white-space:nowrap}
+.top{position:sticky;top:0;z-index:5;background:#000;color:#fff}.inav{position:sticky;top:52px;z-index:4;background:#111;color:#fff;font-size:13px}.inav .w{display:flex;align-items:center;gap:8px;height:42px}.inav a{color:#fff;text-decoration:none;padding:6px 10px;border:1px solid #444;border-radius:999px;white-space:nowrap}.inav a.x{opacity:.35;pointer-events:none}.inav .c{flex:1;text-align:center;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.top .w{display:flex;gap:18px;align-items:center;height:52px;overflow-x:auto;white-space:nowrap}
 .top .logo{font-family:"Archivo","Noto Sans KR",sans-serif;font-weight:900;letter-spacing:-.01em;text-decoration:none;font-size:17px;margin-right:auto}
 .top nav a{color:#bbb;text-decoration:none;font-size:13px;margin-left:16px}.top nav a:hover{color:#fff}
 .lang{display:flex;border:1px solid #444;font-size:12px}.lang a{color:#aaa;text-decoration:none;padding:4px 10px}.lang a[aria-current]{background:#fff;color:#000}
@@ -320,6 +322,11 @@ def page(issue, L, depth, url, alt_url, canonical=None):
             % ((e(alt_ko), 'aria-current="true"' if L == 'ko' else 'hreflang="ko"', e(alt_en), 'aria-current="true"' if L == 'en' else 'hreflang="en"')))
     body = '<body><header class="top"><div class="w"><a class="logo" href="%s">%s</a><nav>%s</nav>%s</div></header>' % (
         (R if L == 'ko' else R + 'en/'), '가전레이더' if L == 'ko' else 'GAJEON RADAR', nav, lang)
+    od, nw = NEIGHBORS.get(d, (None, None))
+    ip = R if L == 'ko' else R + 'en/'
+    lab = ('이전 호', '다음 호', '과월호 전체') if L == 'ko' else ('Older', 'Newer', 'All issues')
+    body += '<nav class="inav" aria-label="%s"><div class="w"><a class="%s" href="%s" rel="prev">← %s</a><span class="c">No.%03d · %s</span><a href="%sarchive.html">%s</a><a class="%s" href="%s" rel="next">%s →</a></div></nav>' % (
+        lab[2], '' if od else 'x', (ip + 'issue/%s.html' % od) if od else '#', lab[0], E['no'], d, R if L == 'ko' else R, lab[2], '' if nw else 'x', (ip + 'issue/%s.html' % nw) if nw else '#', lab[1])
     body += '<div class="band"><div class="w"><p class="mast">%s</p><div class="tag"><span>%s</span><span><b>%s No.%03d · %s</b> · %s</span></div><p class="intro">%s</p>' % (
         '가전레이더' if L == 'ko' else 'Gajeon Radar', e(U['tag']), U['edition'], E['no'], d, e(U['every']), e(U['intro']))
     body += '<h1 class="cover">%s</h1><p class="deck">%s</p><div class="figs">' % (T['cover_title'], e(T['cover_deck']))

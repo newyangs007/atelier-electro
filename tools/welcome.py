@@ -16,6 +16,7 @@ ap.add_argument('--interests', default='')
 ap.add_argument('--mkt', default='')
 ap.add_argument('--date', default='')
 ap.add_argument('--first', default='', help='첫 호 안내 문구(기본: 내일 아침 7시)')
+ap.add_argument('--today', default='', help='오늘 호를 바로 이어서 보낼 때 그 호 번호(예: No.002)')
 a = ap.parse_args()
 
 e = html.escape
@@ -45,8 +46,10 @@ def rows(items):
                    '<td valign="top" style="padding:7px 0;font-size:14px;font-weight:600;color:#111111;border-bottom:1px solid #eeeeee">%s</td></tr>' % (e(k), e(v)) for k, v in items)
 
 
-info = [("구독 이메일", a.to), ("관심 분야", ints), ("발송", "매일 아침 7시 (KST)"), ("첫 호", a.first or "내일 아침 7시")]
-pre = "가전 전문 매거진 가전레이더 구독이 완료되었습니다. %s에 첫 호가 도착합니다." % (a.first or "내일 아침 7시")
+first = ("오늘 호(%s) 바로 발송 · 내일부터 매일 아침 7시" % a.today) if a.today else (a.first or "내일 아침 7시")
+lead = ("오늘 호(%s)를 이어서 바로 보내 드립니다. 내일부터는 매일 아침 7시에 도착합니다." % a.today) if a.today else ("%s, 첫 호가 이 메일함으로 도착합니다." % (a.first or "내일 아침 7시"))
+info = [("구독 이메일", a.to), ("관심 분야", ints), ("발송", "매일 아침 7시 (KST)"), ("첫 호", first)]
+pre = "가전 전문 매거진 가전레이더 구독이 완료되었습니다. " + lead
 
 body = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="color-scheme" content="light"><meta name="supported-color-schemes" content="light"></head><body style="margin:0;background:#f2f2f2">
 <div style="display:none;max-height:0;overflow:hidden;opacity:0">{e(pre)}&#8199;&#65279;&#847;&#8199;&#65279;&#847;</div>
@@ -62,7 +65,7 @@ body = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="color-sc
 <tr><td style="padding:18px 24px 6px">
 <table role="presentation" cellpadding="0" cellspacing="0" width="100%"><tr><td bgcolor="#fff1ef" style="background:#fff1ef;border-left:5px solid #e0301e;padding:16px 18px">
 <div style="font-size:24px;font-weight:900;color:#111111;letter-spacing:-.03em">구독이 완료되었습니다</div>
-<div style="font-size:15px;font-weight:600;color:#222222;line-height:1.6;margin-top:6px">{e(a.first or "내일 아침 7시")}, 첫 호가 이 메일함으로 도착합니다.<br>AI가전·IT·로봇 뉴스와 오늘의 추천템, 30% 이상 특가를 3분 안에 읽을 수 있게 정리해 드립니다.</div>
+<div style="font-size:15px;font-weight:600;color:#222222;line-height:1.6;margin-top:6px">{e(lead)}<br>AI가전·IT·로봇 뉴스와 오늘의 추천템, 30% 이상 특가를 3분 안에 읽을 수 있게 정리해 드립니다.</div>
 </td></tr></table>
 </td></tr>
 <tr><td style="padding:18px 24px 4px">
@@ -86,10 +89,10 @@ If you did not request this, click <a href="{e(unsub)}" style="color:#555555">Un
 
 txt = "\n".join([
     "가전레이더 GAJEON RADAR — 가전 전문 매거진 · 매일 아침 7시", "",
-    "구독이 완료되었습니다.", (a.first or "내일 아침 7시") + ", 첫 호가 이 메일함으로 도착합니다.", "",
+    "구독이 완료되었습니다.", lead, "",
     "[구독 정보]"] + ["- %s: %s" % kv for kv in info] + ["", "[%s]" % consent[0]] + ["- %s: %s" % kv for kv in consent[1]] + [
     "", "오늘 호 먼저 보기: " + SITE, "", "수신 거부(구독 해지): " + unsub, "전송자: " + sline])
 os.makedirs("out", exist_ok=True)
 open("out/welcome.html", "w", encoding="utf-8").write(body)
 open("out/welcome.txt", "w", encoding="utf-8").write(txt)
-print(json.dumps({"subject": "[가전레이더] 구독이 완료되었습니다 · %s 첫 호 발송" % (a.first or "내일 아침 7시"), "preheader": pre}, ensure_ascii=False))
+print(json.dumps({"subject": "[가전레이더] 구독이 완료되었습니다 · " + ("오늘 호 바로 발송" if a.today else "%s 첫 호 발송" % (a.first or "내일 아침 7시")), "preheader": pre}, ensure_ascii=False))
