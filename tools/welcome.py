@@ -14,7 +14,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument('--to', required=True)
 ap.add_argument('--interests', default='')
 ap.add_argument('--mkt', default='')
-ap.add_argument('--date', default='')
+ap.add_argument('--date', default='', help='신청(동의) 일자 YYYY-MM-DD')
 ap.add_argument('--first', default='', help='첫 호 안내 문구(기본: 내일 아침 7시)')
 ap.add_argument('--today', default='', help='오늘 호를 바로 이어서 보낼 때 그 호 번호(예: No.002)')
 a = ap.parse_args()
@@ -32,7 +32,7 @@ sline = " · ".join(x for x in [sname, smail, SND.get("phone", ""), SND.get("add
 if agree:
     consent = ("광고성 정보 수신 동의 처리 결과", [
         ("전송자", sname + " (" + smail + ")"),
-        ("처리 일자", dk),
+        ("동의 일자", dk),
         ("처리 내용", "광고성 정보(쿠팡 파트너스 추천 상품 등) 이메일 수신 동의"),
         ("철회 방법", "언제든 수신 거부(구독 해지) 링크에서 무료로 철회")])
 else:
