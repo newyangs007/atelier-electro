@@ -791,6 +791,46 @@
    "t": "TrendForce, Global TV Shipments Decline 3.6% YoY in 3Q26 (2026.11.16)",
    "u": "https://www.trendforce.com/presscenter/news/20261116-13306.html",
    "r": "EU"
+  },
+  "S265": {
+   "t": "다나와, 로보락 S9 MaxV Ultra 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=93806297",
+   "r": "KR"
+  },
+  "S266": {
+   "t": "다나와, 에코백스 디봇 T90 프로 옴니 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=106687076",
+   "r": "KR"
+  },
+  "S267": {
+   "t": "다나와, 앤커 유피 C28 옴니 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=107769194",
+   "r": "KR"
+  },
+  "S268": {
+   "t": "다나와, 드리미 L40s Pro Ultra 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=92104061",
+   "r": "KR"
+  },
+  "S269": {
+   "t": "다나와 로봇청소기 인기상품순 (2026.11.23 수집)",
+   "u": "https://prod.danawa.com/list/?cate=10243069",
+   "r": "KR"
+  },
+  "S270": {
+   "t": "다나와 기획전, 2026 상반기 로봇청소기 승자는? (1~6월 판매량 기준)",
+   "u": "https://plan.danawa.com/mobile/info/index.php?nPlanSeq=12743",
+   "r": "KR"
+  },
+  "S271": {
+   "t": "IFR, World Robotics 2026 Service Robots: Global Sales of Professional Service Robots Surge 24% (2026.09.30)",
+   "u": "https://ifr.org/ifr-press-releases/global-sales-of-professional-service-robots-surge-24-percent",
+   "r": "EU"
+  },
+  "S272": {
+   "t": "카운터포인트리서치, 2025년 전 세계 휴머노이드 로봇 설치 약 1만 6천 대 (2026.01.14)",
+   "u": "https://counterpointresearch.com/ko/insights/Global-Humanoid-Robot-Installations-Reach-16,000-Units-in-2025-as-Mass-Production-Picks-Pace",
+   "r": "CN"
   }
  },
  "cover": {
@@ -972,6 +1012,34 @@
   }
  ],
  "news": [
+  {
+   "r": "EU",
+   "c": "로봇",
+   "pt": true,
+   "imp": 4,
+   "h": "IFR: 2025년 가정용 서비스 로봇 3,420만 대(+37%)",
+   "p": "세계로봇연맹 'World Robotics 2026' 집계. 전문 서비스 로봇은 24% 늘어 약 25만 대, 키 140cm 이상 휴머노이드는 약 7,000대 팔렸습니다.",
+   "d": "2026.09.30",
+   "s": "S271"
+  },
+  {
+   "r": "KR",
+   "c": "로봇",
+   "imp": 3,
+   "h": "상반기 로봇청소기 판매 점유율: 삼성 27%·드리미 18%·로보락 16%",
+   "p": "다나와 1~6월 판매량 기준. 모바 9%, LG전자 8%가 뒤를 이었고 150만 원대 프리미엄과 100만 원 이하 실속형으로 양극화됐습니다.",
+   "d": "2026 상반기",
+   "s": "S270"
+  },
+  {
+   "r": "CN",
+   "c": "로봇",
+   "imp": 3,
+   "h": "2025년 휴머노이드 설치 약 1만 6천 대, 중국이 80% 이상",
+   "p": "카운터포인트 집계. 애지봇 31%·유니트리 27% 순이며, 누적 설치는 2027년 10만 대를 넘을 전망입니다.",
+   "d": "2026.01.14",
+   "s": "S272"
+  },
   {
    "r": "KR",
    "c": "로봇",
@@ -2854,6 +2922,163 @@
    "cp": "https://link.coupang.com/a/iSoyduaDts"
   },
   {
+   "id": "r1",
+   "cat": "청소",
+   "mk": "CN",
+   "icon": "robot",
+   "brand": "드리미",
+   "name": "드리미 L40s Pro Ultra 로봇청소기",
+   "price": "696,570원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2025.06",
+   "ch": "다나와 상반기 판매 3위",
+   "why": "2026년 상반기 다나와 로봇청소기 판매 3위. 70만 원 선에서 온수 걸레 세척·온풍 건조 스테이션을 갖췄습니다.",
+   "target": "100만 원 이하 올인원 로봇청소기를 찾는 가구",
+   "usp": "19,000Pa · 회전형 물걸레(확장암) · 먼지 비움·온수 세척·온풍 건조 · AI 사물 인식·3D 장애물 회피",
+   "src": [
+    "S269",
+    "S270",
+    "S268"
+   ],
+   "sc": [
+    3,
+    1,
+    4,
+    3,
+    3
+   ],
+   "scw": [
+    "상반기 판매 3위",
+    "리뷰 수집 전",
+    "연말 블프 시즌",
+    "수입사 유통",
+    "가격 경쟁 보통"
+   ],
+   "note": "가격은 2026.11.23 다나와 제품 페이지 기준입니다. 제품 사진은 다나와 등록 이미지입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "92104061",
+   "q": "드리미 L40s Pro Ultra",
+   "ai": false,
+   "img": "issues/img/92104061.jpg"
+  },
+  {
+   "id": "r2",
+   "cat": "청소",
+   "mk": "CN",
+   "icon": "robot",
+   "brand": "앤커",
+   "name": "앤커 유피 C28 옴니 로봇청소기",
+   "price": "599,900원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2026.03",
+   "ch": "다나와 로봇청소기 인기 6위",
+   "why": "60만 원 안팎의 롤러 물걸레형 올인원. 먼지 비움과 실시간 걸레 세척, 온풍 건조를 지원합니다.",
+   "target": "첫 올인원 로봇청소기, 가성비 중시",
+   "usp": "15,000Pa · 롤러형 물걸레·실시간 세척 · 먼지 비움·냉수 세척·온풍 건조 · LDS 센서",
+   "src": [
+    "S269",
+    "S267"
+   ],
+   "sc": [
+    3,
+    1,
+    4,
+    3,
+    3
+   ],
+   "scw": [
+    "인기 6위",
+    "리뷰 수집 전",
+    "연말 블프 시즌",
+    "수입사 유통",
+    "가격 경쟁 보통"
+   ],
+   "note": "가격은 2026.11.23 다나와 제품 페이지 기준입니다. 제품 사진은 다나와 등록 이미지입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "107769194",
+   "q": "앤커 유피 C28 옴니",
+   "ai": false,
+   "img": "issues/img/107769194.jpg"
+  },
+  {
+   "id": "r3",
+   "cat": "청소",
+   "mk": "CN",
+   "icon": "robot",
+   "brand": "로보락",
+   "name": "로보락 S9 MaxV Ultra 로봇청소기",
+   "price": "1,190,000원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2025.02",
+   "ch": "다나와 로봇청소기 인기 7위",
+   "why": "2025년형 로보락 플래그십. 신형 S10 대비 40만 원가량 낮은 가격에 온수 세척·세제 자동 투입을 갖췄습니다.",
+   "target": "플래그십 성능을 100만 원대 초반에 원하는 가구",
+   "usp": "22,000Pa · 음파 진동 물걸레 · 먼지 비움·온수 세척·온풍 건조·세제 투입·자동 급수 · AI 사물 인식",
+   "src": [
+    "S269",
+    "S265"
+   ],
+   "sc": [
+    2,
+    1,
+    4,
+    3,
+    3
+   ],
+   "scw": [
+    "인기 7위",
+    "리뷰 수집 전",
+    "연말 블프 시즌",
+    "수입사 유통",
+    "경쟁 보통"
+   ],
+   "note": "가격은 2026.11.23 다나와 제품 페이지 기준입니다. 제품 사진은 다나와 등록 이미지입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "93806297",
+   "q": "로보락 S9 MaxV Ultra",
+   "ai": false,
+   "img": "issues/img/93806297.jpg"
+  },
+  {
+   "id": "r4",
+   "cat": "청소",
+   "mk": "CN",
+   "icon": "robot",
+   "brand": "에코백스",
+   "name": "에코백스 디봇 T90 프로 옴니 로봇청소기",
+   "price": "899,000원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2026.02",
+   "ch": "다나와 로봇청소기 인기 9위",
+   "why": "27cm 롤러 물걸레와 30,000Pa 흡입력. 온수 세척·세제 자동 투입 스테이션을 갖췄습니다.",
+   "target": "물걸레 성능 중시, 반려동물 가구",
+   "usp": "30,000Pa · 27cm 롤러 물걸레·실시간 세척 · 먼지 비움·온수 세척·온풍 건조·세제 투입 · AI 사물 인식·3D 인식",
+   "src": [
+    "S269",
+    "S266"
+   ],
+   "sc": [
+    2,
+    1,
+    4,
+    3,
+    3
+   ],
+   "scw": [
+    "인기 9위",
+    "리뷰 수집 전",
+    "연말 블프 시즌",
+    "수입사 유통",
+    "경쟁 보통"
+   ],
+   "note": "가격은 2026.11.23 다나와 제품 페이지 기준입니다. 제품 사진은 다나와 등록 이미지입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "106687076",
+   "q": "에코백스 디봇 T90 프로 옴니",
+   "ai": false,
+   "img": "issues/img/106687076.jpg"
+  },
+  {
    "id": "t1",
    "cat": "TV",
    "mk": "KR",
@@ -3650,6 +3875,18 @@
   ],
   "news": [
    [
+    "IFR: 34.2M consumer service robots sold in 2025 (+37%)",
+    "Per IFR's World Robotics 2026, professional service robots rose 24% to almost 250,000 units, and about 7,000 full-size humanoids (over 140cm) were sold."
+   ],
+   [
+    "H1 robot-vacuum sales share: Samsung 27%, Dreame 18%, Roborock 16%",
+    "Based on Danawa unit sales for January–June; Mova (9%) and LG (8%) followed, with demand split between ~KRW 1.5M premium and sub-KRW 1M value models."
+   ],
+   [
+    "About 16,000 humanoids installed in 2025, over 80% in China",
+    "Per Counterpoint, AGIBOT (31%) and Unitree (27%) lead; cumulative installations are expected to top 100,000 by 2027."
+   ],
+   [
     "LG signs humanoid robot quality pact with KIRIA",
     "LG joins building a humanoid safety-certification system and developing international and national standards."
    ],
@@ -4186,6 +4423,34 @@
     "The OLED evo C6 listed on Danawa in March 2026, now around KRW 1.65M versus a KRW 2.389M launch price.",
     "Mid-size OLED for gaming and movies",
     "48-inch 4K OLED · 120Hz · AI voice & smart assistant · Netflix, YouTube, mirroring"
+   ],
+   "r1": [
+    "Dreame L40s Pro Ultra robot vacuum",
+    "Danawa H1 2026 sales, No.3",
+    "No.3 in Danawa robot-vacuum sales for H1 2026; around KRW 700,000 with hot-water mop washing and warm-air drying.",
+    "Households wanting an all-in-one under KRW 1M",
+    "19,000Pa · rotating mops with extending arm · auto-empty, hot-water wash, warm-air dry · AI object recognition, 3D avoidance"
+   ],
+   "r2": [
+    "Anker Eufy C28 Omni robot vacuum",
+    "Danawa robot vacuums, No.6",
+    "A roller-mop all-in-one around KRW 600,000 with auto-empty, real-time mop washing and warm-air drying.",
+    "First all-in-one buyers, value seekers",
+    "15,000Pa · roller mop with real-time washing · auto-empty, cold-water wash, warm-air dry · LDS sensor"
+   ],
+   "r3": [
+    "Roborock S9 MaxV Ultra robot vacuum",
+    "Danawa robot vacuums, No.7",
+    "Roborock's 2025 flagship, about KRW 400,000 below the new S10, with hot-water washing and auto detergent.",
+    "Flagship performance at a lower price",
+    "22,000Pa · sonic vibrating mop · auto-empty, hot-water wash, warm-air dry, detergent, auto refill · AI object recognition"
+   ],
+   "r4": [
+    "Ecovacs Deebot T90 Pro Omni robot vacuum",
+    "Danawa robot vacuums, No.9",
+    "A 27cm roller mop and 30,000Pa suction, with hot-water washing and auto detergent dispensing.",
+    "Mop-focused homes, pet owners",
+    "30,000Pa · 27cm roller mop · auto-empty, hot-water wash, warm-air dry, detergent · AI object & 3D recognition"
    ]
   },
   "launches": [
@@ -4359,7 +4624,9 @@
    "Alice Intelligence": "Alice Intelligence",
    "가민": "Garmin",
    "소니": "Sony",
-   "애플": "Apple"
+   "애플": "Apple",
+   "에코백스": "Ecovacs",
+   "드리미": "Dreame"
   },
   "mail": {
    "hook": "16 AI glasses models sold out before launch; Black Friday's last week"
