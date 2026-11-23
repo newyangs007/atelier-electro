@@ -96,7 +96,9 @@ def src_link(S, sid, L):
     media = t.split(',')[0] if ',' in t else (L == 'en' and 'Source' or '출처')
     if 'danawa' in s['u'] and ',' not in t:
         media = 'Danawa' if L == 'en' else '다나와'
-    return '<a class="src" href="%s" target="_blank" rel="noopener" title="%s">%s</a>' % (e(s['u']), e(t), e(media[:28]))
+    if len(media) > 40:
+        media = 'Source' if L == 'en' else '출처'
+    return '<a class="src" href="%s" target="_blank" rel="noopener" title="%s">%s</a>' % (e(s['u']), e(t), e(media))
 
 
 def md_select(issue):
@@ -114,7 +116,7 @@ def faq(issue, L):
         return [
             ('What is Gajeon Radar?', 'Gajeon Radar (가전레이더) is a Korean appliance magazine published every morning at 8:00 KST. It covers AI appliances, AI devices such as AI glasses and AI voice recorders, small appliances and major appliances across Korea, the US, Japan, China and Europe, and every number carries its source and date.'),
             ('How are the picks chosen?', 'Each product is scored 1–5 on demand, proof (reviews), timing, access (sourcing) and margin. The average is rounded to 0.5: 4.0 or higher is a Top pick, 3.5 is Conditional, 3.0 or lower is Watch. Prices, review counts and ranks come from Danawa\'s popularity ranking with ads excluded.'),
-            ('What is the AI appliance MD select?', 'AI appliances that meet all four rules: top 5 in their Danawa category, 100+ reviews, a rating of 4.7 or higher, and AI features stated by the manufacturer. Each comes with a one-line MD note.'),
+            ('What is the AI appliance MD note?', 'A one-line buying checkpoint for AI appliances that meet all four rules: top 5 in their Danawa category, 100+ reviews, a rating of 4.7 or higher, and AI features stated by the manufacturer.'),
             ('Which AI appliances stand out today?', 'As of %s, the AI appliance MD select is: %s.' % (d, names) if sel else 'There is no AI appliance MD select in this issue.'),
             ('Are the Coupang links ads?', 'Yes. The Coupang links are part of the Coupang Partners program, and the magazine may earn a commission. Products are scored with the same rules whether or not they have a link.'),
             ('How do I get the newsletter?', 'Subscribe on the Korean homepage. The newsletter (in Korean) arrives every morning at 8:00 KST with three picks matched to your interests, and every email has an unsubscribe link.'),
@@ -122,8 +124,8 @@ def faq(issue, L):
     names = ', '.join('%s(%s, %s)' % (p['name'], p['ch'].split(' · ')[0], p['price']) for p in sel)
     return [
         ('가전레이더는 어떤 매체인가요?', '가전레이더(GAJEON RADAR)는 매일 아침 8시(한국 시간)에 발행하는 가전 매거진입니다. AI가전, AI 안경·AI 녹음기 같은 AI디바이스, 소형가전, 대형가전을 한국·미국·일본·중국·유럽에 걸쳐 다루고, 모든 수치에 매체와 날짜를 붙입니다.'),
-        ('추천템은 어떤 기준으로 고르나요?', '수요·검증(리뷰)·타이밍·접근성·마진 다섯 항목을 1~5점으로 매기고, 평균을 0.5 단위로 반올림합니다. 4.0 이상은 추천템, 3.5는 조건부, 3.0 이하는 관망입니다. 가격·리뷰 수·순위는 다나와 인기상품순(광고 제외) 기준입니다.'),
-        ('AI가전 MD 셀렉트는 무엇인가요?', '다나와 카테고리 인기 5위 이내, 리뷰 100건 이상, 평점 4.7 이상, 제조사가 밝힌 AI 기능까지 네 조건을 모두 갖춘 AI가전에 MD 한 줄 코멘트를 붙인 목록입니다.'),
+        ('추천템은 어떤 기준으로 고르나요?', '수요·검증(리뷰)·타이밍·접근성·마진 다섯 항목을 1~5점으로 매기고, 평균을 0.5 단위로 반올림합니다. 4.0 이상은 추천템, 3.5는 조건부, 3.0 이하는 관망이며, 매일 점수가 가장 높은 3개를 오늘의 추천템으로 소개합니다. 가격·리뷰 수·순위는 다나와 인기상품순(광고 제외) 기준입니다.'),
+        ('AI가전 MD 코멘트는 무엇인가요?', '다나와 카테고리 인기 5위 이내, 리뷰 100건 이상, 평점 4.7 이상, 제조사가 밝힌 AI 기능까지 네 조건을 모두 갖춘 AI가전에 붙이는 구매 확인 포인트 한 줄입니다. 제품 리스트의 AI가전 카테고리와 상세 보기에서 볼 수 있습니다.'),
         ('오늘 주목할 AI가전은 무엇인가요?', ('%s 기준 AI가전 MD 셀렉트는 %s입니다.' % (d, names)) if sel else '이번 호에는 AI가전 MD 셀렉트가 없습니다.'),
         ('쿠팡 링크는 광고인가요?', '네. 쿠팡 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다. 링크가 있든 없든 같은 점수 기준으로 고릅니다.'),
         ('뉴스레터는 어떻게 받나요?', '홈페이지 맨 아래 구독 폼에서 신청하면 매일 아침 8시에 관심 분야에 맞춘 추천템 3개와 주요 뉴스를 메일로 보내 드립니다. 모든 메일 하단에 구독 해지 링크가 있습니다.'),
@@ -187,23 +189,27 @@ def jsonld_product(p, issue):
 
 
 # ---------------------------------------------------------------- SSR fragments injected into index.html containers
+def ranked(issue):
+    return sorted(issue['picks'], key=lambda p: (-score(p['sc']), -p['sc'][0], -p['sc'][1]))
+
+
 def ssr_index(issue):
+    """Plain HTML for crawlers that do not run JavaScript; the page script replaces it on load."""
     S = issue['sources']
-    out = {}
-    out['cover-title'] = issue['cover']['title']
-    out['cover-deck'] = e(issue['cover']['deck'])
-    out['trend-list'] = ''.join('<article class="trend"><div class="rn">%s</div><div class="stat num">%s</div><div class="sl">%s</div><h3>%s</h3><p>%s</p></article>'
-                                % (e(t['rn']), e(t['stat']), e(t['sl']), e(t['t']), e(t['line'])) for t in issue['trends'])
-    news = sorted(issue['news'], key=lambda n: not n.get('pt'))
-    out['wire-list'] = ''.join('<article class="story%s"><div class="meta"><span>%s</span><span class="cat c-%s">%s</span></div><h3>%s</h3><p>%s</p>%s</article>'
-                               % (' pt' if n.get('pt') else '', e(REG['ko'].get(n['r'], n['r'])), e(n['c']), e(NEWSCAT['ko'].get(n['c'], n['c'])),
-                                  e(n['h']), e(n['p']), src_link(S, n['s'], 'ko')) for n in news)
-    out['pick-list'] = ''.join('<a class="pick" href="%s"><span class="vis">%s</span><span class="who">%s · %s</span><h3>%s</h3><span class="row"><span class="price num">%s</span><span class="verdict">%s</span></span></a>'
-                               % (e(p['page']), ('<img src="%s" alt="%s" loading="lazy">' % (e(p['img']), e(p['name']))) if p.get('img') else '',
-                                  e(p['brand']), e(p['cat']), e(p['name']), e(p['price']), verdict(score(p['sc']), 'ko')) for p in issue['picks'])
-    out['ai-select'] = ''.join('<div class="ais"><a class="im" href="%s">%s</a><p class="meta">%s</p><p class="nm">%s</p><p class="mdl">%s</p><p class="pr num">%s</p></div>'
-                               % (e(p['page']), ('<img src="%s" alt="%s" loading="lazy">' % (e(p['img']), e(p['name']))) if p.get('img') else '',
-                                  e(p['ch']), e(p['name']), e(p['md']), e(p['price'])) for p in md_select(issue))
+    img = lambda p: ('<img src="%s" alt="%s" loading="lazy">' % (e(p['img']), e(p['name']))) if p.get('img') else ''
+    out = {'hero-title': issue['cover']['title'], 'hero-deck': e(issue['cover']['deck'])}
+    R = ranked(issue)
+    out['top3-list'] = ''.join('<article class="t3"><a class="im" href="%s">%s</a><div class="b"><span class="badge">%s %.1f</span><h3>%s</h3><p class="why">%s</p><span class="price">%s</span></div></article>'
+                               % (e(p['page']), img(p), verdict(score(p['sc']), 'ko'), score(p['sc']), e(p['name']), e(p['why']), e(p['price'])) for p in R[:3])
+    out['plist'] = ''.join('<article class="card"><a class="im" href="%s">%s</a><div class="who">%s · %s</div><h3><a href="%s">%s</a></h3><div class="row"><span class="price">%s</span><span class="badge">%s</span></div></article>'
+                           % (e(p['page']), img(p), e(p['brand']), e(p['cat']), e(p['page']), e(p['name']), e(p['price']), verdict(score(p['sc']), 'ko')) for p in R)
+    out['news-list'] = ''.join('<article class="nw"><div class="m"><span class="c">%s</span><span>%s</span><span>%s</span></div><h3>%s</h3><p>%s</p>%s</article>'
+                               % (e(NEWSCAT['ko'].get(n['c'], n['c'])), e(REG['ko'].get(n['r'], n['r'])), e(n.get('d', '')), e(n['h']), e(n['p']), src_link(S, n['s'], 'ko'))
+                               for n in sorted(issue['news'], key=lambda n: not n.get('pt')))
+    out['trend-list'] = ''.join('<article class="tr"><div class="st">%s</div><div class="sl">%s</div><h3>%s</h3><p>%s</p></article>'
+                                % (e(t['stat']), e(t['sl']), e(t['t']), e(t['line'])) for t in issue['trends'])
+    out['launch-list'] = ''.join('<div class="ln"><span class="d">%s</span><span class="t">%s %s</span><span class="x">%s · %s</span></div>'
+                                 % (e(l['d']), e(l['b']), e(l['p']), e(REG['ko'].get(l['m'], l['m'])), e(l['cat'])) for l in issue['launches'])
     return out
 
 
@@ -253,7 +259,9 @@ table{width:100%;border-collapse:collapse;font-size:13.5px}th,td{text-align:left
 details{border-top:1px solid #000;padding:14px 0}summary{font-weight:600;cursor:pointer}details p{color:#333;font-size:14px}
 .cta{background:#000;color:#fff;padding:48px 0;margin-top:64px}.cta a.b{display:inline-block;background:#fff;color:#000;padding:12px 22px;text-decoration:none;font-weight:600;margin-top:10px}
 footer{padding:28px 0 60px;font-size:12.5px;color:var(--ink2)}footer a{margin-right:14px}
-@media(max-width:860px){.grid,.trs,.figs{grid-template-columns:1fr 1fr}.ais .grid{grid-template-columns:1fr 1fr}.news{grid-template-columns:1fr}.top nav{display:none}}
+@media(max-width:860px){.grid,.figs,.ais .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}.trs{grid-template-columns:minmax(0,1fr)}.news{grid-template-columns:minmax(0,1fr)}.top nav{display:none}}
+@media(max-width:520px){.w{padding:0 14px}.card h3{font-size:15px}.card .row{flex-wrap:wrap;gap:6px}.price{font-size:17px}.btns a{flex:1 1 auto;text-align:center}.fig .v{font-size:26px}.ais{padding:14px}.mast{font-size:clamp(44px,15vw,90px)}}
+body{overflow-x:clip}.grid>*,.trs>*,.figs>*,.news>*{min-width:0}
 '''
 
 UI = {
