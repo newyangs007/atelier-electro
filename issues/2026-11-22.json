@@ -506,6 +506,156 @@
    "t": "다나와, 로보락 S10 MaxV Ultra Steam 제품 정보",
    "u": "https://prod.danawa.com/info/?pcode=124468606",
    "r": "KR"
+  },
+  "S201": {
+   "t": "다나와 TV 전체 인기상품순 (2026.11.23 수집)",
+   "u": "https://prod.danawa.com/list/?cate=10248425",
+   "r": "KR"
+  },
+  "S202": {
+   "t": "다나와 AI 노트북 인기상품순 (2026.11.23 수집)",
+   "u": "https://prod.danawa.com/list/?cate=11254120",
+   "r": "KR"
+  },
+  "S203": {
+   "t": "다나와 태블릿 전체 인기상품순 (2026.11.23 수집)",
+   "u": "https://prod.danawa.com/list/?cate=12210596",
+   "r": "KR"
+  },
+  "S204": {
+   "t": "다나와 휴대폰 전체 인기상품순 (2026.11.23 수집)",
+   "u": "https://prod.danawa.com/list/?cate=122515",
+   "r": "KR"
+  },
+  "S205": {
+   "t": "다나와 스마트워치 인기상품순 (2026.11.23 수집)",
+   "u": "https://prod.danawa.com/list/?cate=12215657",
+   "r": "KR"
+  },
+  "S206": {
+   "t": "다나와 무선 이어폰 인기상품순 (2026.11.23 수집)",
+   "u": "https://prod.danawa.com/list/?cate=12237349",
+   "r": "KR"
+  },
+  "S207": {
+   "t": "다나와 무선 헤드폰 인기상품순 (2026.11.23 수집)",
+   "u": "https://prod.danawa.com/list/?cate=12237350",
+   "r": "KR"
+  },
+  "S221": {
+   "t": "위키트리, 옴디아 3분기 스마트폰 출하 삼성 1위(2026.10.29 보고서)",
+   "u": "https://www.wikitree.co.kr/articles/1171193",
+   "r": "KR"
+  },
+  "S222": {
+   "t": "연합뉴스, 3분기 스마트폰 매출 점유율 애플 50% 역대 최고(카운터포인트)",
+   "u": "https://www.koreancenter.or.kr/news/articleView.html?idxno=1434572",
+   "r": "KR"
+  },
+  "S223": {
+   "t": "SamMobile, Galaxy S27 series launch timing (2026.10.19)",
+   "u": "https://www.sammobile.com/news/galaxy-s27-series-launch-earlier/",
+   "r": "EU"
+  },
+  "S224": {
+   "t": "IDC, PC shipments fall 20.1% in Q3 2026 (2026.10.08)",
+   "u": "https://idc.com/resource-center/press-releases/idc-pc-tracker-3q26",
+   "r": "US"
+  },
+  "S225": {
+   "t": "카운터포인트리서치, 3분기 글로벌 PC 출하량 21% 감소",
+   "u": "https://counterpointresearch.com/ko/insights/global-pc-shipments-plunge-21-percent-in-q3-2026",
+   "r": "US"
+  },
+  "S226": {
+   "t": "Compound Semiconductor(TrendForce), Global TV shipments decline 3.6% YoY in 3Q26 (2026.11.16)",
+   "u": "https://compoundsemiconductor.net/article/125864/Global_TV_shipments_decline_36_YoY_in_3Q26",
+   "r": "EU"
+  },
+  "S227": {
+   "t": "카운터포인트리서치, 2026년 2분기 글로벌 스마트워치 출하량 4% 감소",
+   "u": "https://korea.counterpointresearch.com/?p=9244",
+   "r": "KR"
+  },
+  "S241": {
+   "t": "다나와, LG 스탠바이미2 Max 32LX6BPGA 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=122632760",
+   "r": "KR"
+  },
+  "S242": {
+   "t": "다나와, 삼성 Mini LED KU75MH75AFXKR 75인치 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=122616528",
+   "r": "KR"
+  },
+  "S243": {
+   "t": "다나와, LG 그램북 16U55U-GSOWK 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=122624573",
+   "r": "KR"
+  },
+  "S244": {
+   "t": "다나와, 삼성 갤럭시북6 프로 NT960XJG-KC51G 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=104939918",
+   "r": "KR"
+  },
+  "S245": {
+   "t": "다나와, 삼성 갤럭시탭S11 128GB 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=96985325",
+   "r": "KR"
+  },
+  "S246": {
+   "t": "다나와, APPLE 2025 iPad A16 11세대 128GB 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=77313098",
+   "r": "KR"
+  },
+  "S247": {
+   "t": "다나와, 삼성 갤럭시S26 256GB 자급제 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=106720964",
+   "r": "KR"
+  },
+  "S248": {
+   "t": "다나와, APPLE 아이폰17 256GB 자급제 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=101956046",
+   "r": "KR"
+  },
+  "S249": {
+   "t": "다나와, 삼성 갤럭시워치9 40mm 블루투스 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=123234951",
+   "r": "KR"
+  },
+  "S250": {
+   "t": "다나와, APPLE 워치 SE 3세대 40mm 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=96981758",
+   "r": "KR"
+  },
+  "S251": {
+   "t": "다나와, 가민 포러너 265 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=19457261",
+   "r": "KR"
+  },
+  "S252": {
+   "t": "다나와, APPLE 에어팟 프로3 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=97405013",
+   "r": "KR"
+  },
+  "S253": {
+   "t": "다나와, 삼성 갤럭시 버즈3 프로 SM-R630N 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=59537216",
+   "r": "KR"
+  },
+  "S254": {
+   "t": "다나와, APPLE 에어팟4 액티브 노이즈 캔슬링 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=65919884",
+   "r": "KR"
+  },
+  "S255": {
+   "t": "다나와, SONY WH-1000XM6 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=92622830",
+   "r": "KR"
+  },
+  "S256": {
+   "t": "다나와, SONY WH-1000XM5 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=17229284",
+   "r": "KR"
   }
  },
  "cover": {
@@ -686,6 +836,62 @@
   }
  ],
  "news": [
+  {
+   "r": "KR",
+   "c": "IT",
+   "h": "3분기 스마트폰 출하 −20%, 삼성 5,780만 대로 1위",
+   "p": "옴디아 집계 세계 출하 2억 5,470만 대로 3분기 기준 2013년 이후 최저. 삼성 점유율은 19%에서 23%로 올랐습니다.",
+   "d": "2026.10.29",
+   "s": "S221"
+  },
+  {
+   "r": "KR",
+   "c": "IT",
+   "h": "애플, 3분기 스마트폰 매출 점유율 50% 역대 최고",
+   "p": "카운터포인트 집계 출하는 19% 줄었지만 평균판매가격이 442달러(+27%)로 올라 매출은 3% 늘었습니다.",
+   "d": "2026.11.04",
+   "s": "S222"
+  },
+  {
+   "r": "EU",
+   "c": "IT",
+   "h": "갤럭시 S27, 일반·플러스·프로·울트라 4종 전망",
+   "p": "외신은 주요 부품이 확정됐고 일반·플러스에 엑시노스 2700이 들어간다고 전했습니다. 삼성 공식 발표는 아닙니다.",
+   "d": "2026.10.19",
+   "s": "S223"
+  },
+  {
+   "r": "US",
+   "c": "IT",
+   "h": "3분기 PC 출하 −20.1%, 6,270만 대",
+   "p": "IDC 집계 두 분기 연속 감소. 메모리 가격 상승에 대비한 선구매 여파와 공급 제약이 겹쳤습니다.",
+   "d": "2026.10.08",
+   "s": "S224"
+  },
+  {
+   "r": "US",
+   "c": "IT",
+   "h": "애플 PC 점유율 9.8%로 상승, 맥북 네오가 방어",
+   "p": "카운터포인트 집계 3분기 PC 출하 −21%. 레노버 26.3%로 1위, 4분기 감소 폭은 27%까지 커질 전망입니다.",
+   "d": "2026.10",
+   "s": "S225"
+  },
+  {
+   "r": "EU",
+   "c": "IT",
+   "h": "3분기 TV 출하 4,794만 대(−3.6%), 삼성 840만 대 1위",
+   "p": "트렌드포스 집계. 올해 미니LED TV 출하는 2,878만 대(+116%)로 보급률 15%에 근접할 전망입니다.",
+   "d": "2026.11.16",
+   "s": "S226"
+  },
+  {
+   "r": "KR",
+   "c": "IT",
+   "h": "2분기 스마트워치 출하 −4%, 화웨이 22% 역대 최고",
+   "p": "카운터포인트 집계. 상위 5개 브랜드 중 애플 성장률이 가장 높았고, 올해 연간 성장률은 1% 안팎 전망입니다.",
+   "d": "2026.09.08",
+   "s": "S227"
+  },
   {
    "r": "KR",
    "c": "AI",
@@ -2224,6 +2430,638 @@
    "q": "로보락 S10 MaxV Ultra Steam",
    "img": "issues/img/124468606.jpg",
    "cp": "https://link.coupang.com/a/iSoyduaDts"
+  },
+  {
+   "id": "i01",
+   "cat": "TV",
+   "mk": "KR",
+   "icon": "tv",
+   "brand": "LG전자",
+   "name": "LG 스탠바이미2 Max 32LX6BPGA",
+   "price": "1,289,880원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2026.04",
+   "ch": "다나와 TV 인기 1위",
+   "why": "다나와 TV 전체 인기 1위. 32인치 4K 이동형 스탠드 TV에 배터리 내장(4시간 30분).",
+   "target": "원룸·1인 가구, 방마다 옮겨 쓰는 서브 TV가 필요한 집",
+   "usp": "32인치 4K · 배터리 내장 4시간 30분 · 돌비비전 · AI 음성인식",
+   "src": [
+    "S201",
+    "S241"
+   ],
+   "sc": [
+    5,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "TV 인기 1위",
+    "리뷰 수집 전",
+    "연말 선물·블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "122632760",
+   "q": "LG 스탠바이미2 Max 32LX6BPGA",
+   "ai": false,
+   "was": "출시가 1,590,000원"
+  },
+  {
+   "id": "i02",
+   "cat": "TV",
+   "mk": "KR",
+   "icon": "tv",
+   "brand": "삼성전자",
+   "name": "삼성 Mini LED KU75MH75AFXKR 75인치",
+   "price": "1,362,680원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2026.04",
+   "ch": "다나와 TV 인기 7위",
+   "why": "2026년형 75인치 미니LED. 다나와 출시가 219만 원 대비 현재 최저가가 37% 낮습니다.",
+   "target": "거실 TV를 75인치로 키우려는 가정",
+   "usp": "75인치 4K 미니LED · AI 음성인식·콘텐츠 추천 · 2026년형",
+   "src": [
+    "S201",
+    "S242"
+   ],
+   "sc": [
+    2,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "TV 인기 7위",
+    "리뷰 수집 전",
+    "연말 선물·블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "122616528",
+   "q": "삼성 Mini LED KU75MH75AFXKR",
+   "ai": false,
+   "was": "출시가 2,190,000원",
+   "dc": 37,
+   "dcb": "다나와 표기 출시가 대비 11.23 최저가"
+  },
+  {
+   "id": "i03",
+   "cat": "노트북",
+   "mk": "KR",
+   "icon": "laptop",
+   "brand": "LG전자",
+   "name": "LG 그램북 16U55U-GSOWK",
+   "price": "1,234,880원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2026.04",
+   "ch": "다나와 AI 노트북 인기 2위",
+   "why": "다나와 AI 노트북 인기 2위. 라이젠 AI 5 430, 16GB, 16인치. 출시가 200만 원 대비 38% 낮습니다.",
+   "target": "대학생·사무용 첫 노트북, 큰 화면 가성비를 찾는 사람",
+   "usp": "16인치 WUXGA · 라이젠 AI 5 430 · 16GB/256GB · 1.74kg",
+   "src": [
+    "S202",
+    "S243"
+   ],
+   "sc": [
+    4,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "AI 노트북 인기 2위",
+    "리뷰 수집 전",
+    "연말 선물·블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "122624573",
+   "q": "LG 그램북 16U55U-GSOWK",
+   "ai": false,
+   "was": "출시가 2,000,000원",
+   "dc": 38,
+   "dcb": "다나와 표기 출시가 대비 11.23 최저가"
+  },
+  {
+   "id": "i04",
+   "cat": "노트북",
+   "mk": "KR",
+   "icon": "laptop",
+   "brand": "삼성전자",
+   "name": "삼성 갤럭시북6 프로 NT960XJG-KC51G",
+   "price": "2,689,990원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2026.01",
+   "ch": "다나와 AI 노트북 인기 16위",
+   "why": "2026년형 16인치 갤럭시북 프로. 코어 울트라5 338H, 1.59kg.",
+   "target": "갤럭시폰과 연동해 쓰는 직장인·대학생",
+   "usp": "16인치 2880×1800 · 코어 울트라5 338H · 16GB/512GB · 1.59kg",
+   "src": [
+    "S202",
+    "S244"
+   ],
+   "sc": [
+    2,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "AI 노트북 인기 16위",
+    "리뷰 수집 전",
+    "연말 선물·블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "104939918",
+   "q": "삼성 갤럭시북6 프로 NT960XJG-KC51G",
+   "ai": false,
+   "was": "출시가 3,110,000원"
+  },
+  {
+   "id": "i05",
+   "cat": "태블릿",
+   "mk": "KR",
+   "icon": "tablet",
+   "brand": "삼성전자",
+   "name": "삼성 갤럭시탭S11 128GB",
+   "price": "1,109,290원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2025.09",
+   "ch": "다나와 태블릿 인기 1위",
+   "why": "다나와 태블릿 전체 인기 1위. 11인치 120Hz AMOLED, IP68.",
+   "target": "필기·영상용 프리미엄 태블릿을 찾는 학생·직장인",
+   "usp": "11인치 D-AMOLED 2X 120Hz · 디멘시티 9400+ · 12GB/128GB · IP68",
+   "src": [
+    "S203",
+    "S245"
+   ],
+   "sc": [
+    5,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "태블릿 인기 1위",
+    "리뷰 수집 전",
+    "연말 선물·블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "96985325",
+   "q": "삼성 갤럭시탭S11 128GB",
+   "ai": false
+  },
+  {
+   "id": "i06",
+   "cat": "태블릿",
+   "mk": "US",
+   "icon": "tablet",
+   "brand": "애플",
+   "name": "APPLE 2025 iPad A16 11세대 128GB",
+   "price": "629,520원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2025.04",
+   "ch": "다나와 태블릿 인기 10위",
+   "why": "아이패드 기본형. 출시가 74만 9천 원 대비 현재 최저가 62만 원대.",
+   "target": "아이폰 사용자, 인강·영상용 첫 아이패드",
+   "usp": "11인치 · A16 · 128GB · 최대 30W 충전",
+   "src": [
+    "S203",
+    "S246"
+   ],
+   "sc": [
+    2,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "태블릿 인기 10위",
+    "리뷰 수집 전",
+    "연말 선물·블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "77313098",
+   "q": "애플 아이패드 A16 11세대 128GB",
+   "ai": false,
+   "was": "출시가 749,000원"
+  },
+  {
+   "id": "i07",
+   "cat": "스마트폰",
+   "mk": "KR",
+   "icon": "phone",
+   "brand": "삼성전자",
+   "name": "삼성 갤럭시S26 256GB 자급제",
+   "price": "1,118,920원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2026.02",
+   "ch": "다나와 휴대폰 인기 2위",
+   "why": "다나와 휴대폰 인기 2위. 6.3인치 120Hz, 엑시노스 2600.",
+   "target": "통신사 약정 없이 바꾸려는 갤럭시 사용자",
+   "usp": "6.3인치 120Hz · 엑시노스 2600 · 4,300mAh · 50MP 트리플",
+   "src": [
+    "S204",
+    "S247"
+   ],
+   "sc": [
+    4,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "휴대폰 인기 2위",
+    "리뷰 수집 전",
+    "연말 선물·블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "106720964",
+   "q": "삼성 갤럭시S26 256GB 자급제",
+   "ai": false,
+   "was": "출시가 1,254,000원"
+  },
+  {
+   "id": "i08",
+   "cat": "스마트폰",
+   "mk": "US",
+   "icon": "phone",
+   "brand": "애플",
+   "name": "APPLE 아이폰17 256GB 자급제",
+   "price": "1,251,300원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2025.09",
+   "ch": "다나와 휴대폰 인기 17위",
+   "why": "아이폰 기본형. 6.3인치 120Hz, A19, 48MP 듀얼.",
+   "target": "통신사 약정 없이 바꾸려는 아이폰 사용자",
+   "usp": "6.3인치 120Hz · A19 · 48MP+48MP · 맥세이프 20W",
+   "src": [
+    "S204",
+    "S248"
+   ],
+   "sc": [
+    2,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "휴대폰 인기 17위",
+    "리뷰 수집 전",
+    "연말 선물·블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "101956046",
+   "q": "애플 아이폰17 256GB 자급제",
+   "ai": false,
+   "was": "출시가 1,290,000원"
+  },
+  {
+   "id": "i09",
+   "cat": "워치",
+   "mk": "KR",
+   "icon": "watch",
+   "brand": "삼성전자",
+   "name": "삼성 갤럭시워치9 40mm 블루투스",
+   "price": "442,950원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2026.08",
+   "ch": "다나와 스마트워치 인기 2위",
+   "why": "다나와 스마트워치 인기 2위. 2026년형 갤럭시워치 기본형.",
+   "target": "갤럭시폰 사용자, 운동·수면 기록용 첫 스마트워치",
+   "usp": "1.34인치 S-AMOLED · 5ATM·IP68 · 32GB · AOD 30시간",
+   "src": [
+    "S205",
+    "S249"
+   ],
+   "sc": [
+    4,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "스마트워치 인기 2위",
+    "리뷰 수집 전",
+    "연말 선물·블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "123234951",
+   "q": "삼성 갤럭시워치9 40mm 블루투스",
+   "ai": false
+  },
+  {
+   "id": "i10",
+   "cat": "워치",
+   "mk": "US",
+   "icon": "watch",
+   "brand": "애플",
+   "name": "APPLE 워치 SE 3세대 40mm",
+   "price": "325,690원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2025.09",
+   "ch": "다나와 스마트워치 인기 11위",
+   "why": "애플워치 입문형. 출시가 36만 9천 원 대비 현재 32만 원대.",
+   "target": "아이폰 사용자, 첫 애플워치",
+   "usp": "40mm LTPO OLED 1000nit · 18시간(저전력 32시간) · 64GB",
+   "src": [
+    "S205",
+    "S250"
+   ],
+   "sc": [
+    2,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "스마트워치 인기 11위",
+    "리뷰 수집 전",
+    "연말 선물·블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "96981758",
+   "q": "애플 워치 SE 3세대 40mm",
+   "ai": false,
+   "was": "출시가 369,000원"
+  },
+  {
+   "id": "i11",
+   "cat": "워치",
+   "mk": "US",
+   "icon": "watch",
+   "brand": "가민",
+   "name": "가민 포러너 265",
+   "price": "459,000원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2023.03",
+   "ch": "다나와 스마트워치 인기 6위",
+   "why": "러닝 워치 스테디셀러. 다나와 스마트워치 인기 6위.",
+   "target": "러닝·마라톤 입문자와 기록 관리하는 러너",
+   "usp": "1.3인치 AMOLED · GPS · 5ATM · 최대 13일",
+   "src": [
+    "S205",
+    "S251"
+   ],
+   "sc": [
+    3,
+    1,
+    4,
+    3,
+    2
+   ],
+   "scw": [
+    "스마트워치 인기 6위",
+    "리뷰 수집 전",
+    "연말 선물·블프 시즌",
+    "공식 수입사 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "19457261",
+   "q": "가민 포러너 265",
+   "ai": false,
+   "was": "출시가 589,000원"
+  },
+  {
+   "id": "i12",
+   "cat": "이어폰",
+   "mk": "US",
+   "icon": "earbuds",
+   "brand": "애플",
+   "name": "APPLE 에어팟 프로3",
+   "price": "287,490원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2025.09",
+   "ch": "다나와 무선 이어폰 인기 1위",
+   "why": "다나와 무선 이어폰 인기 1위. 적응형 ANC, IP57.",
+   "target": "아이폰 사용자, 출퇴근 노이즈 캔슬링용",
+   "usp": "적응형 ANC · IP57 · ANC 켬 약 8시간 · 블루투스 5.3",
+   "src": [
+    "S206",
+    "S252"
+   ],
+   "sc": [
+    5,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "무선 이어폰 인기 1위",
+    "리뷰 수집 전",
+    "연말 선물·블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "97405013",
+   "q": "애플 에어팟 프로3",
+   "ai": false,
+   "was": "출시가 369,000원"
+  },
+  {
+   "id": "i13",
+   "cat": "이어폰",
+   "mk": "KR",
+   "icon": "earbuds",
+   "brand": "삼성전자",
+   "name": "삼성 갤럭시 버즈3 프로 SM-R630N",
+   "price": "219,000원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2024.07",
+   "ch": "다나와 무선 이어폰 인기 11위",
+   "why": "갤럭시 버즈 프로 라인. 출시가 31만 9천 원 대비 31% 낮습니다.",
+   "target": "갤럭시폰 사용자, 노이즈 캔슬링 이어폰",
+   "usp": "적응형 ANC · ANC 켬 26시간 · IP57 · 블루투스 5.4",
+   "src": [
+    "S206",
+    "S253"
+   ],
+   "sc": [
+    2,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "무선 이어폰 인기 11위",
+    "리뷰 수집 전",
+    "연말 선물·블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "59537216",
+   "q": "삼성 갤럭시 버즈3 프로 SM-R630N",
+   "ai": false,
+   "was": "출시가 319,000원",
+   "dc": 31,
+   "dcb": "다나와 표기 출시가 대비 11.23 최저가"
+  },
+  {
+   "id": "i14",
+   "cat": "이어폰",
+   "mk": "US",
+   "icon": "earbuds",
+   "brand": "애플",
+   "name": "APPLE 에어팟4 액티브 노이즈 캔슬링",
+   "price": "179,500원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2024.10",
+   "ch": "다나와 무선 이어폰 인기 10위",
+   "why": "오픈형인데 ANC가 되는 에어팟4. 정품 기준 출시가 대비 33% 낮습니다.",
+   "target": "커널형이 불편한데 노이즈 캔슬링을 원하는 아이폰 사용자",
+   "usp": "오픈형 · 적응형 ANC · ANC 켬 20시간 · 블루투스 5.3",
+   "src": [
+    "S206",
+    "S254"
+   ],
+   "sc": [
+    2,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "무선 이어폰 인기 10위",
+    "리뷰 수집 전",
+    "연말 선물·블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "65919884",
+   "q": "애플 에어팟4 액티브 노이즈 캔슬링",
+   "ai": false,
+   "was": "출시가 269,000원",
+   "dc": 33,
+   "dcb": "다나와 표기 출시가 대비 11.23 최저가"
+  },
+  {
+   "id": "i15",
+   "cat": "오디오",
+   "mk": "JP",
+   "icon": "headphone",
+   "brand": "소니",
+   "name": "SONY WH-1000XM6",
+   "price": "479,190원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2025.05",
+   "ch": "다나와 무선 헤드폰 인기 3위",
+   "why": "소니 노이즈 캔슬링 헤드폰 최신작. 다나와 무선 헤드폰 인기 3위.",
+   "target": "비행·출퇴근이 잦은 직장인, 음질 중시 사용자",
+   "usp": "적응형 ANC(QN3) · ANC 켬 30시간 · LDAC · 254g",
+   "src": [
+    "S207",
+    "S255"
+   ],
+   "sc": [
+    4,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "무선 헤드폰 인기 3위",
+    "리뷰 수집 전",
+    "연말 선물·블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "92622830",
+   "q": "소니 WH-1000XM6",
+   "ai": false,
+   "was": "출시가 619,000원"
+  },
+  {
+   "id": "i16",
+   "cat": "오디오",
+   "mk": "JP",
+   "icon": "headphone",
+   "brand": "소니",
+   "name": "SONY WH-1000XM5",
+   "price": "272,800원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2022.05",
+   "ch": "다나와 무선 헤드폰 인기 2위",
+   "why": "다나와 무선 헤드폰 인기 2위. 출시가 51만 9천 원 대비 47% 낮습니다.",
+   "target": "노이즈 캔슬링 헤드폰을 처음 사는 사람",
+   "usp": "적응형 ANC · ANC 켬 30시간 · 250g · USB-C",
+   "src": [
+    "S207",
+    "S256"
+   ],
+   "sc": [
+    4,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "무선 헤드폰 인기 2위",
+    "리뷰 수집 전",
+    "연말 선물·블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "17229284",
+   "q": "소니 WH-1000XM5",
+   "ai": false,
+   "was": "출시가 519,000원",
+   "dc": 47,
+   "dcb": "다나와 표기 출시가 대비 11.23 최저가"
   }
  ],
  "channels": [
@@ -2376,6 +3214,34 @@
    }
   ],
   "news": [
+   [
+    "Q3 smartphone shipments −20%; Samsung No.1 at 57.8M",
+    "Omdia counted 254.7M units, the lowest Q3 since 2013. Samsung's share rose from 19% to 23%."
+   ],
+   [
+    "Apple hits a record 50% of Q3 smartphone revenue",
+    "Counterpoint: shipments fell 19%, but ASP rose 27% to $442, lifting revenue 3%."
+   ],
+   [
+    "Galaxy S27 expected in four models: base, Plus, Pro, Ultra",
+    "Reports say major components are finalized and the base and Plus use Exynos 2700. Samsung has not confirmed."
+   ],
+   [
+    "Q3 PC shipments −20.1% to 62.7M",
+    "IDC: a second straight decline, as pull-in hangover and supply constraints hit."
+   ],
+   [
+    "Apple's PC share rises to 9.8% as MacBook Neo cushions the fall",
+    "Counterpoint: Q3 PC shipments −21%; Lenovo leads at 26.3%; Q4 decline may widen to 27%."
+   ],
+   [
+    "Q3 TV shipments 47.94M (−3.6%); Samsung No.1 at 8.4M",
+    "TrendForce: 2026 Mini LED TV shipments forecast at 28.78M (+116%), near 15% penetration."
+   ],
+   [
+    "Q2 smartwatch shipments −4%; Huawei hits record 22%",
+    "Counterpoint: Apple grew fastest among the top five; 2026 growth seen around 1%."
+   ],
    [
     "KES 2026: Samsung's 'AI in daily life' vs LG's 'AI into industry'",
     "Samsung showed a connected appliance-mobile ecosystem; LG split its booth into home and industry."
@@ -2681,6 +3547,118 @@
     "Homes with pets or infants, premium robot vacuum upgraders",
     "AI object recognition · steam mop sterilization · hot-water wash & warm-air dry · 4.5cm (max 8.8cm) thresholds",
     "The steam-sterilizing station is the differentiator. Climbing up to 8.8cm helps in homes with many thresholds."
+   ],
+   "i01": [
+    "LG StanbyME 2 Max 32LX6BPGA",
+    "Danawa TVs, No.1",
+    "Danawa's No.1 TV. A 32-inch 4K movable stand TV with a built-in battery (4.5 hours).",
+    "Studio and single households, homes that want a TV to move between rooms",
+    "32-inch 4K · built-in battery 4.5h · Dolby Vision · AI voice"
+   ],
+   "i02": [
+    "Samsung Mini LED KU75MH75AFXKR 75-inch",
+    "Danawa TVs, No.7",
+    "A 2026 75-inch Mini LED TV, now 37% below Danawa's listed launch price of KRW 2.19M.",
+    "Homes moving the living-room TV up to 75 inches",
+    "75-inch 4K Mini LED · AI voice and content picks · 2026 model"
+   ],
+   "i03": [
+    "LG gram Book 16U55U-GSOWK",
+    "Danawa AI laptops, No.2",
+    "Danawa's No.2 AI laptop. Ryzen AI 5 430, 16GB, 16-inch; 38% below its KRW 2M launch price.",
+    "Students and office users buying a first laptop, big-screen value seekers",
+    "16-inch WUXGA · Ryzen AI 5 430 · 16GB/256GB · 1.74kg"
+   ],
+   "i04": [
+    "Samsung Galaxy Book6 Pro NT960XJG-KC51G",
+    "Danawa AI laptops, No.16",
+    "A 2026 16-inch Galaxy Book Pro with Core Ultra 5 338H at 1.59kg.",
+    "Office workers and students in the Galaxy ecosystem",
+    "16-inch 2880×1800 · Core Ultra 5 338H · 16GB/512GB · 1.59kg"
+   ],
+   "i05": [
+    "Samsung Galaxy Tab S11 128GB",
+    "Danawa tablets, No.1",
+    "Danawa's No.1 tablet. 11-inch 120Hz AMOLED, IP68.",
+    "Students and workers wanting a premium tablet for notes and video",
+    "11-inch D-AMOLED 2X 120Hz · Dimensity 9400+ · 12GB/128GB · IP68"
+   ],
+   "i06": [
+    "Apple iPad A16 (11th gen) 128GB",
+    "Danawa tablets, No.10",
+    "The base iPad, now in the KRW 620,000s vs a KRW 749,000 launch price.",
+    "iPhone users, a first iPad for lectures and video",
+    "11-inch · A16 · 128GB · up to 30W charging"
+   ],
+   "i07": [
+    "Samsung Galaxy S26 256GB (unlocked)",
+    "Danawa phones, No.2",
+    "Danawa's No.2 phone. 6.3-inch 120Hz, Exynos 2600.",
+    "Galaxy users switching without a carrier contract",
+    "6.3-inch 120Hz · Exynos 2600 · 4,300mAh · 50MP triple"
+   ],
+   "i08": [
+    "Apple iPhone 17 256GB (unlocked)",
+    "Danawa phones, No.17",
+    "The base iPhone. 6.3-inch 120Hz, A19, 48MP dual.",
+    "iPhone users switching without a carrier contract",
+    "6.3-inch 120Hz · A19 · 48MP+48MP · MagSafe 20W"
+   ],
+   "i09": [
+    "Samsung Galaxy Watch9 40mm Bluetooth",
+    "Danawa smartwatches, No.2",
+    "Danawa's No.2 smartwatch, the 2026 base Galaxy Watch.",
+    "Galaxy phone users, a first watch for workouts and sleep",
+    "1.34-inch S-AMOLED · 5ATM/IP68 · 32GB · 30h with AOD"
+   ],
+   "i10": [
+    "Apple Watch SE (3rd gen) 40mm",
+    "Danawa smartwatches, No.11",
+    "The entry Apple Watch, now in the KRW 320,000s vs a KRW 369,000 launch price.",
+    "iPhone users buying a first Apple Watch",
+    "40mm LTPO OLED 1000nit · 18h (32h low power) · 64GB"
+   ],
+   "i11": [
+    "Garmin Forerunner 265",
+    "Danawa smartwatches, No.6",
+    "A running-watch steady seller, No.6 on Danawa.",
+    "New runners and marathoners tracking training",
+    "1.3-inch AMOLED · GPS · 5ATM · up to 13 days"
+   ],
+   "i12": [
+    "Apple AirPods Pro 3",
+    "Danawa wireless earbuds, No.1",
+    "Danawa's No.1 wireless earbuds. Adaptive ANC, IP57.",
+    "iPhone users who want ANC for the commute",
+    "Adaptive ANC · IP57 · ~8h with ANC · Bluetooth 5.3"
+   ],
+   "i13": [
+    "Samsung Galaxy Buds3 Pro SM-R630N",
+    "Danawa wireless earbuds, No.11",
+    "Galaxy Buds Pro line, 31% below its KRW 319,000 launch price.",
+    "Galaxy phone users wanting ANC earbuds",
+    "Adaptive ANC · 26h with ANC · IP57 · Bluetooth 5.4"
+   ],
+   "i14": [
+    "Apple AirPods 4 with ANC",
+    "Danawa wireless earbuds, No.10",
+    "Open-fit AirPods 4 with ANC, 33% below launch price (genuine listing).",
+    "iPhone users who dislike in-ear tips but want ANC",
+    "Open-fit · adaptive ANC · 20h with ANC · Bluetooth 5.3"
+   ],
+   "i15": [
+    "Sony WH-1000XM6",
+    "Danawa wireless headphones, No.3",
+    "Sony's latest ANC headphones, No.3 on Danawa.",
+    "Frequent flyers and commuters who care about sound",
+    "Adaptive ANC (QN3) · 30h with ANC · LDAC · 254g"
+   ],
+   "i16": [
+    "Sony WH-1000XM5",
+    "Danawa wireless headphones, No.2",
+    "Danawa's No.2 wireless headphones, 47% below the KRW 519,000 launch price.",
+    "First-time ANC headphone buyers",
+    "Adaptive ANC · 30h with ANC · 250g · USB-C"
    ]
   },
   "launches": [
@@ -2832,7 +3810,10 @@
    "루메나": "Lumena",
    "키친아트": "Kitchenart",
    "쿠쿠전자": "Cuckoo",
-   "바이두": "Baidu"
+   "바이두": "Baidu",
+   "가민": "Garmin",
+   "소니": "Sony",
+   "애플": "Apple"
   },
   "mail": {
    "hook": "AI glasses shipments up 263%; Samsung·Google launch in Korea on Dec 10"

@@ -17,10 +17,11 @@ CTRY_EN = {'KR': 'Korea', 'US': 'US', 'JP': 'Japan', 'CN': 'China', 'DE': 'Germa
            'AU': 'Australia', 'IN': 'India', 'SG': 'Singapore', 'FR': 'France', 'EU': 'Europe'}
 CTRY_KO = {'KR': '한국', 'US': '미국', 'JP': '일본', 'CN': '중국', 'DE': '독일', 'IT': '이탈리아', 'GB': '영국', 'CH': '스위스',
            'AU': '호주', 'IN': '인도', 'SG': '싱가포르', 'FR': '프랑스', 'EU': '유럽'}
-NEWSCAT = {'ko': {'AI': 'AI가전', '디바이스': 'AI디바이스', '소형': '소형가전', '대형': '대형가전'},
-           'en': {'AI': 'AI appliances', '디바이스': 'AI devices', '소형': 'Small appliances', '대형': 'Major appliances'}}
+NEWSCAT = {'ko': {'AI': 'AI가전', 'IT': 'IT·모바일', '디바이스': 'AI디바이스', '소형': '소형가전', '대형': '대형가전'},
+           'en': {'AI': 'AI appliances', 'IT': 'IT & mobile', '디바이스': 'AI devices', '소형': 'Small appliances', '대형': 'Major appliances'}}
 PICKCAT_EN = {'난방': 'Heating', '가습': 'Humidifiers', '주방': 'Kitchen', '뷰티': 'Beauty', '청소': 'Cleaning',
-              'AI디바이스': 'AI devices', '대형가전': 'Major appliances'}
+              'AI디바이스': 'AI devices', '대형가전': 'Major appliances', '생활': 'Living', 'TV': 'TV',
+              '오디오': 'Audio', '이어폰': 'Earbuds', '태블릿': 'Tablets', '스마트폰': 'Smartphones', '워치': 'Smartwatches', '노트북': 'Laptops'}
 
 
 def score(sc):

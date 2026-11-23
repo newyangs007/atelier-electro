@@ -41,7 +41,8 @@ CATMAP = {"AI가전": lambda p: p.get("ai") and p["cat"] != "AI디바이스", "A
           "난방·가습": lambda p: p["cat"] in ("난방", "가습", "계절"), "뷰티": lambda p: p["cat"] == "뷰티",
           "대형가전": lambda p: p["cat"] == "대형가전",
           "TV·오디오": lambda p: p["cat"] in ("TV", "오디오", "이어폰"),
-          "모바일·워치": lambda p: p["cat"] in ("스마트폰", "태블릿", "워치")}
+          "모바일·워치": lambda p: p["cat"] in ("스마트폰", "태블릿", "워치", "노트북"),
+          "특가": lambda p: (p.get("dc") or 0) >= 30}
 ints = [x.strip() for x in a.interests.split(",") if x.strip() in CATMAP]
 picks = sorted(j["picks"], key=lambda p: -score(p))
 chosen = []
@@ -100,7 +101,7 @@ def sec(title, eyebrow, rows):
             '<table role="presentation" cellpadding="0" cellspacing="0" width="100%%">%s</table></td></tr>' % (eyebrow, title, rows))
 
 
-order = {"AI": 0, "디바이스": 1, "소형": 2, "대형": 3}
+order = {"AI": 0, "IT": 1, "디바이스": 2, "소형": 3, "대형": 4}
 pts = sorted([n for n in j["news"] if n.get("pt")], key=lambda n: order.get(n["c"], 4))
 seen, news3 = set(), []
 for n in pts:  # spread across fields: one per field first
@@ -110,7 +111,7 @@ for n in pts:  # spread across fields: one per field first
 for n in pts:
     if len(news3) == 3: break
     if n not in news3: news3.append(n)
-CAT = {"AI": "AI가전", "디바이스": "AI디바이스", "소형": "소형가전", "대형": "대형가전"}
+CAT = {"AI": "AI가전", "IT": "IT·모바일", "디바이스": "AI디바이스", "소형": "소형가전", "대형": "대형가전"}
 news_rows = "".join(
     '<tr><td style="padding:12px 0;border-top:1px solid #d6d2c9"><span style="font-size:11px;letter-spacing:.08em;color:#9c7a43">%s · %s</span>'
     '<div style="font-size:15px;font-weight:600;color:#121214;margin-top:3px">%s</div><div style="font-size:13px;color:#5b5b61;line-height:1.55">%s</div></td></tr>'
