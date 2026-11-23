@@ -238,6 +238,25 @@ section.sec{padding:36px 0 8px}
 .adslot{margin:28px 0 0;text-align:center}.adslot[hidden]{display:none}
 .adlabel{display:block;font-size:11px;color:var(--ink2);margin-bottom:4px}
 
+/* 모바일: 스크롤 최소화 */
+.opt-fold{margin:0 0 10px}.opt-fold summary{cursor:pointer;font-size:13px;color:#bbb;padding:6px 0;list-style:none}
+.opt-fold summary::-webkit-details-marker{display:none}.opt-fold summary::after{content:" ＋"}.opt-fold[open] summary::after{content:" －"}
+@media(max-width:759px){
+  section.sec{padding:24px 0 2px}
+  .sh{margin-bottom:12px}.sh h2{font-size:20px}
+  .hero{padding:16px 0 20px}.hero h1{margin:10px 0 8px}.deck{font-size:14px}
+  .figs{gap:8px;margin-top:14px}.fig{padding:10px 12px}.fig .v{font-size:22px}
+  .t3{grid-template-columns:92px minmax(0,1fr);gap:12px;padding:10px}
+  .t3 .why{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .card h3{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13.5px}
+  .nw{padding:11px 0}.nw h3{font-size:15px}
+  .nw p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13px}
+  .trends{display:flex;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px 6px;gap:10px}
+  .trends::-webkit-scrollbar{display:none}
+  .tr{flex:0 0 78%}
+  .subw{margin-top:28px;padding:28px 0}
+}
+
 footer{padding:28px 0 calc(40px + env(safe-area-inset-bottom));font-size:12.5px;color:var(--ink2)}
 footer .links{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:8px}
 footer a{text-decoration:none}
@@ -305,7 +324,7 @@ footer a{text-decoration:none}
 </div></section>
 
 <section class="sec" id="deals-sec" aria-label="오늘의 특가"><div class="wrap">
-  <div class="sh"><div><h2>오늘의 특가 <span style="color:var(--acc)">30% 이상</span></h2><p id="deals-sub">인지도 높은 브랜드 중 다나와 표기 출시가 대비 현재 최저가가 30% 이상 낮은 제품</p></div></div>
+  <div class="sh"><div><h2>오늘의 특가 <span style="color:var(--acc)">30% 이상</span></h2><p id="deals-sub">할인 폭이 큰 인기 브랜드 제품 3개 · 다나와 표기 출시가 대비 30% 이상</p></div></div>
   <div class="deals" id="deal-list"></div>
 </div></section>
 
@@ -348,11 +367,15 @@ footer a{text-decoration:none}
     <div class="sub-grid">
       <fieldset><legend>성별</legend><div class="seg"><label><input type="radio" name="sub-g" value="남성"><span>남성</span></label><label><input type="radio" name="sub-g" value="여성"><span>여성</span></label></div></fieldset>
       <label>나이대<select id="sub-age"><option value="">선택</option><option>10대 (만 14세 이상)</option><option>20대</option><option>30대</option><option>40대</option><option>50대</option><option>60대 이상</option></select></label>
+    </div>
+    <details class="opt-fold"><summary>선택 항목 (독자 유형·관심 분야)</summary>
+    <div class="sub-grid">
       <label style="grid-column:1/-1">독자 유형 (선택)<select id="sub-type"><option value="">선택 안 함</option><option>가전 관심 소비자</option><option>유통·MD·바이어</option><option>제조·브랜드</option><option>온라인 셀러·리셀러</option><option>미디어·크리에이터</option><option>기타</option></select></label>
     </div>
     <fieldset class="ints" id="sub-int"><legend>관심 분야 (선택)</legend><div class="chips">
       <label><input type="checkbox" value="AI가전"><span>AI가전</span></label><label><input type="checkbox" value="주방"><span>주방</span></label><label><input type="checkbox" value="청소"><span>청소·생활</span></label><label><input type="checkbox" value="난방·가습"><span>계절가전</span></label><label><input type="checkbox" value="뷰티"><span>뷰티</span></label><label><input type="checkbox" value="TV·오디오"><span>TV·오디오</span></label><label><input type="checkbox" value="모바일·워치"><span>모바일·노트북·워치</span></label><label><input type="checkbox" value="특가"><span>특가 30%↑</span></label><label><input type="checkbox" value="AI디바이스"><span>AI디바이스</span></label>
     </div></fieldset>
+    </details>
     <label class="agree"><input type="checkbox" id="sub-agree"><span>[필수] 개인정보 수집·이용과 뉴스레터 수신에 동의합니다</span></label>
     <p class="fine">수집 항목: 이메일·성별·나이대·독자 유형·관심 분야 · 목적: 매일 아침 뉴스레터 발송(쿠팡 파트너스 등 제휴 링크 포함), 맞춤 추천, 독자 통계 · 보유: 구독 해지 시까지(해지 즉시 파기). 만 14세 미만은 구독할 수 없습니다.</p>
     <label class="agree"><input type="checkbox" id="sub-mkt"><span>[선택] 공동구매·특가·유튜브 쇼핑 영상 등 광고성 정보 수신에 동의합니다</span></label>
@@ -362,8 +385,7 @@ footer a{text-decoration:none}
 </div></section>
 
 <section class="sec" id="faq"><div class="wrap">
-  <div class="sh"><div><h2>자주 묻는 질문</h2></div></div>
-  <div class="faq"><!--__FAQ__--></div>
+  <details class="fold"><summary>자주 묻는 질문</summary><div class="in"><div class="faq"><!--__FAQ__--></div></div></details>
   <details class="fold" id="src-fold"><summary id="src-sum">출처 전체 보기</summary><div class="in"><ul class="src" id="src-list"></ul></div></details>
   <details class="fold"><summary>점수 기준</summary><div class="in" style="font-size:13.5px;color:#333">수요·검증(리뷰)·타이밍·접근성(소싱)·마진을 1~5점으로 매기고 평균을 0.5 단위로 반올림합니다. 4.0 이상 추천템, 3.5 조건부, 3.0 이하 관망. 가격·리뷰·순위는 다나와 인기상품순(광고 제외) 수집 시점 기준이며 판매처마다 다를 수 있습니다.</div></details>
   <details class="fold"><summary>브랜드 정보</summary><div class="in"><div class="brands" id="brand-list"></div></div></details>
@@ -404,7 +426,9 @@ footer a{text-decoration:none}
   var NCAT=[['all','전체'],['AI','AI가전'],['IT','IT·모바일'],['디바이스','AI디바이스'],['소형','소형가전'],['대형','대형가전']];
   var NCN={'AI':'AI가전','IT':'IT·모바일','디바이스':'AI디바이스','소형':'소형가전','대형':'대형가전'};
   /* 카테고리: 맨 윗줄(전체·특가) + 가전 줄 + IT·디지털 줄. 제품이 없는 묶음은 숨김 */
-  function isDeal(p){return (p.dc||0)>=30;}
+  var DEAL_IDS={};
+  function isDeal(p){return !!DEAL_IDS[p.id];}
+  function pickDeals(j){DEAL_IDS={};j.picks.filter(function(p){return (p.dc||0)>=30&&p.img;}).sort(function(a,b){return (b.cp?1:0)-(a.cp?1:0)||b.dc-a.dc;}).slice(0,3).forEach(function(p){DEAL_IDS[p.id]=1;});}
   var GROUPS=[
     ['all','전체',function(){return true;},0],
     ['deal','특가 30%↑',isDeal,0],
@@ -424,11 +448,12 @@ footer a{text-decoration:none}
   ];
   var GLBL=['','가전','IT·디지털'];
 
-  var D=null,grp='all',shown=6,ncat='all',nshown=6,lshown=5,PER=6;
+  var MOB=window.matchMedia&&matchMedia('(max-width:759px)').matches;
+  var D=null,grp='all',PER=MOB?4:6,shown=PER,ncat='all',nshown=5,lshown=MOB?3:5;
   function ranked(){return D.picks.slice().sort(function(a,b){return (overall(b.sc)-overall(a.sc))||(b.sc[0]-a.sc[0])||(b.sc[1]-a.sc[1]);});}
 
   function render(j){
-    D=j;grp='all';shown=PER;ncat='all';nshown=6;lshown=5;
+    D=j;grp='all';shown=PER;ncat='all';nshown=5;lshown=MOB?3:5;
     var E=j.edition;
     $('ed-label').textContent=E.label;
     $('hero-title').innerHTML=j.cover.title;
@@ -443,7 +468,7 @@ footer a{text-decoration:none}
     $('rolling').hidden=!C.length;
     $('roll-track').innerHTML=one+one.replace(/<a class="rc"/g,'<a class="rc" aria-hidden="true" tabindex="-1"');
     $('roll-track').style.setProperty('--dur',Math.max(30,C.length*4)+'s');
-    var DL=j.picks.filter(isDeal).sort(function(a,b){return b.dc-a.dc;});
+    pickDeals(j);var DL=j.picks.filter(isDeal).sort(function(a,b){return b.dc-a.dc;});
     $('deals-sec').hidden=!DL.length;
     $('deal-list').innerHTML=DL.map(function(p){return '<article class="dl"><span class="off">−'+esc(p.dc)+'%</span><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="n">'+esc(p.name)+'</div><div class="was">'+esc(p.was||'')+'</div><div class="p">'+esc(p.price)+'</div><div class="bs">'+esc(p.dcb||'')+'</div><div class="acts">'+(p.cp?cpBtn(p,'쿠팡에서 보기'):'<button type="button" class="bt" data-id="'+esc(p.id)+'">상세</button>')+'</div></article>';}).join('');
     renderCats();renderProducts();
@@ -504,7 +529,7 @@ footer a{text-decoration:none}
 
   document.addEventListener('click',function(e){
     var c=e.target.closest('#cats .chip');if(c){grp=c.dataset.g;shown=PER;renderCats();renderProducts();return;}
-    var n=e.target.closest('#news-cats .chip');if(n){ncat=n.dataset.c;nshown=6;renderNewsCats();renderNews();return;}
+    var n=e.target.closest('#news-cats .chip');if(n){ncat=n.dataset.c;nshown=5;renderNewsCats();renderNews();return;}
     var cp=e.target.closest('a.cp,a.rc');if(cp){track('click',{target:cp.dataset.id,where:cp.className});return;}
     var q=e.target.closest('[data-id]');if(q&&q.tagName==='BUTTON'){var p=D.picks.filter(function(x){return x.id===q.dataset.id;})[0];if(p)openQV(p);}
   });

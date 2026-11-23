@@ -109,9 +109,9 @@ seen, news3 = set(), []
 for n in pts:  # spread across fields: one per field first
     if n["c"] not in seen:
         news3.append(n); seen.add(n["c"])
-    if len(news3) == 3: break
+    if len(news3) == 5: break
 for n in pts:
-    if len(news3) == 3: break
+    if len(news3) == 5: break
     if n not in news3: news3.append(n)
 REGK = {"KR": "한국", "US": "미국", "JP": "일본", "CN": "중국", "EU": "유럽"}
 CAT = {"AI": "AI가전", "IT": "IT·모바일", "디바이스": "AI디바이스", "소형": "소형가전", "대형": "대형가전"}
@@ -145,7 +145,7 @@ body = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="color-sc
 {('<table role="presentation" cellpadding="0" cellspacing="0" width="100%%" style="margin-top:16px"><tr><td bgcolor="#fff1ef" style="background:#fff1ef;border-left:5px solid #e0301e;padding:14px 16px"><span style="font-size:32px;font-weight:900;color:#e0301e">%s</span><br><span style="font-size:14px;font-weight:600;color:#222222">%s</span></td></tr></table>' % (e(num["stat"]), e(num["sl"]))) if num else ''}
 </td></tr>
 {sec("오늘의 추천템 3", "가전레이더 MD PICK", "".join(card(p) for p in chosen))}
-{sec("놓치면 안 될 뉴스 3", "POINT NEWS", news_rows)}
+{sec("놓치면 안 될 주요 뉴스 5", "POINT NEWS", news_rows)}
 <tr><td style="padding:22px 24px 28px"><a href="{SITE}" style="display:block;text-align:center;padding:15px;border:2px solid #111111;border-radius:10px;background:#ffffff;color:#111111;text-decoration:none;font-size:15px;font-weight:800">가전 전문 매거진 가전레이더에서 전체 보기 &rarr;</a>
 <div style="font-size:13px;color:#555555;text-align:center;margin-top:8px">제품 리스트 · 오늘의 특가 30%↑ · 신제품 · 모든 출처</div></td></tr>
 <tr><td style="padding:18px 24px 26px;border-top:1px solid #e5e5e5;font-size:12px;line-height:1.75;color:#555555">
@@ -155,7 +155,7 @@ body = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="color-sc
 If you no longer wish to receive this email, click <a href="{e(unsub)}" style="color:#555555">Unsubscribe</a>. Unsubscribing is free of charge.<br>{e(ed.get("next", ""))}</td></tr>
 </table></td></tr></table></body></html>'''
 
-txt = "가전 전문 매거진 가전레이더\n%s · 3분 읽기\n%s\n\n오늘의 추천템 3\n%s\n\n뉴스 3\n%s\n\n홈페이지: %s\n\n[광고] 쿠팡 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.\n수신 거부(구독 해지) / Unsubscribe: %s\n전송자: %s" % (
+txt = "가전 전문 매거진 가전레이더\n%s · 3분 읽기\n%s\n\n오늘의 추천템 3\n%s\n\n주요 뉴스 5\n%s\n\n홈페이지: %s\n\n[광고] 쿠팡 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.\n수신 거부(구독 해지) / Unsubscribe: %s\n전송자: %s" % (
     ed["label"], title,
     "\n".join("- %s %s (★%.1f) %s" % (p["name"], p["price"], score(p), p.get("cp") or SITE + slug(p)) for p in chosen),
     "\n".join("- %s" % n["h"] for n in news3), SITE, unsub, " · ".join(x for x in [SND.get("name") or "가전레이더", SND.get("email") or "newyangs007@gmail.com", SND.get("phone", ""), SND.get("addr", "")] if x))
