@@ -45,6 +45,8 @@ CATMAP = {"AI가전": lambda p: p.get("ai") and p["cat"] != "AI디바이스", "A
           "특가": lambda p: (p.get("dc") or 0) >= 30}
 ints = [x.strip() for x in a.interests.split(",") if x.strip() in CATMAP]
 picks = sorted(j["picks"], key=lambda p: -score(p))
+if any(p.get("cp") for p in picks):  # 메일에는 쿠팡 링크가 연결된 제품만
+    picks = [p for p in picks if p.get("cp")]
 chosen = []
 if ints:  # round-robin over interests (조건부 이상) until 3, then general picks
     pools = [[p for p in picks if CATMAP[it](p) and score(p) >= 3.5] for it in ints]
