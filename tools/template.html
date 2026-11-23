@@ -338,7 +338,7 @@ footer a{text-decoration:none}
 </div></section>
 
 <section class="sec" id="news"><div class="wrap">
-  <div class="sh"><div><h2>오늘의 가전·IT 뉴스</h2><p>한국·미국·일본·중국·유럽 · 모든 기사에 출처</p></div></div>
+  <div class="sh"><div><h2>오늘의 가전·IT 뉴스</h2><p>중요도 순 · 한국·미국·일본·중국·유럽 · 모든 기사에 출처</p></div></div>
   <div class="chip-row" id="news-cats" role="group" aria-label="뉴스 분야"></div>
   <div class="news" id="news-list"></div>
   <button type="button" class="more" id="news-more">뉴스 더 보기</button>
@@ -423,8 +423,8 @@ footer a{text-decoration:none}
   var LBL=['수요','검증','타이밍','접근성','마진'];
   var REG={KR:'한국',US:'미국',JP:'일본',CN:'중국',EU:'유럽'};
   var CTRY={KR:'한국',US:'미국',JP:'일본',CN:'중국',DE:'독일',IT:'이탈리아',GB:'영국',CH:'스위스',AU:'호주',IN:'인도',SG:'싱가포르',FR:'프랑스',EU:'유럽'};
-  var NCAT=[['all','전체'],['AI','AI가전'],['IT','IT·모바일'],['디바이스','AI디바이스'],['소형','소형가전'],['대형','대형가전']];
-  var NCN={'AI':'AI가전','IT':'IT·모바일','디바이스':'AI디바이스','소형':'소형가전','대형':'대형가전'};
+  var NCAT=[['all','전체'],['AI','AI가전'],['IT','IT·모바일'],['로봇','로봇'],['디바이스','AI디바이스'],['소형','소형가전'],['대형','대형가전']];
+  var NCN={'AI':'AI가전','IT':'IT·모바일','로봇':'로봇','디바이스':'AI디바이스','소형':'소형가전','대형':'대형가전'};
   /* 카테고리: 맨 윗줄(전체·특가) + 가전 줄 + IT·디지털 줄. 제품이 없는 묶음은 숨김 */
   var DEAL_IDS={};
   function isDeal(p){return !!DEAL_IDS[p.id];}
@@ -449,11 +449,11 @@ footer a{text-decoration:none}
   var GLBL=['','가전','IT·디지털'];
 
   var MOB=window.matchMedia&&matchMedia('(max-width:759px)').matches;
-  var D=null,grp='all',PER=MOB?4:6,shown=PER,ncat='all',nshown=5,lshown=MOB?3:5;
+  var D=null,grp='all',PER=MOB?4:6,shown=PER,ncat='all',nshown=3,lshown=MOB?3:5;
   function ranked(){return D.picks.slice().sort(function(a,b){return (overall(b.sc)-overall(a.sc))||(b.sc[0]-a.sc[0])||(b.sc[1]-a.sc[1]);});}
 
   function render(j){
-    D=j;grp='all';shown=PER;ncat='all';nshown=5;lshown=MOB?3:5;
+    D=j;grp='all';shown=PER;ncat='all';nshown=3;lshown=MOB?3:5;
     var E=j.edition;
     $('ed-label').textContent=E.label;
     $('hero-title').innerHTML=j.cover.title;
@@ -494,7 +494,7 @@ footer a{text-decoration:none}
     $('news-cats').innerHTML=NCAT.map(function(c){var n=c[0]==='all'?D.news.length:D.news.filter(function(x){return x.c===c[0];}).length;if(!n)return '';return '<button type="button" class="chip" data-c="'+c[0]+'" aria-pressed="'+(c[0]===ncat)+'">'+c[1]+'<b>'+n+'</b></button>';}).join('');
   }
   function renderNews(){
-    var L=D.news.filter(function(n){return ncat==='all'||n.c===ncat;}).sort(function(a,b){return (b.pt?1:0)-(a.pt?1:0);});
+    var L=D.news.filter(function(n){return ncat==='all'||n.c===ncat;}).sort(function(a,b){return ((b.pt?1:0)-(a.pt?1:0))||((b.imp||0)-(a.imp||0));});
     $('news-list').innerHTML=L.slice(0,nshown).map(function(n){var S=D.sources[n.s];return '<article class="nw"><div class="m">'+(n.pt?'<span class="pt">주요</span>':'')+'<span class="c">'+esc(NCN[n.c]||n.c)+'</span><span>'+esc(REG[n.r]||n.r)+'</span><span>'+esc(n.d||'')+'</span></div><h3>'+esc(n.h)+'</h3><p>'+esc(n.p)+'</p>'+(S?'<a class="s" href="'+esc(S.u)+'" target="_blank" rel="noopener">'+esc(media(S))+' ↗</a>':'')+'</article>';}).join('');
     var m=$('news-more');m.hidden=L.length<=nshown;m.textContent='뉴스 더 보기 ('+(L.length-nshown)+'개 남음)';
   }
@@ -529,12 +529,12 @@ footer a{text-decoration:none}
 
   document.addEventListener('click',function(e){
     var c=e.target.closest('#cats .chip');if(c){grp=c.dataset.g;shown=PER;renderCats();renderProducts();return;}
-    var n=e.target.closest('#news-cats .chip');if(n){ncat=n.dataset.c;nshown=5;renderNewsCats();renderNews();return;}
+    var n=e.target.closest('#news-cats .chip');if(n){ncat=n.dataset.c;nshown=3;renderNewsCats();renderNews();return;}
     var cp=e.target.closest('a.cp,a.rc');if(cp){track('click',{target:cp.dataset.id,where:cp.className});return;}
     var q=e.target.closest('[data-id]');if(q&&q.tagName==='BUTTON'){var p=D.picks.filter(function(x){return x.id===q.dataset.id;})[0];if(p)openQV(p);}
   });
   $('plist-more').onclick=function(){shown+=PER;renderProducts();};
-  $('news-more').onclick=function(){nshown+=8;renderNews();};
+  $('news-more').onclick=function(){nshown+=3;renderNews();};
   $('launch-more').onclick=function(){lshown+=10;renderLaunches();};
   var roll=$('roll');roll.addEventListener('touchstart',function(){roll.classList.toggle('hold');},{passive:true});
 

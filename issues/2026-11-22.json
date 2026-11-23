@@ -656,6 +656,31 @@
    "t": "다나와, SONY WH-1000XM5 제품 정보 (2026.11.23 확인)",
    "u": "https://prod.danawa.com/info/?pcode=17229284",
    "r": "KR"
+  },
+  "S231": {
+   "t": "연합뉴스, LG전자·한국로봇산업진흥원 휴머노이드 품질 협약(2026.11.16)",
+   "u": "https://www.koreancenter.or.kr/news/articleView.html?idxno=1439876",
+   "r": "KR"
+  },
+  "S232": {
+   "t": "비즈워치, 레인보우로보틱스 로보월드 2026 이동형 양팔로봇 RB-Y2(2026.11.06)",
+   "u": "https://news.bizwatch.co.kr/article/industry/2026/11/06/0019",
+   "r": "KR"
+  },
+  "S233": {
+   "t": "뉴스토마토, 삼성·LG 로봇 손과 두뇌 개발 가속(2026.11.10)",
+   "u": "https://www.newstomato.com/ReadNews.aspx?no=1319892",
+   "r": "KR"
+  },
+  "S234": {
+   "t": "Tech Insider, Apple home robot report (Digital Trends 2026.11.02 인용)",
+   "u": "https://tech-insider.org/apple-home-robot-delay-2028-1000-price-doubt-2026/",
+   "r": "US"
+  },
+  "S235": {
+   "t": "The Robot Report, Narwal builds robot vacuums to serve regional needs (2026.11.13)",
+   "u": "https://www.therobotreport.com/narwal-builds-robot-vacuums-to-serve-regional-needs/",
+   "r": "US"
   }
  },
  "cover": {
@@ -891,6 +916,51 @@
    "p": "카운터포인트 집계. 상위 5개 브랜드 중 애플 성장률이 가장 높았고, 올해 연간 성장률은 1% 안팎 전망입니다.",
    "d": "2026.09.08",
    "s": "S227"
+  },
+  {
+   "r": "KR",
+   "c": "로봇",
+   "imp": 4,
+   "h": "LG전자, 로봇산업진흥원과 휴머노이드 품질 협약",
+   "p": "휴머노이드 안전인증 평가 체계 구축과 국제·국가 표준 개발에 참여합니다.",
+   "d": "2026.11.16",
+   "s": "S231"
+  },
+  {
+   "r": "KR",
+   "c": "로봇",
+   "imp": 3,
+   "h": "삼성·LG, 로봇 ‘손’과 ‘두뇌’ 개발 경쟁",
+   "p": "삼성은 7월 RX 태스크포스를 꾸리고 구미에 로봇 데이터 팩토리를 계획. LG는 액추에이터 ‘액시엄’ 창원 시범 라인을 가동했습니다.",
+   "d": "2026.11.10",
+   "s": "S233"
+  },
+  {
+   "r": "KR",
+   "c": "로봇",
+   "imp": 3,
+   "h": "레인보우로보틱스, 바퀴 달린 양팔로봇 RB-Y2 공개",
+   "p": "삼성전자가 최대주주인 레인보우로보틱스가 로보월드 2026에서 제조 현장용 이동형 양팔로봇을 선보였습니다.",
+   "d": "2026.11.06",
+   "s": "S232"
+  },
+  {
+   "r": "US",
+   "c": "로봇",
+   "imp": 2,
+   "h": "애플 홈로봇, 약 1,000달러·2027~2028년 출시 보도",
+   "p": "외신 보도로 애플 공식 발표는 아닙니다. 회전 팔에 9인치 화면을 단 형태로 전해졌습니다.",
+   "d": "2026.11.02",
+   "s": "S234"
+  },
+  {
+   "r": "US",
+   "c": "로봇",
+   "imp": 2,
+   "h": "나르왈 로봇청소기 Flow 2, 美 판매 305% 증가",
+   "p": "아마존 미국 로봇청소기 신제품 부문 출시 24시간 만에 1위에 올랐다고 회사가 밝혔습니다.",
+   "d": "2026.11.13",
+   "s": "S235"
   },
   {
    "r": "KR",
@@ -3094,6 +3164,26 @@
    [
     "Q2 smartwatch shipments −4%; Huawei hits record 22%",
     "Counterpoint: Apple grew fastest among the top five; 2026 growth seen around 1%."
+   ],
+   [
+    "LG signs humanoid robot quality pact with KIRIA",
+    "LG joins building a humanoid safety-certification system and developing international and national standards."
+   ],
+   [
+    "Samsung and LG race on robot 'hands' and 'brains'",
+    "Samsung formed an RX task force in July and plans a robot data factory in Gumi; LG runs an AXIUM actuator pilot line in Changwon."
+   ],
+   [
+    "Rainbow Robotics unveils wheeled dual-arm robot RB-Y2",
+    "Samsung-backed Rainbow Robotics showed a mobile dual-arm robot for factories at RoboWorld 2026."
+   ],
+   [
+    "Apple home robot reported at ~$1,000 for 2027–2028",
+    "A press report, not confirmed by Apple: a 9-inch screen on a swiveling arm."
+   ],
+   [
+    "Narwal Flow 2 robot vacuum sales up 305% in the US",
+    "The company says it hit No.1 in Amazon US new robot vacuums within 24 hours of launch."
    ],
    [
     "KES 2026: Samsung's 'AI in daily life' vs LG's 'AI into industry'",
