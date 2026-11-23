@@ -751,6 +751,26 @@
    "t": "The Robot Report, Narwal builds robot vacuums to serve regional needs (2026.11.13)",
    "u": "https://www.therobotreport.com/narwal-builds-robot-vacuums-to-serve-regional-needs/",
    "r": "US"
+  },
+  "S257": {
+   "t": "다나와, 삼성전자 Crystal UHD KU65UF8000FXKR 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=80565860",
+   "r": "KR"
+  },
+  "S258": {
+   "t": "다나와, 삼성전자 KU43F6050FFXKR 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=93702980",
+   "r": "KR"
+  },
+  "S259": {
+   "t": "다나와, LG전자 울트라HD AI 50UA7500KNA 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=89601677",
+   "r": "KR"
+  },
+  "S260": {
+   "t": "다나와, LG전자 올레드 evo AI OLED48C6KNA 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=108401885",
+   "r": "KR"
   }
  },
  "cover": {
@@ -2777,6 +2797,168 @@
    "cp": "https://link.coupang.com/a/iSoyduaDts"
   },
   {
+   "id": "t1",
+   "cat": "TV",
+   "mk": "KR",
+   "icon": "tv",
+   "brand": "삼성전자",
+   "name": "삼성 Crystal UHD KU65UF8000FXKR 65인치",
+   "price": "1,048,500원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2025.04",
+   "ch": "삼성 65인치 4K 스마트TV",
+   "why": "타이젠 스마트TV. 65인치 4K UHD에 넷플릭스·유튜브·미러링, AI 음성인식을 지원합니다.",
+   "target": "거실 대화면 입문, 삼성 기기 사용자",
+   "usp": "65인치 4K UHD · 60Hz · 타이젠 · AI 음성인식·AI 콘텐츠 추천 · 에너지 1등급",
+   "src": [
+    "S201",
+    "S257"
+   ],
+   "sc": [
+    2,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "인기 30위 밖",
+    "리뷰 수집 전",
+    "연말 블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 제품 사진은 다나와 등록 이미지입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "80565860",
+   "q": "삼성 KU65UF8000FXKR",
+   "ai": false,
+   "img": "issues/img/80565860.jpg"
+  },
+  {
+   "id": "t2",
+   "cat": "TV",
+   "mk": "KR",
+   "icon": "tv",
+   "brand": "삼성전자",
+   "name": "삼성 스마트TV KU43F6050FFXKR 43인치",
+   "price": "395,640원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2025.04",
+   "ch": "다나와 TV 인기 7위",
+   "why": "40만 원 이하 삼성 43인치 스마트TV. 넷플릭스·유튜브·미러링과 AI 음성인식을 지원합니다.",
+   "target": "원룸·세컨드 TV, 저예산 구매자",
+   "usp": "43인치 FHD · 넷플릭스·유튜브·미러링 · AI 음성인식·AI 스마트홈 · 에너지 1등급",
+   "src": [
+    "S201",
+    "S258"
+   ],
+   "sc": [
+    3,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "TV 인기 7위",
+    "리뷰 수집 전",
+    "연말 블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 제품 사진은 다나와 등록 이미지입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "93702980",
+   "q": "삼성 KU43F6050FFXKR",
+   "ai": false,
+   "img": "issues/img/93702980.jpg"
+  },
+  {
+   "id": "t3",
+   "cat": "TV",
+   "mk": "KR",
+   "icon": "tv",
+   "brand": "LG전자",
+   "name": "LG 울트라HD AI 50UA7500KNA 50인치",
+   "price": "600,570원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2025.04",
+   "ch": "다나와 TV 인기 11위",
+   "why": "webOS 25 스마트TV. 출시가 109만 원 대비 현재 60만 원대입니다.",
+   "target": "방·거실용 50인치, 가성비 4K",
+   "usp": "50인치 4K UHD · webOS 25 · AI 음성인식·AI 콘텐츠 추천·AI 장르 맞춤 화면 · 에너지 1등급",
+   "src": [
+    "S201",
+    "S259"
+   ],
+   "sc": [
+    2,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "TV 인기 11위",
+    "리뷰 수집 전",
+    "연말 블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 제품 사진은 다나와 등록 이미지입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "89601677",
+   "q": "LG 50UA7500KNA",
+   "ai": false,
+   "img": "issues/img/89601677.jpg",
+   "was": "출시가 1,090,000원",
+   "dc": 44,
+   "dcb": "다나와 표기 출시가 대비 11.23 최저가"
+  },
+  {
+   "id": "t4",
+   "cat": "TV",
+   "mk": "KR",
+   "icon": "tv",
+   "brand": "LG전자",
+   "name": "LG 올레드 evo AI OLED48C6KNA 48인치",
+   "price": "1,649,920원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2026.03",
+   "ch": "2026년형 LG 올레드 48인치",
+   "why": "2026년 3월 등록된 올레드 evo C6. 출시가 238만 9천 원 대비 현재 164만 원대입니다.",
+   "target": "게임·영화용 중형 올레드",
+   "usp": "48인치 4K OLED · 120Hz · AI 음성인식·AI 스마트 도우미 · 넷플릭스·유튜브·미러링",
+   "src": [
+    "S201",
+    "S260"
+   ],
+   "sc": [
+    2,
+    1,
+    4,
+    2,
+    2
+   ],
+   "scw": [
+    "TV 인기 22위",
+    "리뷰 수집 전",
+    "연말 블프 시즌",
+    "대기업 공식 유통",
+    "가격 경쟁"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 제품 사진은 다나와 등록 이미지입니다. 리뷰 수·평점과 쿠팡 링크는 PC 작업 때 보강합니다.",
+   "pc": "108401885",
+   "q": "LG OLED48C6KNA",
+   "ai": false,
+   "img": "issues/img/108401885.jpg",
+   "was": "출시가 2,389,000원",
+   "dc": 30,
+   "dcb": "다나와 표기 출시가 대비 11.23 최저가"
+  },
+  {
    "id": "i04",
    "cat": "노트북",
    "mk": "KR",
@@ -3903,6 +4085,34 @@
     "Danawa's No.2 wireless headphones, 47% below the KRW 519,000 launch price.",
     "First-time ANC headphone buyers",
     "Adaptive ANC · 30h with ANC · 250g · USB-C"
+   ],
+   "t1": [
+    "Samsung Crystal UHD KU65UF8000FXKR 65-inch",
+    "Samsung 65-inch 4K smart TV",
+    "Tizen smart TV: 65-inch 4K UHD with Netflix, YouTube, mirroring and AI voice recognition.",
+    "Big-screen starters, Samsung device users",
+    "65-inch 4K UHD · 60Hz · Tizen · AI voice & content recommendations · energy grade 1"
+   ],
+   "t2": [
+    "Samsung Smart TV KU43F6050FFXKR 43-inch",
+    "Danawa TVs, No.7",
+    "A Samsung 43-inch smart TV under KRW 400,000, with Netflix, YouTube, mirroring and AI voice recognition.",
+    "Studios, second TVs, tight budgets",
+    "43-inch FHD · Netflix, YouTube, mirroring · AI voice & smart home · energy grade 1"
+   ],
+   "t3": [
+    "LG UltraHD AI 50UA7500KNA 50-inch",
+    "Danawa TVs, No.11",
+    "webOS 25 smart TV, now around KRW 600,000 versus a KRW 1.09M launch price.",
+    "50-inch for bedroom or living room, value 4K",
+    "50-inch 4K UHD · webOS 25 · AI voice, content & genre picture modes · energy grade 1"
+   ],
+   "t4": [
+    "LG OLED evo AI OLED48C6KNA 48-inch",
+    "2026 LG OLED, 48-inch",
+    "The OLED evo C6 listed on Danawa in March 2026, now around KRW 1.65M versus a KRW 2.389M launch price.",
+    "Mid-size OLED for gaming and movies",
+    "48-inch 4K OLED · 120Hz · AI voice & smart assistant · Netflix, YouTube, mirroring"
    ]
   },
   "launches": [

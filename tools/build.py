@@ -58,6 +58,18 @@ t = t.replace('/*__ICONS__*/', open(T + '/icons.txt', encoding='utf-8').read())
 t = t.replace('/*__ARCHIVE__*/', dump(issues)).replace('/*__ISSUE__*/', dump(latest))
 ADS = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=%s"\n     crossorigin="anonymous"></script>' % cfg['ads']['client']) if (cfg.get('ads') or {}).get('client') else ''
 ST.ADS_HEAD = ADS
+BCSS = ('body{margin:0;font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:#111;background:#fafafa;word-break:keep-all;line-height:1.6}'
+        '.top{position:sticky;top:0;z-index:5;background:#000;color:#fff}.w{max-width:860px;margin:0 auto;padding:0 16px}'
+        '.top .w{display:flex;align-items:center;gap:14px;height:52px}.top a{color:#fff;text-decoration:none}.logo{font-weight:900;font-size:20px;flex:1}'
+        '.bc{font-size:13px;color:#666;margin:16px 0 0}.bc a{color:#666}h1{font-size:26px;margin:8px 0 4px}h1 small,h2 small{font-weight:500;color:#888;font-size:.6em;margin-left:6px}'
+        '.lead{color:#444;margin:0 0 16px}h2{font-size:19px;border-bottom:2px solid #111;padding-bottom:6px;margin:26px 0 10px}'
+        'ul{list-style:none;margin:0;padding:0}.pl li a{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:10px;margin-bottom:8px;color:#111;text-decoration:none}'
+        '.pl .im{flex:none;width:84px;height:84px;display:flex;align-items:center;justify-content:center}.pl img{max-width:84px;max-height:84px;object-fit:contain}'
+        '.pl .tx{display:flex;flex-direction:column;gap:2px;min-width:0}.pl b{font-size:15px}.pl .pr{font-weight:800}.pl .mt{font-size:12.5px;color:#666}'
+        '.nl li{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:12px;margin-bottom:8px}.nl p{margin:4px 0;font-size:14px;color:#333}.nl small{color:#777}.nl a{color:#777}'
+        '.bl{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}.bl a{display:flex;flex-direction:column;background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:12px;color:#111;text-decoration:none}'
+        '.bl span{font-size:12.5px;color:#666}.bl em{font-style:normal;font-size:12.5px;color:#e0301e;font-weight:700}'
+        '.note{font-size:12.5px;color:#777;margin:18px 0}footer{padding:28px 16px;color:#777;font-size:12px}')
 t = t.replace('<!--__VERIFY__-->', ADS + '\n' + '\n'.join(cfg.get('verify', [])) + '\n<script>window.AE_FORM=%s;window.AE_STATS=%s;window.AE_ADS=%s;</script>' % (dump(cfg.get('form')), dump(cfg.get('stats')), dump(cfg.get('ads'))))
 t = t.replace('<!--__JSONLD__-->', ST.jsonld_index(latest))
 t = t.replace('<!--__FAQ__-->', ST.faq_html(ST.faq(latest, 'ko')))
@@ -103,6 +115,92 @@ for p in latest['picks']:
         out = out.replace(k, val)
     open(p['page'], 'w', encoding='utf-8').write(out)
     urls.append(SITE + p['page'])
+
+# ---- 브랜드별 페이지(b/<brand>.html): 브랜드 정보 + 그 브랜드 제품 + 관련 뉴스 ----
+ENB = (latest.get('en') or {}).get('brands', {})
+
+
+def bslug(b):
+    x = re.sub(r'[^a-z0-9]+', '-', (ENB.get(b) or b).lower()).strip('-')
+    return 'b/%s.html' % (x or ('brand-%d' % (abs(hash(b)) % 10000)))
+
+
+os.makedirs('b', exist_ok=True)
+_by = {}
+for p in latest['picks']:
+    _by.setdefault(p['brand'], []).append(p)
+BRAND_PAGES = {}
+for b, ps in sorted(_by.items(), key=lambda kv: -len(kv[1])):
+    path = bslug(b)
+    BRAND_PAGES[b] = path
+    ps = sorted(ps, key=lambda p: -score(p['sc']))
+    info = BR.get(b, {})
+    short = re.sub(r'(전자|생활)$', '', b)
+    keys = {b, short, ENB.get(b, b)}
+    NOT = {'모바': '모바일', '메타': '메타버스'}
+
+    def hit(k, t):
+        return k and k in t and not (k in NOT and t.count(k) == t.count(NOT[k]))
+    news = [n for n in latest['news'] if any(hit(k, n['h'] + ' ' + n['p']) for k in keys)][:8]
+    cats = sorted({p['cat'] for p in ps})
+    cards = ''.join(
+        '<li><a href="../%s"><span class="im">%s</span><span class="tx"><b>%s</b><span class="pr">%s</span><span class="mt">%s · %s · 소싱 점수 %.1f</span></span></a></li>' % (
+            e(p['page']), ('<img src="../%s" alt="%s" loading="lazy">' % (e(p['img']), e(p['name']))) if p.get('img') else '', e(p['name']), e(p['price']),
+            e(p['cat']), e(p['ch']), score(p['sc'])) for p in ps)
+    nws = ''.join('<li><b>%s</b><p>%s</p><small>%s · %s</small></li>' % (e(n['h']), e(n['p']), e(n.get('d', '')),
+                  ', '.join('<a href="%s" target="_blank" rel="noopener">%s</a>' % (e(S[x]['u']), e(S[x]['t'].split(',')[0])) for x in ([n['s']] if isinstance(n.get('s'), str) else n.get('s', [])) if x in S)) for n in news)
+    title = '%s 가전·IT 추천 %d종 가격 비교 · %s | 가전레이더' % (b, len(ps), latest['edition']['date'].replace('-', '.'))
+    desc = '%s(%s) %s 추천 제품 %d종의 오늘 최저가·다나와 순위·소싱 점수를 정리했습니다. %s' % (b, ENB.get(b, b), '·'.join(cats), len(ps), (info.get('f') or ''))
+    url = SITE + path
+    ldo = {'@context': 'https://schema.org', '@graph': [
+        {'@type': 'CollectionPage', 'name': title, 'url': url, 'description': desc[:300], 'inLanguage': 'ko-KR',
+         'about': {'@type': 'Brand', 'name': b, 'alternateName': ENB.get(b, b)},
+         'isPartOf': {'@id': SITE + '#website'}},
+        {'@type': 'ItemList', 'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'url': SITE + p['page'], 'name': p['name']} for i, p in enumerate(ps)]},
+        {'@type': 'BreadcrumbList', 'itemListElement': [
+            {'@type': 'ListItem', 'position': 1, 'name': '가전레이더', 'item': SITE},
+            {'@type': 'ListItem', 'position': 2, 'name': '브랜드', 'item': SITE + 'brands.html'},
+            {'@type': 'ListItem', 'position': 3, 'name': b, 'item': url}]}]}
+    html_ = ('<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+             '<title>%s</title><meta name="description" content="%s"><link rel="canonical" href="%s"><link rel="icon" href="../favicon.svg">'
+             '<meta property="og:type" content="website"><meta property="og:title" content="%s"><meta property="og:description" content="%s"><meta property="og:url" content="%s"><meta property="og:image" content="%s">%s'
+             '<script type="application/ld+json">%s</script><style>%s</style></head><body>'
+             '<header class="top"><div class="w"><a class="logo" href="../">가전레이더</a><a href="../brands.html">브랜드</a><a href="../archive.html">과월호</a></div></header>'
+             '<main class="w"><nav class="bc"><a href="../">홈</a> › <a href="../brands.html">브랜드</a> › %s</nav><h1>%s <small>%s</small></h1>'
+             '<p class="lead">%s</p><h2>추천 제품 %d종 <small>%s 기준</small></h2><ul class="pl">%s</ul>%s'
+             '<p class="note">가격·순위는 %s 다나와 공개 자료 기준이며 판매처마다 다를 수 있습니다. 각 제품 페이지에 출처가 있습니다.</p></main>'
+             '<footer class="w">가전레이더 GAJEON RADAR · 가전 전문 매거진 · 매일 아침 7시</footer></body></html>') % (
+        e(title), e(desc[:160]), url, e(title), e(desc[:160]), url, e(SITE + (ps[0].get('img') or 'og.png')), ADS,
+        json.dumps(ldo, ensure_ascii=False).replace('</', '<\\/'), BCSS,
+        e(b), e(b), e(ENB.get(b, '')) if ENB.get(b, b) != b else '',
+        e(' · '.join(x for x in [info.get('c', ''), info.get('f', ''), ('대표 제품: ' + info['p']) if info.get('p') else ''] if x) or '브랜드 정보 확인 중'),
+        len(ps), e(latest['edition']['label']), cards,
+        ('<h2>관련 뉴스</h2><ul class="nl">%s</ul>' % nws) if nws else '', e(latest['edition']['date']))
+    open(path, 'w', encoding='utf-8').write(html_)
+    urls.append(url)
+# 브랜드 목록
+_bl = ''.join('<li><a href="%s"><b>%s</b><span>%s</span><em>%d종</em></a></li>' % (e(BRAND_PAGES[b]), e(b), e(ENB.get(b, '') if ENB.get(b, b) != b else BR.get(b, {}).get('c', '')), len(_by[b]))
+              for b in sorted(_by, key=lambda x: (-len(_by[x]), x)))
+open('brands.html', 'w', encoding='utf-8').write(
+    ('<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+     '<title>브랜드별 가전·IT 추천 모아 보기 | 가전레이더</title><meta name="description" content="삼성전자·LG전자·애플·다이슨 등 %d개 브랜드의 추천 가전·IT 제품을 브랜드별로 모아 봅니다.">'
+     '<link rel="canonical" href="%sbrands.html"><link rel="icon" href="favicon.svg">%s<style>%s</style></head><body>'
+     '<header class="top"><div class="w"><a class="logo" href="./">가전레이더</a><a href="brands.html">브랜드</a><a href="archive.html">과월호</a></div></header>'
+     '<main class="w"><h1>브랜드별 모아 보기</h1><p class="lead">%s 기준 %d개 브랜드 · 제품 %d종</p><ul class="bl">%s</ul></main>'
+     '<footer class="w">가전레이더 GAJEON RADAR · 가전 전문 매거진</footer></body></html>') % (len(_by), SITE, ADS, BCSS.replace('../', ''), e(latest['edition']['label']), len(_by), len(latest['picks']), _bl))
+_bld = {'@context': 'https://schema.org', '@graph': [
+    {'@type': 'CollectionPage', 'name': '브랜드별 모아 보기 · 가전레이더', 'url': SITE + 'brands.html', 'inLanguage': 'ko-KR'},
+    {'@type': 'ItemList', 'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'url': SITE + BRAND_PAGES[b], 'name': b} for i, b in enumerate(sorted(_by, key=lambda x: (-len(_by[x]), x)))]}]}
+_h = open('brands.html', encoding='utf-8').read().replace('</head>', '<script type="application/ld+json">%s</script></head>' % json.dumps(_bld, ensure_ascii=False).replace('</', '<\\/'), 1)
+open('brands.html', 'w', encoding='utf-8').write(_h)
+urls.append(SITE + 'brands.html')
+# 제품 페이지에 브랜드 페이지 링크
+for p in latest['picks']:
+    if p['brand'] in BRAND_PAGES:
+        h = open(p['page'], encoding='utf-8').read()
+        h = h.replace('<p class="eb" style="color:var(--ink-2);margin:10px 0 0">%s · ' % e(p['brand']),
+                      '<p class="eb" style="color:var(--ink-2);margin:10px 0 0"><a href="../%s" style="color:inherit">%s 제품 모두 보기 ›</a> · ' % (e(BRAND_PAGES[p['brand']]), e(p['brand'])), 1)
+        open(p['page'], 'w', encoding='utf-8').write(h)
 
 today = latest['edition']['date']
 # ---- 과월호(archive.html): 연도 → 월 → 주차 → 일 ----
@@ -170,7 +268,11 @@ def archive_html():
             '<footer class="w">가전레이더 GAJEON RADAR · 매일 아침 7시 발행</footer></body></html>') % (SITE, ADS, jump, len(issues), ''.join(body))
 
 
-open('archive.html', 'w', encoding='utf-8').write(archive_html())
+_ald = {'@context': 'https://schema.org', '@graph': [
+    {'@type': 'CollectionPage', 'name': '과월호 전체 보기 · 가전레이더', 'url': SITE + 'archive.html', 'inLanguage': 'ko-KR', 'isPartOf': {'@id': SITE + '#website'}},
+    {'@type': 'ItemList', 'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'url': SITE + 'issue/%s.html' % a['date'], 'name': 'No.%03d %s' % (a['no'], a['title'])} for i, a in enumerate(issues)]},
+    {'@type': 'BreadcrumbList', 'itemListElement': [{'@type': 'ListItem', 'position': 1, 'name': '가전레이더', 'item': SITE}, {'@type': 'ListItem', 'position': 2, 'name': '과월호', 'item': SITE + 'archive.html'}]}]}
+open('archive.html', 'w', encoding='utf-8').write(archive_html().replace('</head>', '<script type="application/ld+json">%s</script></head>' % json.dumps(_ald, ensure_ascii=False).replace('</', '<\\/'), 1))
 urls.append(SITE + 'archive.html')
 # ---- static issue pages (KO + EN), English home, markdown copies, RSS, llms.txt ----
 os.makedirs('issue', exist_ok=True)
