@@ -77,29 +77,29 @@ def thumb(path):
 
 def card(p):
     href = p.get("cp") or SITE + slug(p)
-    a0 = '<a href="%s" target="_blank" style="color:#121214;text-decoration:none">' % e(href)
+    a0 = '<a href="%s" target="_blank" style="color:#111111;text-decoration:none">' % e(href)
     img = ""
     if p.get("img") and os.path.exists(p["img"]):
         cid = "att%d" % len(imgs)
         imgs.append(thumb(p["img"]))
-        img = ('<td width="96" valign="top" style="padding-right:12px">%s<img src="cid:%s" width="96" height="96" alt="%s" '
-               'style="display:block;width:96px;height:96px;object-fit:contain;background:#fff;border:1px solid #d6d2c9"></a></td>' % (a0, cid, e(p["name"])))
-    btn = '<a href="%s" target="_blank" style="display:inline-block;margin-top:10px;padding:8px 14px;background:#121214;color:#f4f2ee;text-decoration:none;font-size:13px">%s &rarr;</a>' % (
-        e(href), "쿠팡에서 보기" if p.get("cp") else "자세히 보기")
-    tag = ' · <span style="color:#6a3f8f">관심 분야 맞춤</span>' if id(p) in matched else ''
+        img = ('<td width="104" valign="top" style="padding-right:14px">%s<img src="cid:%s" width="104" height="104" alt="%s" '
+               'style="display:block;width:104px;height:104px;object-fit:contain;background:#ffffff;border:1px solid #dddddd;border-radius:8px"></a></td>' % (a0, cid, e(p["name"])))
+    btn = ('<a href="%s" target="_blank" style="display:inline-block;margin-top:12px;padding:10px 16px;border:2px solid #e0301e;border-radius:8px;'
+           'background:#ffffff;color:#e0301e;text-decoration:none;font-size:14px;font-weight:700">%s &rarr;</a>') % (e(href), "쿠팡에서 보기" if p.get("cp") else "자세히 보기")
+    tag = ' · 관심 분야 맞춤' if id(p) in matched else ''
     v = score(p)
     vd = "추천템" if v >= 4 else ("조건부" if v >= 3.5 else "관망")
-    return ('<tr><td style="padding:16px 0;border-top:1px solid #d6d2c9"><table role="presentation" cellpadding="0" cellspacing="0" width="100%%"><tr>%s'
-            '<td valign="top"><div style="font-size:11px;letter-spacing:.1em;color:#9c7a43">%s · ★ %.1f %s%s</div>'
-            '<div style="font-size:16px;font-weight:600;margin:5px 0 3px;line-height:1.35">%s%s</a></div>'
-            '<div style="font-size:15px;color:#121214">%s</div>'
-            '<div style="font-size:13px;color:#5b5b61;line-height:1.55;margin-top:5px">%s</div>%s</td></tr></table></td></tr>'
+    return ('<tr><td style="padding:18px 0;border-top:1px solid #e5e5e5"><table role="presentation" cellpadding="0" cellspacing="0" width="100%%"><tr>%s'
+            '<td valign="top"><div style="font-size:12px;font-weight:700;color:#b42318">%s · ★ %.1f %s%s</div>'
+            '<div style="font-size:17px;font-weight:700;color:#111111;margin:5px 0 4px;line-height:1.4">%s%s</a></div>'
+            '<div style="font-size:18px;font-weight:800;color:#111111">%s</div>'
+            '<div style="font-size:14px;color:#333333;line-height:1.6;margin-top:6px">%s</div>%s</td></tr></table></td></tr>'
             % (img, e(p["brand"]), v, vd, tag, a0, e(p["name"]), e(p["price"]), e(p["why"]), btn))
 
 
 def sec(title, eyebrow, rows):
-    return ('<tr><td style="padding:28px 28px 4px"><div style="font-size:11px;letter-spacing:.16em;color:#9c7a43">%s</div>'
-            '<div style="font-family:Georgia,\'Noto Serif KR\',serif;font-size:21px;color:#121214;margin:6px 0 4px">%s</div>'
+    return ('<tr><td style="padding:26px 24px 4px"><div style="font-size:12px;font-weight:800;letter-spacing:.08em;color:#e0301e">%s</div>'
+            '<div style="font-size:22px;font-weight:800;color:#111111;margin:4px 0 6px;letter-spacing:-.02em">%s</div>'
             '<table role="presentation" cellpadding="0" cellspacing="0" width="100%%">%s</table></td></tr>' % (eyebrow, title, rows))
 
 
@@ -113,48 +113,54 @@ for n in pts:  # spread across fields: one per field first
 for n in pts:
     if len(news3) == 3: break
     if n not in news3: news3.append(n)
+REGK = {"KR": "한국", "US": "미국", "JP": "일본", "CN": "중국", "EU": "유럽"}
 CAT = {"AI": "AI가전", "IT": "IT·모바일", "디바이스": "AI디바이스", "소형": "소형가전", "대형": "대형가전"}
 news_rows = "".join(
-    '<tr><td style="padding:12px 0;border-top:1px solid #d6d2c9"><span style="font-size:11px;letter-spacing:.08em;color:#9c7a43">%s · %s</span>'
-    '<div style="font-size:15px;font-weight:600;color:#121214;margin-top:3px">%s</div><div style="font-size:13px;color:#5b5b61;line-height:1.55">%s</div></td></tr>'
-    % (e(CAT.get(n["c"], n["c"])), e(n["r"]), e(n["h"]), e(n["p"])) for n in news3)
+    '<tr><td style="padding:14px 0;border-top:1px solid #e5e5e5"><div style="font-size:12px;font-weight:700;color:#b42318">%s · %s</div>'
+    '<div style="font-size:16px;font-weight:700;color:#111111;margin-top:4px;line-height:1.45">%s</div><div style="font-size:14px;color:#333333;line-height:1.6;margin-top:4px">%s</div></td></tr>'
+    % (e(CAT.get(n["c"], n["c"])), e(REGK.get(n["r"], n["r"])), e(n["h"]), e(n["p"])) for n in news3)
 
 mail = j.get("mail", {})
 tr = next((t for t in j["trends"] if t.get("stat")), None)
 hook = mail.get("hook") or (news3[0]["h"] if news3 else strip(j["cover"]["title"]))
-pre = mail.get("pre") or ("오늘의 추천: " + " · ".join(p["name"] for p in chosen))[:110]
+pre = mail.get("pre") or ("가전 전문 매거진 가전레이더 · 오늘의 추천: " + " · ".join(p["name"] for p in chosen))[:120]
 num = mail.get("num") or tr
 title = strip(j["cover"]["title"])
 unsub = SITE + "unsubscribe.html" + ("?e=" + quote(a.to) if a.to else "")
 no = ed["label"].split(" · ")[1] if " · " in ed["label"] else ed["date"]
 
-body = f'''<!doctype html><html><body style="margin:0;background:#e9e6df">
+body = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="color-scheme" content="light"><meta name="supported-color-schemes" content="light"></head><body style="margin:0;background:#f2f2f2">
 <div style="display:none;max-height:0;overflow:hidden;opacity:0">{e(pre)}&#8199;&#65279;&#847;&#8199;&#65279;&#847;</div>
-<table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background:#e9e6df"><tr><td align="center" style="padding:20px 10px">
-<table role="presentation" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;table-layout:fixed;word-break:keep-all;overflow-wrap:anywhere;background:#f4f2ee;font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;color:#121214">
-<tr><td style="padding:12px 28px;font-size:11px;color:#5b5b61">[광고] 이 메일의 쿠팡 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</td></tr>
-<tr><td style="background:#0c0c0e;padding:32px 28px 30px">
-<div style="font-size:26px;font-weight:900;letter-spacing:-.02em;color:#f4f2ee">가전레이더 <span style="font-size:12px;font-weight:600;letter-spacing:.14em;color:#e0301e">GAJEON RADAR</span></div>
-<div style="font-size:11px;letter-spacing:.16em;color:#c9a96e;margin-top:6px">{e(ed["label"])} · 3분 읽기</div>
-<div style="font-family:Georgia,'Noto Serif KR',serif;font-size:25px;line-height:1.3;color:#f4f2ee;margin-top:20px">{e(title)}</div>
-{('<div style="margin-top:18px;padding-top:16px;border-top:1px solid #2a2a2e"><span style="font-size:30px;font-weight:700;color:#c9a96e">%s</span> <span style="font-size:13px;color:#b9b6ae">%s</span></div>' % (e(num["stat"]), e(num["sl"]))) if num else ''}
+<table role="presentation" cellpadding="0" cellspacing="0" width="100%" bgcolor="#f2f2f2" style="background:#f2f2f2"><tr><td align="center" style="padding:16px 8px">
+<table role="presentation" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff" style="max-width:600px;width:100%;table-layout:fixed;word-break:keep-all;overflow-wrap:anywhere;background:#ffffff;font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;color:#111111;border-top:6px solid #e0301e">
+<tr><td style="padding:10px 24px;font-size:12px;line-height:1.5;color:#444444;border-bottom:1px solid #eeeeee">[광고] 이 메일의 쿠팡 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</td></tr>
+<tr><td style="padding:22px 24px 6px">
+<div style="font-size:14px;font-weight:800;color:#e0301e;letter-spacing:.02em">가전 전문 매거진</div>
+<div style="font-size:34px;font-weight:900;color:#111111;letter-spacing:-.04em;line-height:1.2;margin-top:2px">가전레이더 <span style="font-size:13px;font-weight:800;letter-spacing:.12em;color:#e0301e">GAJEON RADAR</span></div>
+<div style="font-size:14px;color:#333333;line-height:1.55;margin-top:6px">AI가전·생활가전·대형가전·TV·IT 트렌드와 MD 추천템을 매일 아침 7시에</div>
+<div style="font-size:13px;font-weight:700;color:#555555;margin-top:12px;padding-top:10px;border-top:1px solid #e5e5e5">{e(ed["label"])} · 3분 읽기</div>
 </td></tr>
-{sec("오늘의 추천템 3", "TOP PICKS", "".join(card(p) for p in chosen))}
+<tr><td style="padding:14px 24px 4px">
+<div style="font-size:26px;font-weight:800;line-height:1.35;color:#111111;letter-spacing:-.03em">{e(title)}</div>
+{('<table role="presentation" cellpadding="0" cellspacing="0" width="100%%" style="margin-top:16px"><tr><td bgcolor="#fff1ef" style="background:#fff1ef;border-left:5px solid #e0301e;padding:14px 16px"><span style="font-size:32px;font-weight:900;color:#e0301e">%s</span><br><span style="font-size:14px;font-weight:600;color:#222222">%s</span></td></tr></table>' % (e(num["stat"]), e(num["sl"]))) if num else ''}
+</td></tr>
+{sec("오늘의 추천템 3", "가전레이더 MD PICK", "".join(card(p) for p in chosen))}
 {sec("놓치면 안 될 뉴스 3", "POINT NEWS", news_rows)}
-<tr><td style="padding:24px 28px 30px"><a href="{SITE}" style="display:block;text-align:center;padding:14px;background:#121214;color:#f4f2ee;text-decoration:none;font-size:14px">소싱 픽 전체 · 신제품 · 출처는 홈페이지에서 &rarr;</a></td></tr>
-<tr><td style="padding:18px 28px 26px;border-top:1px solid #d6d2c9;font-size:11px;line-height:1.7;color:#5b5b61">
-가격·리뷰는 수집 시점({e(ed.get("collected", ""))}) 공개 자료 기준이며 판매처마다 다를 수 있습니다. 모든 수치의 출처는 홈페이지 ‘출처’ 섹션에 있습니다.<br>
-전송자: {e(SND.get("name") or "가전레이더")} · <a href="mailto:{e(SND.get("email") or "newyangs007@gmail.com")}" style="color:#5b5b61">{e(SND.get("email") or "newyangs007@gmail.com")}</a>{(" · " + e(SND["phone"])) if SND.get("phone") else ""}{(" · " + e(SND["addr"])) if SND.get("addr") else ""}<br>
-더 이상 받지 않으려면 <a href="{e(unsub)}" style="color:#5b5b61">수신 거부(구독 해지)</a>를 누르세요. 수신 거부에 비용이 들지 않습니다.<br>
-If you no longer wish to receive this email, click <a href="{e(unsub)}" style="color:#5b5b61">Unsubscribe</a>. Unsubscribing is free of charge.<br>{e(ed.get("next", ""))}</td></tr>
+<tr><td style="padding:22px 24px 28px"><a href="{SITE}" style="display:block;text-align:center;padding:15px;border:2px solid #111111;border-radius:10px;background:#ffffff;color:#111111;text-decoration:none;font-size:15px;font-weight:800">가전 전문 매거진 가전레이더에서 전체 보기 &rarr;</a>
+<div style="font-size:13px;color:#555555;text-align:center;margin-top:8px">제품 리스트 · 오늘의 특가 30%↑ · 신제품 · 모든 출처</div></td></tr>
+<tr><td style="padding:18px 24px 26px;border-top:1px solid #e5e5e5;font-size:12px;line-height:1.75;color:#555555">
+가격은 수집 시점({e(ed.get("collected", ""))}) 공개 자료 기준이며 판매처마다 다를 수 있습니다. 모든 수치의 출처는 홈페이지 ‘출처’ 섹션에 있습니다.<br>
+전송자: {e(SND.get("name") or "가전레이더")} · <a href="mailto:{e(SND.get("email") or "newyangs007@gmail.com")}" style="color:#555555">{e(SND.get("email") or "newyangs007@gmail.com")}</a>{(" · " + e(SND["phone"])) if SND.get("phone") else ""}{(" · " + e(SND["addr"])) if SND.get("addr") else ""}<br>
+더 이상 받지 않으려면 <a href="{e(unsub)}" style="color:#555555">수신 거부(구독 해지)</a>를 누르세요. 수신 거부에 비용이 들지 않습니다.<br>
+If you no longer wish to receive this email, click <a href="{e(unsub)}" style="color:#555555">Unsubscribe</a>. Unsubscribing is free of charge.<br>{e(ed.get("next", ""))}</td></tr>
 </table></td></tr></table></body></html>'''
 
-txt = "%s · 3분 읽기\n%s\n\n오늘의 추천템 3\n%s\n\n뉴스 3\n%s\n\n홈페이지: %s\n\n[광고] 쿠팡 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.\n수신 거부(구독 해지) / Unsubscribe: %s\n전송자: %s" % (
+txt = "가전 전문 매거진 가전레이더\n%s · 3분 읽기\n%s\n\n오늘의 추천템 3\n%s\n\n뉴스 3\n%s\n\n홈페이지: %s\n\n[광고] 쿠팡 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.\n수신 거부(구독 해지) / Unsubscribe: %s\n전송자: %s" % (
     ed["label"], title,
     "\n".join("- %s %s (★%.1f) %s" % (p["name"], p["price"], score(p), p.get("cp") or SITE + slug(p)) for p in chosen),
     "\n".join("- %s" % n["h"] for n in news3), SITE, unsub, " · ".join(x for x in [SND.get("name") or "가전레이더", SND.get("email") or "newyangs007@gmail.com", SND.get("phone", ""), SND.get("addr", "")] if x))
 open("out/email.html", "w", encoding="utf-8").write(body)
 open("out/email.txt", "w", encoding="utf-8").write(txt)
 miss = [k for k in ("phone", "addr") if not SND.get(k)]
-print(json.dumps({"subject": "(광고) %s · 가전레이더 %s" % (hook, no), "preheader": pre, "images": imgs,
+print(json.dumps({"subject": "(광고) [가전레이더 %s] %s" % (no, hook), "preheader": pre, "images": imgs,
                   "warn": ("config.sender에 %s가 비어 있습니다(정보통신망법 시행령 별표 6: 전송자 명칭·이메일·전화번호·주소 표시)" % ", ".join(miss)) if miss else ""}, ensure_ascii=False))
