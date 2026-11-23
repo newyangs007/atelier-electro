@@ -88,19 +88,19 @@ button,select,input{font:inherit;color:inherit}
 .tabs a.on{background:#fff;color:#000;font-weight:600}
 
 /* hero */
-.hero{background:#000;color:#fff;padding:22px 0 30px}
+.hero{background:#000;color:#fff;padding:16px 0 20px}
 .meta-line{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:12.5px;color:#aaa}
 .meta-line b{color:#fff;font-weight:500}
 .meta-line select{background:#111;color:#fff;border:1px solid #333;border-radius:8px;padding:5px 8px;font-size:12.5px;max-width:100%}
-.hero h1{font-family:var(--head);font-weight:900;font-size:clamp(28px,7.6vw,54px);line-height:1.18;letter-spacing:-.035em;margin:14px 0 10px}
+.hero h1{font-family:var(--head);font-weight:900;font-size:clamp(25px,6.6vw,46px);line-height:1.2;letter-spacing:-.035em;margin:10px 0 8px}
 .hero h1 em{font-style:normal;color:var(--acc)}
-.deck{color:#cfcfcf;font-size:15px;margin:0;max-width:720px;white-space:pre-line}
-.figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:20px}
-.fig{background:#141414;border-radius:12px;padding:12px 14px;min-width:0}
+.deck{color:#cfcfcf;font-size:14.5px;margin:0;max-width:720px;white-space:pre-line;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 18px}
+.fig{background:var(--soft);border-radius:12px;padding:12px 14px;min-width:0}
 .fig .v{font-family:var(--num);font-weight:800;font-size:26px;line-height:1.1}
 .fig .v small{font-size:15px;color:var(--acc);margin-left:1px}
-.fig .l{font-size:12.5px;color:#bbb;margin-top:4px;line-height:1.45}
-.fig a{font-size:11px;color:#777;text-decoration:none}
+.fig .l{font-size:12.5px;color:#333;margin-top:4px;line-height:1.45}
+.fig a{font-size:12px;color:var(--ink2);text-decoration:none}
 @media(min-width:760px){.figs{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .past{display:none;background:#fff3cd;color:#000;padding:10px 0;font-size:13px}.past.on{display:block}
 
@@ -109,16 +109,29 @@ section.sec{padding:36px 0 8px}
 .sh{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:16px;flex-wrap:wrap}
 .sh h2{font-family:var(--head);font-weight:900;font-size:22px;letter-spacing:-.03em;margin:0;line-height:1.3}
 .sh p{margin:2px 0 0;font-size:12.5px;color:var(--ink2)}
-.ad-note{font-size:11.5px;color:var(--ink2);margin:-8px 0 14px}
+.ad-note{font-size:12px;color:var(--ink2);margin:-8px 0 12px}
 .chip-row{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px 0 12px;margin:0 -16px;padding-left:16px;padding-right:16px}
 .chip-row::-webkit-scrollbar{display:none}
-.chip{flex:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;font-size:13.5px;cursor:pointer;white-space:nowrap}
+.chip{flex:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;min-height:36px;font-size:13.5px;cursor:pointer;white-space:nowrap}
 .chip b{font-family:var(--num);font-weight:700;margin-left:4px;color:var(--ink2);font-size:12px}
 .chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
 .chip[aria-pressed="true"] b{color:#bbb}
 .more{display:block;width:100%;margin:14px 0 0;padding:12px;border:1px solid var(--ink);background:#fff;border-radius:12px;font-weight:600;cursor:pointer}
 .more[hidden]{display:none}
 
+/* unified product card: 이미지 → 브랜드·분류 → 제품명 → 가격 → 핵심 한 줄 → 쿠팡 버튼 */
+.cta{display:flex;align-items:center;justify-content:center;gap:4px;width:100%;min-height:42px;padding:10px 12px;border-radius:10px;background:var(--acc);color:#fff;font-size:14px;font-weight:700;text-decoration:none;border:0;line-height:1.2;cursor:pointer}
+.cta:hover{filter:brightness(.92)}
+.cta.ghost{background:#fff;color:var(--ink);border:1px solid var(--line);font-weight:600}
+.lk{display:block;text-align:center;font-size:12.5px;color:var(--ink2);background:none;border:0;padding:8px 0 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px;width:100%}
+.hl{font-size:12.5px;color:var(--acc);font-weight:600;line-height:1.4;margin:0}
+.pk{display:inline-flex;align-items:center;font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;background:#000;color:#fff;width:max-content}
+.pk.d{background:var(--acc)}
+.t3 .who,.dl .who{font-size:12px;color:var(--ink2)}
+.t3 .price{font-size:18px}
+.dl .cta{min-height:38px;font-size:12.5px;padding:8px 6px}
+.card .hl{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .acts{margin-top:6px}
 /* top 3 */
 .top3{display:grid;gap:12px}
 .t3{display:grid;grid-template-columns:112px minmax(0,1fr);gap:14px;border:1px solid var(--line);border-radius:var(--r);padding:12px;position:relative;background:#fff}
@@ -127,7 +140,7 @@ section.sec{padding:36px 0 8px}
 .t3 .im img{width:90%;height:90%;object-fit:contain}
 .t3 .im svg{width:60%;height:60%;color:#888}
 .t3 .b{min-width:0;display:flex;flex-direction:column;gap:4px}
-.badge{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;background:#000;color:#fff;width:max-content}
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;background:#000;color:#fff;width:max-content}
 .badge.c{background:#fff;color:#000;border:1px solid #000}
 .badge.w{background:var(--soft);color:var(--ink2)}
 .t3 h3{font-size:16px;line-height:1.4;margin:2px 0 0}
@@ -137,7 +150,7 @@ section.sec{padding:36px 0 8px}
 .acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
 .bt{display:inline-flex;align-items:center;justify-content:center;gap:4px;padding:9px 12px;border-radius:10px;font-size:13px;font-weight:600;text-decoration:none;border:1px solid var(--ink);background:#fff;cursor:pointer;line-height:1.2}
 .bt.cp{background:var(--ink);color:#fff}
-@media(min-width:860px){.top3{grid-template-columns:repeat(3,minmax(0,1fr))}.t3{grid-template-columns:1fr}.t3 .im{aspect-ratio:4/3}}
+@media(min-width:860px){.top3{grid-template-columns:repeat(3,minmax(0,1fr))}.t3{grid-template-columns:1fr}.t3 .im{aspect-ratio:auto;height:180px}}
 
 /* rolling */
 .roll{overflow:hidden;margin:0 -16px;padding:4px 0 8px;-webkit-mask:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent);mask:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent)}
@@ -161,12 +174,12 @@ section.sec{padding:36px 0 8px}
 .dl .im img{width:88%;height:88%;object-fit:contain}.dl .im svg{width:55%;height:55%;color:#888}
 .dl .off{position:absolute;top:8px;left:8px;background:var(--acc);color:#fff;font-family:var(--num);font-weight:800;font-size:14px;padding:3px 8px;border-radius:8px}
 .dl .n{font-size:12.5px;line-height:1.4;font-weight:600}
-.dl .was{font-size:11.5px;color:var(--ink2);text-decoration:line-through}
+.dl .was{font-size:12px;color:var(--ink2);text-decoration:line-through}
 .dl .p{font-family:var(--num);font-weight:800;font-size:15px;color:var(--acc)}
-.dl .bs{font-size:10.5px;color:var(--ink2);line-height:1.4}
+.dl .bs{font-size:12px;color:var(--ink2);line-height:1.4}
 .dl .acts{margin-top:auto}.dl .bt{padding:7px 10px;font-size:12px}
 .cats .chip-row{padding-bottom:8px}
-.cgl{flex:none;align-self:center;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--ink2);padding:0 4px 0 0;white-space:nowrap}
+.cgl{display:none;flex:none;align-self:center;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--ink2);padding:0 4px 0 0;white-space:nowrap}
 .chip.deal{border-color:var(--acc);color:var(--acc);font-weight:600}
 .chip.deal[aria-pressed="true"]{background:var(--acc);color:#fff}
 .off-s{display:inline-block;background:var(--acc);color:#fff;font-family:var(--num);font-weight:800;font-size:11.5px;padding:1px 6px;border-radius:6px;margin-left:6px}
@@ -178,7 +191,7 @@ section.sec{padding:36px 0 8px}
 .card .im{aspect-ratio:1/1;background:var(--soft);border-radius:10px;display:grid;place-items:center;overflow:hidden;cursor:pointer;border:0;padding:0;width:100%}
 .card .im img{width:88%;height:88%;object-fit:contain}
 .card .im svg{width:55%;height:55%;color:#888}
-.card .who{font-size:11.5px;color:var(--ink2);margin-top:4px}
+.card .who{font-size:12px;color:var(--ink2);margin-top:4px}
 .card h3{font-size:14px;line-height:1.42;margin:0;font-weight:600}
 .card .md{font-size:12px;background:var(--soft);border-radius:8px;padding:6px 8px;margin:2px 0 0;color:#333;line-height:1.5}
 .card .row{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
@@ -189,12 +202,12 @@ section.sec{padding:36px 0 8px}
 .news{display:grid;gap:0}
 @media(min-width:760px){.news{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px}}
 .nw{border-top:1px solid var(--line);padding:14px 0}
-.nw .m{font-size:11.5px;color:var(--ink2);display:flex;gap:8px;flex-wrap:wrap}
+.nw .m{font-size:12px;color:var(--ink2);display:flex;gap:8px;flex-wrap:wrap}
 .nw .m .c{font-weight:600;color:var(--ink)}
 .nw .m .pt{color:var(--acc);font-weight:700}
 .nw h3{font-size:15.5px;line-height:1.45;margin:4px 0 3px}
 .nw p{margin:0;font-size:13.5px;color:#333}
-.nw a.s{font-size:11.5px;color:var(--ink2);text-decoration:none}
+.nw a.s{font-size:12px;color:var(--ink2);text-decoration:none}
 .nw a.s:hover{text-decoration:underline}
 
 /* trends */
@@ -270,8 +283,8 @@ section.sec{padding:36px 0 8px}
 @media(max-width:759px){
   section.sec{padding:24px 0 2px}
   .sh{margin-bottom:12px}.sh h2{font-size:20px}
-  .hero{padding:16px 0 20px}.hero h1{margin:10px 0 8px}.deck{font-size:14px}
-  .figs{gap:8px;margin-top:14px}.fig{padding:10px 12px}.fig .v{font-size:22px}
+  .hero{padding:12px 0 16px}.hero h1{margin:8px 0 6px}.deck{font-size:13.5px}
+  .figs{gap:8px}.fig{padding:10px 12px}.fig .v{font-size:22px}
   .t3{grid-template-columns:92px minmax(0,1fr);gap:12px;padding:10px}
   .t3 .why{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .card h3{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13.5px}
@@ -326,7 +339,7 @@ footer a{text-decoration:none}
   </div>
   <nav class="tabs" aria-label="호수·목차"><div class="wrap tw">
     <button type="button" class="ed-chip" id="ed-chip" aria-haspopup="dialog" aria-controls="arc" title="호수 선택·과월호"><svg class="cal" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="3" width="13" height="11.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M1.5 6.5h13M5 1.5v3M11 1.5v3" stroke="currentColor" stroke-width="1.6"/></svg><span id="ed-chip-t">No.</span><span class="cv">▼</span></button>
-    <div class="toc" id="toc"><a href="#top3">추천템</a><a href="#deals-sec">특가</a><a href="#products">제품</a><a href="#news">뉴스</a><a href="#trends">트렌드</a><a href="#launches">신제품</a><a href="#subscribe">구독</a></div>
+    <div class="toc" id="toc"><a href="#top3">추천템</a><a href="#deals-sec">특가</a><a href="#products">제품</a><a href="#news">뉴스</a><a href="#subscribe">구독</a><a href="#trends">숫자</a><a href="#launches">신제품</a></div>
   </div></nav>
 </header>
 <div class="past" id="past"><div class="wrap" id="past-in"></div></div>
@@ -336,18 +349,12 @@ footer a{text-decoration:none}
   <div class="meta-line"><b id="ed-label"></b><span>매일 아침 7시 발행</span><a href="archive.html" id="arc-open2" style="color:#fff">과월호 보기 →</a></div>
   <h1 id="hero-title"></h1>
   <p class="deck" id="hero-deck"></p>
-  <div class="figs" id="figs"></div>
 </div></section>
 
 <section class="sec" id="top3"><div class="wrap">
-  <div class="sh"><div><h2>오늘의 추천템 3</h2><p>다나와 인기순위·리뷰·출시 시점으로 매긴 점수 상위 3개</p></div></div>
-  <p class="ad-note">[광고] ‘쿠팡’ 버튼은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+  <div class="sh"><div><h2>오늘의 추천템 3</h2><p>쿠팡에서 바로 살 수 있는 제품 중 점수 상위 3개 · 매일 아침 갱신</p></div></div>
+  <p class="ad-note">[광고] 쿠팡 버튼은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
   <div class="top3" id="top3-list"></div>
-</div></section>
-
-<section class="sec" id="rolling" aria-label="쿠팡에서 바로 보기"><div class="wrap">
-  <div class="sh"><div><h2>쿠팡에서 바로 보기</h2><p>오늘 소개한 제품 중 쿠팡 링크가 있는 제품 · 누르면 멈춰요</p></div></div>
-  <div class="roll" id="roll"><div class="roll-track" id="roll-track"></div></div>
 </div></section>
 
 <section class="sec" id="deals-sec" aria-label="오늘의 특가"><div class="wrap">
@@ -371,8 +378,36 @@ footer a{text-decoration:none}
   <button type="button" class="more" id="news-more">뉴스 더 보기</button>
 </div></section>
 
+<section class="subw" id="subscribe"><div class="wrap">
+  <h2>매일 아침 7시,<br>추천템 3개를 메일로</h2>
+  <p class="lead">관심 분야에 맞춘 추천템과 핵심 뉴스를 3분 분량으로 보내 드려요. 공동구매·특가 소식은 원하는 분께만.</p>
+  <div class="stats" id="stats" hidden></div>
+  <form id="sub-form" novalidate>
+    <label for="sub-email" class="sr">이메일</label>
+    <div class="sub-row"><input type="email" id="sub-email" placeholder="이메일 주소" autocomplete="email" required><button type="submit" id="sub-btn">구독하기</button></div>
+    <details class="opt-fold"><summary>선택 항목 (성별·나이대·독자 유형·관심 분야) — 맞춤 추천에 쓰여요</summary>
+    <div class="sub-grid">
+      <fieldset><legend>성별</legend><div class="seg"><label><input type="radio" name="sub-g" value="남성"><span>남성</span></label><label><input type="radio" name="sub-g" value="여성"><span>여성</span></label></div></fieldset>
+      <label>나이대<select id="sub-age"><option value="">선택</option><option>10대 (만 14세 이상)</option><option>20대</option><option>30대</option><option>40대</option><option>50대</option><option>60대 이상</option></select></label>
+    </div>
+    <div class="sub-grid">
+      <label style="grid-column:1/-1">독자 유형 (선택)<select id="sub-type"><option value="">선택 안 함</option><option>가전 관심 소비자</option><option>유통·MD·바이어</option><option>제조·브랜드</option><option>온라인 셀러·리셀러</option><option>미디어·크리에이터</option><option>기타</option></select></label>
+    </div>
+    <fieldset class="ints" id="sub-int"><legend>관심 분야 (선택)</legend><div class="chips">
+      <label><input type="checkbox" value="AI가전"><span>AI가전</span></label><label><input type="checkbox" value="주방"><span>주방</span></label><label><input type="checkbox" value="청소"><span>청소·생활</span></label><label><input type="checkbox" value="난방·가습"><span>계절가전</span></label><label><input type="checkbox" value="뷰티"><span>뷰티</span></label><label><input type="checkbox" value="TV·오디오"><span>TV·오디오</span></label><label><input type="checkbox" value="모바일·워치"><span>모바일·노트북·워치</span></label><label><input type="checkbox" value="특가"><span>특가 30%↑</span></label><label><input type="checkbox" value="AI디바이스"><span>AI디바이스</span></label>
+    </div></fieldset>
+    </details>
+    <label class="agree"><input type="checkbox" id="sub-agree"><span>[필수] 만 14세 이상이며, 개인정보 수집·이용과 뉴스레터 수신에 동의합니다</span></label>
+    <p class="fine">수집 항목: 이메일·성별·나이대·독자 유형·관심 분야 · 목적: 매일 아침 뉴스레터 발송(쿠팡 파트너스 등 제휴 링크 포함), 맞춤 추천, 독자 통계 · 보유: 구독 해지 시까지(해지 즉시 파기). 만 14세 미만은 구독할 수 없습니다.</p>
+    <label class="agree"><input type="checkbox" id="sub-mkt"><span>[선택] 공동구매·특가·유튜브 쇼핑 영상 등 광고성 정보 수신에 동의합니다</span></label>
+    <p class="fine">동의하지 않아도 뉴스레터는 받을 수 있고, 메일 하단 링크로 언제든 철회할 수 있습니다. <a href="privacy.html">개인정보처리방침</a></p>
+    <p class="msg" id="sub-msg" role="status" aria-live="polite"></p>
+  </form>
+</div></section>
+
 <section class="sec" id="trends"><div class="wrap">
-  <div class="sh"><div><h2>이번 주 트렌드</h2><p>숫자로 보는 여섯 가지 흐름</p></div></div>
+  <div class="sh"><div><h2>숫자로 보는 오늘</h2><p>오늘 호의 핵심 수치와 이번 주 흐름</p></div></div>
+  <div class="figs" id="figs"></div>
   <div class="trends" id="trend-list"></div>
 </div></section>
 
@@ -384,32 +419,7 @@ footer a{text-decoration:none}
   <button type="button" class="more" id="launch-more">신제품 더 보기</button>
 </div></section>
 
-<section class="subw" id="subscribe"><div class="wrap">
-  <h2>매일 아침 7시,<br>추천템 3개를 메일로</h2>
-  <p class="lead">관심 분야에 맞춘 추천템과 핵심 뉴스를 3분 분량으로 보내 드려요. 공동구매·특가 소식은 원하는 분께만.</p>
-  <div class="stats" id="stats" hidden></div>
-  <form id="sub-form" novalidate>
-    <label for="sub-email" class="sr">이메일</label>
-    <div class="sub-row"><input type="email" id="sub-email" placeholder="이메일 주소" autocomplete="email" required><button type="submit" id="sub-btn">구독하기</button></div>
-    <div class="sub-grid">
-      <fieldset><legend>성별</legend><div class="seg"><label><input type="radio" name="sub-g" value="남성"><span>남성</span></label><label><input type="radio" name="sub-g" value="여성"><span>여성</span></label></div></fieldset>
-      <label>나이대<select id="sub-age"><option value="">선택</option><option>10대 (만 14세 이상)</option><option>20대</option><option>30대</option><option>40대</option><option>50대</option><option>60대 이상</option></select></label>
-    </div>
-    <details class="opt-fold"><summary>선택 항목 (독자 유형·관심 분야)</summary>
-    <div class="sub-grid">
-      <label style="grid-column:1/-1">독자 유형 (선택)<select id="sub-type"><option value="">선택 안 함</option><option>가전 관심 소비자</option><option>유통·MD·바이어</option><option>제조·브랜드</option><option>온라인 셀러·리셀러</option><option>미디어·크리에이터</option><option>기타</option></select></label>
-    </div>
-    <fieldset class="ints" id="sub-int"><legend>관심 분야 (선택)</legend><div class="chips">
-      <label><input type="checkbox" value="AI가전"><span>AI가전</span></label><label><input type="checkbox" value="주방"><span>주방</span></label><label><input type="checkbox" value="청소"><span>청소·생활</span></label><label><input type="checkbox" value="난방·가습"><span>계절가전</span></label><label><input type="checkbox" value="뷰티"><span>뷰티</span></label><label><input type="checkbox" value="TV·오디오"><span>TV·오디오</span></label><label><input type="checkbox" value="모바일·워치"><span>모바일·노트북·워치</span></label><label><input type="checkbox" value="특가"><span>특가 30%↑</span></label><label><input type="checkbox" value="AI디바이스"><span>AI디바이스</span></label>
-    </div></fieldset>
-    </details>
-    <label class="agree"><input type="checkbox" id="sub-agree"><span>[필수] 개인정보 수집·이용과 뉴스레터 수신에 동의합니다</span></label>
-    <p class="fine">수집 항목: 이메일·성별·나이대·독자 유형·관심 분야 · 목적: 매일 아침 뉴스레터 발송(쿠팡 파트너스 등 제휴 링크 포함), 맞춤 추천, 독자 통계 · 보유: 구독 해지 시까지(해지 즉시 파기). 만 14세 미만은 구독할 수 없습니다.</p>
-    <label class="agree"><input type="checkbox" id="sub-mkt"><span>[선택] 공동구매·특가·유튜브 쇼핑 영상 등 광고성 정보 수신에 동의합니다</span></label>
-    <p class="fine">동의하지 않아도 뉴스레터는 받을 수 있고, 메일 하단 링크로 언제든 철회할 수 있습니다. <a href="privacy.html">개인정보처리방침</a></p>
-    <p class="msg" id="sub-msg" role="status" aria-live="polite"></p>
-  </form>
-</div></section>
+
 
 <section class="sec" id="faq"><div class="wrap">
   <details class="fold"><summary>자주 묻는 질문</summary><div class="in"><div class="faq"><!--__FAQ__--></div></div></details>
@@ -454,6 +464,9 @@ footer a{text-decoration:none}
   function pimg(p){return p.img?'<img src="'+esc(p.img)+'" alt="'+esc(p.name)+'" loading="lazy">':icon(p.icon);}
   function pd(p){if(!p.pd)return '';var c=/▼/.test(p.pd)?'dn':(/▲/.test(p.pd)?'up':'');return '<span class="pd '+c+'">'+esc(p.pd)+'</span>';}
   function media(S){var m=S.t.split(',')[0];return m.length>40?'출처':m;}
+  function cta(p){return p.cp?'<a class="cta cp" data-id="'+esc(p.id)+'" href="'+esc(p.cp)+'" target="_blank" rel="noopener sponsored">쿠팡에서 가격 보기 ↗</a>':'<button type="button" class="cta ghost" data-id="'+esc(p.id)+'">상세 보기</button>';}
+  function pk(p){return isDeal(p)?'<span class="pk d">−'+esc(p.dc)+'%</span>':(overall(p.sc)>=4?'<span class="pk">MD 추천</span>':'');}
+  function buyFirst(L){return L.slice().sort(function(a,b){return (b.cp?1:0)-(a.cp?1:0);});}
   function cpBtn(p,label){return p.cp?'<a class="bt cp" data-id="'+esc(p.id)+'" href="'+esc(p.cp)+'" target="_blank" rel="noopener sponsored">'+(label||'쿠팡')+'</a>':'';}
   var LBL=['수요','검증','타이밍','접근성','마진'];
   var REG={KR:'한국',US:'미국',JP:'일본',CN:'중국',EU:'유럽'};
@@ -497,16 +510,10 @@ footer a{text-decoration:none}
     $('figs').innerHTML=j.cover.figs.slice(0,4).map(function(f){var s=(f.s||[])[0],S=j.sources[s];return '<div class="fig"><div class="v">'+esc(f.v)+'<small>'+esc(f.u)+'</small></div><div class="l">'+esc(f.l)+'</div>'+(S?'<a href="'+esc(S.u)+'" target="_blank" rel="noopener">'+esc(media(S))+' ↗</a>':'')+'</div>';}).join('');
     /* 추천템 3 */
     var R=ranked();
-    $('top3-list').innerHTML=R.slice(0,3).map(function(p,i){return '<article class="t3"><span class="rk">'+(i+1)+'</span><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="b">'+badge(p)+'<h3>'+esc(p.name)+'</h3><p class="why">'+esc(p.why)+'</p><div><span class="price">'+esc(p.price)+'</span>'+pd(p)+'</div><div class="acts">'+cpBtn(p,'쿠팡에서 보기')+'<button type="button" class="bt" data-id="'+esc(p.id)+'">상세</button></div></div></article>';}).join('');
-    /* 롤링 */
-    var C=R.filter(function(p){return p.cp;});
-    var one=C.map(function(p){return '<a class="rc" data-id="'+esc(p.id)+'" href="'+esc(p.cp)+'" target="_blank" rel="noopener sponsored"><span class="im">'+pimg(p)+'</span><span class="n">'+esc(p.name)+'</span><span class="p">'+esc(p.price)+'</span><span class="go">쿠팡에서 보기 ↗</span></a>';}).join('');
-    $('rolling').hidden=!C.length;
-    $('roll-track').innerHTML=one+one.replace(/<a class="rc"/g,'<a class="rc" aria-hidden="true" tabindex="-1"');
-    $('roll-track').style.setProperty('--dur',Math.max(30,C.length*4)+'s');
+    $('top3-list').innerHTML=buyFirst(R).slice(0,3).map(function(p,i){return '<article class="t3"><span class="rk">'+(i+1)+'</span><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="b">'+pk(p)+'<div class="who">'+esc(p.brand)+' · '+esc(p.cat)+'</div><h3>'+esc(p.name)+'</h3><div><span class="price">'+esc(p.price)+'</span>'+pd(p)+'</div><p class="why">'+esc(p.why)+'</p>'+cta(p)+(p.cp?'<button type="button" class="lk" data-id="'+esc(p.id)+'">상세 정보</button>':'')+'</div></article>';}).join('');
     pickDeals(j);var DL=j.picks.filter(isDeal).sort(function(a,b){return b.dc-a.dc;});
     $('deals-sec').hidden=!DL.length;var dt=document.querySelector('#toc a[href="#deals-sec"]');if(dt)dt.hidden=!DL.length;
-    $('deal-list').innerHTML=DL.map(function(p){return '<article class="dl"><span class="off">−'+esc(p.dc)+'%</span><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="n">'+esc(p.name)+'</div><div class="was">'+esc(p.was||'')+'</div><div class="p">'+esc(p.price)+'</div><div class="bs">'+esc(p.dcb||'')+'</div><div class="acts">'+(p.cp?cpBtn(p,'쿠팡에서 보기'):'<button type="button" class="bt" data-id="'+esc(p.id)+'">상세</button>')+'</div></article>';}).join('');
+    $('deal-list').innerHTML=DL.map(function(p){return '<article class="dl"><span class="off">−'+esc(p.dc)+'%</span><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="who">'+esc(p.brand)+'</div><div class="n">'+esc(p.name)+'</div><div class="was">'+esc(p.was||'')+'</div><div class="p">'+esc(p.price)+'</div><div class="bs">'+esc(p.dcb||'')+'</div><div class="acts">'+cta(p)+'</div></article>';}).join('');
     renderCats();renderProducts();
     renderNewsCats();renderNews();
     $('trend-list').innerHTML=j.trends.map(function(t){return '<article class="tr"><div class="st">'+esc(t.stat)+'</div><div class="sl">'+esc(t.sl)+'</div><h3>'+esc(t.t)+'</h3><p>'+esc(t.line)+'</p></article>';}).join('');
@@ -518,12 +525,13 @@ footer a{text-decoration:none}
     $('brand-list').innerHTML=Object.keys(used).filter(function(b){return BR[b];}).map(function(b){var x=BR[b];return '<div><b>'+esc(b)+'</b> · '+esc(x.c)+'<br>'+esc(x.f)+(x.p?' · '+esc(x.p):'')+'</div>';}).join('');
   }
   function renderCats(){
-    $('cats').innerHTML=[0,1,2].map(function(r){var h=GROUPS.filter(function(g){return g[3]===r;}).map(function(g){var n=D.picks.filter(g[2]).length;if(!n)return '';return '<button type="button" class="chip'+(g[0]==='deal'?' deal':'')+'" data-g="'+g[0]+'" aria-pressed="'+(g[0]===grp)+'">'+esc(g[1])+'<b>'+n+'</b></button>';}).join('');return h?'<div class="chip-row">'+(GLBL[r]?'<span class="cgl">'+GLBL[r]+'</span>':'')+h+'</div>':'';}).join('');
+    var ORDER=['all','deal','robot','tv','ai','kitchen','living','season','big','beauty','phone','laptop','tablet','watch','audio','aidev'];
+    $('cats').innerHTML='<div class="chip-row">'+ORDER.map(function(id){var g=GROUPS.filter(function(x){return x[0]===id;})[0];if(!g)return '';var n=D.picks.filter(g[2]).length;if(!n)return '';return '<button type="button" class="chip'+(g[0]==='deal'?' deal':'')+'" data-g="'+g[0]+'" aria-pressed="'+(g[0]===grp)+'">'+esc(g[1])+'<b>'+n+'</b></button>';}).join('')+'</div>';
   }
   function renderProducts(){
     var g=GROUPS.filter(function(x){return x[0]===grp;})[0]||GROUPS[0];
-    var L=ranked().filter(g[2]);
-    $('plist').innerHTML=L.slice(0,shown).map(function(p){var b=BR[p.brand];return '<article class="card"><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="who">'+esc(p.brand)+' · '+esc(p.cat)+'</div><h3>'+esc(p.name)+'</h3>'+(p.md&&grp==='ai'?'<p class="md">MD · '+esc(p.md)+'</p>':'')+'<div class="row"><span class="price">'+esc(p.price)+(isDeal(p)?'<span class="off-s">−'+esc(p.dc)+'%</span>':'')+'</span>'+badge(p)+'</div>'+pd(p)+'<div class="acts">'+cpBtn(p)+'<button type="button" class="bt" data-id="'+esc(p.id)+'">상세</button></div></article>';}).join('');
+    var L=buyFirst(ranked().filter(g[2]));
+    $('plist').innerHTML=L.slice(0,shown).map(function(p){return '<article class="card"><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="who">'+esc(p.brand)+' · '+esc(p.cat)+'</div><h3>'+esc(p.name)+'</h3><div class="row"><span class="price">'+esc(p.price)+'</span>'+pk(p)+'</div>'+pd(p)+'<p class="hl">'+esc(p.ch)+'</p><div class="acts">'+cta(p)+'</div></article>';}).join('');
     var m=$('plist-more');m.hidden=L.length<=shown;m.textContent='더 보기 ('+(L.length-shown)+'개 남음)';
   }
   function renderNewsCats(){
@@ -566,13 +574,12 @@ footer a{text-decoration:none}
   document.addEventListener('click',function(e){
     var c=e.target.closest('#cats .chip');if(c){grp=c.dataset.g;shown=PER;renderCats();renderProducts();return;}
     var n=e.target.closest('#news-cats .chip');if(n){ncat=n.dataset.c;nshown=3;renderNewsCats();renderNews();return;}
-    var cp=e.target.closest('a.cp,a.rc');if(cp){track('click',{target:cp.dataset.id,where:cp.className});return;}
+    var cp=e.target.closest('a.cp');if(cp){track('click',{target:cp.dataset.id,where:cp.className});return;}
     var q=e.target.closest('[data-id]');if(q&&q.tagName==='BUTTON'){var p=D.picks.filter(function(x){return x.id===q.dataset.id;})[0];if(p)openQV(p);}
   });
   $('plist-more').onclick=function(){shown+=PER;renderProducts();};
   $('news-more').onclick=function(){nshown+=3;renderNews();};
   $('launch-more').onclick=function(){lshown+=10;renderLaunches();};
-  var roll=$('roll');roll.addEventListener('touchstart',function(){roll.classList.toggle('hold');},{passive:true});
 
   /* 호수 선택·과월호: 일별·주차별·월별·연도별 */
   var cache={},CUR=LATEST.edition.date,ORD=ARCH.map(function(a){return a.date;}),AV='day',AN=20,WDK='일월화수목금토';
@@ -615,7 +622,7 @@ footer a{text-decoration:none}
   /* 통계·추적 */
   function track(type,o){if(!AE_FORM)return;try{var fd=new URLSearchParams();fd.append(AE_FORM.f.type,type);Object.keys(o||{}).forEach(function(k){if(AE_FORM.f[k])fd.append(AE_FORM.f[k],o[k]);});fetch(AE_FORM.url,{method:'POST',mode:'no-cors',body:fd});}catch(e){}}
   try{if(!sessionStorage.getItem('ae-v')){sessionStorage.setItem('ae-v','1');track('visit',{where:location.pathname});}}catch(e){}
-  (function(){var S=window.AE_STATS;if(!S)return;var vis=S.visitors==null?'<b class="pend">집계 준비 중</b>':'<b>'+Number(S.visitors).toLocaleString('ko-KR')+'</b>';
+  (function(){var S=window.AE_STATS;if(!S||Number(S.subscribers||0)<100)return; /* 작은 숫자는 신뢰를 떨어뜨려 100명 이상부터 표시 */var vis=S.visitors==null?'<b class="pend">집계 준비 중</b>':'<b>'+Number(S.visitors).toLocaleString('ko-KR')+'</b>';
     $('stats').innerHTML='<span><b>'+Number(S.subscribers||0).toLocaleString('ko-KR')+'</b>구독자</span><span>'+vis+'누적 방문자</span><span style="align-self:flex-end">'+esc(S.asof||'')+' 기준</span>';$('stats').hidden=false;
     $('foot-stats').textContent='구독자 '+Number(S.subscribers||0).toLocaleString('ko-KR')+'명';})();
   /* 광고 */
@@ -633,14 +640,12 @@ footer a{text-decoration:none}
     function interests(){return [].slice.call(document.querySelectorAll('#sub-int input:checked')).map(function(x){return x.value;});}
     function reset(){em.value='';ag.checked=false;$('sub-mkt').checked=false;}
     function mailFallback(v){
-      var u='mailto:newyangs007@gmail.com?subject='+encodeURIComponent('[가전레이더] 구독 신청')+'&body='+encodeURIComponent('구독 이메일: '+v+'\n성별: '+gender()+'\n나이대: '+age()+'\n독자 유형: '+(rtype()||'미선택')+'\n관심 분야: '+(interests().join(', ')||'전체')+'\n광고성 정보 수신: '+mkt()+'\n신청 시각: '+new Date().toISOString());
+      var u='mailto:newyangs007@gmail.com?subject='+encodeURIComponent('[가전레이더] 구독 신청')+'&body='+encodeURIComponent('구독 이메일: '+v+'\n성별: '+(gender()||'미선택')+'\n나이대: '+(age()||'미선택')+'\n독자 유형: '+(rtype()||'미선택')+'\n관심 분야: '+(interests().join(', ')||'전체')+'\n광고성 정보 수신: '+mkt()+'\n신청 시각: '+new Date().toISOString());
       location.href=u;say('메일 앱이 열리면 그대로 보내 주세요. 접수되면 구독 완료 메일을 보내 드리고, 다음 날 아침 7시부터 발송합니다.');
     }
     f.onsubmit=function(e){
       e.preventDefault();var v=em.value.trim();
       if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){say('이메일 주소를 확인해 주세요.');em.focus();return;}
-      if(!gender()){say('성별을 선택해 주세요.');return;}
-      if(!age()){say('나이대를 선택해 주세요.');$('sub-age').focus();return;}
       if(!ag.checked){say('[필수] 항목에 동의해 주세요.');ag.focus();return;}
       var F=AE_FORM;
       if(F){btn.disabled=true;var fd=new URLSearchParams();fd.append(F.f.type,'subscribe');fd.append(F.f.email,v);if(F.f.interest)fd.append(F.f.interest,interests().join(', '));if(F.f.gender)fd.append(F.f.gender,gender());if(F.f.age)fd.append(F.f.age,age());if(F.f.rtype)fd.append(F.f.rtype,rtype());if(F.f.mkt)fd.append(F.f.mkt,mkt());
@@ -651,7 +656,7 @@ footer a{text-decoration:none}
 
   /* 목차 하이라이트·맨 위로 */
   var links=[].slice.call(document.querySelectorAll('#toc a')),tt=$('totop');
-  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){links.forEach(function(a){var on=a.getAttribute('href')==='#'+en.target.id;a.classList.toggle('on',on);if(on&&a.scrollIntoView&&a.parentNode.scrollWidth>a.parentNode.clientWidth){a.parentNode.scrollTo({left:a.offsetLeft-16,behavior:'smooth'});}});}});},{rootMargin:'-40% 0px -55% 0px'});
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){links.forEach(function(a){var on=a.getAttribute('href')==='#'+en.target.id;a.classList.toggle('on',on);if(on&&a.scrollIntoView&&a.parentNode.scrollWidth>a.parentNode.clientWidth){a.parentNode.scrollTo({left:Math.max(0,a.offsetLeft-a.parentNode.offsetLeft-8),behavior:'smooth'});}});}});},{rootMargin:'-40% 0px -55% 0px'});
   links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(s)io.observe(s);});
   addEventListener('scroll',function(){tt.classList.toggle('on',scrollY>900);},{passive:true});
   tt.onclick=function(){scrollTo({top:0,behavior:'smooth'});};

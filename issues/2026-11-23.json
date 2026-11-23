@@ -831,6 +831,16 @@
    "t": "카운터포인트리서치, 2025년 전 세계 휴머노이드 로봇 설치 약 1만 6천 대 (2026.01.14)",
    "u": "https://counterpointresearch.com/ko/insights/Global-Humanoid-Robot-Installations-Reach-16,000-Units-in-2025-as-Mass-Production-Picks-Pace",
    "r": "CN"
+  },
+  "S273": {
+   "t": "다나와, 삼성전자 올레드 KQ65SF90AFXKR 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=77623823",
+   "r": "KR"
+  },
+  "S274": {
+   "t": "다나와, LG전자 올레드 evo AI OLED42C5ENA 제품 정보 (2026.11.23 확인)",
+   "u": "https://prod.danawa.com/info/?pcode=89863406",
+   "r": "KR"
   }
  },
  "cover": {
@@ -3241,6 +3251,85 @@
    "dcb": "다나와 표기 출시가 대비 11.23 최저가"
   },
   {
+   "id": "t5",
+   "cat": "TV",
+   "mk": "KR",
+   "icon": "tv",
+   "brand": "삼성전자",
+   "name": "삼성 올레드 KQ65SF90AFXKR 65인치",
+   "price": "3,067,260원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2025.03",
+   "ch": "삼성 QD-OLED 65인치 · 출시가 대비 −28%",
+   "why": "QD-OLED 패널과 3세대 AI 화질 엔진(NQ4 AI Gen3). 출시가 429만 원 대비 306만 원대입니다.",
+   "target": "거실 프리미엄 TV, 영화·게임",
+   "usp": "65인치 4K QD-OLED · 120Hz · NQ4 AI Gen3 · AI 실시간 번역·AI 오토 게임 모드 · 타이젠",
+   "src": [
+    "S201",
+    "S273"
+   ],
+   "sc": [
+    2,
+    1,
+    4,
+    2,
+    3
+   ],
+   "scw": [
+    "인기 30위 밖",
+    "리뷰 수집 전",
+    "연말 블프 시즌",
+    "대기업 공식 유통",
+    "고단가"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 제품 사진은 다나와 등록 이미지입니다. 평점·리뷰 수와 쿠팡 링크는 PC 작업 때 확인해 보강하고, 평점이 낮으면 다른 모델로 바꿉니다.",
+   "pc": "77623823",
+   "q": "삼성 KQ65SF90AFXKR",
+   "ai": false,
+   "img": "issues/img/77623823.jpg",
+   "was": "출시가 4,290,000원"
+  },
+  {
+   "id": "t6",
+   "cat": "TV",
+   "mk": "KR",
+   "icon": "tv",
+   "brand": "LG전자",
+   "name": "LG 올레드 evo AI OLED42C5ENA 42인치",
+   "price": "1,172,770원",
+   "rev": "수집 전",
+   "rate": "—",
+   "reg": "2025.04",
+   "ch": "다나와 TV 인기 30위 · 120만 원 이하 올레드",
+   "why": "LG 올레드 evo C5 42인치. 120Hz(VRR 최대 144Hz)로 게이밍 모니터 겸용으로 많이 찾는 크기입니다.",
+   "target": "게임·서재용 소형 올레드",
+   "usp": "42인치 4K W-OLED · 120Hz(VRR 144Hz) · AI 음성 인식·AI 실시간 번역 · 넷플릭스·유튜브·미러링",
+   "src": [
+    "S201",
+    "S274"
+   ],
+   "sc": [
+    2,
+    1,
+    4,
+    2,
+    3
+   ],
+   "scw": [
+    "TV 인기 30위",
+    "리뷰 수집 전",
+    "연말 블프 시즌",
+    "대기업 공식 유통",
+    "고단가"
+   ],
+   "note": "가격·출시가는 2026.11.23 다나와 제품 페이지 기준입니다. 제품 사진은 다나와 등록 이미지입니다. 평점·리뷰 수와 쿠팡 링크는 PC 작업 때 확인해 보강하고, 평점이 낮으면 다른 모델로 바꿉니다.",
+   "pc": "89863406",
+   "q": "LG OLED42C5ENA",
+   "ai": false,
+   "img": "issues/img/89863406.jpg"
+  },
+  {
    "id": "i04",
    "cat": "노트북",
    "mk": "KR",
@@ -4451,6 +4540,20 @@
     "A 27cm roller mop and 30,000Pa suction, with hot-water washing and auto detergent dispensing.",
     "Mop-focused homes, pet owners",
     "30,000Pa · 27cm roller mop · auto-empty, hot-water wash, warm-air dry, detergent · AI object & 3D recognition"
+   ],
+   "t5": [
+    "Samsung OLED KQ65SF90AFXKR 65-inch",
+    "Samsung QD-OLED 65-inch · −28% vs launch",
+    "QD-OLED panel with the 3rd-gen NQ4 AI Gen3 processor, now around KRW 3.07M versus a KRW 4.29M launch price.",
+    "Premium living-room TV for movies and games",
+    "65-inch 4K QD-OLED · 120Hz · NQ4 AI Gen3 · AI live translation, AI auto game mode · Tizen"
+   ],
+   "t6": [
+    "LG OLED evo AI OLED42C5ENA 42-inch",
+    "Danawa TVs No.30 · OLED under KRW 1.2M",
+    "LG OLED evo C5 at 42 inches; 120Hz (VRR up to 144Hz) makes it popular as a gaming monitor too.",
+    "Compact OLED for gaming or a study",
+    "42-inch 4K W-OLED · 120Hz (VRR 144Hz) · AI voice, AI live translation · Netflix, YouTube, mirroring"
    ]
   },
   "launches": [

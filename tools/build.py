@@ -95,7 +95,7 @@ for p in latest['picks']:
     src = ''.join('<li><a href="%s" target="_blank" rel="noopener">%s</a></li>' % (e(S[s]['u']), e(S[s]['t'])) for s in p.get('src', []) if s in S)
     rows = ''.join('<tr><th>%s</th><td class="n">%d</td><td>%s</td></tr>' % (LBL[i], x, e((p.get('scw') or [''] * 5)[i])) for i, x in enumerate(p['sc']))
     img = ('../' + p['img']) if p.get('img') else ''
-    buy = ('<a class="cp" href="%s" target="_blank" rel="noopener sponsored">쿠팡에서 구매 ↗</a>' % e(p['cp'])) if p.get('cp') else ''
+    buy = ('<a class="cp" href="%s" target="_blank" rel="noopener sponsored">쿠팡에서 가격 보기 ↗</a>' % e(p['cp'])) if p.get('cp') else ''
     dan = ('<a href="https://prod.danawa.com/info/?pcode=%s" target="_blank" rel="noopener">다나와 가격 비교 ↗</a>' % e(p['pc'])) if p.get('pc') else ''
     country = BR.get(p['brand'], {}).get('c', '')
     out = PAGE
@@ -107,12 +107,17 @@ for p in latest['picks']:
         '{{IMG}}': ('<img src="%s" alt="%s">' % (e(img), e(p['name']))) if img else '',
         '{{IMGC}}': e(p.get('imgc') or ('다나와 등록 이미지' if img else '')), '{{OGIMG}}': e(SITE + p['img']) if p.get('img') else e(SITE + 'og.png'),
         '{{URL}}': e(SITE + p['page']), '{{BUY}}': buy, '{{DANAWA}}': dan,
-        '{{DISC}}': '이 페이지의 ‘쿠팡에서 구매’ 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.' if p.get('cp') else '',
+        '{{DISC}}': '이 페이지의 ‘쿠팡에서 가격 보기’ 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.' if p.get('cp') else '',
         '{{EDITION}}': e(latest['edition']['label']), '{{DESC}}': e(p['why'] + ' ' + p['usp'])[:160],
         '{{JSONLD}}': ST.jsonld_product(p, latest),
         '{{ADS}}': ADS,
     }.items():
         out = out.replace(k, val)
+    if p.get('cp'):  # 모바일 하단 고정 구매 바: 가격과 쿠팡 버튼이 항상 보이게
+        out = out.replace('</body>', '<div class="stk" role="complementary" aria-label="쿠팡 가격 보기"><div><b>%s</b><small>%s 기준</small></div><a class="cp" href="%s" target="_blank" rel="noopener sponsored">쿠팡에서 가격 보기 ↗</a></div>'
+                          '<style>.stk{display:none}@media(max-width:759px){.stk{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;gap:12px;justify-content:space-between;background:#fff;border-top:1px solid #ddd;padding:10px 16px calc(10px + env(safe-area-inset-bottom))}'
+                          '.stk b{display:block;font-size:17px}.stk small{font-size:12px;color:#666}.stk a{flex:none;background:#e0301e;color:#fff;font-weight:700;text-decoration:none;padding:12px 16px;border-radius:10px;font-size:14px}body{padding-bottom:72px}}</style></body>'
+                          % (e(p['price']), e(latest['edition']['date'].replace('-', '.')), e(p['cp'])), 1)
     open(p['page'], 'w', encoding='utf-8').write(out)
     urls.append(SITE + p['page'])
 

@@ -84,8 +84,8 @@ def card(p):
         imgs.append(thumb(p["img"]))
         img = ('<td width="104" valign="top" style="padding-right:14px">%s<img src="cid:%s" width="104" height="104" alt="%s" '
                'style="display:block;width:104px;height:104px;object-fit:contain;background:#ffffff;border:1px solid #dddddd;border-radius:8px"></a></td>' % (a0, cid, e(p["name"])))
-    btn = ('<a href="%s" target="_blank" style="display:inline-block;margin-top:12px;padding:10px 16px;border:2px solid #e0301e;border-radius:8px;'
-           'background:#ffffff;color:#e0301e;text-decoration:none;font-size:14px;font-weight:700">%s &rarr;</a>') % (e(href), "쿠팡에서 보기" if p.get("cp") else "자세히 보기")
+    btn = ('<a href="%s" target="_blank" style="display:inline-block;margin-top:12px;padding:11px 18px;border:2px solid #e0301e;border-radius:8px;'
+           'background:#e0301e;color:#ffffff;text-decoration:none;font-size:14px;font-weight:700">%s &rarr;</a>') % (e(href), "쿠팡에서 가격 보기" if p.get("cp") else "자세히 보기")
     tag = ' · 관심 분야 맞춤' if id(p) in matched else ''
     v = score(p)
     vd = "추천템" if v >= 4 else ("조건부" if v >= 3.5 else "관망")
