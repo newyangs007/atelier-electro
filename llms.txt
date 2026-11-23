@@ -1,8 +1,8 @@
 # 가전레이더 (GAJEON RADAR)
 
-> 가전레이더는 AI가전·AI디바이스(AI 안경·AI 녹음기)·소형가전·대형가전 트렌드와 다나와 인기순위·리뷰로 고른 MD 추천템을 매일 아침 8시(KST)에 정리하는 한국어 가전 매거진입니다. Gajeon Radar is a daily Korean appliance magazine (English edition available) covering AI appliances, AI devices, small and major appliances in Korea, the US, Japan, China and Europe. Every number carries its source and date.
+> 가전레이더는 AI가전·AI디바이스(AI 안경·AI 녹음기)·소형가전·대형가전 트렌드와 다나와 인기순위·리뷰로 고른 MD 추천템을 매일 아침 7시(KST)에 정리하는 한국어 가전 매거진입니다. Gajeon Radar is a daily Korean appliance magazine (English edition available) covering AI appliances, AI devices, small and major appliances in Korea, the US, Japan, China and Europe. Every number carries its source and date.
 
-- 발행: 매일 08:00 KST · 언어: 한국어(원문), 영어(번역판)
+- 발행: 매일 07:00 KST · 언어: 한국어(원문), 영어(번역판)
 - 점수: 수요·검증·타이밍·접근성·마진 1~5점 평균(0.5 단위), 4.0 이상 추천템 · 3.5 조건부 · 3.0 이하 관망
 - 가격·리뷰·순위 출처: 다나와 인기상품순(광고 제외), 해외는 제조사 발표가
 - 쿠팡 링크는 쿠팡 파트너스 제휴 링크입니다

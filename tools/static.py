@@ -114,21 +114,21 @@ def faq(issue, L):
         en = (issue.get('en') or {}).get('picks', {})
         names = '; '.join('%s (%s, %s)' % (en.get(p['id'], [p['name']])[0], en.get(p['id'], [0, p['ch']])[1], en_price(p['price'])) for p in sel)
         return [
-            ('What is Gajeon Radar?', 'Gajeon Radar (가전레이더) is a Korean appliance magazine published every morning at 8:00 KST. It covers AI appliances, AI devices such as AI glasses and AI voice recorders, small appliances and major appliances across Korea, the US, Japan, China and Europe, and every number carries its source and date.'),
+            ('What is Gajeon Radar?', 'Gajeon Radar (가전레이더) is a Korean appliance magazine published every morning at 7:00 KST. It covers AI appliances, AI devices such as AI glasses and AI voice recorders, small appliances and major appliances across Korea, the US, Japan, China and Europe, and every number carries its source and date.'),
             ('How are the picks chosen?', 'Each product is scored 1–5 on demand, proof (reviews), timing, access (sourcing) and margin. The average is rounded to 0.5: 4.0 or higher is a Top pick, 3.5 is Conditional, 3.0 or lower is Watch. Prices, review counts and ranks come from Danawa\'s popularity ranking with ads excluded.'),
             ('What is the AI appliance MD note?', 'A one-line buying checkpoint for AI appliances that meet all four rules: top 5 in their Danawa category, 100+ reviews, a rating of 4.7 or higher, and AI features stated by the manufacturer.'),
             ('Which AI appliances stand out today?', 'As of %s, the AI appliance MD select is: %s.' % (d, names) if sel else 'There is no AI appliance MD select in this issue.'),
             ('Are the Coupang links ads?', 'Yes. The Coupang links are part of the Coupang Partners program, and the magazine may earn a commission. Products are scored with the same rules whether or not they have a link.'),
-            ('How do I get the newsletter?', 'Subscribe on the Korean homepage. The newsletter (in Korean) arrives every morning at 8:00 KST with three picks matched to your interests, and every email has an unsubscribe link.'),
+            ('How do I get the newsletter?', 'Subscribe on the Korean homepage. The newsletter (in Korean) arrives every morning at 7:00 KST with three picks matched to your interests, and every email has an unsubscribe link.'),
         ]
     names = ', '.join('%s(%s, %s)' % (p['name'], p['ch'].split(' · ')[0], p['price']) for p in sel)
     return [
-        ('가전레이더는 어떤 매체인가요?', '가전레이더(GAJEON RADAR)는 매일 아침 8시(한국 시간)에 발행하는 가전 매거진입니다. AI가전, AI 안경·AI 녹음기 같은 AI디바이스, 소형가전, 대형가전을 한국·미국·일본·중국·유럽에 걸쳐 다루고, 모든 수치에 매체와 날짜를 붙입니다.'),
+        ('가전레이더는 어떤 매체인가요?', '가전레이더(GAJEON RADAR)는 매일 아침 7시(한국 시간)에 발행하는 가전 매거진입니다. AI가전, AI 안경·AI 녹음기 같은 AI디바이스, 소형가전, 대형가전을 한국·미국·일본·중국·유럽에 걸쳐 다루고, 모든 수치에 매체와 날짜를 붙입니다.'),
         ('추천템은 어떤 기준으로 고르나요?', '수요·검증(리뷰)·타이밍·접근성·마진 다섯 항목을 1~5점으로 매기고, 평균을 0.5 단위로 반올림합니다. 4.0 이상은 추천템, 3.5는 조건부, 3.0 이하는 관망이며, 매일 점수가 가장 높은 3개를 오늘의 추천템으로 소개합니다. 가격·리뷰 수·순위는 다나와 인기상품순(광고 제외) 기준입니다.'),
         ('AI가전 MD 코멘트는 무엇인가요?', '다나와 카테고리 인기 5위 이내, 리뷰 100건 이상, 평점 4.7 이상, 제조사가 밝힌 AI 기능까지 네 조건을 모두 갖춘 AI가전에 붙이는 구매 확인 포인트 한 줄입니다. 제품 리스트의 AI가전 카테고리와 상세 보기에서 볼 수 있습니다.'),
         ('오늘 주목할 AI가전은 무엇인가요?', ('%s 기준 AI가전 MD 셀렉트는 %s입니다.' % (d, names)) if sel else '이번 호에는 AI가전 MD 셀렉트가 없습니다.'),
         ('쿠팡 링크는 광고인가요?', '네. 쿠팡 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다. 링크가 있든 없든 같은 점수 기준으로 고릅니다.'),
-        ('뉴스레터는 어떻게 받나요?', '홈페이지 맨 아래 구독 폼에서 신청하면 매일 아침 8시에 관심 분야에 맞춘 추천템 3개와 주요 뉴스를 메일로 보내 드립니다. 모든 메일 하단에 구독 해지 링크가 있습니다.'),
+        ('뉴스레터는 어떻게 받나요?', '홈페이지 맨 아래 구독 폼에서 신청하면 매일 아침 7시에 관심 분야에 맞춘 추천템 3개와 주요 뉴스를 메일로 보내 드립니다. 모든 메일 하단에 구독 해지 링크가 있습니다.'),
     ]
 
 
@@ -151,7 +151,7 @@ def jsonld_index(issue, L='ko'):
     base = SITE if L == 'ko' else SITE + 'en/'
     web = {'@type': 'WebSite', '@id': SITE + '#site', 'name': '가전레이더', 'alternateName': ['GAJEON RADAR', 'Gajeon Radar'], 'url': SITE,
            'inLanguage': ['ko-KR', 'en'], 'publisher': {'@id': SITE + '#org'},
-           'description': 'AI가전·AI디바이스·소형가전·대형가전 트렌드와 MD 추천템을 매일 아침 8시에 정리하는 가전 매거진'}
+           'description': 'AI가전·AI디바이스·소형가전·대형가전 트렌드와 MD 추천템을 매일 아침 7시에 정리하는 가전 매거진'}
     items = [{'@type': 'ListItem', 'position': i + 1, 'url': SITE + p['page'], 'name': T['picks'][p['id']]['name']} for i, p in enumerate(issue['picks'])]
     lst = {'@type': 'ItemList', 'name': ('오늘의 가전 소싱 픽' if L == 'ko' else "Today's appliance picks") + ' ' + issue['edition']['date'], 'itemListElement': items}
     fq = {'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in faq(issue, L)]}
@@ -162,7 +162,7 @@ def jsonld_issue(issue, L, url):
     T = tr(issue, L)
     d = issue['edition']['date']
     art = {'@type': 'NewsArticle', 'headline': strip(T['cover_title'])[:110], 'description': T['cover_deck'].replace('\n', ' ')[:300],
-           'datePublished': d + 'T08:00:00+09:00', 'dateModified': d + 'T08:00:00+09:00', 'inLanguage': 'ko-KR' if L == 'ko' else 'en',
+           'datePublished': d + 'T07:00:00+09:00', 'dateModified': d + 'T07:00:00+09:00', 'inLanguage': 'ko-KR' if L == 'ko' else 'en',
            'image': [SITE + 'og.png'], 'author': {'@id': SITE + '#org'}, 'publisher': {'@id': SITE + '#org'},
            'mainEntityOfPage': url, 'isAccessibleForFree': True,
            'about': ['AI가전', 'AI디바이스', '소형가전', '대형가전'] if L == 'ko' else ['AI appliances', 'AI devices', 'small appliances', 'major appliances']}
@@ -266,19 +266,19 @@ body{overflow-x:clip}.grid>*,.trs>*,.figs>*,.news>*{min-width:0}
 
 UI = {
     'ko': dict(nav=[('#trends', '트렌드'), ('#ai', 'AI가전 MD'), ('#picks', '소싱 픽'), ('#news', '뉴스'), ('#launches', '신제품'), ('#sources', '출처')],
-               tag='GAJEON RADAR · AI가전 · AI디바이스 · 소형가전 · 대형가전 트렌드 & MD 추천', every='매일 08:00 KST 발행',
-               intro='가전레이더는 국내외 가전 뉴스와 신제품, 다나와 인기순위·리뷰로 고른 AI가전·소형가전 MD 추천템을 매일 아침 8시에 정리합니다. 모든 수치에 매체와 날짜를 붙입니다.',
+               tag='GAJEON RADAR · AI가전 · AI디바이스 · 소형가전 · 대형가전 트렌드 & MD 추천', every='매일 07:00 KST 발행',
+               intro='가전레이더는 국내외 가전 뉴스와 신제품, 다나와 인기순위·리뷰로 고른 AI가전·소형가전 MD 추천템을 매일 아침 7시에 정리합니다. 모든 수치에 매체와 날짜를 붙입니다.',
                trends='이번 주의 여섯 단어', ai='AI가전 MD 셀렉트', aisub='선정 기준: 다나와 카테고리 인기 5위 이내 · 리뷰 100건 이상 · 평점 4.7 이상 · 제조사가 밝힌 AI 기능',
                picks='오늘의 소싱 픽', pickssub='[광고] ‘쿠팡에서 구매’ 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.',
                news='AI가전 · AI디바이스 · 소형 · 대형 뉴스', launches='주요 브랜드 신제품', sources='출처', faq='자주 묻는 질문',
                th_l=['시점', '시장', '브랜드', '카테고리', '제품', '가격'], th_s=['No.', '국가', '출처', '원문'],
                buy='쿠팡에서 구매 ↗', detail='상세·점수 근거', danawa='다나와 ↗', target='추천 대상', usp='차별점', score='소싱 점수', rev='리뷰', rate='평점',
-               cta='매일 아침 8시, 메일로 받아보기', ctasub='관심 분야에 맞춘 추천템 3개와 주요 뉴스를 한 통으로 보내 드립니다.', ctab='구독하기',
+               cta='매일 아침 7시, 메일로 받아보기', ctasub='관심 분야에 맞춘 추천템 3개와 주요 뉴스를 한 통으로 보내 드립니다.', ctab='구독하기',
                ctaurl='../#subscribe', home='../', open='열기 ↗', other='English', otherurl='../en/issue/%s.html', edition='호',
                foot='가격·리뷰·순위는 수집 시점 기준이며 판매처마다 다를 수 있습니다.', privacy='개인정보처리방침'),
     'en': dict(nav=[('#trends', 'Trends'), ('#ai', 'AI picks'), ('#picks', 'Picks'), ('#news', 'News'), ('#launches', 'Launches'), ('#sources', 'Sources')],
-               tag="GAJEON RADAR · Korea's daily briefing on AI appliances, AI devices, small and major appliances", every='Every day 08:00 KST',
-               intro='Gajeon Radar (가전레이더) tracks appliance news and launches across Korea, the US, Japan, China and Europe, and picks AI and small appliances from Danawa popularity ranks and reviews — every morning at 8 AM KST, with a source and date on every number.',
+               tag="GAJEON RADAR · Korea's daily briefing on AI appliances, AI devices, small and major appliances", every='Every day 07:00 KST',
+               intro='Gajeon Radar (가전레이더) tracks appliance news and launches across Korea, the US, Japan, China and Europe, and picks AI and small appliances from Danawa popularity ranks and reviews — every morning at 7 AM KST, with a source and date on every number.',
                trends='Six words this week', ai='AI appliance MD select', aisub='Rules: top 5 in the Danawa category · 100+ reviews · rating 4.7+ · AI features stated by the maker',
                picks="Today's sourcing picks", pickssub='[Ad] "Buy on Coupang" links are part of the Coupang Partners program; we may earn a commission. Coupang ships within Korea.',
                news='AI appliances · AI devices · small · major', launches='New launches from major brands', sources='Sources', faq='FAQ',
@@ -310,7 +310,7 @@ def page(issue, L, depth, url, alt_url, canonical=None):
         e(canonical or url), e(alt_ko), e(alt_en), e(alt_ko))
     head += ('<meta property="og:type" content="article"><meta property="og:title" content="%s"><meta property="og:description" content="%s"><meta property="og:url" content="%s">'
              '<meta property="og:image" content="%sog.png"><meta property="og:site_name" content="가전레이더"><meta property="og:locale" content="%s"><meta name="twitter:card" content="summary_large_image">'
-             '<meta property="article:published_time" content="%sT08:00:00+09:00">' % (e(title), e(desc), e(canonical or url), SITE, 'ko_KR' if L == 'ko' else 'en_US', d))
+             '<meta property="article:published_time" content="%sT07:00:00+09:00">' % (e(title), e(desc), e(canonical or url), SITE, 'ko_KR' if L == 'ko' else 'en_US', d))
     head += '<link rel="icon" href="%sfavicon.svg" type="image/svg+xml"><link rel="alternate" type="application/rss+xml" title="가전레이더" href="%srss.xml">' % (R, SITE)
     head += '<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono&family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">'
     head += ADS_HEAD + '<style>%s</style>%s</head>' % (CSS, jsonld_issue(issue, L, canonical or url))
@@ -411,9 +411,9 @@ def markdown(issue, L):
 def llms_txt(issue, issues):
     d = issue['edition']['date']
     o = ['# 가전레이더 (GAJEON RADAR)', '',
-         '> 가전레이더는 AI가전·AI디바이스(AI 안경·AI 녹음기)·소형가전·대형가전 트렌드와 다나와 인기순위·리뷰로 고른 MD 추천템을 매일 아침 8시(KST)에 정리하는 한국어 가전 매거진입니다. '
+         '> 가전레이더는 AI가전·AI디바이스(AI 안경·AI 녹음기)·소형가전·대형가전 트렌드와 다나와 인기순위·리뷰로 고른 MD 추천템을 매일 아침 7시(KST)에 정리하는 한국어 가전 매거진입니다. '
          'Gajeon Radar is a daily Korean appliance magazine (English edition available) covering AI appliances, AI devices, small and major appliances in Korea, the US, Japan, China and Europe. Every number carries its source and date.',
-         '', '- 발행: 매일 08:00 KST · 언어: 한국어(원문), 영어(번역판)',
+         '', '- 발행: 매일 07:00 KST · 언어: 한국어(원문), 영어(번역판)',
          '- 점수: 수요·검증·타이밍·접근성·마진 1~5점 평균(0.5 단위), 4.0 이상 추천템 · 3.5 조건부 · 3.0 이하 관망',
          '- 가격·리뷰·순위 출처: 다나와 인기상품순(광고 제외), 해외는 제조사 발표가',
          '- 쿠팡 링크는 쿠팡 파트너스 제휴 링크입니다', '',
@@ -449,11 +449,11 @@ def rss(issues_full, L='ko'):
             '<title>%s</title><link>%s</link><atom:link href="%srss.xml" rel="self" type="application/rss+xml"/>'
             '<description>%s</description><language>%s</language>%s</channel></rss>\n') % (
         e('가전레이더 — AI가전·소형가전 트렌드와 MD 추천템' if L == 'ko' else 'Gajeon Radar — Korean AI & small appliance trends'), base, base,
-        e('AI가전·AI디바이스·소형가전·대형가전 뉴스와 MD 추천템, 매일 아침 8시' if L == 'ko' else 'Daily at 8 AM KST: appliance news, launches and MD picks from Korea'),
+        e('AI가전·AI디바이스·소형가전·대형가전 뉴스와 MD 추천템, 매일 아침 7시' if L == 'ko' else 'Daily at 7 AM KST: appliance news, launches and MD picks from Korea'),
         'ko' if L == 'ko' else 'en', ''.join(items))
 
 
 def rfc822(d):
     import datetime
     t = datetime.datetime.strptime(d, '%Y-%m-%d')
-    return t.strftime('%a, %d %b %Y') + ' 08:00:00 +0900'
+    return t.strftime('%a, %d %b %Y') + ' 07:00:00 +0900'

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>가전레이더 | AI가전·소형가전 트렌드와 MD 추천템, 매일 아침 8시</title>
-<meta name="description" content="가전레이더(GAJEON RADAR)는 AI가전·AI디바이스·소형가전·대형가전·TV·모바일 뉴스와 다나와 인기순위로 고른 추천템을 매일 아침 8시에 출처와 함께 정리하는 가전 매거진입니다.">
+<title>가전레이더 | AI가전·소형가전 트렌드와 MD 추천템, 매일 아침 7시</title>
+<meta name="description" content="가전레이더(GAJEON RADAR)는 AI가전·AI디바이스·소형가전·대형가전·TV·모바일 뉴스와 다나와 인기순위로 고른 추천템을 매일 아침 7시에 출처와 함께 정리하는 가전 매거진입니다.">
 <meta name="keywords" content="가전레이더, AI가전, AI가전 추천, 소형가전 추천, 가전 트렌드, 가전 신제품, 로봇청소기 추천, 김치냉장고 추천, 냉장고 추천, TV 추천, 무선 이어폰 추천, 스마트워치, AI 안경, AI 녹음기, 가전 소싱, 가전 뉴스레터">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#000000">
 <meta property="og:title" content="가전레이더 — AI가전·소형가전 트렌드와 추천템">
-<meta property="og:description" content="매일 아침 8시, 가전 뉴스와 오늘의 추천템 3개를 출처와 함께.">
+<meta property="og:description" content="매일 아침 7시, 가전 뉴스와 오늘의 추천템 3개를 출처와 함께.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://newyangs007.github.io/atelier-electro/">
 <meta property="og:image" content="https://newyangs007.github.io/atelier-electro/og.png">
@@ -269,7 +269,7 @@ footer a{text-decoration:none}
 
 <main>
 <section class="hero" aria-labelledby="hero-title"><div class="wrap">
-  <div class="meta-line"><b id="ed-label"></b><span>매일 아침 8시 발행</span><label class="sr" for="issue">지난 호 보기</label><select id="issue"></select></div>
+  <div class="meta-line"><b id="ed-label"></b><span>매일 아침 7시 발행</span><label class="sr" for="issue">지난 호 보기</label><select id="issue"></select></div>
   <h1 id="hero-title"></h1>
   <p class="deck" id="hero-deck"></p>
   <div class="figs" id="figs"></div>
@@ -316,7 +316,7 @@ footer a{text-decoration:none}
 </div></section>
 
 <section class="subw" id="subscribe"><div class="wrap">
-  <h2>매일 아침 8시,<br>추천템 3개를 메일로</h2>
+  <h2>매일 아침 7시,<br>추천템 3개를 메일로</h2>
   <p class="lead">관심 분야에 맞춘 추천템과 핵심 뉴스를 3분 분량으로 보내 드려요. 공동구매·특가 소식은 원하는 분께만.</p>
   <div class="stats" id="stats" hidden></div>
   <form id="sub-form" novalidate>
@@ -348,7 +348,7 @@ footer a{text-decoration:none}
 </main>
 
 <footer><div class="wrap">
-  <div><b>가전레이더 GAJEON RADAR</b> · 매일 아침 8시 가전 트렌드와 추천템</div>
+  <div><b>가전레이더 GAJEON RADAR</b> · 매일 아침 7시 가전 트렌드와 추천템</div>
   <div class="links"><span id="foot-stats"></span><a href="privacy.html">개인정보처리방침</a><a href="unsubscribe.html">구독 해지</a><a href="en/" hreflang="en">English</a><a href="rss.xml">RSS</a><a href="llms.txt">llms.txt</a></div>
 </div></footer>
 
@@ -506,7 +506,7 @@ footer a{text-decoration:none}
     function reset(){em.value='';ag.checked=false;$('sub-mkt').checked=false;}
     function mailFallback(v){
       var u='mailto:newyangs007@gmail.com?subject='+encodeURIComponent('[가전레이더] 구독 신청')+'&body='+encodeURIComponent('구독 이메일: '+v+'\n성별: '+gender()+'\n나이대: '+age()+'\n독자 유형: '+(rtype()||'미선택')+'\n관심 분야: '+(interests().join(', ')||'전체')+'\n광고성 정보 수신: '+mkt()+'\n신청 시각: '+new Date().toISOString());
-      location.href=u;say('메일 앱이 열리면 그대로 보내 주세요. 보내 주신 주소로 다음 날 아침 8시부터 발송합니다.');
+      location.href=u;say('메일 앱이 열리면 그대로 보내 주세요. 보내 주신 주소로 다음 날 아침 7시부터 발송합니다.');
     }
     f.onsubmit=function(e){
       e.preventDefault();var v=em.value.trim();
@@ -516,7 +516,7 @@ footer a{text-decoration:none}
       if(!ag.checked){say('[필수] 항목에 동의해 주세요.');ag.focus();return;}
       var F=AE_FORM;
       if(F){btn.disabled=true;var fd=new URLSearchParams();fd.append(F.f.type,'subscribe');fd.append(F.f.email,v);if(F.f.interest)fd.append(F.f.interest,interests().join(', '));if(F.f.gender)fd.append(F.f.gender,gender());if(F.f.age)fd.append(F.f.age,age());if(F.f.rtype)fd.append(F.f.rtype,rtype());if(F.f.mkt)fd.append(F.f.mkt,mkt());
-        fetch(F.url,{method:'POST',mode:'no-cors',body:fd}).then(function(){btn.disabled=false;reset();say('구독 신청이 완료됐어요. 다음 날 아침 8시부터 보내 드립니다.');}).catch(function(){btn.disabled=false;mailFallback(v);});return;}
+        fetch(F.url,{method:'POST',mode:'no-cors',body:fd}).then(function(){btn.disabled=false;reset();say('구독 신청이 완료됐어요. 다음 날 아침 7시부터 보내 드립니다.');}).catch(function(){btn.disabled=false;mailFallback(v);});return;}
       mailFallback(v);
     };
   })();
