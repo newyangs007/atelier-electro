@@ -210,8 +210,8 @@ def ssr_index(issue):
            'hero-src': ''.join('<a href="%s" target="_blank" rel="noopener"><b>출처</b>%s 바로가기 ↗</a>' % (e(S[k]['u']), e(S[k]['t'].split(',')[0][:40])) for k in hs)}
     R = ranked(issue)
     by = {p['id']: p for p in issue['picks']}
-    T3 = [by[i] for i in (issue.get('top3') or []) if i in by] or R[:3]
-    out['top3-list'] = ''.join('<article class="t3"><a class="im" href="%s">%s</a><div class="b"><span class="badge">%s %.1f</span><h3>%s</h3><p class="why">%s</p><span class="price">%s</span></div></article>'
+    T3 = [by[i] for i in (issue.get('md') or issue.get('top3') or []) if i in by] or R[:3]
+    out['rtrack'] = ''.join('<article class="rs"><a class="im" href="%s">%s</a><div class="b"><span class="badge">%s %.1f</span><h3>%s</h3><p class="why">%s</p><span class="price">%s</span></div></article>'
                                % (e(p['page']), img(p), verdict(score(p['sc']), 'ko'), score(p['sc']), e(p['name']), e(p['why']), e(p['price'])) for p in T3)
     out['plist'] = '<div class="grid">' + ''.join('<article class="card"><a class="im" href="%s">%s</a><div class="who">%s · %s</div><h3><a href="%s">%s</a></h3><div class="row"><span class="price">%s</span><span class="badge">%s</span></div></article>'
                            % (e(p['page']), img(p), e(p['brand']), e(p['cat']), e(p['page']), e(p['name']), e(p['price']), verdict(score(p['sc']), 'ko')) for p in R) + '</div>'

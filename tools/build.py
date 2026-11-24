@@ -30,24 +30,74 @@ for _p in latest['picks']:
 latest['picks'] = _picks
 
 
-# ---- 오늘의 추천템 3: 쿠팡 제품 중 점수 순, 어제 추천템 3은 빼서 매일 바뀌게 ----
+# ---- MD 픽 롤링: 카테고리마다 1개씩 8개, 날짜마다 다른 제품, 어제 MD 픽은 되도록 제외 ----
 def _sc(p):
     v = sum(p['sc']) / len(p['sc']); return round(v * 2) / 2
 
 
-def _top3(issue, exclude):
-    R = sorted([p for p in issue['picks'] if p.get('cp')], key=lambda p: (-_sc(p), -p['sc'][0], -p['sc'][1]))
-    T = [p['id'] for p in R if p['id'] not in exclude][:3]
-    return T + [p['id'] for p in R if p['id'] not in T][:3 - len(T)]
+def upper(p):
+    c = p.get('cat', '')
+    if c == 'TV': return 'tv'
+    if c in ('스마트폰', '태블릿', '노트북'): return 'mobile'
+    if c == '워치': return 'wear'
+    if c in ('이어폰', '오디오'): return 'audio'
+    if c == '주방': return 'kitchen'
+    if c in ('청소', '로봇') or p.get('icon') == 'robot': return 'clean'
+    if c == '뷰티': return 'beauty'
+    if c == '대형가전': return 'big'
+    if c in ('난방', '가습', '계절', '생활'): return 'season'
+    if c == 'AI디바이스': return 'aidev'
+    return 'etc'
 
 
-_prev_top = (prev.get('top3') or _top3(prev, set())) if prev else []
-_t3 = _top3(latest, set(_prev_top))
-if latest.get('top3') != _t3 or latest.get('prev_top3') != _prev_top:
+MD_ORDER = ['tv', 'mobile', 'wear', 'kitchen', 'beauty', 'clean', 'big', 'audio', 'season', 'aidev']
+
+
+def _md(issue, exclude):
+    import datetime
+    day = datetime.date.fromisoformat(issue['edition']['date']).toordinal()
+    ok = [p for p in issue['picks'] if p.get('cp') and p.get('img') and str(p.get('price', '')).endswith('원')]
+    G = {}
+    for p in ok:
+        G.setdefault(upper(p), []).append(p)
+    def pick(cat, pref=None):
+        L = G.get(cat) or []
+        if pref:
+            L = [p for p in L if pref(p)] or L
+        if not L:
+            return None
+        # 가격이 괜찮은 제품(정가 대비 20% 이상 할인) 먼저, 그다음 점수 순
+        L = sorted(L, key=lambda p: (-(1 if (p.get('dc') or 0) >= 20 or _pct(p) >= 20 else 0), -_sc(p), p['id']))
+        fresh = [p for p in L if p['id'] not in exclude] or L
+        return fresh[day % len(fresh)]['id']
+    out = []
+    for cat, pref in (('kitchen', lambda p: p.get('sub') == '음식물처리기'), ('beauty', lambda p: p.get('brand') == '에이피알')):
+        x = pick(cat, pref)
+        if x: out.append((cat, x))
+    rot = MD_ORDER[day % len(MD_ORDER):] + MD_ORDER[:day % len(MD_ORDER)]
+    for cat in rot:
+        if len(out) >= 8: break
+        if cat in dict(out): continue
+        x = pick(cat)
+        if x: out.append((cat, x))
+    order = {c: i for i, c in enumerate(MD_ORDER)}
+    return [x for _, x in sorted(out, key=lambda t: order.get(t[0], 99))]
+
+
+def _pct(p):
+    m = re.search(r'([\d,]+)\s*원', p.get('why', ''))
+    m2 = re.search(r'정가 ([\d,]+)원 대비 (\d+)%', p.get('why', ''))
+    return int(m2.group(2)) if m2 else 0
+
+
+_prev_md = (prev.get('md') or prev.get('top3') or []) if prev else []
+_md_ids = _md(latest, set(_prev_md))
+_t3 = _md_ids[:3]
+if latest.get('md') != _md_ids or latest.get('prev_md') != _prev_md or latest.get('top3') != _t3:
     _raw = json.load(open('issues/%s.json' % issues[0]['date'], encoding='utf-8'))
-    _raw['top3'], _raw['prev_top3'] = _t3, _prev_top
+    _raw['md'], _raw['prev_md'], _raw['top3'], _raw['prev_top3'] = _md_ids, _prev_md, _t3, _prev_md[:3]
     json.dump(_raw, open('issues/%s.json' % issues[0]['date'], 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-latest['top3'], latest['prev_top3'] = _t3, _prev_top
+latest['md'], latest['prev_md'], latest['top3'], latest['prev_top3'] = _md_ids, _prev_md, _t3, _prev_md[:3]
 
 
 def won(s):
@@ -74,9 +124,8 @@ for p in latest['picks']:
     if prev:
         q = prevmap.get(p.get('pc') or p['name'])
         a, b = won(p.get('price')), won(q.get('price')) if q else None
-        if q is None:
-            p['pd'] = '신규 편입'
-        elif a is not None and b is not None and a != b:
+        # 전일 대비는 어제도 쿠팡 링크가 있던 제품(같은 가격 기준)만 표시
+        if q is not None and q.get('cp') and a is not None and b is not None and a != b:
             p['pd'] = ('▼' if a < b else '▲') + format(abs(a - b), ',') + '원 (전일 대비)'
 
 cfg = json.load(open(T + '/config.json', encoding='utf-8')) if os.path.exists(T + '/config.json') else {}
