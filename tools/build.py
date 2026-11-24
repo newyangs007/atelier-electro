@@ -513,6 +513,14 @@ open('sitemap.xml', 'w', encoding='utf-8').write(
 open('robots.txt', 'w', encoding='utf-8').write('User-agent: *\nAllow: /\nSitemap: %ssitemap.xml\n' % SITE)
 print(issues[:1], len(latest['picks']), 'product pages', len(urls), 'urls')
 
+# ---- 영문판의 '한국어' 링크는 ?lang=ko 로(브라우저가 영어여도 한국어로 고정) ----
+import glob as _glob
+for _f in _glob.glob('en/**/*.html', recursive=True):
+    _h = open(_f, encoding='utf-8').read()
+    _n = _h.replace('href="%s" hreflang="ko"' % SITE, 'href="%s?lang=ko" hreflang="ko"' % SITE).replace('href="%s">한국어' % SITE, 'href="%s?lang=ko">한국어' % SITE)
+    if _n != _h:
+        open(_f, 'w', encoding='utf-8').write(_n)
+
 # ---- Apps Script 발송용 메일 템플릿(mail/today.json, mail/welcome.json) ----
 import subprocess as _sp, sys as _sys
 _sp.run([_sys.executable, 'tools/mailjson.py', 'issues/%s.json' % issues[0]['date']], check=True)

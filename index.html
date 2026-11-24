@@ -22,6 +22,15 @@
 <link rel="canonical" href="https://newyangs007.github.io/atelier-electro/">
 <link rel="alternate" hreflang="ko" href="https://newyangs007.github.io/atelier-electro/">
 <link rel="alternate" hreflang="en" href="https://newyangs007.github.io/atelier-electro/en/">
+<script>/* 기본은 한국어. 브라우저 기본 언어가 한국어가 아니면(해외·영어 설정) 영문판으로. ?lang=ko 또는 한국어 선택 시 고정 */
+(function(){try{var q=location.search,S=window.localStorage;
+if(/[?&]lang=ko\b/.test(q)){S.setItem('ae-lang','ko');return;}
+if(/[?&]lang=en\b/.test(q))S.setItem('ae-lang','en');
+var pref=S.getItem('ae-lang');if(pref==='ko')return;
+var ua=navigator.userAgent||'';if(navigator.webdriver||/bot|crawl|spider|slurp|yeti|daum|naver|bing|google|lighthouse|headless|preview|facebookexternalhit|kakaotalk-scrap|embedly|whatsapp|telegram/i.test(ua))return;
+var L=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'ko']).map(function(x){return String(x).toLowerCase();});
+if(pref==='en'||L[0].indexOf('ko')!==0){var p=q.replace(/([?&])lang=en\b&?/,'$1').replace(/[?&]$/,'');location.replace('en/'+p+location.hash);}
+}catch(e){}})();</script>
 <link rel="alternate" hreflang="x-default" href="https://newyangs007.github.io/atelier-electro/">
 <link rel="alternate" type="application/rss+xml" title="가전레이더" href="https://newyangs007.github.io/atelier-electro/rss.xml">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
