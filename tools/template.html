@@ -8,8 +8,8 @@
 <meta name="keywords" content="가전레이더, 가전 레이더, GAJEON RADAR, 오늘의 가전뉴스, 가전 뉴스, 음식물처리기 추천, 스마트카라, 밥솥 추천, 쿠쿠 밥솥, 쿠첸 밥솥, 에어프라이어 추천, 뷰티디바이스 추천, 에이피알 메디큐브, 갤럭시 Z 폴드8, 아이폰 듀오, LG 가전, 삼성 가전, 리퍼 가전, 가전 특가, AI가전, AI가전 추천, 소형가전 추천, 가전 트렌드, 가전 신제품, 로봇청소기 추천, 김치냉장고 추천, 냉장고 추천, TV 추천, 무선 이어폰 추천, 스마트워치, AI 안경, AI 녹음기, 가전 소싱, 가전 뉴스레터">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#000000">
-<meta property="og:title" content="가전레이더 — AI가전·소형가전 트렌드와 추천템">
-<meta property="og:description" content="매일 아침 7시, 가전 뉴스와 오늘의 추천템 3개를 출처와 함께.">
+<meta property="og:title" content="가전레이더 GAJEON RADAR — 오늘의 가전뉴스·MD 픽">
+<meta property="og:description" content="매일 아침 7시, 가전뉴스·숫자로 보는 오늘·신제품과 MD 픽을 출처와 함께.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://newyangs007.github.io/atelier-electro/">
 <meta property="og:image" content="https://newyangs007.github.io/atelier-electro/og.png">
@@ -417,6 +417,9 @@ footer a{text-decoration:none}
 .trs{margin-top:8px;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:12px}.trs b{color:var(--acc);font-size:11px}.trs a{color:var(--ink2);text-decoration:none;border-bottom:1px solid #ccc}.trs a:hover{color:var(--ink)}
 .fig a{font-size:12px}
 @media(min-width:760px){.deals{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));overflow:visible;margin:0;padding:2px 0 8px}.dl{width:auto}}
+.kfab{position:fixed;left:14px;bottom:18px;z-index:40;display:flex;align-items:center;gap:5px;border:0;border-radius:999px;background:#fee500;color:#191919;font-weight:800;font-size:13px;padding:10px 14px;box-shadow:0 8px 20px -8px rgba(0,0,0,.45);cursor:pointer;transition:transform .15s}
+.kfab svg{width:18px;height:18px}.kfab:active{transform:scale(.94)}
+.bt.ks{background:#fee500;border-color:#fee500;color:#191919;font-weight:700}
 mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
 /* 사이트 전체 검색 */
 .sx{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.55);display:flex;justify-content:center;align-items:flex-start;opacity:0;pointer-events:none;transition:opacity .2s}
@@ -558,6 +561,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   <div class="links"><span id="foot-stats"></span><a href="privacy.html">개인정보처리방침</a><a href="archive.html">과월호</a><a href="brands.html">브랜드</a><a href="unsubscribe.html">구독 해지</a><a href="en/" hreflang="en">English</a><a href="rss.xml">RSS</a><a href="llms.txt">llms.txt</a></div>
 </div></footer>
 
+<button type="button" class="kfab" id="kfab" aria-label="카카오톡으로 오늘 호 공유"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1 3.6c-.1.3.3.6.6.4l4.2-2.8c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg><span>공유</span></button>
 <button type="button" class="totop" id="totop" aria-label="맨 위로">↑</button>
 <div class="veil" id="veil"></div>
 <aside class="qv arc" id="arc" role="dialog" aria-modal="true" aria-labelledby="arc-title" aria-hidden="true"><div class="qv-h"><b id="arc-title">호수 선택 · 과월호</b><button type="button" id="arc-x" aria-label="닫기">×</button></div><div class="qv-b">
@@ -737,11 +741,11 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
       +(isDeal(p)?'<p class="note"><b>특가 −'+esc(p.dc)+'%</b> · '+esc(p.was||'')+' → '+esc(p.price)+' · '+esc(p.dcb||'')+'</p>':'')
       +(p.md?'<p class="note"><b>MD</b> · '+esc(p.md)+'</p>':'')
       +'<dl><dt>추천 이유</dt><dd>'+esc(p.why)+'</dd><dt>추천 대상</dt><dd>'+esc(p.target)+'</dd><dt>차별점</dt><dd>'+esc(p.usp)+'</dd><dt>신호</dt><dd>'+esc(p.ch)+'</dd><dt>리뷰</dt><dd>'+esc(p.rev||'—')+' · 평점 '+esc(p.rate||'—')+'</dd></dl>'
-      +'<div class="acts">'+cpBtn(p,'쿠팡에서 보기')+(p.page?'<a class="bt" href="'+esc(p.page)+'">제품 페이지</a>':'')+(p.pc?'<a class="bt" href="https://prod.danawa.com/info/?pcode='+esc(p.pc)+'" target="_blank" rel="noopener">다나와 ↗</a>':'')+'<button type="button" class="bt" id="qv-share">링크 복사</button></div>'
+      +'<div class="acts">'+cpBtn(p,'쿠팡에서 보기')+(p.page?'<a class="bt" href="'+esc(p.page)+'">제품 페이지</a>':'')+(p.pc?'<a class="bt" href="https://prod.danawa.com/info/?pcode='+esc(p.pc)+'" target="_blank" rel="noopener">다나와 ↗</a>':'')+'<button type="button" class="bt ks" id="qv-share">카톡 공유</button></div>'
       +'<h4 style="margin:18px 0 4px;font-size:14px">소싱 점수 '+v.toFixed(1)+'</h4><div class="bars">'+bars+'</div>'
       +(p.note?'<p class="note">'+esc(p.note)+'</p>':'')+(srcs?'<p class="srcs">출처<br>'+srcs+'</p>':'');
     $('qv').classList.add('on');$('veil').classList.add('on');$('qv').setAttribute('aria-hidden','false');document.body.style.overflow='hidden';$('qv-x').focus();
-    var sh=$('qv-share');if(sh)sh.onclick=function(){var u=location.origin+location.pathname.replace(/[^/]*$/,'')+(p.page||'');(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){sh.textContent='복사됨';},function(){prompt('링크',u);});};
+    var sh=$('qv-share');if(sh)sh.onclick=function(){shareIt('[가전레이더 MD 픽] '+p.name+' '+p.price,location.origin+location.pathname.replace(/[^/]*$/,'')+(p.page||''),sh);};
     track('view',{target:p.id,where:'qv'});
   }
   function closeQV(){$('qv').classList.remove('on');$('veil').classList.remove('on');$('qv').setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
@@ -891,10 +895,14 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
     ['pointerleave','focusout','touchend'].forEach(function(ev){tr.addEventListener(ev,function(){rollAuto();},{passive:true});});
     tr.addEventListener('scroll',function(){clearTimeout(tm);tm=setTimeout(function(){var S=tr.children,best=0,d=1e9;for(var i=0;i<S.length;i++){var x=Math.abs(S[i].offsetLeft-tr.offsetLeft-tr.scrollLeft);if(x<d){d=x;best=i;}}RI=best;rollMark();},80);},{passive:true});
     tr.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){rollGo(RI+1);e.preventDefault();}if(e.key==='ArrowLeft'){rollGo(RI-1);e.preventDefault();}});})();
-  $('kshare').onclick=function(){var u=location.origin+location.pathname+(CUR!==ORD[0]?'?issue='+CUR:''),t='가전레이더 '+(D.edition.label||'')+' — '+String(D.cover.title).replace(/<[^>]+>/g,'');
+  function shareIt(t,u,btn){
     if(navigator.share){navigator.share({title:'가전레이더',text:t,url:u}).catch(function(){});return;}
-    var done=function(){var b=$('kshare');b.lastChild.textContent='링크 복사됨 — 카톡에 붙여 넣기';setTimeout(function(){b.lastChild.textContent='카카오톡으로 공유';},2500);};
-    if(navigator.clipboard)navigator.clipboard.writeText(t+'\n'+u).then(done,function(){prompt('링크를 복사해 카카오톡에 붙여 넣으세요',u);});else prompt('링크를 복사해 카카오톡에 붙여 넣으세요',u);};
+    var lab=btn&&(btn.lastChild||btn),old=lab&&lab.textContent;
+    var done=function(){if(lab){lab.textContent='링크 복사됨 — 카톡 대화창에 붙여 넣기';setTimeout(function(){lab.textContent=old;},2600);}};
+    if(navigator.clipboard)navigator.clipboard.writeText(t+'\n'+u).then(done,function(){prompt('링크를 복사해 카카오톡에 붙여 넣으세요',u);});else prompt('링크를 복사해 카카오톡에 붙여 넣으세요',u);}
+  function shareIssue(btn){var u=location.origin+location.pathname+(CUR!==ORD[0]?'?issue='+CUR:'');shareIt('가전레이더 '+(D.edition.label||'')+' — '+String(D.cover.title).replace(/<[^>]+>/g,''),u,btn);}
+  $('kshare').onclick=function(){shareIssue(this);};
+  $('kfab').onclick=function(){shareIssue(null);};
   render(LATEST);
   reveal(document.querySelector('main'));
   (function(){var q=null;try{q=new URLSearchParams(location.search).get('q');}catch(x){}if(q)openSX(q);})();
