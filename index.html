@@ -416,6 +416,10 @@ footer a{text-decoration:none}
 .rdots button[aria-selected="true"]{width:22px;background:var(--ink)}
 .kshare{display:inline-flex;align-items:center;gap:6px;margin-top:12px;border:0;border-radius:999px;background:#fee500;color:#191919;font-weight:700;font-size:13px;padding:8px 14px;cursor:pointer;transition:transform .15s,filter .2s}
 .kshare svg{width:16px;height:16px}.kshare:hover{filter:brightness(.96)}.kshare:active{transform:scale(.96)}
+.trn{margin-top:8px;display:grid;gap:4px}.trn a{font-size:12.5px;font-weight:600;color:var(--ink);text-decoration:none;line-height:1.4}.trn a:hover{text-decoration:underline}
+.trs{margin-top:8px;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:12px}.trs b{color:var(--acc);font-size:11px}.trs a{color:var(--ink2);text-decoration:none;border-bottom:1px solid #ccc}.trs a:hover{color:var(--ink)}
+.fig a{font-size:12px}
+@media(min-width:760px){.deals{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));overflow:visible;margin:0;padding:2px 0 8px}.dl{width:auto}}
 mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
 /* 사이트 전체 검색 */
 .sx{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.55);display:flex;justify-content:center;align-items:flex-start;opacity:0;pointer-events:none;transition:opacity .2s}
@@ -499,7 +503,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   <div class="rdots" id="rdots" role="tablist" aria-label="MD 픽 넘기기"></div>
 </div></section>
 <section class="sec" id="deals-sec" aria-label="오늘의 특가"><div class="wrap">
-  <div class="sh"><div><h2>오늘의 특가 <span style="color:var(--acc)">30% 이상</span></h2><p id="deals-sub">인기 브랜드 제품 중 할인 폭이 큰 3개 · 쿠팡 표시 정가(또는 다나와 출시가) 대비 30% 이상 · 쿠팡 반품 최상 등급 포함</p></div></div>
+  <div class="sh"><div><h2>오늘의 특가 <span style="color:var(--acc)">30% 이상</span></h2><p id="deals-sub">인기 브랜드 제품 중 할인 폭이 큰 6개 · 쿠팡 표시 정가(또는 다나와 출시가) 대비 30% 이상 · 쿠팡 반품 최상 등급 포함</p></div></div>
   <div class="deals" id="deal-list"></div>
 </div></section>
 <section class="sec" id="products"><div class="wrap">
@@ -803,7 +807,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   /* 카테고리: 상위(묶음) → 하위(종류) → 브랜드. 쿠팡 파트너스 제휴 제품만 진열 */
   var DEAL_IDS={};
   function isDeal(p){return !!DEAL_IDS[p.id];}
-  function pickDeals(j){DEAL_IDS={};j.picks.filter(function(p){return (p.dc||0)>=30&&p.img&&p.cp;}).sort(function(a,b){return b.dc-a.dc;}).slice(0,3).forEach(function(p){DEAL_IDS[p.id]=1;});}
+  function pickDeals(j){DEAL_IDS={};var DC={};j.picks.filter(function(p){return (p.dc||0)>=30&&p.img&&p.cp;}).sort(function(a,b){return b.dc-a.dc;}).forEach(function(p){var u=upOf(p);DC[u]=(DC[u]||0)+1;if(DC[u]<=2&&Object.keys(DEAL_IDS).length<6)DEAL_IDS[p.id]=1;});}
   var UP=[
     ['tv','TV',function(p){return p.cat==='TV';}],
     ['mobile','스마트폰·태블릿',function(p){return /^(스마트폰|태블릿|노트북)$/.test(p.cat);}],
@@ -874,7 +878,11 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
     $('deal-list').innerHTML=DL.map(function(p){return '<article class="dl"><span class="off">−'+esc(p.dc)+'%</span><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="who">'+esc(p.brand)+'</div><div class="n">'+esc(p.name)+'</div><div class="was">'+esc(p.was||'')+'</div><div class="p">'+esc(p.price)+'</div><div class="bs">'+esc(p.dcb||'')+'</div><div class="acts">'+cta(p)+'</div></article>';}).join('');
     renderCats();renderProducts();
     renderNewsCats();renderNews();
-    $('trend-list').innerHTML=j.trends.map(function(t){return '<article class="tr"><div class="st">'+esc(t.stat)+'</div><div class="sl">'+esc(t.sl)+'</div><h3>'+esc(t.t)+'</h3><p>'+esc(t.line)+'</p></article>';}).join('');
+    $('trend-list').innerHTML=j.trends.map(function(t){var S=(t.s||[]).filter(function(k){return j.sources[k];});
+      var rel=j.news.filter(function(n){return S.indexOf(n.s)>=0;}).slice(0,2);
+      return '<article class="tr"><div class="st">'+esc(t.stat)+'</div><div class="sl">'+esc(t.sl)+'</div><h3>'+esc(t.t)+'</h3><p>'+esc(t.line)+'</p>'
+        +(rel.length?'<div class="trn">'+rel.map(function(n){return '<a href="'+esc(j.sources[n.s].u)+'" target="_blank" rel="noopener">관련 기사 · '+esc(n.h)+' ↗</a>';}).join('')+'</div>':'')
+        +(S.length?'<div class="trs"><b>출처</b>'+S.map(function(k){return '<a href="'+esc(j.sources[k].u)+'" target="_blank" rel="noopener">'+esc(media(j.sources[k]))+' ↗</a>';}).join('')+'</div>':'')+'</article>';}).join('');
     renderLaunches();
     var keys=Object.keys(j.sources);
     $('src-sum').textContent='출처 전체 보기 ('+keys.length+'건)';
