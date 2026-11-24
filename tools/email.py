@@ -201,8 +201,8 @@ body = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="color-sc
 <div style="font-size:13px;color:#555555;text-align:center;margin-top:8px">제품 리스트 · 오늘의 특가 30%↑ · 신제품 · 모든 출처</div></td></tr>
 <tr><td style="padding:0 24px 24px"><table role="presentation" cellpadding="0" cellspacing="0" width="100%"><tr><td bgcolor="#fff7cc" style="background-color:#fff7cc;border-radius:12px;padding:16px 18px;text-align:center">
 <div style="font-size:15px;font-weight:800;color:#111111">가전 일 하는 동료에게도 알려 주세요</div>
-<div style="font-size:13px;color:#444444;margin:4px 0 10px">이 메일을 전달하거나, 아래 버튼으로 추천 메일을 보내 주세요.</div>
-<a href="mailto:?subject={quote("[추천] 매일 아침 가전 뉴스레터 가전레이더")}&amp;body={quote("가전 업계 소식을 매일 아침 3분으로 정리해 주는 가전레이더예요. 무료 구독: " + SITE + "#subscribe")}" style="display:inline-block;padding:10px 16px;border-radius:8px;background-color:#111111;color:#ffffff;text-decoration:none;font-size:14px;font-weight:700">동료에게 추천하기 &rarr;</a>
+<div style="font-size:13px;color:#444444;margin:4px 0 10px">이 메일을 전달하거나, 아래 버튼을 눌러 카카오톡·메일·문자로 추천해 주세요.</div>
+<a href="{SITE}recommend.html" style="display:inline-block;padding:10px 16px;border-radius:8px;background-color:#111111;color:#ffffff;text-decoration:none;font-size:14px;font-weight:700">동료에게 추천하기 &rarr;</a>
 </td></tr></table></td></tr>
 <tr><td style="padding:18px 24px 26px;border-top:1px solid #e5e5e5;font-size:12px;line-height:1.75;color:#555555">
 가격은 수집 시점({e(ed.get("collected", ""))}) 공개 자료 기준이며 판매처마다 다를 수 있습니다. 모든 수치의 출처는 홈페이지 ‘출처’ 섹션에 있습니다.<br>

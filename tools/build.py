@@ -131,6 +131,8 @@ for p in latest['picks']:
 cfg = json.load(open(T + '/config.json', encoding='utf-8')) if os.path.exists(T + '/config.json') else {}
 dump = lambda o: json.dumps(o, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 t = open(T + '/template.html', encoding='utf-8').read()
+_bm = re.search(r'<div class="biz">비즈니스 협업 환영 : (.*?)</div>', t)
+BIZ_SNIP = _bm.group(1) if _bm else ''
 t = t.replace('/*__BRANDS__*/', open(T + '/brands.json', encoding='utf-8').read())
 t = t.replace('/*__ICONS__*/', open(T + '/icons.txt', encoding='utf-8').read())
 t = t.replace('/*__ARCHIVE__*/', dump(issues)).replace('/*__ISSUE__*/', dump(latest))
@@ -364,6 +366,7 @@ _ald = {'@context': 'https://schema.org', '@graph': [
     {'@type': 'BreadcrumbList', 'itemListElement': [{'@type': 'ListItem', 'position': 1, 'name': '가전레이더', 'item': SITE}, {'@type': 'ListItem', 'position': 2, 'name': '과월호', 'item': SITE + 'archive.html'}]}]}
 open('archive.html', 'w', encoding='utf-8').write(archive_html().replace('</head>', '<script type="application/ld+json">%s</script></head>' % json.dumps(_ald, ensure_ascii=False).replace('</', '<\\/'), 1))
 urls.append(SITE + 'archive.html')
+urls.append(SITE + 'recommend.html')
 # ---- static issue pages (KO + EN), English home, markdown copies, RSS, llms.txt ----
 os.makedirs('issue', exist_ok=True)
 os.makedirs('en/issue', exist_ok=True)
@@ -431,6 +434,7 @@ def _list_page(fname, title, desc, h1, lead, groups, ld_items):
              '<main class="w"><h1>%s</h1><p class="lead">%s</p>%s</main>'
              '<footer class="w">가전레이더 GAJEON RADAR · 매일 아침 7시 발행<br>비즈니스 협업 환영 : <!--__BIZ__--></footer></body></html>') % (
         e(title), e(desc), SITE, fname, e(title), e(desc), SITE, fname, SITE, ADS, _LCSS, json.dumps(ld, ensure_ascii=False).replace('</', '<\\/'), jump, e(h1), e(lead), body)
+    html_ = html_.replace('<!--__BIZ__-->', BIZ_SNIP)
     open(fname, 'w', encoding='utf-8').write(html_)
     urls.append(SITE + fname)
 
