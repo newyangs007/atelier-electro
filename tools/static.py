@@ -142,7 +142,7 @@ def ld(obj):
     return '<script type="application/ld+json">%s</script>' % json.dumps(obj, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 
 
-ORG = {'@type': 'NewsMediaOrganization', '@id': SITE + '#org', 'name': '가전레이더', 'alternateName': ['GAJEON RADAR', 'Gajeon Radar', 'Atelier Électro'],
+ORG = {'@type': 'NewsMediaOrganization', '@id': SITE + '#org', 'name': '가전레이더', 'alternateName': ['가전 레이더', 'GAJEON RADAR', 'Gajeon Radar', 'Atelier Électro'],
        'url': SITE, 'logo': {'@type': 'ImageObject', 'url': SITE + 'logo.png', 'width': 512, 'height': 512},
        'sameAs': ['https://github.com/newyangs007/atelier-electro'], 'email': 'newyangs007@gmail.com'}
 
@@ -150,8 +150,10 @@ ORG = {'@type': 'NewsMediaOrganization', '@id': SITE + '#org', 'name': '가전�
 def jsonld_index(issue, L='ko'):
     T = tr(issue, L)
     base = SITE if L == 'ko' else SITE + 'en/'
-    web = {'@type': 'WebSite', '@id': SITE + '#site', 'name': '가전레이더', 'alternateName': ['GAJEON RADAR', 'Gajeon Radar'], 'url': SITE,
+    web = {'@type': 'WebSite', '@id': SITE + '#site', 'name': '가전레이더', 'alternateName': ['가전 레이더', 'GAJEON RADAR', 'Gajeon Radar'], 'url': SITE,
            'inLanguage': ['ko-KR', 'en'], 'publisher': {'@id': SITE + '#org'},
+           'potentialAction': {'@type': 'SearchAction', 'target': {'@type': 'EntryPoint', 'urlTemplate': SITE + '?q={search_term_string}'},
+                               'query-input': 'required name=search_term_string'},
            'description': 'AI가전·AI디바이스·소형가전·대형가전 트렌드와 MD 추천템을 매일 아침 7시에 정리하는 가전 매거진'}
     items = [{'@type': 'ListItem', 'position': i + 1, 'url': SITE + p['page'], 'name': T['picks'][p['id']]['name']} for i, p in enumerate(issue['picks'])]
     lst = {'@type': 'ItemList', 'name': ('오늘의 가전 소싱 픽' if L == 'ko' else "Today's appliance picks") + ' ' + issue['edition']['date'], 'itemListElement': items}
@@ -198,14 +200,24 @@ def ssr_index(issue):
     """Plain HTML for crawlers that do not run JavaScript; the page script replaces it on load."""
     S = issue['sources']
     img = lambda p: ('<img src="%s" alt="%s" loading="lazy">' % (e(p['img']), e(p['name']))) if p.get('img') else ''
-    out = {'hero-title': issue['cover']['title'], 'hero-deck': e(issue['cover']['deck'])}
+    hs = [k for k in (issue['cover'].get('s') or []) if k in S][:2]
+    if not hs:
+        top = sorted(issue['news'], key=lambda n: (not n.get('pt'), -(n.get('imp') or 0)))
+        hs = [top[0]['s']] if top and top[0]['s'] in S else []
+    title = issue['cover']['title']
+    out = {'hero-title': ('<a href="%s" target="_blank" rel="noopener">%s</a>' % (e(S[hs[0]]['u']), title)) if hs else title,
+           'hero-deck': e(issue['cover']['deck']),
+           'hero-src': ''.join('<a href="%s" target="_blank" rel="noopener"><b>출처</b>%s 바로가기 ↗</a>' % (e(S[k]['u']), e(S[k]['t'].split(',')[0][:40])) for k in hs)}
     R = ranked(issue)
+    by = {p['id']: p for p in issue['picks']}
+    T3 = [by[i] for i in (issue.get('top3') or []) if i in by] or R[:3]
     out['top3-list'] = ''.join('<article class="t3"><a class="im" href="%s">%s</a><div class="b"><span class="badge">%s %.1f</span><h3>%s</h3><p class="why">%s</p><span class="price">%s</span></div></article>'
-                               % (e(p['page']), img(p), verdict(score(p['sc']), 'ko'), score(p['sc']), e(p['name']), e(p['why']), e(p['price'])) for p in R[:3])
-    out['plist'] = ''.join('<article class="card"><a class="im" href="%s">%s</a><div class="who">%s · %s</div><h3><a href="%s">%s</a></h3><div class="row"><span class="price">%s</span><span class="badge">%s</span></div></article>'
-                           % (e(p['page']), img(p), e(p['brand']), e(p['cat']), e(p['page']), e(p['name']), e(p['price']), verdict(score(p['sc']), 'ko')) for p in R)
+                               % (e(p['page']), img(p), verdict(score(p['sc']), 'ko'), score(p['sc']), e(p['name']), e(p['why']), e(p['price'])) for p in T3)
+    out['plist'] = '<div class="grid">' + ''.join('<article class="card"><a class="im" href="%s">%s</a><div class="who">%s · %s</div><h3><a href="%s">%s</a></h3><div class="row"><span class="price">%s</span><span class="badge">%s</span></div></article>'
+                           % (e(p['page']), img(p), e(p['brand']), e(p['cat']), e(p['page']), e(p['name']), e(p['price']), verdict(score(p['sc']), 'ko')) for p in R) + '</div>'
     out['news-list'] = ''.join('<article class="nw"><div class="m"><span class="c">%s</span><span>%s</span><span>%s</span></div><h3>%s</h3><p>%s</p>%s</article>'
-                               % (e(NEWSCAT['ko'].get(n['c'], n['c'])), e(REG['ko'].get(n['r'], n['r'])), e(n.get('d', '')), e(n['h']), e(n['p']), src_link(S, n['s'], 'ko'))
+                               % (e(NEWSCAT['ko'].get(n['c'], n['c'])), e(REG['ko'].get(n['r'], n['r'])), e(n.get('d', '')),
+                                  ('<a href="%s" target="_blank" rel="noopener">%s</a>' % (e(S[n['s']]['u']), e(n['h']))) if n['s'] in S else e(n['h']), e(n['p']), src_link(S, n['s'], 'ko'))
                                for n in sorted(issue['news'], key=lambda n: (not n.get('pt'), -(n.get('imp') or 0))))
     out['trend-list'] = ''.join('<article class="tr"><div class="st">%s</div><div class="sl">%s</div><h3>%s</h3><p>%s</p></article>'
                                 % (e(t['stat']), e(t['sl']), e(t['t']), e(t['line'])) for t in issue['trends'])

@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>가전레이더 | AI가전·소형가전 트렌드와 MD 추천템, 매일 아침 7시</title>
+<title>가전레이더 GAJEON RADAR | 오늘의 가전뉴스·AI가전·소형가전 추천템, 매일 아침 7시</title>
 <meta name="description" content="가전레이더(GAJEON RADAR)는 AI가전·AI디바이스·소형가전·대형가전·TV·모바일 뉴스와 다나와 인기순위로 고른 추천템을 매일 아침 7시에 출처와 함께 정리하는 가전 매거진입니다.">
-<meta name="keywords" content="가전레이더, AI가전, AI가전 추천, 소형가전 추천, 가전 트렌드, 가전 신제품, 로봇청소기 추천, 김치냉장고 추천, 냉장고 추천, TV 추천, 무선 이어폰 추천, 스마트워치, AI 안경, AI 녹음기, 가전 소싱, 가전 뉴스레터">
+<meta name="keywords" content="가전레이더, 가전 레이더, GAJEON RADAR, 오늘의 가전뉴스, 가전 뉴스, 음식물처리기 추천, 스마트카라, 밥솥 추천, 쿠쿠 밥솥, 쿠첸 밥솥, 에어프라이어 추천, 뷰티디바이스 추천, 에이피알 메디큐브, 갤럭시 Z 폴드8, 아이폰 듀오, LG 가전, 삼성 가전, 리퍼 가전, 가전 특가, AI가전, AI가전 추천, 소형가전 추천, 가전 트렌드, 가전 신제품, 로봇청소기 추천, 김치냉장고 추천, 냉장고 추천, TV 추천, 무선 이어폰 추천, 스마트워치, AI 안경, AI 녹음기, 가전 소싱, 가전 뉴스레터">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#000000">
 <meta property="og:title" content="가전레이더 — AI가전·소형가전 트렌드와 추천템">
@@ -327,6 +327,87 @@ footer a{text-decoration:none}
 .qv-b .srcs a{color:var(--ink2)}
 .totop{position:fixed;right:14px;bottom:calc(16px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:50%;border:0;background:#000;color:#fff;font-size:18px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:40;cursor:pointer}
 .totop.on{opacity:.85;pointer-events:auto}
+/* ---- 2026-11-24 개편: 검색·묶음 진열·인터랙션 ---- */
+.sx-btn{display:flex;align-items:center;gap:5px;background:#1b1b1d;border:1px solid #3a3a3e;color:#fff;border-radius:999px;padding:6px 12px 6px 10px;font-size:13px;cursor:pointer;transition:background .2s,border-color .2s}
+.sx-btn svg{width:16px;height:16px}.sx-btn:hover{background:#2a2a2e;border-color:#666}
+@media(max-width:420px){.sx-btn span{display:none}.sx-btn{padding:7px 9px}}
+.hero h1 a{text-decoration:none;background-image:linear-gradient(currentColor,currentColor);background-size:0 2px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .35s}
+.hero h1 a:hover{background-size:100% 2px}
+.hsrc{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.hsrc a{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:#fff;text-decoration:none;border:1px solid #444;border-radius:999px;padding:5px 11px;transition:background .2s,border-color .2s,transform .2s}
+.hsrc a b{color:var(--acc);font-weight:700}
+.hsrc a:hover{background:#1d1d20;border-color:#888;transform:translateY(-1px)}
+.nw h3 a{text-decoration:none}
+.nw h3 a:hover{text-decoration:underline;text-underline-offset:3px}
+.nw h3 a::after{content:" ↗";font-size:.8em;color:var(--ink2)}
+.pq{display:flex;align-items:center;gap:8px;border:1.5px solid var(--ink);border-radius:12px;padding:0 10px;margin:0 0 10px;background:#fff;transition:box-shadow .2s}
+.pq:focus-within{box-shadow:0 0 0 4px rgba(224,48,30,.15);border-color:var(--acc)}
+.pq svg{width:18px;height:18px;flex:none;color:var(--ink2)}
+.pq input{flex:1;min-width:0;border:0;outline:0;padding:11px 0;font-size:15px;background:transparent}
+.pq button{border:0;background:var(--soft);border-radius:50%;width:26px;height:26px;cursor:pointer;flex:none}
+.fl{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px 10px}
+.fl::-webkit-scrollbar{display:none}
+.fl[hidden]{display:none}
+.fl .lb{flex:none;font-size:12px;color:var(--ink2);align-self:center;margin-right:2px;white-space:nowrap}
+.fl .chip{min-height:32px;padding:5px 11px;font-size:13px;background:var(--soft);border-color:transparent}
+.fl .chip[aria-pressed="true"]{background:var(--ink);color:#fff}
+.chip.lg{border-color:#a50034;color:#a50034;font-weight:700;background:#fff}
+.chip.lg[aria-pressed="true"]{background:#a50034;color:#fff;border-color:#a50034}
+.chip.ss{border-color:#1428a0;color:#1428a0;font-weight:700;background:#fff}
+.chip.ss[aria-pressed="true"]{background:#1428a0;color:#fff;border-color:#1428a0}
+.chip{transition:background .2s,color .2s,border-color .2s,transform .15s}
+.chip:active{transform:scale(.95)}
+.pstat{font-size:12.5px;color:var(--ink2);margin:0 0 8px;min-height:1em}
+.grp{margin:4px 0 22px}
+.gh{display:flex;align-items:baseline;gap:8px;margin:0 0 8px}
+.gh h3{margin:0;font-size:17px;letter-spacing:-.02em}
+.gh small{font-family:var(--num);color:var(--ink2);font-size:12px}
+.gh .subs{font-size:12px;color:var(--ink2);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gh button{border:0;background:none;color:var(--acc);font-weight:600;font-size:13px;cursor:pointer;white-space:nowrap;padding:4px 0}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:46%;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 -16px;padding:2px 16px 8px;scroll-padding:0 16px}
+.rail::-webkit-scrollbar{display:none}
+.rail>.card{scroll-snap-align:start}
+@media(min-width:760px){.rail{grid-auto-columns:calc(25% - 9px);gap:12px}}
+.rail>.card{min-width:0}
+.card,.t3,.dl{transition:transform .25s cubic-bezier(.2,.7,.3,1),box-shadow .25s,border-color .25s}
+.card .im img,.t3 .im img,.dl .im img{transition:transform .45s cubic-bezier(.2,.7,.3,1)}
+@media(hover:hover){
+  .card:hover,.t3:hover,.dl:hover{transform:translateY(-4px);box-shadow:0 14px 30px -14px rgba(0,0,0,.28);border-color:#cfcfcb}
+  .card:hover .im img,.t3:hover .im img,.dl:hover .im img{transform:scale(1.06)}
+}
+.cta{transition:transform .15s,filter .2s}.cta:active{transform:scale(.97)}.cta.cp:hover{filter:brightness(1.08)}
+.card .sub{display:inline-block;font-size:11px;background:var(--soft);border-radius:6px;padding:1px 6px;margin-left:4px;color:#444}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+.hero h1,.hero .deck,.hsrc{animation:rise .7s cubic-bezier(.2,.7,.3,1) both}
+.hero .deck{animation-delay:.08s}.hsrc{animation-delay:.16s}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.empty{border:1px dashed var(--line);border-radius:12px;padding:18px;text-align:center;color:var(--ink2);font-size:14px}
+mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
+/* 사이트 전체 검색 */
+.sx{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.55);display:flex;justify-content:center;align-items:flex-start;opacity:0;pointer-events:none;transition:opacity .2s}
+.sx.on{opacity:1;pointer-events:auto}
+.sx-in{background:#fff;width:min(720px,100%);max-height:100dvh;display:flex;flex-direction:column;border-radius:0 0 18px 18px;transform:translateY(-16px);transition:transform .25s cubic-bezier(.2,.7,.3,1)}
+.sx.on .sx-in{transform:none}
+@media(min-width:760px){.sx{padding-top:8vh}.sx-in{border-radius:18px;max-height:80vh}}
+.sx-h{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.sx-h svg{width:20px;height:20px;flex:none;color:var(--ink2)}
+.sx-h input{flex:1;min-width:0;border:0;outline:0;font-size:17px;padding:8px 0}
+.sx-h button{border:0;background:var(--soft);border-radius:999px;padding:7px 12px;font-size:13px;cursor:pointer}
+.sx-tags{display:flex;gap:6px;flex-wrap:wrap;padding:10px 14px 0}
+.sx-tags button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 11px;font-size:13px;cursor:pointer}
+.sx-r{overflow-y:auto;padding:6px 14px 18px;-webkit-overflow-scrolling:touch}
+.sx-g{margin-top:12px}
+.sx-g h4{margin:0 0 4px;font-size:12px;color:var(--ink2);font-weight:600;letter-spacing:.02em}
+.sx-i{display:flex;gap:10px;align-items:center;width:100%;text-align:left;border:0;background:none;padding:9px 6px;border-radius:10px;text-decoration:none;cursor:pointer;color:inherit}
+.sx-i:hover,.sx-i:focus-visible{background:var(--soft)}
+.sx-i .th{width:44px;height:44px;flex:none;border-radius:8px;background:var(--soft);display:grid;place-items:center;overflow:hidden}
+.sx-i .th img{width:90%;height:90%;object-fit:contain}.sx-i .th svg{width:60%;height:60%;color:#888}
+.sx-i .tx{min-width:0;flex:1}
+.sx-i .t{display:block;font-size:14px;font-weight:600;line-height:1.4}
+.sx-i .d{display:block;font-size:12px;color:var(--ink2);line-height:1.45;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sx-i .go{font-size:12px;color:var(--acc);white-space:nowrap;font-weight:600}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.hero h1,.hero .deck,.hsrc{animation:none}.card,.t3,.dl,.card .im img,.t3 .im img,.dl .im img,.sx,.sx-in{transition:none}.card:hover,.t3:hover,.dl:hover{transform:none}.card:hover .im img,.t3:hover .im img,.dl:hover .im img{transform:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -334,12 +415,13 @@ footer a{text-decoration:none}
   <div class="wrap">
     <a class="logo" href="./" aria-label="가전레이더 홈"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22" fill="none" stroke="#fff" stroke-width="4"/><circle cx="32" cy="32" r="11" fill="none" stroke="#fff" stroke-width="4"/><path d="M32 32L50 18" stroke="#e0301e" stroke-width="6" stroke-linecap="round"/></svg>가전레이더</a>
     <span class="sp"></span>
+    <button type="button" class="sx-btn" id="sx-open" aria-haspopup="dialog" aria-controls="sx" aria-label="사이트 전체 검색"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>검색</span></button>
     <div class="lang" role="navigation" aria-label="언어"><a href="./" aria-current="true" hreflang="ko" lang="ko" title="한국어">KO</a><a href="en/" hreflang="en" lang="en" title="English">EN</a></div>
     <a class="btn-sub" href="#subscribe">구독</a>
   </div>
   <nav class="tabs" aria-label="호수·목차"><div class="wrap tw">
     <button type="button" class="ed-chip" id="ed-chip" aria-haspopup="dialog" aria-controls="arc" title="호수 선택·과월호"><svg class="cal" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="3" width="13" height="11.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M1.5 6.5h13M5 1.5v3M11 1.5v3" stroke="currentColor" stroke-width="1.6"/></svg><span id="ed-chip-t">No.</span><span class="cv">▼</span></button>
-    <div class="toc" id="toc"><a href="#top3">추천템</a><a href="#deals-sec">특가</a><a href="#products">제품</a><a href="#news">뉴스</a><a href="#subscribe">구독</a><a href="#trends">숫자</a><a href="#launches">신제품</a></div>
+    <div class="toc" id="toc"><a href="#news">뉴스</a><a href="#top3">추천템</a><a href="#deals-sec">특가</a><a href="#products">제품</a><a href="#subscribe">구독</a><a href="#trends">숫자</a><a href="#launches">신제품</a></div>
   </div></nav>
 </header>
 <div class="past" id="past"><div class="wrap" id="past-in"></div></div>
@@ -349,10 +431,18 @@ footer a{text-decoration:none}
   <div class="meta-line"><b id="ed-label"></b><span>매일 아침 7시 발행</span><a href="archive.html" id="arc-open2" style="color:#fff">과월호 보기 →</a></div>
   <h1 id="hero-title"></h1>
   <p class="deck" id="hero-deck"></p>
+  <div class="hsrc" id="hero-src"></div>
+</div></section>
+
+<section class="sec" id="news"><div class="wrap">
+  <div class="sh"><div><h2>오늘의 가전뉴스</h2><p>중요도 순 · 한국·미국·일본·중국·유럽 · 제목을 누르면 기사 원문(출처)으로 바로 갑니다</p></div></div>
+  <div class="chip-row" id="news-cats" role="group" aria-label="뉴스 분야"></div>
+  <div class="news" id="news-list"></div>
+  <button type="button" class="more" id="news-more">뉴스 더 보기</button>
 </div></section>
 
 <section class="sec" id="top3"><div class="wrap">
-  <div class="sh"><div><h2>오늘의 추천템 3</h2><p>쿠팡에서 바로 살 수 있는 제품 중 점수 상위 3개 · 매일 아침 갱신</p></div></div>
+  <div class="sh"><div><h2>오늘의 추천템 3</h2><p id="top3-sub">쿠팡 파트너스 제휴 제품 중 점수 상위 3개 · 어제 추천템은 빼고 매일 바뀝니다</p></div></div>
   <p class="ad-note">[광고] 쿠팡 버튼은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
   <div class="top3" id="top3-list"></div>
 </div></section>
@@ -365,18 +455,16 @@ footer a{text-decoration:none}
 <div class="wrap"><div class="adslot" data-slot="top" hidden></div></div>
 
 <section class="sec" id="products"><div class="wrap">
-  <div class="sh"><div><h2>제품 리스트</h2><p id="plist-sub">카테고리를 고르면 점수 높은 순으로 보여 드려요</p></div></div>
-  <div class="cats" id="cats" role="group" aria-label="카테고리"></div>
-  <div class="grid" id="plist"></div>
-  <button type="button" class="more" id="plist-more">더 보기</button>
+  <div class="sh"><div><h2>제품 리스트</h2><p id="plist-sub">쿠팡 파트너스 제휴 제품만 · 카테고리별로 묶어 점수 높은 순</p></div></div>
+  <label class="pq"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="sr">제품 검색</span><input type="search" id="pq" placeholder="제품명·브랜드·종류로 찾기 (예: 음식물처리기, LG)" autocomplete="off" enterkeyhint="search"><button type="button" id="pq-x" aria-label="검색어 지우기" hidden>×</button></label>
+  <div class="cats" id="cats" role="group" aria-label="상위 카테고리"></div>
+  <div class="fl" id="subs" role="group" aria-label="하위 카테고리" hidden></div>
+  <div class="fl br" id="brf" role="group" aria-label="브랜드"></div>
+  <p class="pstat" id="pstat" role="status" aria-live="polite"></p>
+  <div id="plist"></div>
+  <button type="button" class="more" id="plist-more" hidden>더 보기</button>
 </div></section>
 
-<section class="sec" id="news"><div class="wrap">
-  <div class="sh"><div><h2>오늘의 가전·IT 뉴스</h2><p>중요도 순 · 한국·미국·일본·중국·유럽 · 모든 기사에 출처</p></div></div>
-  <div class="chip-row" id="news-cats" role="group" aria-label="뉴스 분야"></div>
-  <div class="news" id="news-list"></div>
-  <button type="button" class="more" id="news-more">뉴스 더 보기</button>
-</div></section>
 
 <section class="subw" id="subscribe"><div class="wrap">
   <h2>매일 아침 7시,<br>추천템 3개를 메일로</h2>
@@ -444,6 +532,11 @@ footer a{text-decoration:none}
   <div id="ar-list"></div>
   <a class="ar-all" href="archive.html">과월호 전체 페이지 열기 ↗</a>
 </div></aside>
+<div class="sx" id="sx" role="dialog" aria-modal="true" aria-labelledby="sx-t" aria-hidden="true"><div class="sx-in">
+  <div class="sx-h"><b id="sx-t" class="sr">사이트 전체 검색</b><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><input type="search" id="sx-q" placeholder="뉴스·제품·브랜드·신제품·지난 호 전체 검색" autocomplete="off" enterkeyhint="search" aria-label="검색어"><button type="button" id="sx-x" aria-label="닫기">닫기</button></div>
+  <div class="sx-tags" id="sx-tags"></div>
+  <div class="sx-r" id="sx-r" aria-live="polite"></div>
+</div></div>
 <aside class="qv" id="qv" role="dialog" aria-modal="true" aria-labelledby="qv-title" aria-hidden="true"><div class="qv-h"><b>제품 상세</b><button type="button" id="qv-x" aria-label="닫기">×</button></div><div class="qv-b" id="qv-b"></div></aside>
 
 <script id="brand-data" type="application/json">/*__BRANDS__*/</script>
@@ -473,44 +566,57 @@ footer a{text-decoration:none}
   var CTRY={KR:'한국',US:'미국',JP:'일본',CN:'중국',DE:'독일',IT:'이탈리아',GB:'영국',CH:'스위스',AU:'호주',IN:'인도',SG:'싱가포르',FR:'프랑스',EU:'유럽'};
   var NCAT=[['all','전체'],['AI','AI가전'],['TV','TV'],['IT','IT·모바일'],['로봇','로봇'],['디바이스','AI디바이스'],['소형','소형가전'],['대형','대형가전']];
   var NCN={'AI':'AI가전','TV':'TV','IT':'IT·모바일','로봇':'로봇','디바이스':'AI디바이스','소형':'소형가전','대형':'대형가전'};
-  /* 카테고리: 맨 윗줄(전체·특가) + 가전 줄 + IT·디지털 줄. 제품이 없는 묶음은 숨김 */
+  /* 카테고리: 상위(묶음) → 하위(종류) → 브랜드. 쿠팡 파트너스 제휴 제품만 진열 */
   var DEAL_IDS={};
   function isDeal(p){return !!DEAL_IDS[p.id];}
   function pickDeals(j){DEAL_IDS={};j.picks.filter(function(p){return (p.dc||0)>=30&&p.img&&p.cp;}).sort(function(a,b){return b.dc-a.dc;}).slice(0,3).forEach(function(p){DEAL_IDS[p.id]=1;});}
-  var GROUPS=[
-    ['all','전체',function(){return true;},0],
-    ['deal','특가 30%↑',isDeal,0],
-    ['ai','AI가전',function(p){return p.ai&&p.cat!=='AI디바이스';},1],
-    ['kitchen','주방',function(p){return p.cat==='주방';},1],
-    ['robot','로봇',function(p){return p.icon==='robot';},1],
-    ['living','청소·생활',function(p){return p.cat==='청소'||p.cat==='생활';},1],
-    ['season','계절가전',function(p){return p.cat==='난방'||p.cat==='가습'||p.cat==='계절';},1],
-    ['big','대형가전',function(p){return p.cat==='대형가전';},1],
-    ['beauty','뷰티',function(p){return p.cat==='뷰티';},1],
-    ['tv','TV',function(p){return p.cat==='TV';},2],
-    ['laptop','노트북',function(p){return p.cat==='노트북';},2],
-    ['tablet','태블릿',function(p){return p.cat==='태블릿';},2],
-    ['phone','스마트폰',function(p){return p.cat==='스마트폰';},2],
-    ['watch','스마트워치',function(p){return p.cat==='워치';},2],
-    ['audio','이어폰·오디오',function(p){return p.cat==='이어폰'||p.cat==='오디오';},2],
-    ['aidev','AI디바이스',function(p){return p.cat==='AI디바이스';},2]
+  var UP=[
+    ['tv','TV·영상',function(p){return p.cat==='TV';}],
+    ['big','대형가전',function(p){return p.cat==='대형가전';}],
+    ['kitchen','주방가전',function(p){return p.cat==='주방';}],
+    ['clean','청소·로봇',function(p){return p.cat==='청소'||p.cat==='로봇'||p.icon==='robot';}],
+    ['season','계절·생활',function(p){return /^(난방|가습|계절|생활)$/.test(p.cat);}],
+    ['beauty','뷰티',function(p){return p.cat==='뷰티';}],
+    ['mobile','모바일·IT',function(p){return /^(스마트폰|태블릿|노트북|워치)$/.test(p.cat);}],
+    ['audio','이어폰·오디오',function(p){return p.cat==='이어폰'||p.cat==='오디오';}],
+    ['aidev','AI디바이스',function(p){return p.cat==='AI디바이스';}]
   ];
-  var GLBL=['','가전','IT·디지털'];
+  var UPN={};UP.forEach(function(u){UPN[u[0]]=u[1];});UPN.etc='기타';
+  function upOf(p){for(var i=0;i<UP.length;i++)if(UP[i][2](p))return UP[i][0];return 'etc';}
+  var SUBN={fryer:'에어프라이어',glass:'에어프라이어',disposer:'음식물처리기',rice:'밥솥',soup:'블렌더·두유제조기',prep:'블렌더·두유제조기',steam:'스팀오븐·찜기',robot:'로봇청소기',stick:'무선청소기',heater:'히터',humid:'가습기',dryer:'헤어드라이어',beauty:'뷰티디바이스',washer:'세탁·건조기',recorder:'AI 녹음기',glasses:'AI 안경',earbuds:'무선 이어폰',headphone:'헤드폰',speaker:'스피커',watch:'스마트워치',tablet:'태블릿',laptop:'노트북'};
+  function subOf(p){if(p.sub)return p.sub;var n=p.name||'';
+    if(p.icon==='fridge')return /김치/.test(n)?'김치냉장고':'냉장고';
+    if(p.icon==='tv'||p.cat==='TV')return /OLED|올레드/i.test(n)?'OLED TV':'QLED·미니LED TV';
+    if(p.icon==='phone'||p.cat==='스마트폰')return /폴드|플립|fold|flip/i.test(n)?'폴더블폰':'스마트폰';
+    return SUBN[p.icon]||p.cat;}
+  var PIN=['LG전자','삼성전자'];
+  function brandCls(b){return b==='LG전자'?' lg':(b==='삼성전자'?' ss':'');}
+  function norm(x){return String(x==null?'':x).toLowerCase().replace(/\s+/g,'');}
+  function hay(p){return norm([p.name,p.brand,p.cat,subOf(p),UPN[upOf(p)],p.why,p.ch,p.usp,p.target,p.brand==='LG전자'?'엘지 lg':'',p.brand==='삼성전자'?'삼성 samsung':''].join(' '));}
+  function toks(q){return String(q||'').toLowerCase().split(/\s+/).filter(Boolean);}
+  function hit(h,T){for(var i=0;i<T.length;i++)if(h.indexOf(norm(T[i]))<0)return false;return true;}
+  function hl(t,T){var x=esc(t);T.forEach(function(k){var e=esc(k).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');if(e)x=x.replace(new RegExp('('+e+')','ig'),'<mark>$1</mark>');});return x;}
 
   var MOB=window.matchMedia&&matchMedia('(max-width:759px)').matches;
-  var D=null,grp='all',PER=MOB?4:6,shown=PER,ncat='all',nshown=3,lshown=MOB?3:5;
+  var D=null,grp='all',sub='',brand='',pq='',PER=MOB?4:6,shown=PER,ncat='all',nshown=3,lshown=MOB?3:5;
   function ranked(){return D.picks.slice().sort(function(a,b){return (overall(b.sc)-overall(a.sc))||(b.sc[0]-a.sc[0])||(b.sc[1]-a.sc[1]);});}
 
+  function cpOnly(L){var seen={},out=[];var any=L.some(function(p){return p.cp;});L.forEach(function(p){var k=p.pc||norm(p.name);if((any&&!p.cp)||seen[k])return;seen[k]=1;out.push(p);});return out;}
+  function heroSrc(j){if(j.cover.s&&j.cover.s.length)return j.cover.s.slice(0,2);var n=j.news.slice().sort(function(a,b){return ((b.pt?1:0)-(a.pt?1:0))||((b.imp||0)-(a.imp||0));})[0];return n?[n.s]:[];}
+  function top3List(j){var by={};j.picks.forEach(function(p){by[p.id]=p;});var L=(j.top3||[]).map(function(id){return by[id];}).filter(Boolean);if(L.length<3){var prev={};(j.prev_top3||[]).forEach(function(id){prev[id]=1;});buyFirst(ranked()).forEach(function(p){if(L.length<3&&L.indexOf(p)<0&&!prev[p.id])L.push(p);});}return L.slice(0,3);}
+  function card(p,T){T=T||[];return '<article class="card"><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="who">'+hl(p.brand,T)+'<span class="sub">'+hl(subOf(p),T)+'</span></div><h3>'+hl(p.name,T)+'</h3><div class="row"><span class="price">'+esc(p.price)+'</span>'+pk(p)+'</div>'+pd(p)+'<p class="hl">'+esc(p.ch)+'</p><div class="acts">'+cta(p)+'</div></article>';}
   function render(j){
-    D=j;grp='all';shown=PER;ncat='all';nshown=3;lshown=MOB?3:5;
+    j.picks=cpOnly(j.picks);D=j;grp='all';sub='';brand='';shown=PER;ncat='all';nshown=3;lshown=MOB?3:5;
     var E=j.edition;
     $('ed-label').textContent=E.label;
-    $('hero-title').innerHTML=j.cover.title;
+    var HS=heroSrc(j),H0=j.sources[HS[0]];
+    $('hero-title').innerHTML=H0?'<a href="'+esc(H0.u)+'" target="_blank" rel="noopener">'+j.cover.title+'</a>':j.cover.title;
+    $('hero-src').innerHTML=HS.map(function(k){var S=j.sources[k];return S?'<a href="'+esc(S.u)+'" target="_blank" rel="noopener"><b>출처</b>'+esc(media(S))+' 바로가기 ↗</a>':'';}).join('');
     $('hero-deck').textContent=j.cover.deck;
     $('figs').innerHTML=j.cover.figs.slice(0,4).map(function(f){var s=(f.s||[])[0],S=j.sources[s];return '<div class="fig"><div class="v">'+esc(f.v)+'<small>'+esc(f.u)+'</small></div><div class="l">'+esc(f.l)+'</div>'+(S?'<a href="'+esc(S.u)+'" target="_blank" rel="noopener">'+esc(media(S))+' ↗</a>':'')+'</div>';}).join('');
     /* 추천템 3 */
-    var R=ranked();
-    $('top3-list').innerHTML=buyFirst(R).slice(0,3).map(function(p,i){return '<article class="t3"><span class="rk">'+(i+1)+'</span><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="b">'+pk(p)+'<div class="who">'+esc(p.brand)+' · '+esc(p.cat)+'</div><h3>'+esc(p.name)+'</h3><div><span class="price">'+esc(p.price)+'</span>'+pd(p)+'</div><p class="why">'+esc(p.why)+'</p>'+cta(p)+(p.cp?'<button type="button" class="lk" data-id="'+esc(p.id)+'">상세 정보</button>':'')+'</div></article>';}).join('');
+    var T3=top3List(j);
+    $('top3-list').innerHTML=T3.map(function(p,i){return '<article class="t3"><span class="rk">'+(i+1)+'</span><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="b">'+pk(p)+'<div class="who">'+esc(p.brand)+' · '+esc(p.cat)+'</div><h3>'+esc(p.name)+'</h3><div><span class="price">'+esc(p.price)+'</span>'+pd(p)+'</div><p class="why">'+esc(p.why)+'</p>'+cta(p)+(p.cp?'<button type="button" class="lk" data-id="'+esc(p.id)+'">상세 정보</button>':'')+'</div></article>';}).join('');
     pickDeals(j);var DL=j.picks.filter(isDeal).sort(function(a,b){return b.dc-a.dc;});
     $('deals-sec').hidden=!DL.length;var dt=document.querySelector('#toc a[href="#deals-sec"]');if(dt)dt.hidden=!DL.length;
     $('deal-list').innerHTML=DL.map(function(p){return '<article class="dl"><span class="off">−'+esc(p.dc)+'%</span><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="who">'+esc(p.brand)+'</div><div class="n">'+esc(p.name)+'</div><div class="was">'+esc(p.was||'')+'</div><div class="p">'+esc(p.price)+'</div><div class="bs">'+esc(p.dcb||'')+'</div><div class="acts">'+cta(p)+'</div></article>';}).join('');
@@ -524,23 +630,47 @@ footer a{text-decoration:none}
     var used={};j.picks.forEach(function(p){used[p.brand]=1;});
     $('brand-list').innerHTML=Object.keys(used).filter(function(b){return BR[b];}).map(function(b){var x=BR[b];return '<div><b>'+esc(b)+'</b> · '+esc(x.c)+'<br>'+esc(x.f)+(x.p?' · '+esc(x.p):'')+'</div>';}).join('');
   }
+  function scope(useBrand){var T=toks(pq);return ranked().filter(function(p){
+      if(grp==='deal'){if(!isDeal(p))return false;}else if(grp!=='all'&&upOf(p)!==grp)return false;
+      if(sub&&subOf(p)!==sub)return false;if(useBrand&&brand&&p.brand!==brand)return false;
+      return !T.length||hit(hay(p),T);});}
+  function chips(L,cur,attr,cls){return L.map(function(x){return '<button type="button" class="chip'+(cls?cls(x[0]):'')+'" '+attr+'="'+esc(x[0])+'" aria-pressed="'+(x[0]===cur)+'">'+esc(x[1])+'<b>'+x[2]+'</b></button>';}).join('');}
   function renderCats(){
-    var ORDER=['all','deal','robot','tv','ai','kitchen','living','season','big','beauty','phone','laptop','tablet','watch','audio','aidev'];
-    $('cats').innerHTML='<div class="chip-row">'+ORDER.map(function(id){var g=GROUPS.filter(function(x){return x[0]===id;})[0];if(!g)return '';var n=D.picks.filter(g[2]).length;if(!n)return '';return '<button type="button" class="chip'+(g[0]==='deal'?' deal':'')+'" data-g="'+g[0]+'" aria-pressed="'+(g[0]===grp)+'">'+esc(g[1])+'<b>'+n+'</b></button>';}).join('')+'</div>';
+    var P=D.picks,L=[['all','전체',P.length]];var nd=P.filter(isDeal).length;if(nd)L.push(['deal','특가 30%↑',nd]);
+    UP.concat([['etc','기타']]).forEach(function(u){var n=P.filter(function(p){return upOf(p)===u[0];}).length;if(n)L.push([u[0],u[1],n]);});
+    $('cats').innerHTML='<div class="chip-row">'+chips(L,grp,'data-g',function(id){return id==='deal'?' deal':'';})+'</div>';
+    /* 하위 카테고리 */
+    var sb=$('subs');if(grp!=='all'&&grp!=='deal'){var C={},O=[];P.forEach(function(p){if(upOf(p)!==grp)return;var k=subOf(p);if(!C[k]){C[k]=0;O.push(k);}C[k]++;});
+      sb.hidden=O.length<2;sb.innerHTML='<span class="lb">종류</span>'+chips([['','전체',O.reduce(function(a,k){return a+C[k];},0)]].concat(O.map(function(k){return [k,k,C[k]];})),sub,'data-s');}else{sb.hidden=true;sb.innerHTML='';}
+    /* 브랜드: LG전자·삼성전자 먼저 */
+    var B={},S=scope(false);S.forEach(function(p){B[p.brand]=(B[p.brand]||0)+1;});
+    var bl=Object.keys(B).sort(function(a,b){var ia=PIN.indexOf(a),ib=PIN.indexOf(b);ia=ia<0?9:ia;ib=ib<0?9:ib;return (ia-ib)||(B[b]-B[a])||a.localeCompare(b,'ko');});
+    if(brand&&!B[brand])brand='';
+    $('brf').hidden=bl.length<2&&!brand;$('brf').innerHTML='<span class="lb">브랜드</span>'+chips([['','전체',S.length]].concat(bl.map(function(k){return [k,k,B[k]];})),brand,'data-b',brandCls);
   }
   function renderProducts(){
-    var g=GROUPS.filter(function(x){return x[0]===grp;})[0]||GROUPS[0];
-    var L=buyFirst(ranked().filter(g[2]));
-    $('plist').innerHTML=L.slice(0,shown).map(function(p){return '<article class="card"><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="who">'+esc(p.brand)+' · '+esc(p.cat)+'</div><h3>'+esc(p.name)+'</h3><div class="row"><span class="price">'+esc(p.price)+'</span>'+pk(p)+'</div>'+pd(p)+'<p class="hl">'+esc(p.ch)+'</p><div class="acts">'+cta(p)+'</div></article>';}).join('');
-    var m=$('plist-more');m.hidden=L.length<=shown;m.textContent='더 보기 ('+(L.length-shown)+'개 남음)';
+    var T=toks(pq),box=$('plist'),m=$('plist-more'),st=$('pstat');$('pq-x').hidden=!pq;
+    if(grp==='all'&&!sub&&!brand&&!T.length){
+      var top={};top3List(D).forEach(function(p){top[p.id]=1;});
+      var rest=ranked().filter(function(p){return !top[p.id];});
+      var G=UP.concat([['etc','기타']]).map(function(u){return {id:u[0],n:u[1],L:rest.filter(function(p){return upOf(p)===u[0];})};}).filter(function(g){return g.L.length;});
+      box.innerHTML=G.map(function(g){var subs=[];g.L.forEach(function(p){var k=subOf(p);if(subs.indexOf(k)<0)subs.push(k);});
+        return '<section class="grp" aria-label="'+esc(g.n)+'"><div class="gh"><h3>'+esc(g.n)+'</h3><small>'+g.L.length+'</small><span class="subs">'+esc(subs.join(' · '))+'</span><button type="button" data-gg="'+g.id+'">전체 보기 →</button></div><div class="rail">'+g.L.slice(0,8).map(function(p){return card(p);}).join('')+'</div></section>';}).join('');
+      st.textContent='쿠팡 파트너스 제휴 제품 '+D.picks.length+'개 · 위 추천템 3개는 빼고 카테고리별로 묶었어요';
+      m.hidden=true;reveal(box);return;}
+    var L=scope(true);
+    st.innerHTML=(T.length?'‘'+esc(pq)+'’ 검색 결과 ':'')+'<b>'+L.length+'</b>개 · '+esc(grp==='all'?'전체':(grp==='deal'?'특가':UPN[grp]))+(sub?' › '+esc(sub):'')+(brand?' › '+esc(brand):'')+' · 점수 높은 순';
+    if(!L.length){box.innerHTML='<div class="empty">조건에 맞는 쿠팡 제휴 제품이 없어요.<br><button type="button" class="more" data-sxq="'+esc(pq)+'" style="max-width:320px;margin:12px auto 0">뉴스·신제품까지 전체 검색</button></div>';m.hidden=true;return;}
+    box.innerHTML='<div class="grid">'+L.slice(0,shown).map(function(p){return card(p,T);}).join('')+'</div>';
+    m.hidden=L.length<=shown;m.textContent='더 보기 ('+(L.length-shown)+'개 남음)';reveal(box);
   }
   function renderNewsCats(){
     $('news-cats').innerHTML=NCAT.map(function(c){var n=c[0]==='all'?D.news.length:D.news.filter(function(x){return x.c===c[0];}).length;if(!n)return '';return '<button type="button" class="chip" data-c="'+c[0]+'" aria-pressed="'+(c[0]===ncat)+'">'+c[1]+'<b>'+n+'</b></button>';}).join('');
   }
   function renderNews(){
     var L=D.news.filter(function(n){return ncat==='all'||n.c===ncat;}).sort(function(a,b){return ((b.pt?1:0)-(a.pt?1:0))||((b.imp||0)-(a.imp||0));});
-    $('news-list').innerHTML=L.slice(0,nshown).map(function(n){var S=D.sources[n.s];return '<article class="nw"><div class="m">'+(n.pt?'<span class="pt">주요</span>':'')+'<span class="c">'+esc(NCN[n.c]||n.c)+'</span><span>'+esc(REG[n.r]||n.r)+'</span><span>'+esc(n.d||'')+'</span></div><h3>'+esc(n.h)+'</h3><p>'+esc(n.p)+'</p>'+(S?'<a class="s" href="'+esc(S.u)+'" target="_blank" rel="noopener">'+esc(media(S))+' ↗</a>':'')+'</article>';}).join('');
-    var m=$('news-more');m.hidden=L.length<=nshown;m.textContent='뉴스 더 보기 ('+(L.length-nshown)+'개 남음)';
+    $('news-list').innerHTML=L.slice(0,nshown).map(function(n){var S=D.sources[n.s];return '<article class="nw"><div class="m">'+(n.pt?'<span class="pt">주요</span>':'')+'<span class="c">'+esc(NCN[n.c]||n.c)+'</span><span>'+esc(REG[n.r]||n.r)+'</span><span>'+esc(n.d||'')+'</span></div><h3>'+(S?'<a href="'+esc(S.u)+'" target="_blank" rel="noopener">'+esc(n.h)+'</a>':esc(n.h))+'</h3><p>'+esc(n.p)+'</p>'+(S?'<a class="s" href="'+esc(S.u)+'" target="_blank" rel="noopener">'+esc(media(S))+' ↗</a>':'')+'</article>';}).join('');
+    reveal($('news-list'));var m=$('news-more');m.hidden=L.length<=nshown;m.textContent='뉴스 더 보기 ('+(L.length-nshown)+'개 남음)';
   }
   function renderLaunches(){
     var L=D.launches;
@@ -572,7 +702,11 @@ footer a{text-decoration:none}
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeQV();});
 
   document.addEventListener('click',function(e){
-    var c=e.target.closest('#cats .chip');if(c){grp=c.dataset.g;shown=PER;renderCats();renderProducts();return;}
+    var c=e.target.closest('#cats .chip');if(c){grp=c.dataset.g;sub='';shown=PER;renderCats();renderProducts();return;}
+    var sc=e.target.closest('#subs .chip');if(sc){sub=sc.dataset.s;shown=PER;renderCats();renderProducts();return;}
+    var bc=e.target.closest('#brf .chip');if(bc){brand=bc.dataset.b;shown=PER;renderCats();renderProducts();return;}
+    var gg=e.target.closest('[data-gg]');if(gg){grp=gg.dataset.gg;sub='';brand='';shown=PER;renderCats();renderProducts();$('products').scrollIntoView({behavior:RM?'auto':'smooth'});return;}
+    var sq=e.target.closest('[data-sxq]');if(sq){openSX(sq.dataset.sxq);return;}
     var n=e.target.closest('#news-cats .chip');if(n){ncat=n.dataset.c;nshown=3;renderNewsCats();renderNews();return;}
     var cp=e.target.closest('a.cp');if(cp){track('click',{target:cp.dataset.id,where:cp.className});return;}
     var q=e.target.closest('[data-id]');if(q&&q.tagName==='BUTTON'){var p=D.picks.filter(function(x){return x.id===q.dataset.id;})[0];if(p)openQV(p);}
@@ -661,7 +795,52 @@ footer a{text-decoration:none}
   addEventListener('scroll',function(){tt.classList.toggle('on',scrollY>900);},{passive:true});
   tt.onclick=function(){scrollTo({top:0,behavior:'smooth'});};
 
+  /* 스크롤 등장 효과 (움직임 줄이기 설정 시 끔) */
+  var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var RIO=(!RM&&'IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var el=en.target;el.classList.add('in');RIO.unobserve(el);setTimeout(function(){el.style.transitionDelay='';},700);}});},{rootMargin:'0px 0px -6% 0px'}):null;
+  function reveal(root){if(!RIO||!root)return;var i=0;[].forEach.call(root.querySelectorAll('.t3,.dl,.grp,.nw,.fig,.grid>.card'),function(el){if(el.classList.contains('rv'))return;el.classList.add('rv');el.style.transitionDelay=((i++)%4)*60+'ms';RIO.observe(el);});}
+
+  /* 제품 리스트 안 검색 */
+  var pqi=$('pq');pqi.addEventListener('input',function(){pq=pqi.value.trim();shown=PER;renderCats();renderProducts();});
+  $('pq-x').onclick=function(){pqi.value='';pq='';renderCats();renderProducts();pqi.focus();};
+
+  /* 사이트 전체 검색: 오늘 호 제품·뉴스·신제품·브랜드 + 지난 호 뉴스·신제품·제목 */
+  var SXALL=null,sxT=0;
+  function loadAll(){if(SXALL)return SXALL;SXALL=Promise.all(ARCH.slice(0,60).map(function(a){if(cache[a.date])return Promise.resolve(cache[a.date]);return fetch('issues/'+a.date+'.json').then(function(r){return r.ok?r.json():null;}).then(function(j){if(j)cache[j.edition.date]=j;return j;}).catch(function(){return null;});}));return SXALL;}
+  function media2(j,k){var S=j.sources[k];return S?{u:S.u,m:media(S)}:null;}
+  function sxRun(){var q=$('sx-q').value.trim(),T=toks(q),box=$('sx-r');
+    try{history.replaceState(null,'',q?location.pathname+'?q='+encodeURIComponent(q)+location.hash:location.pathname+(CUR!==ORD[0]?'?issue='+CUR:'')+location.hash);}catch(x){}
+    if(!T.length){box.innerHTML='<p class="pstat" style="margin-top:12px">제품명·브랜드·뉴스 키워드로 찾아보세요. 지난 호 뉴스까지 함께 찾습니다.</p>';return;}
+    var P=D.picks.filter(function(p){return hit(hay(p),T);}).slice(0,8);
+    var NW=[],LN=[],IS=[],seenN={},seenL={};
+    var issues=[D].concat(Object.keys(cache).map(function(k){return cache[k];}).filter(function(j){return j!==D;}).sort(function(a,b){return a.edition.date<b.edition.date?1:-1;}));
+    issues.forEach(function(j){(j.news||[]).forEach(function(n){var k=norm(n.h);if(seenN[k])return;if(hit(norm(n.h+' '+n.p+' '+(NCN[n.c]||n.c)),T)){seenN[k]=1;NW.push({n:n,j:j});}});
+      (j.launches||[]).forEach(function(l){var k=norm(l.b+l.p);if(seenL[k])return;if(hit(norm([l.b,l.p,l.cat,l.pr].join(' ')),T)){seenL[k]=1;LN.push({l:l,j:j});}});
+      var a=ARCH.filter(function(x){return x.date===j.edition.date;})[0];if(a&&hit(norm(a.title+' '+j.cover.deck),T))IS.push(a);});
+    var BRN=Object.keys(BR).filter(function(b){return hit(norm(b+' '+(BR[b].c||'')+(b==='LG전자'?' 엘지 lg':'')+(b==='삼성전자'?' 삼성 samsung':'')),T);}).sort(function(a,b){return PIN.indexOf(b)-PIN.indexOf(a);}).slice(0,6);
+    function g(t,n,h){return n?'<div class="sx-g"><h4>'+t+' '+n+'</h4>'+h+'</div>':'';}
+    var h=g('제품 (쿠팡 제휴)',P.length,P.map(function(p){return '<button type="button" class="sx-i" data-sxp="'+esc(p.id)+'"><span class="th">'+pimg(p)+'</span><span class="tx"><span class="t">'+hl(p.name,T)+'</span><span class="d">'+hl(p.brand,T)+' · '+hl(subOf(p),T)+' · '+esc(p.price)+'</span></span><span class="go">상세</span></button>';}).join(''))
+      +g('뉴스',NW.length,NW.slice(0,12).map(function(x){var m=media2(x.j,x.n.s);return '<a class="sx-i" href="'+esc(m?m.u:'#')+'" target="_blank" rel="noopener"><span class="tx"><span class="t">'+hl(x.n.h,T)+'</span><span class="d">'+esc(x.n.d||x.j.edition.date)+' · '+esc(NCN[x.n.c]||x.n.c)+(m?' · '+esc(m.m):'')+'</span></span><span class="go">원문 ↗</span></a>';}).join(''))
+      +g('신제품',LN.length,LN.slice(0,8).map(function(x){return '<div class="sx-i"><span class="tx"><span class="t">'+hl(x.l.b+' '+x.l.p,T)+'</span><span class="d">'+esc(x.l.d)+' · '+esc(REG[x.l.m]||x.l.m)+' · '+esc(x.l.cat)+(x.l.pr&&x.l.pr!=='—'?' · '+esc(x.l.pr):'')+'</span></span></div>';}).join(''))
+      +g('브랜드',BRN.length,BRN.map(function(b){var n=D.picks.filter(function(p){return p.brand===b;}).length;return '<button type="button" class="sx-i" data-sxb="'+esc(b)+'"><span class="tx"><span class="t">'+hl(b,T)+'</span><span class="d">'+esc(BR[b].c||'')+(n?' · 오늘 제휴 제품 '+n+'개':'')+'</span></span><span class="go">'+(n?'제품 보기':'')+'</span></button>';}).join(''))
+      +g('지난 호',IS.length,IS.slice(0,6).map(function(a){return '<button type="button" class="sx-i" data-sxd="'+esc(a.date)+'"><span class="tx"><span class="t">'+esc(noS(a.no))+' · '+hl(a.title,T)+'</span><span class="d">'+esc(a.date)+'</span></span><span class="go">열기</span></button>';}).join(''));
+    box.innerHTML=h||'<p class="empty" style="margin-top:12px">‘'+esc(q)+'’에 맞는 내용이 없어요. 다른 낱말로 찾아보세요.</p>';}
+  function sxTags(){var W=['음식물처리기','로봇청소기','LG전자','삼성전자','OLED TV','AI 녹음기','에어프라이어','밥솥','뷰티디바이스','폴드8'];
+    $('sx-tags').innerHTML=W.filter(function(w){var T=toks(w);return D.picks.some(function(p){return hit(hay(p),T);})||D.news.some(function(n){return hit(norm(n.h+n.p),T);});}).map(function(w){return '<button type="button" data-sxt="'+esc(w)+'">'+esc(w)+'</button>';}).join('');}
+  function openSX(q){lastFocus=document.activeElement;var x=$('sx');x.classList.add('on');x.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';sxTags();var i=$('sx-q');if(q!=null)i.value=q;sxRun();setTimeout(function(){i.focus();},30);loadAll().then(sxRun);}
+  function closeSX(){var x=$('sx');if(!x.classList.contains('on'))return;x.classList.remove('on');x.setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastFocus&&lastFocus.focus)lastFocus.focus();}
+  $('sx-open').onclick=function(){openSX();};$('sx-x').onclick=closeSX;
+  $('sx').addEventListener('click',function(e){if(e.target.id==='sx'){closeSX();return;}
+    var t=e.target.closest('[data-sxt]');if(t){$('sx-q').value=t.dataset.sxt;sxRun();return;}
+    var p=e.target.closest('[data-sxp]');if(p){var x=D.picks.filter(function(y){return y.id===p.dataset.sxp;})[0];closeSX();if(x)openQV(x);return;}
+    var b=e.target.closest('[data-sxb]');if(b){closeSX();grp='all';sub='';brand=b.dataset.sxb;pq='';pqi.value='';shown=PER;renderCats();renderProducts();$('products').scrollIntoView({behavior:RM?'auto':'smooth'});return;}
+    var d=e.target.closest('[data-sxd]');if(d){closeSX();openIssue(d.dataset.sxd);}});
+  $('sx-q').addEventListener('input',function(){clearTimeout(sxT);sxT=setTimeout(sxRun,120);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSX();
+    if(e.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test((document.activeElement||{}).tagName||'')){e.preventDefault();openSX();}});
   render(LATEST);
+  reveal(document.querySelector('main'));
+  (function(){var q=null;try{q=new URLSearchParams(location.search).get('q');}catch(x){}if(q)openSX(q);})();
 })();
 </script>
 </body>

@@ -21,5 +21,7 @@ var IC={
     phone:'<rect x="38" y="12" width="44" height="96" rx="9"/><path d="M54 20h12"/><path d="M54 98h12"/>',
     watch:'<rect x="38" y="38" width="44" height="44" rx="12"/><path d="M46 38l4-22h20l4 22M46 82l4 22h20l4-22"/><path d="M60 52v10l7 5"/>',
     laptop:'<rect x="26" y="28" width="68" height="46" rx="4"/><path d="M14 84h92l-6 10H20z"/>',
-    speaker:'<rect x="34" y="14" width="52" height="92" rx="10"/><circle cx="60" cy="70" r="18"/><circle cx="60" cy="70" r="6"/><circle cx="60" cy="34" r="7"/>'
+    speaker:'<rect x="34" y="14" width="52" height="92" rx="10"/><circle cx="60" cy="70" r="18"/><circle cx="60" cy="70" r="6"/><circle cx="60" cy="34" r="7"/>',
+    rice:'<path d="M22 52h76v30a18 18 0 0 1-18 18H40a18 18 0 0 1-18-18z"/><path d="M18 52a42 20 0 0 1 84 0"/><path d="M52 30h16"/><circle cx="60" cy="76" r="8"/><path d="M40 100v6M80 100v6"/>',
+    beauty:'<rect x="48" y="40" width="24" height="68" rx="10"/><path d="M42 40h36l-4-18a6 6 0 0 0-6-5H52a6 6 0 0 0-6 5z"/><circle cx="60" cy="58" r="5"/><path d="M60 72v18"/><path d="M28 24l6 6M92 24l-6 6M24 44h8M88 44h8" opacity=".6"/>'
   };

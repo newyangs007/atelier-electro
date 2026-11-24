@@ -20,6 +20,35 @@ issues.sort(key=lambda a: a['date'], reverse=True)
 latest = json.load(open('issues/%s.json' % issues[0]['date'], encoding='utf-8'))
 prev = json.load(open('issues/%s.json' % issues[1]['date'], encoding='utf-8')) if len(issues) > 1 else None
 
+# ---- 제품: 쿠팡 파트너스 링크가 있는 제품만 노출, 같은 제품 중복 제거 ----
+_seen, _picks = set(), []
+for _p in latest['picks']:
+    _k = (_p.get('pc') or re.sub(r'\s+', '', _p['name']).lower())
+    if not _p.get('cp') or _k in _seen:
+        continue
+    _seen.add(_k); _picks.append(_p)
+latest['picks'] = _picks
+
+
+# ---- 오늘의 추천템 3: 쿠팡 제품 중 점수 순, 어제 추천템 3은 빼서 매일 바뀌게 ----
+def _sc(p):
+    v = sum(p['sc']) / len(p['sc']); return round(v * 2) / 2
+
+
+def _top3(issue, exclude):
+    R = sorted([p for p in issue['picks'] if p.get('cp')], key=lambda p: (-_sc(p), -p['sc'][0], -p['sc'][1]))
+    T = [p['id'] for p in R if p['id'] not in exclude][:3]
+    return T + [p['id'] for p in R if p['id'] not in T][:3 - len(T)]
+
+
+_prev_top = (prev.get('top3') or _top3(prev, set())) if prev else []
+_t3 = _top3(latest, set(_prev_top))
+if latest.get('top3') != _t3 or latest.get('prev_top3') != _prev_top:
+    _raw = json.load(open('issues/%s.json' % issues[0]['date'], encoding='utf-8'))
+    _raw['top3'], _raw['prev_top3'] = _t3, _prev_top
+    json.dump(_raw, open('issues/%s.json' % issues[0]['date'], 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+latest['top3'], latest['prev_top3'] = _t3, _prev_top
+
 
 def won(s):
     m = re.fullmatch(r'\s*([\d,]+)\s*원\s*~?\s*', s or '')
@@ -78,6 +107,11 @@ open('index.html', 'w', encoding='utf-8').write(t)
 
 # ---- product pages ----
 os.makedirs('p', exist_ok=True)
+# 쿠팡 링크가 빠진 제품의 지난 페이지는 지움(검색에 구매 버튼 없는 페이지가 남지 않게)
+_live = {p['page'] for p in latest['picks']}
+for _f in glob.glob('p/*.html'):
+    if _f not in _live:
+        os.remove(_f)
 S = latest['sources']
 BR = json.load(open(T + '/brands.json', encoding='utf-8'))
 LBL = ['수요', '검증', '타이밍', '접근성', '마진']
@@ -131,6 +165,8 @@ def bslug(b):
 
 
 os.makedirs('b', exist_ok=True)
+for _f in glob.glob('b/*.html'):
+    os.remove(_f)
 _by = {}
 for p in latest['picks']:
     _by.setdefault(p['brand'], []).append(p)
