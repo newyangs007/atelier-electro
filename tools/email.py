@@ -115,17 +115,40 @@ news3 = pts[:5]  # 중요도(imp) 순 상위 5
 REGK = {"KR": "한국", "US": "미국", "JP": "일본", "CN": "중국", "EU": "유럽"}
 CAT = {"AI": "AI가전", "TV": "TV", "IT": "IT·모바일", "로봇": "로봇", "디바이스": "AI디바이스", "소형": "소형가전", "대형": "대형가전"}
 SRC = j["sources"]
+import re as _re
+from urllib.parse import urlparse as _up, quote as _q
+_EN_KR = ("koreaherald.com", "en.sedaily.com", "koreajoongangdaily.joins.com", "koreatimes.co.kr", "en.yna.co.kr")
+_KH = {_up(v.get('u','')).netloc.lower() for v in SRC.values() if v.get('r') == 'KR'}
+def is_for(S):
+    """해외(영어·중국어·일본어 등) 원문인지: .kr 도메인·한국어 경로는 국내, 그 밖에는 출처 지역(r)으로 판단."""
+    if not S or not S.get("u"): return False
+    u = _up(S["u"]); h = u.netloc.lower(); pa = u.path.lower()
+    if h.endswith(".kr") or _re.search(r"/ko(-kr)?(/|$)", pa): return False
+    if any(h == d or h.endswith("." + d) for d in _EN_KR): return True
+    if S.get("r") == "KR" or _re.search(r"/(kr|ko)(/|$)", pa): return False
+    if any(h == d or h.endswith("." + d) for d in ('fnnews.com', 'irobotnews.com', 'chosun.com', 'donga.com', 'sedaily.com', 'heraldcorp.com', 'newsis.com', 'inews24.com', 'bloter.net', 'betanews.net', 'g-enews.com', 'ajunews.com', 'newspim.com', 'segye.com', 'kukinews.com', 'newstomato.com', 'ceoscoredaily.com', 'ditoday.com', 'venturesquare.net', 'hankyung.com', 'etnews.com', 'danawa.com', 'coupang.com', 'ohou.se', 'wikidocs.net', 'heraldk.com', 'naver.com', 'daum.net', 'businesspost.co.kr', 'thelec.net', 'digitaltoday.co.kr')): return False
+    return h not in _KH
+def tr_url(u):
+    return "https://translate.google.com/translate?sl=auto&tl=ko&hl=ko&u=" + _q(u, safe="")
 def nlink(n):
     S = SRC.get(n["s"])
-    return S["u"] if S else SITE
+    if not S: return SITE
+    return tr_url(S["u"]) if is_for(S) else S["u"]
+def nlabel(n):
+    S = SRC.get(n["s"])
+    return "한국어 번역으로 보기" if is_for(S) else "원문 바로가기"
+_HLN = r"\d[\d,]*(?:\.\d+)?"
+_HLX = _re.compile(r"([+\u2212-]?" + _HLN + r"(?:\s?(?:조|억|만|천)(?:\s?" + _HLN + r")?)*\s?(?:%p|%|만|대|원|달러|위안|엔|명|배|개|GB|g))")
+def hl(t):
+    return _HLX.sub(lambda m: '<span style="background-color:#fff1a8;font-weight:700;color:#111111">' + m.group(1) + "</span>", e(t))
 def nmedia(n):
     S = SRC.get(n["s"])
     return (S["t"].split(",")[0][:30]) if S else "출처"
 news_rows = "".join(
     '<tr><td style="padding:14px 0;border-top:1px solid #e5e5e5"><div style="font-size:12px;font-weight:700;color:#b42318">%s · %s</div>'
     '<div style="font-size:16px;font-weight:700;color:#111111;margin-top:4px;line-height:1.45"><a href="%s" target="_blank" style="color:#111111;text-decoration:none">%s</a></div><div style="font-size:14px;color:#333333;line-height:1.6;margin-top:4px">%s</div>'
-    '<a href="%s" target="_blank" style="display:inline-block;margin-top:6px;font-size:13px;font-weight:700;color:#e0301e;text-decoration:none">%s 원문 바로가기 &rarr;</a></td></tr>'
-    % (e(CAT.get(n["c"], n["c"])), e(REGK.get(n["r"], n["r"])), e(nlink(n)), e(n["h"]), e(n["p"]), e(nlink(n)), e(nmedia(n))) for n in news3)
+    '<a href="%s" target="_blank" style="display:inline-block;margin-top:6px;font-size:13px;font-weight:700;color:#e0301e;text-decoration:none">%s %s &rarr;</a></td></tr>'
+    % (e(CAT.get(n["c"], n["c"])), e(REGK.get(n["r"], n["r"])), e(nlink(n)), e(n["h"]), hl(n["p"]), e(nlink(n)), e(nmedia(n)), nlabel(n)) for n in news3)
 
 # 더 많은 쿠팡 제휴 제품: 추천템과 겹치지 않게 카테고리마다 1개씩, 사진 있는 것만 최대 4개 (LG전자·삼성전자 먼저)
 def upper(p):
@@ -200,9 +223,9 @@ body = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="color-sc
 <tr><td style="padding:22px 24px 28px"><a href="{SITE}" style="display:block;text-align:center;padding:15px;border:2px solid #111111;border-radius:10px;background-color:#ffffff;color:#111111;text-decoration:none;font-size:15px;font-weight:800">가전 전문 매거진 가전레이더에서 전체 보기 &rarr;</a>
 <div style="font-size:13px;color:#555555;text-align:center;margin-top:8px">제품 리스트 · 오늘의 특가 30%↑ · 신제품 · 모든 출처</div></td></tr>
 <tr><td style="padding:0 24px 24px"><table role="presentation" cellpadding="0" cellspacing="0" width="100%"><tr><td bgcolor="#fff7cc" style="background-color:#fff7cc;border-radius:12px;padding:16px 18px;text-align:center">
-<div style="font-size:15px;font-weight:800;color:#111111">가전 일 하는 동료에게도 알려 주세요</div>
+<div style="font-size:15px;font-weight:800;color:#111111">가전은 가전 매거진, 가전레이더에서</div>
 <div style="font-size:13px;color:#444444;margin:4px 0 10px">이 메일을 전달하거나, 아래 버튼을 눌러 카카오톡·메일·문자로 추천해 주세요.</div>
-<a href="{SITE}recommend.html" style="display:inline-block;padding:10px 16px;border-radius:8px;background-color:#111111;color:#ffffff;text-decoration:none;font-size:14px;font-weight:700">동료에게 추천하기 &rarr;</a>
+<a href="{SITE}recommend.html" style="display:inline-block;padding:10px 16px;border-radius:8px;background-color:#111111;color:#ffffff;text-decoration:none;font-size:14px;font-weight:700">동료에게 알려주기 &rarr;</a>
 </td></tr></table></td></tr>
 <tr><td style="padding:18px 24px 26px;border-top:1px solid #e5e5e5;font-size:12px;line-height:1.75;color:#555555">
 가격은 수집 시점({e(ed.get("collected", ""))}) 공개 자료 기준이며 판매처마다 다를 수 있습니다. 모든 수치의 출처는 홈페이지 ‘출처’ 섹션에 있습니다.<br>

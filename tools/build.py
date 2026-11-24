@@ -434,6 +434,36 @@ def _all_issues():
     return out
 
 
+from urllib.parse import urlparse as _up, quote as _uq
+_KH = set()
+for _a in issues:
+    try:
+        for _v in json.load(open('issues/%s.json' % _a['date'], encoding='utf-8'))['sources'].values():
+            if _v.get('r') == 'KR':
+                _KH.add(_up(_v.get('u', '')).netloc.lower())
+    except Exception:
+        pass
+def _is_for(S):
+    """해외 원문(영어·중국어·일본어 등)인지 — .kr 도메인·한국어 경로는 국내."""
+    if not S or not S.get('u'):
+        return False
+    _x = _up(S['u']); _h = _x.netloc.lower(); _pa = _x.path.lower()
+    if _h.endswith('.kr') or re.search(r'/ko(-kr)?(/|$)', _pa):
+        return False
+    if any(_h == d or _h.endswith('.' + d) for d in ('koreaherald.com', 'en.sedaily.com', 'koreajoongangdaily.joins.com', 'koreatimes.co.kr', 'en.yna.co.kr')):
+        return True
+    if S.get('r') == 'KR' or re.search(r'/(kr|ko)(/|$)', _pa):
+        return False
+    if any(_h == d or _h.endswith('.' + d) for d in ('fnnews.com', 'irobotnews.com', 'chosun.com', 'donga.com', 'sedaily.com', 'heraldcorp.com', 'newsis.com', 'inews24.com', 'bloter.net', 'betanews.net', 'g-enews.com', 'ajunews.com', 'newspim.com', 'segye.com', 'kukinews.com', 'newstomato.com', 'ceoscoredaily.com', 'ditoday.com', 'venturesquare.net', 'hankyung.com', 'etnews.com', 'danawa.com', 'coupang.com', 'ohou.se', 'wikidocs.net', 'heraldk.com', 'naver.com', 'daum.net', 'businesspost.co.kr', 'thelec.net', 'digitaltoday.co.kr')):
+        return False
+    return _h not in _KH
+def _tr(u):
+    return 'https://translate.google.com/translate?sl=auto&tl=ko&hl=ko&u=' + _uq(u, safe='')
+_HLN = r'\d[\d,]*(?:\.\d+)?'
+_HLX = re.compile(r'([+\u2212-]?' + _HLN + r'(?:\s?(?:조|억|만|천)(?:\s?' + _HLN + r')?)*\s?(?:%p|%|만|대|원|달러|위안|엔|명|배|개|GB|g))')
+def _hl(t):
+    return _HLX.sub(r'<mark>\1</mark>', e(t))
+
 _NC = {'AI': 'AI가전', 'TV': 'TV', 'IT': 'IT·모바일', '로봇': '로봇', '디바이스': 'AI디바이스', '소형': '소형가전', '대형': '대형가전'}
 _RG = {'KR': '한국', 'US': '미국', 'JP': '일본', 'CN': '중국', 'EU': '유럽'}
 _LCSS = ('body{margin:0;font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:#111;background:#fafafa;word-break:keep-all;line-height:1.6}'
@@ -446,7 +476,7 @@ _LCSS = ('body{margin:0;font-family:-apple-system,"Apple SD Gothic Neo","Noto Sa
          'article{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:12px 14px;margin:8px 0}'
          '.m{font-size:12px;color:#666;display:flex;gap:8px;flex-wrap:wrap}.m b{color:#e0301e}'
          'h3{font-size:16px;margin:4px 0}h3 a{color:#111;text-decoration:none}h3 a:hover{text-decoration:underline}p{margin:2px 0 0;font-size:14px;color:#333}'
-         '.s{font-size:12.5px;color:#555}footer{padding:30px 0;color:#777;font-size:12px}')
+         '.s{font-size:12.5px;color:#555}.s a{color:#777}mark{background:linear-gradient(transparent 58%,#ffe27a 58%);color:inherit;font-weight:700}.trk{font-size:11px;font-weight:700;color:#0b6bcb;background:#e8f2fd;border-radius:4px;padding:1px 6px}footer{padding:30px 0;color:#777;font-size:12px}')
 
 
 def _list_page(fname, title, desc, h1, lead, groups, ld_items):
@@ -492,8 +522,8 @@ for _m in sorted(_g, reverse=True):
         _u = _S.get('u', '')
         _arts.append('<article><div class="m"><b>%s</b><span>%s</span><span>%s</span></div><h3>%s</h3><p>%s</p>%s</article>' % (
             e(_NC.get(_n['c'], _n['c'])), e(_RG.get(_n['r'], _n['r'])), e(_d),
-            ('<a href="%s" target="_blank" rel="noopener">%s ↗</a>' % (e(_u), e(_n['h']))) if _u else e(_n['h']), e(_n['p']),
-            ('<div class="s">출처: %s</div>' % e(_S.get('t', ''))) if _S else ''))
+            ('<a href="%s" target="_blank" rel="noopener">%s ↗</a>' % (e(_tr(_u) if _is_for(_S) else _u), e(_n['h']))) if _u else e(_n['h']), _hl(_n['p']),
+            ('<div class="s">출처: %s%s</div>' % (e(_S.get('t', '')), (' · <span class="trk">한국어 번역</span> <a href="%s" target="_blank" rel="noopener">원문 ↗</a>' % e(_u)) if _is_for(_S) else '')) if _S else ''))
         if _u:
             _ldi.append({'name': _n['h'], 'url': _u})
     _p = _m.split('.')
@@ -521,7 +551,7 @@ for _m in sorted(_g, reverse=True):
         _t = '%s %s' % (_l['b'], _l['p'])
         _arts.append('<article><div class="m"><b>%s</b><span>%s</span><span>%s</span>%s</div><h3>%s</h3></article>' % (
             e(_l.get('cat', '')), e(_RG.get(_l.get('m'), _l.get('m', ''))), e(_d), ('<span>%s</span>' % e(_l['pr'])) if _l.get('pr') and _l['pr'] != '—' else '',
-            ('<a href="%s" target="_blank" rel="noopener">%s ↗</a>' % (e(_u), e(_t))) if _u else e(_t)))
+            ('<a href="%s" target="_blank" rel="noopener">%s ↗</a>%s' % (e(_tr(_u) if _is_for(_S) else _u), e(_t), ' <span class="trk">한국어 번역</span>' if _is_for(_S) else '')) if _u else e(_t)))
         if _u:
             _ldi.append({'name': _t, 'url': _u})
     _p = _m.split('.')
