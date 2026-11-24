@@ -381,6 +381,37 @@ for d, j in FULL.items():
     open('en/issue/%s.md' % d, 'w', encoding='utf-8').write(ST.markdown(j, 'en'))
     pairs.append((ko_u, en_u))
 open('en/index.html', 'w', encoding='utf-8').write(ST.page(latest, 'en', '../', SITE + 'en/', SITE))
+
+# ---- 영문 홈페이지: 한국어 홈과 같은 템플릿·구조·UX (문구만 영어, 데이터는 issue.en 을 화면에서 적용) ----
+import importlib.util as _ilu
+_spec = _ilu.spec_from_file_location('i18n_en', T + '/i18n_en.py'); I18N = _ilu.module_from_spec(_spec); _spec.loader.exec_module(I18N)
+_te = open(T + '/template.html', encoding='utf-8').read()
+_te = re.sub(r'<script>/\* 기본은 한국어.*?</script>\n?', '', _te, count=1, flags=re.S)
+_te = I18N.translate(_te)
+_te = _te.replace('<html lang="ko">', '<html lang="en">', 1)
+_te = re.sub(r'<meta charset="utf-8">', '<meta charset="utf-8">\n<base href="../">', _te, count=1)
+_EN_T = 'Gajeon Radar (GAJEON RADAR) — daily appliance news, launches and MD picks'
+_EN_D = "Every morning at 7 a.m. KST: appliance news, today's numbers, new launches and MD picks across AI appliances, TV, IT, robots and small and large appliances — every figure sourced."
+_te = re.sub(r'<title>.*?</title>', '<title>%s</title>' % e(_EN_T), _te, count=1, flags=re.S)
+_te = re.sub(r'(<meta name="description" content=")[^"]*', r'\g<1>' + e(_EN_D).replace('\\', '\\\\'), _te, count=1)
+_te = re.sub(r'(<meta property="og:title" content=")[^"]*', r'\g<1>' + e(_EN_T), _te, count=1)
+_te = re.sub(r'(<meta property="og:description" content=")[^"]*', r'\g<1>' + e(_EN_D).replace('\\', '\\\\'), _te, count=1)
+_te = re.sub(r'(<meta property="og:locale" content=")[^"]*', r'\g<1>en_US', _te, count=1)
+_te = re.sub(r'(<link rel="canonical" href=")[^"]*', r'\g<1>' + SITE + 'en/', _te, count=1)
+_te = re.sub(r'(<meta property="og:url" content=")[^"]*', r'\g<1>' + SITE + 'en/', _te, count=1)
+_te = _te.replace('<a href="./" aria-current="true" hreflang="ko" lang="ko"', '<a href="./?lang=ko" hreflang="ko" lang="ko"', 1)
+_te = _te.replace('<a href="en/" hreflang="en"', '<a href="en/" aria-current="true" hreflang="en"', 1)
+_te = _te.replace('/*__BRANDS__*/', open(T + '/brands.json', encoding='utf-8').read())
+_te = _te.replace('/*__ICONS__*/', open(T + '/icons.txt', encoding='utf-8').read())
+_te = _te.replace('/*__ARCHIVE__*/', dump(issues)).replace('/*__ISSUE__*/', dump(latest))
+_anchor_fix = ("<script>window.AE_LANG='en';document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href^=\"#\"]');"
+               "if(!a)return;var id=a.getAttribute('href').slice(1),el=id&&document.getElementById(id);if(!el)return;ev.preventDefault();el.scrollIntoView({behavior:'smooth'});"
+               "try{history.replaceState(null,'',location.pathname+location.search+'#'+id);}catch(x){}},true);</script>")
+_te = _te.replace('<!--__VERIFY__-->', ADS + '\n' + _anchor_fix + '\n<script>window.AE_FORM=%s;window.AE_STATS=%s;window.AE_ADS=%s;</script>' % (dump(cfg.get('form')), dump(cfg.get('stats')), dump(cfg.get('ads'))))
+_te = _te.replace('<!--__JSONLD__-->', '<script type="application/ld+json">%s</script>' % json.dumps({'@context': 'https://schema.org', '@type': 'WebPage', 'name': _EN_T, 'url': SITE + 'en/', 'inLanguage': 'en', 'isPartOf': {'@id': SITE + '#website'}}, ensure_ascii=False))
+_te = _te.replace('<!--__FAQ__-->', ST.faq_html(ST.faq(latest, 'en')))
+open('en/index.html', 'w', encoding='utf-8').write(_te)
+
 full_sorted = [FULL[a['date']] for a in issues]
 open('rss.xml', 'w', encoding='utf-8').write(ST.rss(full_sorted, 'ko'))
 open('en/rss.xml', 'w', encoding='utf-8').write(ST.rss(full_sorted, 'en'))
@@ -520,6 +551,26 @@ for _f in _glob.glob('en/**/*.html', recursive=True):
     _n = _h.replace('href="%s" hreflang="ko"' % SITE, 'href="%s?lang=ko" hreflang="ko"' % SITE).replace('href="%s">한국어' % SITE, 'href="%s?lang=ko">한국어' % SITE)
     if _n != _h:
         open(_f, 'w', encoding='utf-8').write(_n)
+
+# ---- 모든 하위 페이지 맨 아래에도 '비즈니스 협업 환영' 줄 ----
+if BIZ_SNIP:
+    _en_biz = '<p class="bizln" style="margin:10px 0 0;font-size:13px">Business inquiries: %s</p>' % BIZ_SNIP
+    _ko_biz = '<p class="bizln" style="margin:10px 0 0;font-size:13px">비즈니스 협업 환영 : %s</p>' % BIZ_SNIP
+    for _f in _glob.glob('**/*.html', recursive=True):
+        if _f.startswith(('tools/', 'out/', 'mail/')) or _f in ('index.html', 'en/index.html', 'news.html', 'launches.html') or _f.startswith('google') or _f.startswith('naver'):
+            continue
+        _h = open(_f, encoding='utf-8').read()
+        if 'class="bizln"' in _h or '</footer>' not in _h:
+            continue
+        _i = _h.rfind('</footer>')
+        _j = _h.rfind('</div>', 0, _i)
+        _snip = _en_biz if _f.startswith('en/') else _ko_biz
+        # footer 안쪽 마지막 div가 footer 바로 앞이면 그 안에 넣는다
+        if _j != -1 and _h[_j:_i].strip() == '</div>' and _h.rfind('<footer', 0, _i) < _j:
+            _h = _h[:_j] + _snip + _h[_j:]
+        else:
+            _h = _h[:_i] + _snip + _h[_i:]
+        open(_f, 'w', encoding='utf-8').write(_h)
 
 # ---- Apps Script 발송용 메일 템플릿(mail/today.json, mail/welcome.json) ----
 import subprocess as _sp, sys as _sys
