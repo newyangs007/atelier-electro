@@ -389,6 +389,113 @@ for k, v in pairs:
 urls = urls + [u for pr in pairs for u in pr if u not in urls]
 
 
+# ---- 뉴스 전체(news.html)·신제품 전체(launches.html): 지난 호까지 날짜순, 검색 노출용 ----
+def _all_issues():
+    out = []
+    for a in issues:
+        try:
+            out.append(json.load(open('issues/%s.json' % a['date'], encoding='utf-8')))
+        except Exception:
+            pass
+    return out
+
+
+_NC = {'AI': 'AI가전', 'TV': 'TV', 'IT': 'IT·모바일', '로봇': '로봇', '디바이스': 'AI디바이스', '소형': '소형가전', '대형': '대형가전'}
+_RG = {'KR': '한국', 'US': '미국', 'JP': '일본', 'CN': '중국', 'EU': '유럽'}
+_LCSS = ('body{margin:0;font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:#111;background:#fafafa;word-break:keep-all;line-height:1.6}'
+         '.top{position:sticky;top:0;z-index:5;background:#000;color:#fff}.w{max-width:860px;margin:0 auto;padding:0 16px}'
+         '.top .w{display:flex;align-items:center;gap:12px;height:52px}.top a{color:#fff;text-decoration:none;font-size:14px}.logo{font-weight:900;font-size:20px!important;flex:1}'
+         '.jump{position:sticky;top:52px;z-index:4;background:#111}.jump .w{display:flex;gap:6px;overflow-x:auto;height:44px;align-items:center;scrollbar-width:none}'
+         '.jump a{color:#fff;text-decoration:none;border:1px solid #444;border-radius:999px;padding:5px 11px;font-size:13px;white-space:nowrap}'
+         'h1{font-size:26px;margin:22px 0 4px}.lead{color:#555;margin:0 0 14px;font-size:14px}'
+         'h2{font-size:17px;margin:24px 0 6px;padding-bottom:6px;border-bottom:2px solid #111;scroll-margin-top:104px}h2 small{color:#888;font-weight:500;font-size:13px;margin-left:6px}'
+         'article{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:12px 14px;margin:8px 0}'
+         '.m{font-size:12px;color:#666;display:flex;gap:8px;flex-wrap:wrap}.m b{color:#e0301e}'
+         'h3{font-size:16px;margin:4px 0}h3 a{color:#111;text-decoration:none}h3 a:hover{text-decoration:underline}p{margin:2px 0 0;font-size:14px;color:#333}'
+         '.s{font-size:12.5px;color:#555}footer{padding:30px 0;color:#777;font-size:12px}')
+
+
+def _list_page(fname, title, desc, h1, lead, groups, ld_items):
+    jump = ''.join('<a href="#%s">%s</a>' % (gid, glab) for gid, glab, _ in groups)
+    body = ''.join('<h2 id="%s">%s <small>%d건</small></h2>%s' % (gid, glab, len(arts), ''.join(arts)) for gid, glab, arts in groups)
+    ld = {'@context': 'https://schema.org', '@graph': [
+        {'@type': 'CollectionPage', 'name': title, 'url': SITE + fname, 'inLanguage': 'ko-KR', 'description': desc, 'isPartOf': {'@id': SITE + '#website'}},
+        {'@type': 'ItemList', 'numberOfItems': len(ld_items), 'itemListElement': [dict(x, **{'@type': 'ListItem', 'position': i + 1}) for i, x in enumerate(ld_items[:200])]},
+        {'@type': 'BreadcrumbList', 'itemListElement': [{'@type': 'ListItem', 'position': 1, 'name': '가전레이더', 'item': SITE}, {'@type': 'ListItem', 'position': 2, 'name': h1, 'item': SITE + fname}]}]}
+    html_ = ('<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+             '<title>%s</title><meta name="description" content="%s"><link rel="canonical" href="%s%s"><link rel="icon" href="favicon.svg">'
+             '<meta property="og:title" content="%s"><meta property="og:description" content="%s"><meta property="og:url" content="%s%s"><meta property="og:image" content="%sog.png">%s'
+             '<style>%s</style><script type="application/ld+json">%s</script></head><body>'
+             '<header class="top"><div class="w"><a class="logo" href="./">가전레이더</a><a href="news.html">뉴스</a><a href="launches.html">신제품</a><a href="archive.html">과월호</a><a href="./#subscribe">구독</a></div></header>'
+             '<nav class="jump" aria-label="날짜 바로가기"><div class="w">%s</div></nav>'
+             '<main class="w"><h1>%s</h1><p class="lead">%s</p>%s</main>'
+             '<footer class="w">가전레이더 GAJEON RADAR · 매일 아침 7시 발행<br>비즈니스 협업 환영 : <a href="mailto:newyangs007@gmail.com">newyangs007@gmail.com</a></footer></body></html>') % (
+        e(title), e(desc), SITE, fname, e(title), e(desc), SITE, fname, SITE, ADS, _LCSS, json.dumps(ld, ensure_ascii=False).replace('</', '<\\/'), jump, e(h1), e(lead), body)
+    open(fname, 'w', encoding='utf-8').write(html_)
+    urls.append(SITE + fname)
+
+
+_ALL = _all_issues()
+_seen, _news = set(), []
+for _j in _ALL:
+    for _n in _j.get('news', []):
+        _k = re.sub(r'\s+', '', _n['h'])
+        if _k in _seen:
+            continue
+        _seen.add(_k)
+        _S = _j['sources'].get(_n['s'], {})
+        _d = (_n.get('d') or _j['edition']['date'].replace('-', '.'))
+        _news.append((_d, _n, _S, _j['edition']['date']))
+_news.sort(key=lambda x: x[0], reverse=True)
+_g = {}
+for _d, _n, _S, _ed in _news:
+    _g.setdefault(_d[:7], []).append((_d, _n, _S))
+_groups, _ldi = [], []
+for _m in sorted(_g, reverse=True):
+    _arts = []
+    for _d, _n, _S in _g[_m]:
+        _u = _S.get('u', '')
+        _arts.append('<article><div class="m"><b>%s</b><span>%s</span><span>%s</span></div><h3>%s</h3><p>%s</p>%s</article>' % (
+            e(_NC.get(_n['c'], _n['c'])), e(_RG.get(_n['r'], _n['r'])), e(_d),
+            ('<a href="%s" target="_blank" rel="noopener">%s ↗</a>' % (e(_u), e(_n['h']))) if _u else e(_n['h']), e(_n['p']),
+            ('<div class="s">출처: %s</div>' % e(_S.get('t', ''))) if _S else ''))
+        if _u:
+            _ldi.append({'name': _n['h'], 'url': _u})
+    _p = _m.split('.')
+    _groups.append(('m' + _m.replace('.', '-'), '%s년 %d월' % (_p[0], int(_p[1])) if len(_p) > 1 and _p[1].isdigit() else _m, _arts))
+_list_page('news.html', '가전 뉴스 전체 보기 · 가전레이더 GAJEON RADAR', '가전레이더가 매일 정리한 AI가전·TV·IT·로봇·소형가전·대형가전 뉴스를 날짜순으로 모두 봅니다. 기사마다 원문 출처 링크.',
+           '가전 뉴스 전체', '지난 호까지 모든 뉴스 %d건 · 최신 날짜순 · 제목을 누르면 기사 원문으로 이동' % len(_news), _groups, _ldi)
+
+_seen, _ln = set(), []
+for _j in _ALL:
+    for _l in _j.get('launches', []):
+        _k = re.sub(r'\s+', '', _l['b'] + _l['p'])
+        if _k in _seen:
+            continue
+        _seen.add(_k)
+        _ln.append((_l.get('d', ''), _l, _j['sources'].get(_l.get('s'), {})))
+_ln.sort(key=lambda x: x[0], reverse=True)
+_g = {}
+for _d, _l, _S in _ln:
+    _g.setdefault(_d[:7], []).append((_d, _l, _S))
+_groups, _ldi = [], []
+for _m in sorted(_g, reverse=True):
+    _arts = []
+    for _d, _l, _S in _g[_m]:
+        _u = _S.get('u', '')
+        _t = '%s %s' % (_l['b'], _l['p'])
+        _arts.append('<article><div class="m"><b>%s</b><span>%s</span><span>%s</span>%s</div><h3>%s</h3></article>' % (
+            e(_l.get('cat', '')), e(_RG.get(_l.get('m'), _l.get('m', ''))), e(_d), ('<span>%s</span>' % e(_l['pr'])) if _l.get('pr') and _l['pr'] != '—' else '',
+            ('<a href="%s" target="_blank" rel="noopener">%s ↗</a>' % (e(_u), e(_t))) if _u else e(_t)))
+        if _u:
+            _ldi.append({'name': _t, 'url': _u})
+    _p = _m.split('.')
+    _groups.append(('m' + _m.replace('.', '-'), '%s년 %d월' % (_p[0], int(_p[1])) if len(_p) > 1 and _p[1].isdigit() else _m, _arts))
+_list_page('launches.html', '가전 신제품 출시 전체 · 가전레이더 GAJEON RADAR', '삼성·LG·다이슨·샤오미 등 주요 브랜드 가전·IT 신제품 출시와 발표를 월별로 모아 봅니다. 날짜·국가·가격과 출처 링크.',
+           '가전 신제품 출시 전체', '지난 호까지 신제품 %d건 · 월별 · 제목을 누르면 출처로 이동' % len(_ln), _groups, _ldi)
+
+
+
 def sm(u):
     x = '  <url><loc>%s</loc><lastmod>%s</lastmod>' % (u, today)
     if u in alt:

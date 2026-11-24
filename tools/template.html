@@ -432,6 +432,15 @@ footer a{text-decoration:none}
 .ln .t a{color:inherit;text-decoration:none}.ln .t a:hover{text-decoration:underline;text-underline-offset:3px}
 #launch-months{margin-bottom:6px}
 @media(prefers-reduced-motion:reduce){#plist .grid{animation:none}}
+.biz{margin-top:14px;padding-top:12px;border-top:1px solid #333;font-size:13px;color:#ddd}.biz a{color:#fff;font-weight:700;text-decoration:underline}
+.refer{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:4px 0 14px;font-size:13px}.refer span{flex-basis:100%;opacity:.85}
+.refer button{border:1px solid currentColor;background:transparent;color:inherit;border-radius:999px;padding:8px 14px;font-weight:700;cursor:pointer}.refer .ks{background:#fee500;color:#191919;border-color:#fee500}
+.substrip{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:26px 0 0;padding:16px 18px;border-radius:16px;background:#111;color:#fff}
+.substrip div{flex:1;min-width:200px}.substrip b{display:block;font-size:16px}.substrip span{font-size:13px;opacity:.75}
+.substrip a{background:var(--acc);color:#fff;text-decoration:none;font-weight:800;border-radius:10px;padding:11px 16px}.substrip button{background:transparent;color:#fff;border:1px solid #666;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer}
+.nscope{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 8px}.nscope button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 12px;font-size:13px;font-weight:700;cursor:pointer}
+.nscope button[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}.nscope a{margin-left:auto;font-size:13px;color:var(--acc);font-weight:700;text-decoration:none}
+.ndate{grid-column:1/-1;font-family:var(--num);font-weight:800;font-size:13px;color:var(--acc);padding:12px 0 2px}
 mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
 /* 사이트 전체 검색 */
 .sx{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.55);display:flex;justify-content:center;align-items:flex-start;opacity:0;pointer-events:none;transition:opacity .2s}
@@ -497,6 +506,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
 </div></section>
 <section class="sec" id="news"><div class="wrap">
   <div class="sh"><div><h2>오늘의 가전뉴스</h2><p>중요도 순 · 한국·미국·일본·중국·유럽 · 제목을 누르면 기사 원문(출처)으로 바로 갑니다</p></div></div>
+  <div class="nscope" role="tablist" aria-label="뉴스 범위"><button type="button" role="tab" data-ns="today" aria-selected="true">오늘 호 · 중요도순</button><button type="button" role="tab" data-ns="all" aria-selected="false">지난 뉴스까지 · 날짜순</button><a href="news.html">뉴스 전체 페이지 →</a></div>
   <div class="chip-row" id="news-cats" role="group" aria-label="뉴스 분야"></div>
   <div class="news" id="news-list"></div>
   <nav class="pager" id="news-pager" aria-label="뉴스 페이지"></nav>
@@ -514,6 +524,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   <div class="roll"><div class="rtrack" id="rtrack" tabindex="0"></div></div>
   <div class="rdots" id="rdots" role="tablist" aria-label="MD 픽 넘기기"></div>
 </div></section>
+<div class="wrap"><div class="substrip"><div><b>매일 아침 7시, 가전 뉴스·MD 픽을 무료로</b><span>3분이면 읽는 가전 전문 뉴스레터</span></div><a href="#subscribe">무료 구독하기</a><button type="button" id="refer-btn2">동료에게 보내기</button></div></div>
 <section class="sec" id="deals-sec" aria-label="오늘의 특가"><div class="wrap">
   <div class="sh"><div><h2>오늘의 특가 <span style="color:var(--acc)">30% 이상</span></h2><p id="deals-sub">인기 브랜드 제품 중 할인 폭이 큰 6개 · 쿠팡 표시 정가(또는 다나와 출시가) 대비 30% 이상 · 쿠팡 반품 최상 등급 포함</p></div></div>
   <div class="deals" id="deal-list"></div>
@@ -532,6 +543,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
 <section class="subw" id="subscribe"><div class="wrap">
   <h2>매일 아침 7시,<br>가전 뉴스와 MD 픽을 메일로</h2>
   <p class="lead">관심 분야에 맞춘 추천템과 핵심 뉴스를 3분 분량으로 보내 드려요. 공동구매·특가 소식은 원하는 분께만.</p>
+  <div class="refer"><span>가전 일 하는 동료에게도 알려 주세요</span><button type="button" id="refer-btn">동료에게 보내기</button><button type="button" class="ks" id="refer-ks">카톡 공유</button></div>
   <div class="stats" id="stats" hidden></div>
   <form id="sub-form" novalidate>
     <label for="sub-email" class="sr">이메일</label>
@@ -571,7 +583,8 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
 
 <footer><div class="wrap">
   <div><b>가전레이더 GAJEON RADAR</b> · 매일 아침 7시 가전 트렌드와 추천템</div>
-  <div class="links"><span id="foot-stats"></span><a href="privacy.html">개인정보처리방침</a><a href="archive.html">과월호</a><a href="brands.html">브랜드</a><a href="unsubscribe.html">구독 해지</a><a href="en/" hreflang="en">English</a><a href="rss.xml">RSS</a><a href="llms.txt">llms.txt</a></div>
+  <div class="links"><span id="foot-stats"></span><a href="news.html">뉴스 전체</a><a href="launches.html">신제품 전체</a><a href="privacy.html">개인정보처리방침</a><a href="archive.html">과월호</a><a href="brands.html">브랜드</a><a href="unsubscribe.html">구독 해지</a><a href="en/" hreflang="en">English</a><a href="rss.xml">RSS</a><a href="llms.txt">llms.txt</a></div>
+  <div class="biz">비즈니스 협업 환영 : <!--__BIZ__--></div>
 </div></footer>
 
 <button type="button" class="kfab" id="kfab" aria-label="카카오톡으로 오늘 호 공유"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1 3.6c-.1.3.3.6.6.4l4.2-2.8c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg><span>공유</span></button>
@@ -659,7 +672,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   function hl(t,T){var x=esc(t);T.forEach(function(k){var e=esc(k).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');if(e)x=x.replace(new RegExp('('+e+')','ig'),'<mark>$1</mark>');});return x;}
 
   var MOB=window.matchMedia&&matchMedia('(max-width:759px)').matches;
-  var D=null,grp='mobile',sub='',brand='',pq='',PER=4,shown=PER,ncat='all',npg=1,NPP=6,lmon='',lpg=1,LPP=8,CPLAY=true,CT=null;
+  var D=null,grp='mobile',sub='',brand='',pq='',PER=4,shown=PER,ncat='all',nscope='today',ALLN=null,ALLL=null,npg=1,NPP=6,lmon='',lpg=1,LPP=8,CPLAY=true,CT=null;
   function ranked(){return D.picks.slice().sort(function(a,b){return (overall(b.sc)-overall(a.sc))||(b.sc[0]-a.sc[0])||(b.sc[1]-a.sc[1]);});}
 
   function cpOnly(L){var seen={},out=[];var any=L.some(function(p){return p.cp;});L.forEach(function(p){var k=p.pc||norm(p.name);if((any&&!p.cp)||seen[k])return;seen[k]=1;out.push(p);});return out;}
@@ -734,27 +747,33 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
     m.hidden=L.length<=shown;m.textContent=UPN[grp]&&!T.length?UPN[grp]+' 전체 보기 ('+L.length+'개)':'전체 보기 ('+L.length+'개)';reveal(box);
   }
   function renderNewsCats(){
-    $('news-cats').innerHTML=NCAT.map(function(c){var n=c[0]==='all'?D.news.length:D.news.filter(function(x){return x.c===c[0];}).length;if(!n)return '';return '<button type="button" class="chip" data-c="'+c[0]+'" aria-pressed="'+(c[0]===ncat)+'">'+c[1]+'<b>'+n+'</b></button>';}).join('');
+    var SRC=newsSrc();$('news-cats').innerHTML=NCAT.map(function(c){var n=c[0]==='all'?SRC.length:SRC.filter(function(x){return x.n.c===c[0];}).length;if(!n)return '';return '<button type="button" class="chip" data-c="'+c[0]+'" aria-pressed="'+(c[0]===ncat)+'">'+c[1]+'<b>'+n+'</b></button>';}).join('');
   }
   function pager(id,cur,total,attr){var el=$(id);if(total<=1){el.innerHTML='';return;}
     var P=[],add=function(x){if(P.indexOf(x)<0)P.push(x);};add(1);for(var i=cur-2;i<=cur+2;i++)if(i>1&&i<total)add(i);add(total);
     var h='<button type="button" '+attr+'="'+(cur-1)+'" aria-label="이전 페이지"'+(cur<=1?' disabled':'')+'>‹</button>',prev=0;
     P.forEach(function(x){if(x-prev>1)h+='<span class="gap">…</span>';h+='<button type="button" '+attr+'="'+x+'"'+(x===cur?' aria-current="page"':'')+'>'+x+'</button>';prev=x;});
     el.innerHTML=h+'<button type="button" '+attr+'="'+(cur+1)+'" aria-label="다음 페이지"'+(cur>=total?' disabled':'')+'>›</button>';}
+  function buildAll(){var seenN={},seenL={};ALLN=[];ALLL=[];var J=[D].concat(Object.keys(cache).map(function(k){return cache[k];}).filter(function(x){return x!==D;}));
+    J.forEach(function(j){(j.news||[]).forEach(function(n){var k=norm(n.h);if(seenN[k])return;seenN[k]=1;ALLN.push({n:n,j:j,d:n.d||j.edition.date.replace(/-/g,'.')});});
+      (j.launches||[]).forEach(function(l){var k=norm(l.b+l.p);if(seenL[k])return;seenL[k]=1;ALLL.push({l:l,j:j});});});}
+  function newsSrc(){if(nscope==='all'&&ALLN)return ALLN;return D.news.map(function(n){return {n:n,j:D,d:n.d||''};});}
   function renderNews(){
-    var L=D.news.filter(function(n){return ncat==='all'||n.c===ncat;}).sort(function(a,b){return ((b.pt?1:0)-(a.pt?1:0))||((b.imp||0)-(a.imp||0));});
+    var L=newsSrc().filter(function(x){return ncat==='all'||x.n.c===ncat;});
+    if(nscope==='all')L.sort(function(a,b){return a.d<b.d?1:(a.d>b.d?-1:0);});else L.sort(function(a,b){return ((b.n.pt?1:0)-(a.n.pt?1:0))||((b.n.imp||0)-(a.n.imp||0));});
     var T=Math.max(1,Math.ceil(L.length/NPP));npg=Math.min(Math.max(1,npg),T);
-    $('news-list').innerHTML=L.slice((npg-1)*NPP,npg*NPP).map(function(n){var S=D.sources[n.s];return '<article class="nw"><div class="m">'+(n.pt?'<span class="pt">주요</span>':'')+'<span class="c">'+esc(NCN[n.c]||n.c)+'</span><span>'+esc(REG[n.r]||n.r)+'</span><span>'+esc(n.d||'')+'</span></div><h3>'+(S?'<a href="'+esc(S.u)+'" target="_blank" rel="noopener">'+esc(n.h)+'</a>':esc(n.h))+'</h3><p>'+esc(n.p)+'</p>'+(S?'<a class="s" href="'+esc(S.u)+'" target="_blank" rel="noopener">'+esc(media(S))+' ↗</a>':'')+'</article>';}).join('');
+    var lastD='';$('news-list').innerHTML=L.slice((npg-1)*NPP,npg*NPP).map(function(x){var n=x.n,S=x.j.sources[n.s];var hd='';if(nscope==='all'&&x.d.slice(0,10)!==lastD){lastD=x.d.slice(0,10);hd='<div class="ndate">'+esc(lastD)+'</div>';}return hd+'<article class="nw"><div class="m">'+(n.pt?'<span class="pt">주요</span>':'')+'<span class="c">'+esc(NCN[n.c]||n.c)+'</span><span>'+esc(REG[n.r]||n.r)+'</span><span>'+esc(n.d||'')+'</span></div><h3>'+(S?'<a href="'+esc(S.u)+'" target="_blank" rel="noopener">'+esc(n.h)+'</a>':esc(n.h))+'</h3><p>'+esc(n.p)+'</p>'+(S?'<a class="s" href="'+esc(S.u)+'" target="_blank" rel="noopener">'+esc(media(S))+' ↗</a>':'')+'</article>';}).join('');
     pager('news-pager',npg,T,'data-np');
   }
   function lmonOf(l){var m=String(l.d||'').match(/^(\d{4})\.(\d{2})/);return m?m[1]+'.'+m[2]:'기타';}
   function renderLaunches(){
-    var C={},O=[];D.launches.forEach(function(l){var k=lmonOf(l);if(!C[k]){C[k]=0;O.push(k);}C[k]++;});
+    var LS=ALLL?ALLL.map(function(x){return x.l;}):D.launches,SRCOF=function(l){for(var i=0;ALLL&&i<ALLL.length;i++)if(ALLL[i].l===l)return ALLL[i].j.sources;return D.sources;};
+    var C={},O=[];LS.forEach(function(l){var k=lmonOf(l);if(!C[k]){C[k]=0;O.push(k);}C[k]++;});
     O.sort(function(a,b){return a<b?1:-1;});if(!lmon||(lmon!=='all'&&!C[lmon]))lmon=O[0]||'all';
-    $('launch-months').innerHTML='<button type="button" class="chip" data-lm="all" aria-pressed="'+(lmon==='all')+'">전체<b>'+D.launches.length+'</b></button>'+O.map(function(k){var p=k.split('.');return '<button type="button" class="chip" data-lm="'+k+'" aria-pressed="'+(k===lmon)+'">'+(p[1]?(+p[0])+'년 '+(+p[1])+'월':k)+'<b>'+C[k]+'</b></button>';}).join('');
-    var L=D.launches.filter(function(l){return lmon==='all'||lmonOf(l)===lmon;}).sort(function(a,b){return String(a.d)<String(b.d)?1:-1;});
+    $('launch-months').innerHTML='<button type="button" class="chip" data-lm="all" aria-pressed="'+(lmon==='all')+'">전체<b>'+LS.length+'</b></button>'+O.map(function(k){var p=k.split('.');return '<button type="button" class="chip" data-lm="'+k+'" aria-pressed="'+(k===lmon)+'">'+(p[1]?(+p[0])+'년 '+(+p[1])+'월':k)+'<b>'+C[k]+'</b></button>';}).join('');
+    var L=LS.filter(function(l){return lmon==='all'||lmonOf(l)===lmon;}).sort(function(a,b){return String(a.d)<String(b.d)?1:-1;});
     var T=Math.max(1,Math.ceil(L.length/LPP));lpg=Math.min(Math.max(1,lpg),T);
-    $('launch-list').innerHTML=L.slice((lpg-1)*LPP,lpg*LPP).map(function(l){var S=l.s&&D.sources[l.s];var t=esc(l.b)+' '+esc(l.p);return '<div class="ln"><span class="d">'+esc(l.d)+'</span><span class="t">'+(S?'<a href="'+esc(S.u)+'" target="_blank" rel="noopener">'+t+' ↗</a>':t)+'</span><span class="x">'+esc(REG[l.m]||l.m)+' · '+esc(l.cat)+(l.pr&&l.pr!=='—'?' · '+esc(l.pr):'')+'</span></div>';}).join('');
+    $('launch-list').innerHTML=L.slice((lpg-1)*LPP,lpg*LPP).map(function(l){var SS=SRCOF(l),S=l.s&&SS[l.s];var t=esc(l.b)+' '+esc(l.p);return '<div class="ln"><span class="d">'+esc(l.d)+'</span><span class="t">'+(S?'<a href="'+esc(S.u)+'" target="_blank" rel="noopener">'+t+' ↗</a>':t)+'</span><span class="x">'+esc(REG[l.m]||l.m)+' · '+esc(l.cat)+(l.pr&&l.pr!=='—'?' · '+esc(l.pr):'')+'</span></div>';}).join('');
     pager('launch-pager',lpg,T,'data-lp');
   }
 
@@ -787,6 +806,8 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
     var gg=e.target.closest('[data-gg]');if(gg){pq='';pqi.value='';grp=gg.dataset.gg;sub='';brand='';shown=PER;renderCats();renderProducts();$('products').scrollIntoView({behavior:RM?'auto':'smooth'});return;}
     var sq=e.target.closest('[data-sxq]');if(sq){openSX(sq.dataset.sxq);return;}
     var n=e.target.closest('#news-cats .chip');if(n){ncat=n.dataset.c;npg=1;renderNewsCats();renderNews();return;}
+    var ns=e.target.closest('[data-ns]');if(ns){nscope=ns.dataset.ns;npg=1;[].forEach.call(document.querySelectorAll('[data-ns]'),function(b){b.setAttribute('aria-selected',b===ns?'true':'false');});
+      if(nscope==='all'&&!ALLN){$('news-list').innerHTML='<p class="pstat">지난 호 뉴스를 불러오는 중…</p>';loadAll().then(function(){buildAll();renderNewsCats();renderNews();renderLaunches();});}else{renderNewsCats();renderNews();}return;}
     var np=e.target.closest('[data-np]');if(np&&!np.disabled){npg=+np.dataset.np;renderNews();$('news').scrollIntoView({behavior:RM?'auto':'smooth'});return;}
     var lm=e.target.closest('[data-lm]');if(lm){lmon=lm.dataset.lm;lpg=1;renderLaunches();return;}
     var lp=e.target.closest('[data-lp]');if(lp&&!lp.disabled){lpg=+lp.dataset.lp;renderLaunches();$('launches').scrollIntoView({behavior:RM?'auto':'smooth'});return;}
@@ -935,6 +956,11 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
     if(navigator.clipboard)navigator.clipboard.writeText(t+'\n'+u).then(done,function(){prompt('링크를 복사해 카카오톡에 붙여 넣으세요',u);});else prompt('링크를 복사해 카카오톡에 붙여 넣으세요',u);}
   function shareIssue(btn){var u=location.origin+location.pathname+(CUR!==ORD[0]?'?issue='+CUR:'');shareIt('가전레이더 '+(D.edition.label||'')+' — '+String(D.cover.title).replace(/<[^>]+>/g,''),u,btn);}
   $('kshare').onclick=function(){shareIssue(this);};
+  function refer(btn){var u=location.origin+location.pathname,t='가전 업계 소식을 매일 아침 3분으로 정리해 주는 가전레이더예요. 무료 구독해 보세요.';
+    if(navigator.share&&MOB){navigator.share({title:'가전레이더 GAJEON RADAR',text:t,url:u+'#subscribe'}).catch(function(){});return;}
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&su='+encodeURIComponent('[추천] 매일 아침 가전 뉴스레터 가전레이더')+'&body='+encodeURIComponent(t+'\n\n오늘 호: '+u+'\n무료 구독: '+u+'#subscribe'),'_blank','noopener');}
+  $('refer-btn').onclick=function(){refer(this);};$('refer-btn2').onclick=function(){refer(this);};$('refer-ks').onclick=function(){shareIt('가전 업계 소식을 매일 아침 3분으로 — 가전레이더 무료 구독',location.origin+location.pathname+'#subscribe',this);};
+  setTimeout(function(){loadAll().then(function(){buildAll();renderLaunches();});},2500);
   $('kfab').onclick=function(){shareIssue(null);};
   render(LATEST);
   reveal(document.querySelector('main'));
