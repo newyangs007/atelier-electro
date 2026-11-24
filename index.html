@@ -29,7 +29,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5779293511896982"
      crossorigin="anonymous"></script>
 
-<script>window.AE_FORM=null;window.AE_STATS={"subscribers":2,"visitors":null,"asof":"2026.11.22"};window.AE_ADS={"client":"ca-pub-5779293511896982","slots":{"top":"","mid":""}};</script>
+<script>window.AE_FORM={"url":"https://docs.google.com/forms/d/e/1FAIpQLSdM9Byz8M07PU6Vhe1yyxi2Q2q2CuZMuyTipNsfR04s-vyrfQ/formResponse","f":{"type":"entry.39795775","email":"entry.1668430876","gender":"entry.417716409","age":"entry.995861062","rtype":"entry.51750022","interest":"entry.592355641","mkt":"entry.1052516069","target":"entry.1263319197","where":"entry.1900222117"}};window.AE_STATS={"subscribers":2,"visitors":null,"asof":"2026.11.22"};window.AE_ADS={"client":"ca-pub-5779293511896982","slots":{"top":"","mid":""}};</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Sans+KR:wght@800;900&display=swap" rel="stylesheet">
@@ -1089,7 +1089,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
       if(!ag.checked){say('[필수] 항목에 동의해 주세요.');ag.focus();return;}
       var F=AE_FORM;
       if(F){btn.disabled=true;var fd=new URLSearchParams();fd.append(F.f.type,'subscribe');fd.append(F.f.email,v);if(F.f.interest)fd.append(F.f.interest,interests().join(', '));if(F.f.gender)fd.append(F.f.gender,gender());if(F.f.age)fd.append(F.f.age,age());if(F.f.rtype)fd.append(F.f.rtype,rtype());if(F.f.mkt)fd.append(F.f.mkt,mkt());
-        fetch(F.url,{method:'POST',mode:'no-cors',body:fd}).then(function(){btn.disabled=false;reset();say('구독 신청이 완료됐어요. 1시간 안에 구독 완료 메일을 보내 드리고, 다음 날 아침 7시부터 발송합니다.');}).catch(function(){btn.disabled=false;mailFallback(v);});return;}
+        fetch(F.url,{method:'POST',mode:'no-cors',body:fd}).then(function(){btn.disabled=false;reset();say('구독 신청이 완료됐어요. 몇 분 안에 구독 완료 메일과 오늘 호를 보내 드리고, 내일부터 매일 아침 7시에 도착합니다.');}).catch(function(){btn.disabled=false;mailFallback(v);});return;}
       mailFallback(v);
     };
   })();

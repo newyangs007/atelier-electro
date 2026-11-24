@@ -1,5 +1,18 @@
 {
- "form": null,
+ "form": {
+  "url": "https://docs.google.com/forms/d/e/1FAIpQLSdM9Byz8M07PU6Vhe1yyxi2Q2q2CuZMuyTipNsfR04s-vyrfQ/formResponse",
+  "f": {
+   "type": "entry.39795775",
+   "email": "entry.1668430876",
+   "gender": "entry.417716409",
+   "age": "entry.995861062",
+   "rtype": "entry.51750022",
+   "interest": "entry.592355641",
+   "mkt": "entry.1052516069",
+   "target": "entry.1263319197",
+   "where": "entry.1900222117"
+  }
+ },
  "stats": {
   "subscribers": 2,
   "visitors": null,

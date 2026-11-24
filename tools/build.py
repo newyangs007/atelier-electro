@@ -429,7 +429,7 @@ def _list_page(fname, title, desc, h1, lead, groups, ld_items):
              '<header class="top"><div class="w"><a class="logo" href="./">가전레이더</a><a href="news.html">뉴스</a><a href="launches.html">신제품</a><a href="archive.html">과월호</a><a href="./#subscribe">구독</a></div></header>'
              '<nav class="jump" aria-label="날짜 바로가기"><div class="w">%s</div></nav>'
              '<main class="w"><h1>%s</h1><p class="lead">%s</p>%s</main>'
-             '<footer class="w">가전레이더 GAJEON RADAR · 매일 아침 7시 발행<br>비즈니스 협업 환영 : <a href="mailto:newyangs007@gmail.com">newyangs007@gmail.com</a></footer></body></html>') % (
+             '<footer class="w">가전레이더 GAJEON RADAR · 매일 아침 7시 발행<br>비즈니스 협업 환영 : <!--__BIZ__--></footer></body></html>') % (
         e(title), e(desc), SITE, fname, e(title), e(desc), SITE, fname, SITE, ADS, _LCSS, json.dumps(ld, ensure_ascii=False).replace('</', '<\\/'), jump, e(h1), e(lead), body)
     open(fname, 'w', encoding='utf-8').write(html_)
     urls.append(SITE + fname)
