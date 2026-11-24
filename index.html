@@ -346,6 +346,7 @@ footer a{text-decoration:none}
 .pq{display:flex;align-items:center;gap:8px;border:1.5px solid var(--ink);border-radius:12px;padding:0 10px;margin:0 0 10px;background:#fff;transition:box-shadow .2s}
 .pq:focus-within{box-shadow:0 0 0 4px rgba(224,48,30,.15);border-color:var(--acc)}
 .pq svg{width:18px;height:18px;flex:none;color:var(--ink2)}
+.pq input::-webkit-search-cancel-button,.sx-h input::-webkit-search-cancel-button{-webkit-appearance:none;display:none}
 .pq input{flex:1;min-width:0;border:0;outline:0;padding:11px 0;font-size:15px;background:transparent}
 .pq button{border:0;background:var(--soft);border-radius:50%;width:26px;height:26px;cursor:pointer;flex:none}
 .fl{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px 10px}
@@ -386,6 +387,11 @@ footer a{text-decoration:none}
 .hero .deck{animation-delay:.08s}.hsrc{animation-delay:.16s}
 @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 .empty{border:1px dashed var(--line);border-radius:12px;padding:18px;text-align:center;color:var(--ink2);font-size:14px}
+#plist .rel{margin-top:18px;border-top:2px solid var(--ink);padding-top:10px}
+#plist .rel h3{margin:0 0 4px;font-size:16px}#plist .rel h3 small{font-family:var(--num);color:var(--ink2);font-size:12px;margin-left:4px}
+.rl{display:block;text-decoration:none;padding:10px 0;border-bottom:1px solid var(--line);transition:background .2s}
+.rl .m{display:block;font-size:12px;color:var(--ink2)}.rl b{display:block;font-size:14.5px;line-height:1.45;margin:2px 0}.rl .go{font-size:12px;color:var(--acc);font-weight:600}
+@media(hover:hover){.rl:hover b{text-decoration:underline;text-underline-offset:3px}}
 mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
 /* 사이트 전체 검색 */
 .sx{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.55);display:flex;justify-content:center;align-items:flex-start;opacity:0;pointer-events:none;transition:opacity .2s}
@@ -460,10 +466,9 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
 
 <section class="sec" id="products"><div class="wrap">
   <div class="sh"><div><h2>제품 리스트</h2><p id="plist-sub">쿠팡 파트너스 제휴 제품만 · 카테고리별로 묶어 점수 높은 순</p></div></div>
-  <label class="pq"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="sr">제품 검색</span><input type="search" id="pq" placeholder="제품명·브랜드·종류로 찾기 (예: 음식물처리기, LG)" autocomplete="off" enterkeyhint="search"><button type="button" id="pq-x" aria-label="검색어 지우기" hidden>×</button></label>
+  <label class="pq"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="sr">제품 검색</span><input type="search" id="pq" placeholder="제품·브랜드·종류 검색 — 관련 뉴스도 함께 (예: TV, 로봇청소기)" autocomplete="off" enterkeyhint="search"><button type="button" id="pq-x" aria-label="검색어 지우기" hidden>×</button></label>
   <div class="cats" id="cats" role="group" aria-label="상위 카테고리"></div>
   <div class="fl" id="subs" role="group" aria-label="하위 카테고리" hidden></div>
-  <div class="fl br" id="brf" role="group" aria-label="브랜드"></div>
   <p class="pstat" id="pstat" role="status" aria-live="polite"></p>
   <div id="plist"><div class="grid"><article class="card"><a class="im" href="p/124871036.html"><img src="issues/img/124871036.jpg" alt="신일 에코 팬 큐브 히터 SEH-H800V" loading="lazy"></a><div class="who">신일전자 · 난방</div><h3><a href="p/124871036.html">신일 에코 팬 큐브 히터 SEH-H800V</a></h3><div class="row"><span class="price">128,880원</span><span class="badge">추천템</span></div></article><article class="card"><a class="im" href="p/108229562.html"><img src="issues/img/108229562.jpg" alt="플라우드 노트 프로 AI 녹음기" loading="lazy"></a><div class="who">플라우드 · AI디바이스</div><h3><a href="p/108229562.html">플라우드 노트 프로 AI 녹음기</a></h3><div class="row"><span class="price">298,000원</span><span class="badge">추천템</span></div></article><article class="card"><a class="im" href="p/124298665.html"><img src="issues/img/124298665.jpg" alt="조지루시 STAN 가습기 EE-FAH50K" loading="lazy"></a><div class="who">조지루시 · 가습</div><h3><a href="p/124298665.html">조지루시 STAN 가습기 EE-FAH50K</a></h3><div class="row"><span class="price">360,490원</span><span class="badge">추천템</span></div></article><article class="card"><a class="im" href="p/122724762.html"><img src="issues/img/122724762.jpg" alt="플라우드 노트핀 S AI 녹음기" loading="lazy"></a><div class="who">플라우드 · AI디바이스</div><h3><a href="p/122724762.html">플라우드 노트핀 S AI 녹음기</a></h3><div class="row"><span class="price">279,000원</span><span class="badge">추천템</span></div></article><article class="card"><a class="im" href="p/97406273.html"><img src="issues/img/97406273.jpg" alt="블라우풍트 에어이지 프로 BLP-HD7300" loading="lazy"></a><div class="who">블라우풍트 · 뷰티</div><h3><a href="p/97406273.html">블라우풍트 에어이지 프로 BLP-HD7300</a></h3><div class="row"><span class="price">67,860원</span><span class="badge">추천템</span></div></article><article class="card"><a class="im" href="p/124075398.html"><img src="issues/img/124075398.jpg" alt="모바 P70 Pro Ultra 로봇청소기" loading="lazy"></a><div class="who">모바 · 청소</div><h3><a href="p/124075398.html">모바 P70 Pro Ultra 로봇청소기</a></h3><div class="row"><span class="price">549,000원</span><span class="badge">조건부</span></div></article><article class="card"><a class="im" href="p/122666101.html"><img src="issues/img/122666101.jpg" alt="LG 디오스 AI 오브제컬렉션 냉장고 T876MEE1H1" loading="lazy"></a><div class="who">LG전자 · 대형가전</div><h3><a href="p/122666101.html">LG 디오스 AI 오브제컬렉션 냉장고 T876MEE1H1</a></h3><div class="row"><span class="price">2,137,490원</span><span class="badge">조건부</span></div></article><article class="card"><a class="im" href="p/124569231.html"><img src="issues/img/124569231.jpg" alt="메타 레이밴 웨이페어러 3세대 RW4011" loading="lazy"></a><div class="who">메타 · AI디바이스</div><h3><a href="p/124569231.html">메타 레이밴 웨이페어러 3세대 RW4011</a></h3><div class="row"><span class="price">740,000원</span><span class="badge">조건부</span></div></article><article class="card"><a class="im" href="p/72816731.html"><img src="issues/img/72816731.jpg" alt="아이닉 4세대 올스텐 에어프라이어 iSA6L" loading="lazy"></a><div class="who">아이닉 · 주방</div><h3><a href="p/72816731.html">아이닉 4세대 올스텐 에어프라이어 iSA6L</a></h3><div class="row"><span class="price">89,000원</span><span class="badge">조건부</span></div></article><article class="card"><a class="im" href="p/99125183.html"><img src="issues/img/99125183.jpg" alt="LG 디오스 AI 오브제컬렉션 김치톡톡 Z490MEEF11" loading="lazy"></a><div class="who">LG전자 · 대형가전</div><h3><a href="p/99125183.html">LG 디오스 AI 오브제컬렉션 김치톡톡 Z490MEEF11</a></h3><div class="row"><span class="price">2,067,110원</span><span class="badge">조건부</span></div></article><article class="card"><a class="im" href="p/124468606.html"><img src="issues/img/124468606.jpg" alt="로보락 S10 MaxV Ultra Steam 로봇청소기" loading="lazy"></a><div class="who">로보락 · 청소</div><h3><a href="p/124468606.html">로보락 S10 MaxV Ultra Steam 로봇청소기</a></h3><div class="row"><span class="price">1,639,990원</span><span class="badge">조건부</span></div></article><article class="card"><a class="im" href="p/shark-powerpro-flex-reveal-plus.html"><img src="issues/img/shark_iz382h.jpg" alt="Shark PowerPro Flex Reveal Plus 무선청소기" loading="lazy"></a><div class="who">Shark · 청소</div><h3><a href="p/shark-powerpro-flex-reveal-plus.html">Shark PowerPro Flex Reveal Plus 무선청소기</a></h3><div class="row"><span class="price">$379.99</span><span class="badge">관망</span></div></article><article class="card"><a class="im" href="p/124075114.html"><img src="issues/img/124075114.jpg" alt="삼성 비스포크 AI 스팀 울트라 VR90F01AAG" loading="lazy"></a><div class="who">삼성전자 · 청소</div><h3><a href="p/124075114.html">삼성 비스포크 AI 스팀 울트라 VR90F01AAG</a></h3><div class="row"><span class="price">1,493,460원</span><span class="badge">관망</span></div></article><article class="card"><a class="im" href="p/toffy-k-as2.html"><img src="issues/img/toffy_kas2.jpg" alt="Toffy 오토 스프 블렌더 세라믹 코트 K-AS2" loading="lazy"></a><div class="who">Toffy · 주방</div><h3><a href="p/toffy-k-as2.html">Toffy 오토 스프 블렌더 세라믹 코트 K-AS2</a></h3><div class="row"><span class="price">¥9,900</span><span class="badge">관망</span></div></article><article class="card"><a class="im" href="p/124921931.html"><img src="issues/img/124921931.jpg" alt="이븐리얼리티스 G2 AI 글래스 A타입" loading="lazy"></a><div class="who">이븐리얼리티스 · AI디바이스</div><h3><a href="p/124921931.html">이븐리얼리티스 G2 AI 글래스 A타입</a></h3><div class="row"><span class="price">1,099,000원</span><span class="badge">관망</span></div></article><article class="card"><a class="im" href="p/122616605.html"><img src="issues/img/122616605.jpg" alt="프리옴 9L 에어프라이어" loading="lazy"></a><div class="who">프리옴 · 주방</div><h3><a href="p/122616605.html">프리옴 9L 에어프라이어</a></h3><div class="row"><span class="price">63,080원</span><span class="badge">관망</span></div></article><article class="card"><a class="im" href="p/108365732.html"><img src="issues/img/108365732.jpg" alt="풀무원 스팀쿡 마스터 듀얼스팀 AV20F11" loading="lazy"></a><div class="who">풀무원건강생활 · 주방</div><h3><a href="p/108365732.html">풀무원 스팀쿡 마스터 듀얼스팀 AV20F11</a></h3><div class="row"><span class="price">325,710원</span><span class="badge">관망</span></div></article><article class="card"><a class="im" href="p/103877486.html"><img src="issues/img/103877486.jpg" alt="다이슨 스팟앤스크럽 AI 로봇청소기" loading="lazy"></a><div class="who">다이슨 · 청소</div><h3><a href="p/103877486.html">다이슨 스팟앤스크럽 AI 로봇청소기</a></h3><div class="row"><span class="price">908,990원</span><span class="badge">관망</span></div></article><article class="card"><a class="im" href="p/124182087.html"><img src="issues/img/124182087.jpg" alt="닌자 크리스피 FN100KR" loading="lazy"></a><div class="who">샤크닌자 · 주방</div><h3><a href="p/124182087.html">닌자 크리스피 FN100KR</a></h3><div class="row"><span class="price">197,100원</span><span class="badge">관망</span></div></article><article class="card"><a class="im" href="p/122694803.html"><img src="issues/img/122694803.jpg" alt="미닉스 더 플렌더 mini MNFD-300G" loading="lazy"></a><div class="who">미닉스 · 주방</div><h3><a href="p/122694803.html">미닉스 더 플렌더 mini MNFD-300G</a></h3><div class="row"><span class="price">255,710원</span><span class="badge">관망</span></div></article><article class="card"><a class="im" href="p/123134941.html"><img src="issues/img/123134941.jpg" alt="앤커 사운드코어 워크 AI 녹음기 D3200" loading="lazy"></a><div class="who">앤커 · AI디바이스</div><h3><a href="p/123134941.html">앤커 사운드코어 워크 AI 녹음기 D3200</a></h3><div class="row"><span class="price">168,900원</span><span class="badge">관망</span></div></article><article class="card"><a class="im" href="p/108693731.html"><img src="issues/img/108693731.jpg" alt="삼성 비스포크 AI 콤보 세탁건조기 WD80H25BHW" loading="lazy"></a><div class="who">삼성전자 · 대형가전</div><h3><a href="p/108693731.html">삼성 비스포크 AI 콤보 세탁건조기 WD80H25BHW</a></h3><div class="row"><span class="price">2,610,710원</span><span class="badge">관망</span></div></article></div></div>
   <button type="button" class="more" id="plist-more" hidden>더 보기</button>
@@ -794,9 +799,16 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   var PIN=['LG전자','삼성전자'];
   function brandCls(b){return b==='LG전자'?' lg':(b==='삼성전자'?' ss':'');}
   function norm(x){return String(x==null?'':x).toLowerCase().replace(/\s+/g,'');}
-  function hay(p){return norm([p.name,p.brand,p.cat,subOf(p),UPN[upOf(p)],p.why,p.ch,p.usp,p.target,p.brand==='LG전자'?'엘지 lg':'',p.brand==='삼성전자'?'삼성 samsung':''].join(' '));}
+  function hay(p){return norm([p.name,p.brand,p.cat,subOf(p),UPN[upOf(p)],p.ch,p.brand==='LG전자'?'엘지 lg':'',p.brand==='삼성전자'?'삼성 samsung':''].join(' '));}
   function toks(q){return String(q||'').toLowerCase().split(/\s+/).filter(Boolean);}
-  function hit(h,T){for(var i=0;i<T.length;i++)if(h.indexOf(norm(T[i]))<0)return false;return true;}
+  var SYNG=[['tv','티비','티브이','텔레비전','텔레비젼'],['로봇청소기','로청','로봇 청소기'],['음식물처리기','음처기','음식물 처리기'],['lg','엘지','lg전자'],['삼성','samsung','삼성전자'],['에어프라이어','에프'],['노트북','랩톱','laptop'],['스마트폰','휴대폰','핸드폰','갤럭시','아이폰'],['이어폰','이어버드','버즈','에어팟'],['밥솥','전기밥솥'],['뷰티디바이스','미용기기','뷰티기기','홈케어'],['올레드','oled'],['드라이어','드라이기'],['ai','인공지능']];
+  var SYN={};SYNG.forEach(function(g){var n=g.map(norm);n.forEach(function(k){SYN[k]=n;});});
+  function hit(h,T){for(var i=0;i<T.length;i++){var k=norm(T[i]),A=SYN[k]||[k],ok=false;for(var a=0;a<A.length;a++)if(h.indexOf(A[a])>=0){ok=true;break;}if(!ok)return false;}return true;}
+  function newsHay(n){return norm(n.h+' '+n.p+' '+(NCN[n.c]||n.c)+' '+n.c);}
+  function relNews(T,max){var out=[],seen={};var issues=[D].concat(Object.keys(cache).map(function(k){return cache[k];}).filter(function(j){return j!==D;}).sort(function(a,b){return a.edition.date<b.edition.date?1:-1;}));
+    issues.forEach(function(j,ji){(j.news||[]).forEach(function(n){var k=norm(n.h);if(seen[k])return;if(hit(newsHay(n),T)){seen[k]=1;out.push({n:n,j:j,o:ji});}});});
+    out.sort(function(a,b){return (a.o-b.o)||((b.n.pt?1:0)-(a.n.pt?1:0))||((b.n.imp||0)-(a.n.imp||0));});return out.slice(0,max||5);}
+  function relHtml(T,R){if(!R.length)return '';return '<div class="rel"><h3>관련 뉴스 <small>'+R.length+'</small></h3>'+R.map(function(x){var S=x.j.sources[x.n.s];return '<a class="rl" href="'+esc(S?S.u:'#')+'" target="_blank" rel="noopener"><span class="m">'+esc(NCN[x.n.c]||x.n.c)+' · '+esc(x.n.d||x.j.edition.date)+(S?' · '+esc(media(S)):'')+'</span><b>'+hl(x.n.h,T)+'</b><span class="go">원문 ↗</span></a>';}).join('')+'</div>';}
   function hl(t,T){var x=esc(t);T.forEach(function(k){var e=esc(k).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');if(e)x=x.replace(new RegExp('('+e+')','ig'),'<mark>$1</mark>');});return x;}
 
   var MOB=window.matchMedia&&matchMedia('(max-width:759px)').matches;
@@ -834,7 +846,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   }
   function scope(useBrand){var T=toks(pq);return ranked().filter(function(p){
       if(grp==='deal'){if(!isDeal(p))return false;}else if(grp!=='all'&&upOf(p)!==grp)return false;
-      if(sub&&subOf(p)!==sub)return false;if(useBrand&&brand&&p.brand!==brand)return false;
+      if(sub&&subOf(p)!==sub)return false;
       return !T.length||hit(hay(p),T);});}
   function chips(L,cur,attr,cls){return L.map(function(x){return '<button type="button" class="chip'+(cls?cls(x[0]):'')+'" '+attr+'="'+esc(x[0])+'" aria-pressed="'+(x[0]===cur)+'">'+esc(x[1])+'<b>'+x[2]+'</b></button>';}).join('');}
   function renderCats(){
@@ -844,15 +856,10 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
     /* 하위 카테고리 */
     var sb=$('subs');if(grp!=='all'&&grp!=='deal'){var C={},O=[];P.forEach(function(p){if(upOf(p)!==grp)return;var k=subOf(p);if(!C[k]){C[k]=0;O.push(k);}C[k]++;});
       sb.hidden=O.length<2;sb.innerHTML='<span class="lb">종류</span>'+chips([['','전체',O.reduce(function(a,k){return a+C[k];},0)]].concat(O.map(function(k){return [k,k,C[k]];})),sub,'data-s');}else{sb.hidden=true;sb.innerHTML='';}
-    /* 브랜드: LG전자·삼성전자 먼저 */
-    var B={},S=scope(false);S.forEach(function(p){B[p.brand]=(B[p.brand]||0)+1;});
-    var bl=Object.keys(B).sort(function(a,b){var ia=PIN.indexOf(a),ib=PIN.indexOf(b);ia=ia<0?9:ia;ib=ib<0?9:ib;return (ia-ib)||(B[b]-B[a])||a.localeCompare(b,'ko');});
-    if(brand&&!B[brand])brand='';
-    $('brf').hidden=bl.length<2&&!brand;$('brf').innerHTML='<span class="lb">브랜드</span>'+chips([['','전체',S.length]].concat(bl.map(function(k){return [k,k,B[k]];})),brand,'data-b',brandCls);
   }
   function renderProducts(){
     var T=toks(pq),box=$('plist'),m=$('plist-more'),st=$('pstat');$('pq-x').hidden=!pq;
-    if(grp==='all'&&!sub&&!brand&&!T.length){
+    if(grp==='all'&&!sub&&!T.length){
       var top={};top3List(D).forEach(function(p){top[p.id]=1;});
       var rest=ranked().filter(function(p){return !top[p.id];});
       var G=UP.concat([['etc','기타']]).map(function(u){return {id:u[0],n:u[1],L:rest.filter(function(p){return upOf(p)===u[0];})};}).filter(function(g){return g.L.length;});
@@ -861,9 +868,10 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
       st.textContent='쿠팡 파트너스 제휴 제품 '+D.picks.length+'개 · 위 추천템 3개는 빼고 카테고리별로 묶었어요';
       m.hidden=true;reveal(box);return;}
     var L=scope(true);
-    st.innerHTML=(T.length?'‘'+esc(pq)+'’ 검색 결과 ':'')+'<b>'+L.length+'</b>개 · '+esc(grp==='all'?'전체':(grp==='deal'?'특가':UPN[grp]))+(sub?' › '+esc(sub):'')+(brand?' › '+esc(brand):'')+' · 점수 높은 순';
-    if(!L.length){box.innerHTML='<div class="empty">조건에 맞는 쿠팡 제휴 제품이 없어요.<br><button type="button" class="more" data-sxq="'+esc(pq)+'" style="max-width:320px;margin:12px auto 0">뉴스·신제품까지 전체 검색</button></div>';m.hidden=true;return;}
-    box.innerHTML='<div class="grid">'+L.slice(0,shown).map(function(p){return card(p,T);}).join('')+'</div>';
+    st.innerHTML=(T.length?'‘'+esc(pq)+'’ 검색 결과 ':'')+'<b>'+L.length+'</b>개 · '+esc(grp==='all'?'전체':(grp==='deal'?'특가':UPN[grp]))+(sub?' › '+esc(sub):'')+' · 점수 높은 순';
+    var RN=T.length?relNews(T,5):[];if(T.length&&!SXALL)loadAll().then(function(){if(pq)renderProducts();});
+    if(!L.length){box.innerHTML='<div class="empty">‘'+esc(pq||UPN[grp]||'')+'’에 맞는 쿠팡 제휴 제품은 아직 없어요.'+(RN.length?' 관련 뉴스를 먼저 보여 드려요.':'')+'</div>'+relHtml(T,RN);m.hidden=true;return;}
+    box.innerHTML='<div class="grid">'+L.slice(0,shown).map(function(p){return card(p,T);}).join('')+'</div>'+relHtml(T,RN);
     m.hidden=L.length<=shown;m.textContent='더 보기 ('+(L.length-shown)+'개 남음)';reveal(box);
   }
   function renderNewsCats(){
@@ -906,7 +914,6 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   document.addEventListener('click',function(e){
     var c=e.target.closest('#cats .chip');if(c){grp=c.dataset.g;sub='';shown=PER;renderCats();renderProducts();return;}
     var sc=e.target.closest('#subs .chip');if(sc){sub=sc.dataset.s;shown=PER;renderCats();renderProducts();return;}
-    var bc=e.target.closest('#brf .chip');if(bc){brand=bc.dataset.b;shown=PER;renderCats();renderProducts();return;}
     var gg=e.target.closest('[data-gg]');if(gg){grp=gg.dataset.gg;sub='';brand='';shown=PER;renderCats();renderProducts();$('products').scrollIntoView({behavior:RM?'auto':'smooth'});return;}
     var sq=e.target.closest('[data-sxq]');if(sq){openSX(sq.dataset.sxq);return;}
     var n=e.target.closest('#news-cats .chip');if(n){ncat=n.dataset.c;nshown=3;renderNewsCats();renderNews();return;}
@@ -1016,7 +1023,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
     var P=D.picks.filter(function(p){return hit(hay(p),T);}).slice(0,8);
     var NW=[],LN=[],IS=[],seenN={},seenL={};
     var issues=[D].concat(Object.keys(cache).map(function(k){return cache[k];}).filter(function(j){return j!==D;}).sort(function(a,b){return a.edition.date<b.edition.date?1:-1;}));
-    issues.forEach(function(j){(j.news||[]).forEach(function(n){var k=norm(n.h);if(seenN[k])return;if(hit(norm(n.h+' '+n.p+' '+(NCN[n.c]||n.c)),T)){seenN[k]=1;NW.push({n:n,j:j});}});
+    issues.forEach(function(j){(j.news||[]).forEach(function(n){var k=norm(n.h);if(seenN[k])return;if(hit(newsHay(n),T)){seenN[k]=1;NW.push({n:n,j:j});}});
       (j.launches||[]).forEach(function(l){var k=norm(l.b+l.p);if(seenL[k])return;if(hit(norm([l.b,l.p,l.cat,l.pr].join(' ')),T)){seenL[k]=1;LN.push({l:l,j:j});}});
       var a=ARCH.filter(function(x){return x.date===j.edition.date;})[0];if(a&&hit(norm(a.title+' '+j.cover.deck),T))IS.push(a);});
     var BRN=Object.keys(BR).filter(function(b){return hit(norm(b+' '+(BR[b].c||'')+(b==='LG전자'?' 엘지 lg':'')+(b==='삼성전자'?' 삼성 samsung':'')),T);}).sort(function(a,b){return PIN.indexOf(b)-PIN.indexOf(a);}).slice(0,6);
@@ -1035,7 +1042,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   $('sx').addEventListener('click',function(e){if(e.target.id==='sx'){closeSX();return;}
     var t=e.target.closest('[data-sxt]');if(t){$('sx-q').value=t.dataset.sxt;sxRun();return;}
     var p=e.target.closest('[data-sxp]');if(p){var x=D.picks.filter(function(y){return y.id===p.dataset.sxp;})[0];closeSX();if(x)openQV(x);return;}
-    var b=e.target.closest('[data-sxb]');if(b){closeSX();grp='all';sub='';brand=b.dataset.sxb;pq='';pqi.value='';shown=PER;renderCats();renderProducts();$('products').scrollIntoView({behavior:RM?'auto':'smooth'});return;}
+    var b=e.target.closest('[data-sxb]');if(b){closeSX();grp='all';sub='';brand='';pq=b.dataset.sxb;pqi.value=pq;shown=PER;renderCats();renderProducts();$('products').scrollIntoView({behavior:RM?'auto':'smooth'});return;}
     var d=e.target.closest('[data-sxd]');if(d){closeSX();openIssue(d.dataset.sxd);}});
   $('sx-q').addEventListener('input',function(){clearTimeout(sxT);sxT=setTimeout(sxRun,120);});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSX();
