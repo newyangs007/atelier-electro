@@ -401,3 +401,7 @@ open('sitemap.xml', 'w', encoding='utf-8').write(
     ''.join(sm(u) for u in urls) + '</urlset>\n')
 open('robots.txt', 'w', encoding='utf-8').write('User-agent: *\nAllow: /\nSitemap: %ssitemap.xml\n' % SITE)
 print(issues[:1], len(latest['picks']), 'product pages', len(urls), 'urls')
+
+# ---- Apps Script 발송용 메일 템플릿(mail/today.json, mail/welcome.json) ----
+import subprocess as _sp, sys as _sys
+_sp.run([_sys.executable, 'tools/mailjson.py', 'issues/%s.json' % issues[0]['date']], check=True)
