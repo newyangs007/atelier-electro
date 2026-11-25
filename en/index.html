@@ -220,6 +220,12 @@ section.sec{padding:36px 0 8px}
 .nw a.s{font-size:12px;color:var(--ink2);text-decoration:none}
 .nw a.s:hover{text-decoration:underline}
 .nsl{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}.nw a.s2{color:#888}
+.rchips{margin-bottom:8px}.rchips .lb,.chip-row .lb{font-size:12px;font-weight:700;color:var(--ink2);margin-right:2px;align-self:center;flex:none}
+.rg{display:inline-block;font-size:11px;font-weight:700;line-height:1.5;padding:1px 6px;border-radius:4px;margin-right:4px;background:#eef0f3;color:#333}
+.rg-KR{background:#e8f2fd;color:#0b57a8}.rg-US{background:#fdecec;color:#b3261e}.rg-JP{background:#fff1e6;color:#b4570b}.rg-CN{background:#fdeeee;color:#a3121e}.rg-EU{background:#eaf0ff;color:#2a45a8}.rg-ETC{background:#eef0f3;color:#555}
+.fig{position:relative}.rgf{position:absolute;top:10px;right:10px;margin:0}.rgs{display:inline-flex;gap:0;margin-left:6px;vertical-align:1px}
+.fig-empty{flex:1;margin:0;padding:18px;background:var(--soft);border-radius:12px;color:var(--ink2);font-size:14px}
+.chip.rgc[aria-pressed=true]{background:#111;color:#fff}
 .trk{display:inline-block;font-size:11px;font-weight:700;color:#0b6bcb;background:#e8f2fd;border-radius:4px;padding:1px 6px;line-height:1.5}
 .ln .trk{margin-left:6px;vertical-align:1px}
 mark.hl{background:linear-gradient(transparent 58%,#ffe27a 58%);color:inherit;font-weight:700;padding:0 1px}
@@ -525,12 +531,14 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
 
 <section class="sec" id="trends"><div class="wrap">
   <div class="sh"><div><h2>Today in numbers</h2><p>Key figures from today's issue and this week's trends · every figure sourced · swipe or use the arrows</p></div><div class="shc"><button type="button" class="rbtn" id="f-prev" aria-label="Previous figure">‹</button><button type="button" class="rbtn" id="f-next" aria-label="Next figure">›</button></div></div>
+  <div class="chip-row rchips" id="fig-regs" role="group" aria-label="나라별 보기"></div>
   <div class="figs" id="figs" tabindex="0" aria-roledescription="carousel" aria-label="Today in numbers"></div>
   <div class="trends" id="trend-list"></div>
 </div></section>
 <section class="sec" id="news"><div class="wrap">
   <div class="sh"><div><h2>Today's appliance news</h2><p>By importance · Korea, US, Japan, China, Europe · click a headline to open the original article · key figures highlighted</p></div></div>
   <div class="nscope" role="tablist" aria-label="News range"><button type="button" role="tab" data-ns="today" aria-selected="true">Today's issue · by importance</button><button type="button" role="tab" data-ns="all" aria-selected="false">Including past news · by date</button><a href="news.html">All news page →</a></div>
+  <div class="chip-row rchips" id="news-regs" role="group" aria-label="나라별 보기"></div>
   <div class="chip-row" id="news-cats" role="group" aria-label="News topics"></div>
   <div class="news" id="news-list"></div>
   <nav class="pager" id="news-pager" aria-label="News pages"></nav>
@@ -976,18 +984,13 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
     fitTitle();
     $('hero-src').innerHTML=HS.map(function(k){var S=j.sources[k];return S?'<a href="'+esc(sU(S))+'" target="_blank" rel="noopener"><b>'+SRCW+'</b>'+esc(media(S))+' ↗</a>':'';}).join('');
     $('hero-deck').textContent=j.cover.deck;
-    $('figs').innerHTML=j.cover.figs.map(function(f){var s=(f.s||[])[0],S=j.sources[s];return '<div class="fig"><div class="v">'+esc(f.v)+'<small>'+esc(f.u)+'</small></div><div class="l">'+esc(f.l)+'</div>'+(S?'<a href="'+esc(sU(S))+'" target="_blank" rel="noopener">'+esc(media(S))+' ↗</a>':'')+'</div>';}).join('');
+    freg='all';renderFigs();
     renderRoll(j);
     pickDeals(j);var DL=j.picks.filter(isDeal).sort(function(a,b){return b.dc-a.dc;});
     $('deals-sec').hidden=!DL.length;var dt=document.querySelector('#toc a[href="#deals-sec"]');if(dt)dt.hidden=!DL.length;
     $('deal-list').innerHTML=DL.map(function(p){return '<article class="dl"><span class="off">−'+esc(p.dc)+'%</span><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="who">'+esc(p.brand)+'</div><div class="n">'+esc(p.name)+'</div><div class="was">'+esc(p.was||'')+'</div><div class="p">'+esc(p.price)+'</div><div class="bs">'+esc(p.dcb||'')+'</div><div class="acts">'+cta(p)+'</div></article>';}).join('');
     renderCats();renderProducts();catSync();
     renderNewsCats();renderNews();
-    $('trend-list').innerHTML=j.trends.map(function(t){var S=(t.s||[]).filter(function(k){return j.sources[k];});
-      var rel=j.news.filter(function(n){return S.indexOf(n.s)>=0;}).slice(0,2);
-      return '<article class="tr"><div class="st">'+esc(t.stat)+'</div><div class="sl">'+esc(t.sl)+'</div><h3>'+esc(t.t)+'</h3><p>'+hlN(t.line)+'</p>'
-        +(rel.length?'<div class="trn">'+rel.map(function(n){return '<a href="'+esc(sU(j.sources[n.s]))+'" target="_blank" rel="noopener">Related · '+esc(n.h)+' ↗</a>';}).join('')+'</div>':'')
-        +(S.length?'<div class="trs"><b>'+SRCW+'</b>'+S.map(function(k){return '<a href="'+esc(sU(j.sources[k]))+'" target="_blank" rel="noopener">'+esc(media(j.sources[k]))+' ↗</a>';}).join('')+'</div>':'')+'</article>';}).join('');
     renderLaunches();
     var keys=Object.keys(j.sources);
     $('src-sum').textContent='All sources ('+keys.length+'건)';
@@ -1018,8 +1021,30 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
     box.innerHTML='<div class="grid'+(shown<=PER&&!T.length?' row4':'')+'">'+L.slice(0,shown).map(function(p){return card(p,T);}).join('')+'</div>'+relHtml(T,RN);
     m.hidden=L.length<=shown;m.textContent=UPN[grp]&&!T.length?UPN[grp]+' See all ('+L.length+'개)':'See all ('+L.length+'개)';reveal(box);
   }
+  var freg='all',nreg='all',RGO=['KR','US','JP','CN','EU','ETC'],RGN={KR:'Korea',US:'US',JP:'Japan',CN:'China',EU:'Europe',ETC:'Other'};
+  if(LANG==='en')RGN={KR:'Korea',US:'US',JP:'Japan',CN:'China',EU:'Europe',ETC:'Other'};
+  function rg(r){r=String(r||'').toUpperCase();if(RGN[r]&&r!=='ETC')return r;return /^(DE|IT|GB|UK|FR|CH|ES|NL|PL|SE|AT|BE|DK|FI|NO|IE|PT|CZ|HU)$/.test(r)?'EU':(r?'ETC':'KR');}
+  function regsOf(j,ids){var o=[];(ids||[]).forEach(function(k){var S=j.sources[k];if(S){var g=rg(S.r);if(o.indexOf(g)<0)o.push(g);}});return o;}
+  function regTags(L){return L.length?'<span class="rgs">'+L.map(function(g){return '<span class="rg rg-'+g+'">'+RGN[g]+'</span>';}).join('')+'</span>':'';}
+  function regChips(id,cnt,cur,attr){var tot=cnt.all||0;$(id).innerHTML='<span class="lb">'+(LANG==='en'?'Country':'나라')+'</span>'+[['all',LANG==='en'?'All':'All']].concat(RGO.filter(function(g){return cnt[g];}).map(function(g){return [g,RGN[g]];})).map(function(c){return '<button type="button" class="chip'+(c[0]!=='all'?' rgc rgc-'+c[0]:'')+'" '+attr+'="'+c[0]+'" aria-pressed="'+(c[0]===cur)+'">'+c[1]+'<b>'+(cnt[c[0]]||0)+'</b></button>';}).join('');}
+  function renderFigs(){var j=D;if(!j)return;var F=j.cover.figs||[],cnt={all:0};
+    F.forEach(function(f){cnt.all++;var g=regsOf(j,f.s)[0]||'KR';cnt[g]=(cnt[g]||0)+1;});
+    (j.trends||[]).forEach(function(t){cnt.all++;regsOf(j,t.s).forEach(function(g){cnt[g]=(cnt[g]||0)+1;});});
+    if(freg!=='all'&&!cnt[freg])freg='all';regChips('fig-regs',cnt,freg,'data-fr');
+    var FF=F.filter(function(f){return freg==='all'||(regsOf(j,f.s)[0]||'KR')===freg;});
+    $('figs').innerHTML=FF.length?FF.map(function(f){var s=(f.s||[])[0],S=j.sources[s],g=regsOf(j,f.s)[0]||'KR';return '<div class="fig"><span class="rg rg-'+g+' rgf">'+RGN[g]+'</span><div class="v">'+esc(f.v)+'<small>'+esc(f.u)+'</small></div><div class="l">'+esc(f.l)+'</div>'+(S?'<a href="'+esc(sU(S))+'" target="_blank" rel="noopener">'+esc(media(S))+' ↗</a>':'')+'</div>';}).join(''):'<p class="fig-empty">'+(LANG==='en'?'No headline figures from this country today — see the trends below.':'오늘 이 나라의 대표 수치는 없어요. 아래 흐름 카드를 확인하세요.')+'</p>';
+    $('figs').scrollLeft=0;var nav=FF.length>2;$('f-prev').hidden=$('f-next').hidden=!nav;
+    renderTrends();}
+  function renderTrends(){var j=D;
+    $('trend-list').innerHTML=j.trends.filter(function(t){return freg==='all'||regsOf(j,t.s).indexOf(freg)>=0;}).map(function(t){var S=(t.s||[]).filter(function(k){return j.sources[k];});
+      var rel=j.news.filter(function(n){return S.indexOf(n.s)>=0;}).slice(0,2);
+      return '<article class="tr"><div class="st">'+esc(t.stat)+'</div><div class="sl">'+esc(t.sl)+regTags(regsOf(j,t.s))+'</div><h3>'+esc(t.t)+'</h3><p>'+hlN(t.line)+'</p>'
+        +(rel.length?'<div class="trn">'+rel.map(function(n){return '<a href="'+esc(sU(j.sources[n.s]))+'" target="_blank" rel="noopener">Related · '+esc(n.h)+' ↗</a>';}).join('')+'</div>':'')
+        +(S.length?'<div class="trs"><b>'+SRCW+'</b>'+S.map(function(k){return '<a href="'+esc(sU(j.sources[k]))+'" target="_blank" rel="noopener">'+esc(media(j.sources[k]))+' ↗</a>';}).join('')+'</div>':'')+'</article>';}).join('');
+  }
   function renderNewsCats(){
-    var SRC=newsSrc();$('news-cats').innerHTML=NCAT.map(function(c){var n=c[0]==='all'?SRC.length:SRC.filter(function(x){return x.n.c===c[0];}).length;if(!n)return '';return '<button type="button" class="chip" data-c="'+c[0]+'" aria-pressed="'+(c[0]===ncat)+'">'+c[1]+'<b>'+n+'</b></button>';}).join('');
+    var ALLS=newsSrc(),rc={all:0};ALLS.forEach(function(x){if(ncat!=='all'&&x.n.c!==ncat)return;rc.all++;var g=rg(x.n.r);rc[g]=(rc[g]||0)+1;});if(nreg!=='all'&&!rc[nreg])nreg='all';regChips('news-regs',rc,nreg,'data-nr');
+    var SRC=ALLS.filter(function(x){return nreg==='all'||rg(x.n.r)===nreg;});$('news-cats').innerHTML=NCAT.map(function(c){var n=c[0]==='all'?SRC.length:SRC.filter(function(x){return x.n.c===c[0];}).length;if(!n)return '';return '<button type="button" class="chip" data-c="'+c[0]+'" aria-pressed="'+(c[0]===ncat)+'">'+c[1]+'<b>'+n+'</b></button>';}).join('');
   }
   function pager(id,cur,total,attr){var el=$(id);if(total<=1){el.innerHTML='';return;}
     var P=[],add=function(x){if(P.indexOf(x)<0)P.push(x);};add(1);for(var i=cur-2;i<=cur+2;i++)if(i>1&&i<total)add(i);add(total);
@@ -1031,7 +1056,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
       (j.launches||[]).forEach(function(l){var k=norm(l.b+l.p);if(seenL[k])return;seenL[k]=1;ALLL.push({l:l,j:j});});});}
   function newsSrc(){if(nscope==='all'&&ALLN)return ALLN;return D.news.map(function(n){return {n:n,j:D,d:n.d||''};});}
   function renderNews(){
-    var L=newsSrc().filter(function(x){return ncat==='all'||x.n.c===ncat;});
+    var L=newsSrc().filter(function(x){return (ncat==='all'||x.n.c===ncat)&&(nreg==='all'||rg(x.n.r)===nreg);});
     if(nscope==='all')L.sort(function(a,b){return a.d<b.d?1:(a.d>b.d?-1:0);});else L.sort(function(a,b){return ((b.n.pt?1:0)-(a.n.pt?1:0))||((b.n.imp||0)-(a.n.imp||0));});
     var T=Math.max(1,Math.ceil(L.length/NPP));npg=Math.min(Math.max(1,npg),T);
     var lastD='';$('news-list').innerHTML=L.slice((npg-1)*NPP,npg*NPP).map(function(x){var n=x.n,S=x.j.sources[n.s];var hd='';if(nscope==='all'&&x.d.slice(0,10)!==lastD){lastD=x.d.slice(0,10);hd='<div class="ndate">'+esc(lastD)+'</div>';}return hd+'<article class="nw"><div class="m">'+(n.pt?'<span class="pt">'+(LANG==='en'?'Key':'Key')+'</span>':'')+'<span class="c">'+esc(NCN[n.c]||n.c)+'</span><span>'+esc(REG[n.r]||n.r)+'</span><span>'+esc(n.d||'')+'</span></div><h3>'+(S?'<a href="'+esc(sU(S))+'" target="_blank" rel="noopener">'+esc(n.h)+'</a>':esc(n.h))+'</h3><p>'+hlN(n.p)+'</p>'+(S?'<div class="nsl"><a class="s" href="'+esc(sU(S))+'" target="_blank" rel="noopener">'+esc(media(S))+' ↗</a>'+trTag(S)+(LANG!=='en'&&isFor(S)?'<a class="s s2" href="'+esc(S.u)+'" target="_blank" rel="noopener">Article ↗</a>':'')+'</div>':'')+'</article>';}).join('');
@@ -1078,6 +1103,8 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
     var gg=e.target.closest('[data-gg]');if(gg){pq='';pqi.value='';grp=gg.dataset.gg;sub='';brand='';shown=PER;renderCats();renderProducts();$('products').scrollIntoView({behavior:RM?'auto':'smooth'});return;}
     var sq=e.target.closest('[data-sxq]');if(sq){openSX(sq.dataset.sxq);return;}
     var n=e.target.closest('#news-cats .chip');if(n){ncat=n.dataset.c;npg=1;renderNewsCats();renderNews();return;}
+    var nr=e.target.closest('#news-regs .chip');if(nr){nreg=nr.dataset.nr;npg=1;renderNewsCats();renderNews();return;}
+    var fr=e.target.closest('#fig-regs .chip');if(fr){freg=fr.dataset.fr;renderFigs();return;}
     var ns=e.target.closest('[data-ns]');if(ns){nscope=ns.dataset.ns;npg=1;[].forEach.call(document.querySelectorAll('[data-ns]'),function(b){b.setAttribute('aria-selected',b===ns?'true':'false');});
       if(nscope==='all'&&!ALLN){$('news-list').innerHTML='<p class="pstat">Loading past news…</p>';loadAll().then(function(){buildAll();renderNewsCats();renderNews();renderLaunches();});}else{renderNewsCats();renderNews();}return;}
     var np=e.target.closest('[data-np]');if(np&&!np.disabled){npg=+np.dataset.np;renderNews();$('news').scrollIntoView({behavior:RM?'auto':'smooth'});return;}
