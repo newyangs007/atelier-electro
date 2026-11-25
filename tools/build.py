@@ -212,7 +212,7 @@ ENB = (latest.get('en') or {}).get('brands', {})
 
 def bslug(b):
     x = re.sub(r'[^a-z0-9]+', '-', (ENB.get(b) or b).lower()).strip('-')
-    return 'b/%s.html' % (x or ('brand-%d' % (abs(hash(b)) % 10000)))
+    return 'b/%s.html' % (x or ('brand-%d' % (__import__('zlib').crc32(b.encode('utf-8')) % 10000)))
 
 
 os.makedirs('b', exist_ok=True)

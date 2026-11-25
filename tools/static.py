@@ -142,7 +142,7 @@ def ld(obj):
     return '<script type="application/ld+json">%s</script>' % json.dumps(obj, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 
 
-ORG = {'@type': 'NewsMediaOrganization', '@id': SITE + '#org', 'name': '가전레이더', 'alternateName': ['가전 레이더', 'GAJEON RADAR', 'Gajeon Radar', 'Atelier Électro'],
+ORG = {'@type': 'NewsMediaOrganization', '@id': SITE + '#org', 'name': '가전레이더', 'alternateName': ['가전 레이더', '가전레이다', 'GAJEON RADAR', 'Gajeon Radar', 'Atelier Électro'],
        'url': SITE, 'logo': {'@type': 'ImageObject', 'url': SITE + 'logo.png', 'width': 512, 'height': 512},
        'sameAs': ['https://github.com/newyangs007/atelier-electro'], 'email': 'newyangs007@gmail.com'}
 
@@ -150,7 +150,7 @@ ORG = {'@type': 'NewsMediaOrganization', '@id': SITE + '#org', 'name': '가전�
 def jsonld_index(issue, L='ko'):
     T = tr(issue, L)
     base = SITE if L == 'ko' else SITE + 'en/'
-    web = {'@type': 'WebSite', '@id': SITE + '#site', 'name': '가전레이더', 'alternateName': ['가전 레이더', 'GAJEON RADAR', 'Gajeon Radar'], 'url': SITE,
+    web = {'@type': 'WebSite', '@id': SITE + '#site', 'name': '가전레이더', 'alternateName': ['가전 레이더', '가전레이다', 'GAJEON RADAR', 'Gajeon Radar'], 'url': SITE,
            'inLanguage': ['ko-KR', 'en'], 'publisher': {'@id': SITE + '#org'},
            'potentialAction': {'@type': 'SearchAction', 'target': {'@type': 'EntryPoint', 'urlTemplate': SITE + '?q={search_term_string}'},
                                'query-input': 'required name=search_term_string'},
@@ -211,8 +211,9 @@ def ssr_index(issue):
     R = ranked(issue)
     by = {p['id']: p for p in issue['picks']}
     T3 = [by[i] for i in (issue.get('md') or issue.get('top3') or []) if i in by] or R[:3]
-    out['rtrack'] = ''.join('<article class="rs"><a class="im" href="%s">%s</a><div class="b"><span class="badge">%s %.1f</span><h3>%s</h3><p class="why">%s</p><span class="price">%s</span></div></article>'
-                               % (e(p['page']), img(p), verdict(score(p['sc']), 'ko'), score(p['sc']), e(p['name']), e(p['why']), e(p['price'])) for p in T3)
+    out['tp-list'] = ''.join('<article class="tp"><div class="tp-h"><span class="rk">%d</span><span class="tc">%s</span><span class="badge">%s %.1f</span></div><div class="tp-b"><a class="im" href="%s">%s</a><div class="tp-i"><div class="who">%s</div><h3><a href="%s">%s</a></h3><div class="tp-p"><b>%s</b></div><p class="tp-r">%s</p></div></div>%s</article>'
+                               % (i + 1, e(p['cat']), verdict(score(p['sc']), 'ko'), score(p['sc']), e(p['page']), img(p), e(p['brand']), e(p['page']), e(p['name']), e(p['price']), e(p.get('ch') or p.get('why', '')),
+                                  ('<div class="tp-a"><a class="cta cp" href="%s" target="_blank" rel="noopener sponsored">쿠팡에서 가격 보기 ↗</a></div>' % e(p['cp'])) if p.get('cp') else '') for i, p in enumerate(T3[:3]))
     out['plist'] = '<div class="grid">' + ''.join('<article class="card"><a class="im" href="%s">%s</a><div class="who">%s · %s</div><h3><a href="%s">%s</a></h3><div class="row"><span class="price">%s</span><span class="badge">%s</span></div></article>'
                            % (e(p['page']), img(p), e(p['brand']), e(p['cat']), e(p['page']), e(p['name']), e(p['price']), verdict(score(p['sc']), 'ko')) for p in R) + '</div>'
     out['news-list'] = ''.join('<article class="nw"><div class="m"><span class="c">%s</span><span>%s</span><span>%s</span></div><h3>%s</h3><p>%s</p>%s</article>'
