@@ -21,13 +21,21 @@ latest = json.load(open('issues/%s.json' % issues[0]['date'], encoding='utf-8'))
 prev = json.load(open('issues/%s.json' % issues[1]['date'], encoding='utf-8')) if len(issues) > 1 else None
 
 # ---- 제품: 쿠팡 파트너스 링크가 있는 제품만 노출, 같은 제품 중복 제거 ----
-_seen, _picks = set(), []
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import cpcheck as _CPC
+_BADCP = _CPC.bad_links()
+_seen, _picks, _dropped = set(), [], []
 for _p in latest['picks']:
     _k = (_p.get('pc') or re.sub(r'\s+', '', _p['name']).lower())
     if not _p.get('cp') or _k in _seen:
         continue
+    if not _CPC.usable(_p['cp'], _BADCP):  # 파트너스 연결 실패·엉뚱한 페이지·열리지 않는 링크는 무조건 제외
+        _dropped.append(_p['id'])
+        continue
     _seen.add(_k); _picks.append(_p)
 latest['picks'] = _picks
+if _dropped:
+    print('cpcheck: excluded', len(_dropped), 'picks:', ','.join(_dropped))
 
 
 # ---- MD 픽 롤링: 카테고리마다 1개씩 8개, 날짜마다 다른 제품, 어제 MD 픽은 되도록 제외 ----
@@ -135,7 +143,7 @@ _bm = re.search(r'<div class="biz">비즈니스 협업 환영 : (.*?)</div>', t)
 BIZ_SNIP = _bm.group(1) if _bm else ''
 t = t.replace('/*__BRANDS__*/', open(T + '/brands.json', encoding='utf-8').read())
 t = t.replace('/*__ICONS__*/', open(T + '/icons.txt', encoding='utf-8').read())
-t = t.replace('/*__ARCHIVE__*/', dump(issues)).replace('/*__ISSUE__*/', dump(latest))
+t = t.replace('/*__ARCHIVE__*/', dump(issues)).replace('/*__ISSUE__*/', dump(latest)).replace('/*__CPBAD__*/', dump(_BADCP))
 ADS = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=%s"\n     crossorigin="anonymous"></script>' % cfg['ads']['client']) if (cfg.get('ads') or {}).get('client') else ''
 ST.ADS_HEAD = ADS
 BCSS = ('body{margin:0;font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:#111;background:#fafafa;word-break:keep-all;line-height:1.6}'
@@ -403,7 +411,7 @@ _te = _te.replace('<a href="./" aria-current="true" hreflang="ko" lang="ko"', '<
 _te = _te.replace('<a href="en/" hreflang="en"', '<a href="en/" aria-current="true" hreflang="en"', 1)
 _te = _te.replace('/*__BRANDS__*/', open(T + '/brands.json', encoding='utf-8').read())
 _te = _te.replace('/*__ICONS__*/', open(T + '/icons.txt', encoding='utf-8').read())
-_te = _te.replace('/*__ARCHIVE__*/', dump(issues)).replace('/*__ISSUE__*/', dump(latest))
+_te = _te.replace('/*__ARCHIVE__*/', dump(issues)).replace('/*__ISSUE__*/', dump(latest)).replace('/*__CPBAD__*/', dump(_BADCP))
 _anchor_fix = ("<script>window.AE_LANG='en';document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href^=\"#\"]');"
                "if(!a)return;var id=a.getAttribute('href').slice(1),el=id&&document.getElementById(id);if(!el)return;ev.preventDefault();el.scrollIntoView({behavior:'smooth'});"
                "try{history.replaceState(null,'',location.pathname+location.search+'#'+id);}catch(x){}},true);</script>")

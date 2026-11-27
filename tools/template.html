@@ -748,6 +748,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
 <script id="brand-data" type="application/json">/*__BRANDS__*/</script>
 <script id="archive-index" type="application/json">/*__ARCHIVE__*/</script>
 <script id="magazine-data" type="application/json">/*__ISSUE__*/</script>
+<script id="cp-bad" type="application/json">/*__CPBAD__*/</script>
 <script>
 (function(){
   'use strict';
@@ -871,7 +872,9 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   var D=null,grp='mobile',sub='',brand='',pq='',PER=4,shown=PER,ncat='all',nscope='today',ALLN=null,ALLL=null,npg=1,NPP=MOB?3:6,lmon='',lpg=1,LPP=MOB?3:6,CPLAY=true,CT=null;
   function ranked(){return D.picks.slice().sort(function(a,b){return (overall(b.sc)-overall(a.sc))||(b.sc[0]-a.sc[0])||(b.sc[1]-a.sc[1]);});}
 
-  function cpOnly(L){var seen={},out=[];var any=L.some(function(p){return p.cp;});L.forEach(function(p){var k=p.pc||norm(p.name);if((any&&!p.cp)||seen[k])return;seen[k]=1;out.push(p);});return out;}
+  var CPBAD=[];try{CPBAD=JSON.parse($('cp-bad').textContent)||[];}catch(e){}
+  function cpOk(cp){return !!cp&&/^https:\/\/link\.coupang\.com\/a\/[A-Za-z0-9]+$/.test(cp)&&CPBAD.indexOf(cp)<0;}
+  function cpOnly(L){var seen={},out=[];L.forEach(function(p){var k=p.pc||norm(p.name);if(!cpOk(p.cp)||seen[k])return;seen[k]=1;out.push(p);});return out;}
   function heroSrc(j){if(j.cover.s&&j.cover.s.length)return j.cover.s.slice(0,2);var n=j.news.slice().sort(function(a,b){return ((b.pt?1:0)-(a.pt?1:0))||((b.imp||0)-(a.imp||0));})[0];return n?[n.s]:[];}
   function top3List(j){var by={};j.picks.forEach(function(p){by[p.id]=p;});var L=(j.top3||[]).map(function(id){return by[id];}).filter(Boolean);if(L.length<3){var prev={};(j.prev_top3||[]).forEach(function(id){prev[id]=1;});buyFirst(ranked()).forEach(function(p){if(L.length<3&&L.indexOf(p)<0&&!prev[p.id])L.push(p);});}return L.slice(0,3);}
   function card(p,T){T=T||[];return '<article class="card"><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="who">'+hl(p.brand,T)+'<span class="sub">'+hl(subOf(p),T)+'</span></div><h3>'+hl(p.name,T)+'</h3><div class="row"><span class="price">'+esc(p.price)+pd(p)+'</span>'+pk(p)+'</div><p class="hl">'+esc(p.ch)+'</p><div class="acts">'+cta(p)+'<button type="button" class="dt" data-id="'+esc(p.id)+'">'+(LANG==='en'?'Details':'상세')+'</button></div></article>';}

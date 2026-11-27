@@ -45,8 +45,12 @@ CATMAP = {"AI가전": lambda p: p.get("ai") and p["cat"] != "AI디바이스", "A
           "특가": lambda p: (p.get("dc") or 0) >= 30}
 ints = [x.strip() for x in a.interests.split(",") if x.strip() in CATMAP]
 picks = sorted(j["picks"], key=lambda p: -score(p))
-if any(p.get("cp") for p in picks):  # 메일에는 쿠팡 링크가 연결된 제품만
-    picks = [p for p in picks if p.get("cp")]
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import cpcheck as _CPC
+_BADCP = _CPC.bad_links()
+# 메일에는 쿠팡 파트너스 링크가 검증된(실패 기록이 없는) 제품만
+picks = [p for p in picks if _CPC.usable(p.get("cp"), _BADCP)]
 # 추천템은 매일 바뀌게: 어제 추천템 3은 뒤로, 오늘 추천템 3(build.py 가 계산)은 앞으로
 _prev = set(j.get("prev_top3") or [])
 _t3 = j.get("top3") or []
