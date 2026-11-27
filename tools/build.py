@@ -164,25 +164,6 @@ t = t.replace('<!--__FAQ__-->', ST.faq_html(ST.faq(latest, 'ko')))
 t = ST.inject(t, ST.ssr_index(latest))
 open('index.html', 'w', encoding='utf-8').write(t)
 
-# ---- 하위 페이지: 같은 템플릿을 data-pg 로 바꿔 숫자·뉴스·특가·제품·신제품만 보여 줌(홈은 요약만) ----
-SUBPAGES = [
-    ('numbers.html', 'numbers', '숫자로 보는 오늘 · 가전레이더 GAJEON RADAR', '오늘 호의 가전 핵심 수치 6개와 이번 주 흐름을 나라별로 봅니다. 수치마다 출처를 연결했습니다.'),
-    ('news.html', 'news', '오늘의 가전 뉴스 전체 · 가전레이더 GAJEON RADAR', 'AI가전·TV·IT·로봇·소형가전·대형가전 뉴스를 분야·나라별로 골라 보고, 지난 뉴스까지 날짜순으로 봅니다.'),
-    ('products.html', 'products', '오늘의 특가·카테고리별 제품 · 가전레이더 GAJEON RADAR', '쿠팡 파트너스로 연결이 확인된 가전·IT 제품을 카테고리·인기 순으로 보고, 30% 이상 특가를 확인합니다.'),
-    ('launches.html', 'launches', '가전 신제품 출시 · 가전레이더 GAJEON RADAR', '주요 브랜드 가전·IT 신제품 출시와 발표를 월별로 봅니다. 제목을 누르면 출처로 이동합니다.'),
-]
-for _f, _pg, _ti, _de in SUBPAGES:
-    _h = t.replace('<body data-pg="home">', '<body data-pg="%s">' % _pg, 1)
-    _h = re.sub(r'<title>.*?</title>', '<title>%s</title>' % html.escape(_ti), _h, count=1, flags=re.S)
-    _h = re.sub(r'(<meta name="description" content=")[^"]*', lambda m: m.group(1) + html.escape(_de), _h, count=1)
-    _h = re.sub(r'(<meta property="og:title" content=")[^"]*', lambda m: m.group(1) + html.escape(_ti), _h, count=1)
-    _h = re.sub(r'(<meta property="og:description" content=")[^"]*', lambda m: m.group(1) + html.escape(_de), _h, count=1)
-    _h = re.sub(r'(<link rel="canonical" href=")[^"]*', lambda m: m.group(1) + SITE + _f, _h, count=1)
-    _h = re.sub(r'(<meta property="og:url" content=")[^"]*', lambda m: m.group(1) + SITE + _f, _h, count=1)
-    _h = re.sub(r'<script type="application/ld\+json">.*?</script>', '', _h, flags=re.S)
-    _h = _h.replace('<link rel="alternate" hreflang="en"', '<link rel="alternate" data-x="en"', 1)
-    open(_f, 'w', encoding='utf-8').write(_h)
-
 # ---- product pages ----
 os.makedirs('p', exist_ok=True)
 # 쿠팡 링크가 빠진 제품의 지난 페이지는 지움(검색에 구매 버튼 없는 페이지가 남지 않게)
@@ -394,8 +375,6 @@ _ald = {'@context': 'https://schema.org', '@graph': [
 open('archive.html', 'w', encoding='utf-8').write(archive_html().replace('</head>', '<script type="application/ld+json">%s</script></head>' % json.dumps(_ald, ensure_ascii=False).replace('</', '<\\/'), 1))
 urls.append(SITE + 'archive.html')
 urls.append(SITE + 'recommend.html')
-for _f, _pg, _ti, _de in SUBPAGES:
-    urls.append(SITE + _f)
 # ---- static issue pages (KO + EN), English home, markdown copies, RSS, llms.txt ----
 os.makedirs('issue', exist_ok=True)
 os.makedirs('en/issue', exist_ok=True)
@@ -557,7 +536,7 @@ for _m in sorted(_g, reverse=True):
             _ldi.append({'name': _n['h'], 'url': _u})
     _p = _m.split('.')
     _groups.append(('m' + _m.replace('.', '-'), '%s년 %d월' % (_p[0], int(_p[1])) if len(_p) > 1 and _p[1].isdigit() else _m, _arts))
-_list_page('news-archive.html', '가전 뉴스 전체 보기 · 가전레이더 GAJEON RADAR', '가전레이더가 매일 정리한 AI가전·TV·IT·로봇·소형가전·대형가전 뉴스를 날짜순으로 모두 봅니다. 기사마다 원문 출처 링크.',
+_list_page('news.html', '가전 뉴스 전체 보기 · 가전레이더 GAJEON RADAR', '가전레이더가 매일 정리한 AI가전·TV·IT·로봇·소형가전·대형가전 뉴스를 날짜순으로 모두 봅니다. 기사마다 원문 출처 링크.',
            '가전 뉴스 전체', '지난 호까지 모든 뉴스 %d건 · 최신 날짜순 · 제목을 누르면 기사 원문으로 이동' % len(_news), _groups, _ldi)
 
 _seen, _ln = set(), []
@@ -585,7 +564,7 @@ for _m in sorted(_g, reverse=True):
             _ldi.append({'name': _t, 'url': _u})
     _p = _m.split('.')
     _groups.append(('m' + _m.replace('.', '-'), '%s년 %d월' % (_p[0], int(_p[1])) if len(_p) > 1 and _p[1].isdigit() else _m, _arts))
-_list_page('launches-archive.html', '가전 신제품 출시 전체 · 가전레이더 GAJEON RADAR', '삼성·LG·다이슨·샤오미 등 주요 브랜드 가전·IT 신제품 출시와 발표를 월별로 모아 봅니다. 날짜·국가·가격과 출처 링크.',
+_list_page('launches.html', '가전 신제품 출시 전체 · 가전레이더 GAJEON RADAR', '삼성·LG·다이슨·샤오미 등 주요 브랜드 가전·IT 신제품 출시와 발표를 월별로 모아 봅니다. 날짜·국가·가격과 출처 링크.',
            '가전 신제품 출시 전체', '지난 호까지 신제품 %d건 · 월별 · 제목을 누르면 출처로 이동' % len(_ln), _groups, _ldi)
 
 
@@ -616,7 +595,7 @@ if BIZ_SNIP:
     _en_biz = '<p class="bizln" style="margin:10px 0 0;font-size:13px">Business inquiries: %s</p>' % BIZ_SNIP
     _ko_biz = '<p class="bizln" style="margin:10px 0 0;font-size:13px">비즈니스 협업 환영 : %s</p>' % BIZ_SNIP
     for _f in _glob.glob('**/*.html', recursive=True):
-        if _f.startswith(('tools/', 'out/', 'mail/')) or _f in ('index.html', 'en/index.html', 'news.html', 'launches.html', 'numbers.html', 'products.html', 'news-archive.html', 'launches-archive.html') or _f.startswith('google') or _f.startswith('naver'):
+        if _f.startswith(('tools/', 'out/', 'mail/')) or _f in ('index.html', 'en/index.html', 'news.html', 'launches.html') or _f.startswith('google') or _f.startswith('naver'):
             continue
         _h = open(_f, encoding='utf-8').read()
         if 'class="bizln"' in _h or '</footer>' not in _h:
