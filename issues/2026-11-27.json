@@ -1449,6 +1449,12 @@
    "s": [
     "S39",
     "S6"
+   ],
+   "why": "판매 대수가 줄어드는데 평균가는 오른다는 건, 소비자가 '싸고 많이'보다 '비싸도 오래 쓸 하나'를 고르고 있다는 신호로 읽힙니다. 연말 소형가전은 가격 할인보다 소재·디자인·기능 차별화가 구매를 가를 가능성이 큽니다.",
+   "tags": [
+    "소형가전",
+    "프리미엄화",
+    "중국"
    ]
   },
   {
@@ -1461,6 +1467,12 @@
     "S34",
     "S35",
     "S15"
+   ],
+   "why": "여러 브랜드가 유리·스테인리스 내부를 앞세운 제품을 내놓으면서, 에어프라이어 비교 기준이 용량·가격에서 내부 소재와 '보이는 조리'로 넓어지고 있습니다. 구매 전에 바스켓·내솥 소재를 먼저 확인해 볼 이유가 생긴 셈입니다.",
+   "tags": [
+    "에어프라이어",
+    "소재",
+    "주방가전"
    ]
   },
   {
@@ -1473,6 +1485,12 @@
     "S64",
     "S58",
     "S67"
+   ],
+   "why": "한·중 대형가전 업체가 모두 생성형 AI와 로봇 조직을 앞세우면서, 냉장고·세탁기의 경쟁 포인트가 용량·효율에서 '알아서 판단하는 기능'으로 옮겨 가고 있습니다. 교체 주기가 긴 대형가전일수록 AI 기능 범위와 업데이트 지원을 함께 따져 볼 필요가 있습니다.",
+   "tags": [
+    "AI가전",
+    "냉장고",
+    "삼성·LG·하이얼"
    ]
   },
   {
@@ -1484,6 +1502,12 @@
    "s": [
     "S1",
     "S2"
+   ],
+   "why": "'미니·소형' 검색이 월 100만 건을 넘으면서, 같은 기능을 작은 크기에 담은 제품이 하나의 카테고리가 됐습니다. 좁은 공간에서 중요한 크기·소음·전력 스펙을 앞세운 제품이 주목받기 좋은 환경입니다.",
+   "tags": [
+    "1인 가구",
+    "미니가전",
+    "검색 트렌드"
    ]
   },
   {
@@ -1495,6 +1519,12 @@
    "s": [
     "S11",
     "S17"
+   ],
+   "why": "집 전체가 아니라 앉은 자리만 데우는 소형 히터 한 라인이 인기 1·2위를 함께 차지했습니다. 겨울 난방가전 수요가 '공간 전체'보다 '내 자리' 중심으로 나뉘고 있다는 신호로 읽힙니다.",
+   "tags": [
+    "전기히터",
+    "개인 난방",
+    "다나와 인기"
    ]
   },
   {
@@ -1506,6 +1536,12 @@
    "s": [
     "S83",
     "S81"
+   ],
+   "why": "출하 대부분이 화면 없는 모델이라는 건, AI 안경이 아직 '보는 기기'보다 카메라·음성으로 AI를 부르는 기기로 쓰이고 있다는 뜻입니다. 삼성·구글의 국내 출시로 스마트폰 다음 AI 기기 경쟁이 국내에서도 본격화되는 시점입니다.",
+   "tags": [
+    "AI 안경",
+    "웨어러블",
+    "삼성·구글"
    ]
   }
  ],
@@ -5343,32 +5379,38 @@
    {
     "t": "Fewer units, higher prices",
     "sl": "Avg. price, small kitchen appliances in China",
-    "line": "Prices rose even as unit sales fell 14.6%. On Korean TV shopping, Roborock hit KRW 45B and Dyson hair KRW 30B."
+    "line": "Prices rose even as unit sales fell 14.6%. On Korean TV shopping, Roborock hit KRW 45B and Dyson hair KRW 30B.",
+    "why": "Fewer units at higher average prices suggests shoppers are choosing one better product over several cheap ones. Year-end small appliances are likely to compete on materials, design and features rather than discounts alone."
    },
    {
     "t": "Glass and steel instead of coatings",
     "sl": "BRUNO glass air fryer sales vs. plan",
-    "line": "From Ninja Crispi to Ainic all-stainless, 'see-through cooking' is the trend."
+    "line": "From Ninja Crispi to Ainic all-stainless, 'see-through cooking' is the trend.",
+    "why": "With several brands leading on glass and stainless interiors, air fryers are now compared on interior material and see-through cooking, not just capacity and price. Checking the basket material first is becoming part of the purchase."
    },
    {
     "t": "AI redesigns big appliances",
     "sl": "Foods recognized by Haier's AI fridge",
-    "line": "Samsung Family Hub now runs Gemini; LG set up a robotics business center."
+    "line": "Samsung Family Hub now runs Gemini; LG set up a robotics business center.",
+    "why": "Korean and Chinese majors are all leading with generative AI and robotics units, shifting the fight in fridges and washers from capacity and efficiency to features that decide for you. For long-lived appliances, the scope of AI features and update support now matters."
    },
    {
     "t": "Single-person, mini, studio",
     "sl": "Monthly searches for 'mini/compact' appliances",
-    "line": "61% female, rising inflow from people in their 20s. Searches for 'mini air cooler' hit a record."
+    "line": "61% female, rising inflow from people in their 20s. Searches for 'mini air cooler' hit a record.",
+    "why": "With monthly searches for 'mini/compact' appliances above one million, small-footprint versions have become a category of their own. Products that lead with size, noise and power specs for small spaces are well placed."
    },
    {
     "t": "Heat only my spot",
     "sl": "Cumulative sales, Shinil Cube heater line",
-    "line": "Danawa's No.1 and No.2 electric heaters are both from the same line."
+    "line": "Danawa's No.1 and No.2 electric heaters are both from the same line.",
+    "why": "One line of compact desk heaters holds both of the top two spots. Winter heating demand appears to be splitting toward the personal spot rather than the whole room."
    },
    {
     "t": "AI moves onto your face",
     "sl": "Global AI glasses shipment growth, H1",
-    "line": "96% are display-less models. Samsung and Google launch in Korea on December 10."
+    "line": "96% are display-less models. Samsung and Google launch in Korea on December 10.",
+    "why": "Since almost all shipments are display-free models, AI glasses are still used mainly to call up AI by camera and voice rather than to show content. With Samsung and Google launching in Korea, the race for the next AI device after the phone is starting locally too."
    }
   ],
   "news": [

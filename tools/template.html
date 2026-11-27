@@ -607,6 +607,59 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
 .morebar .more{margin:0!important;max-width:none;flex:0 1 260px}
 .morebar .more.less{flex:0 0 auto;background:#fff;color:var(--ink);border:1px solid var(--line)}
 .ln .x .trk{margin-left:6px}
+
+/* ===== 인사이트 매거진 개편 (인사이트 70 : 커머스 30) ===== */
+.deck3{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.deck3 li{position:relative;padding-left:16px;font-size:15px;line-height:1.55;color:#e8e8e8}
+.deck3 li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;border-radius:2px;background:var(--acc)}
+.deck3 mark.hl{background:none;color:#fff;font-weight:800;padding:0}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:14px}
+.kpis-more{margin-top:8px}.kpis[hidden]{display:none}
+.kpi{background:#141416;border:1px solid #2a2a2e;border-radius:12px;padding:10px 12px;min-width:0}
+.kpi .v{font-family:var(--num);font-weight:800;font-size:22px;line-height:1.1;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kpi .v small{font-size:.58em;color:var(--acc);margin-left:2px}
+.kpi .l{font-size:12px;line-height:1.35;color:#cfcfcf;margin-top:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.7em}
+.kpi .ks2{display:flex;gap:4px;align-items:center;margin-top:6px;min-width:0}.kpi .ks2 .rg{font-size:10px;padding:0 4px;margin:0;flex:none}
+.kpi .ks2 a{font-size:11px;color:#9a9a9a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.kpi-tg{margin-top:8px;background:none;border:1px solid #333;color:#ddd;border-radius:10px;padding:7px 12px;font-size:12.5px;cursor:pointer;min-height:36px}
+.kpi-tg:hover{border-color:#777;color:#fff}
+@media(max-width:600px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.kpi .v{font-size:20px}.deck3 li{font-size:14px}}
+.adbox:not([hidden]){margin:24px 0;min-height:120px}
+.adbox .adlabel{display:block;font-size:11px;color:var(--ink2);margin-bottom:4px}
+.inss{display:grid;gap:14px}
+@media(min-width:760px){.inss{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ins{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff;display:flex;flex-direction:column;gap:8px;min-width:0}
+.ins[hidden]{display:none}
+.ins-k{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.ins-k b{font-family:var(--num);font-size:26px;font-weight:900;color:var(--acc);line-height:1}
+.ins-k span{font-size:13px;color:var(--ink2);font-weight:600}
+.ins h3{font-size:17px;margin:0;line-height:1.4}
+.ins-w{background:var(--soft);border-radius:10px;padding:10px 12px}
+.ins-w .lbl{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.04em;color:var(--acc);text-transform:uppercase;margin-bottom:3px}
+.ins-w p{margin:0;font-size:14px;line-height:1.6;color:#222}
+.ins-fact{margin:0;font-size:13px;color:#555;line-height:1.55}
+.ins-f{display:flex;flex-direction:column;gap:6px;margin-top:auto}
+.ins-f .tags{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center}
+.ins-f .tag{font-size:12px;color:#0b57a8;background:#eef4fc;border-radius:999px;padding:2px 8px}
+.ins-src summary{font-size:12.5px;color:var(--ink2);cursor:pointer;list-style:none}.ins-src summary::-webkit-details-marker{display:none}
+.ins-src summary::after{content:" ▾"}.ins-src[open] summary::after{content:" ▴"}
+.ins-src a{display:block;font-size:12.5px;color:#333;margin-top:4px;line-height:1.45}
+#ins-more{max-width:420px;margin:14px auto 0}
+.tp-h .asof{margin-left:auto;font-size:11px;color:var(--ink2);border:1px solid var(--line);border-radius:999px;padding:1px 7px}
+.tp-why{margin:0;font-size:13px;color:#0b57a8;font-weight:600;line-height:1.45}
+.tp-spec{margin:3px 0 0;font-size:12.5px;color:#555;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tp-p{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px}
+.tp-p .dcb{font-family:var(--num);font-weight:900;color:var(--acc);font-size:18px}
+.tp-p b{font-family:var(--num);font-size:20px;font-weight:800}
+.tp-p .tp-r{font-size:12.5px;color:#444;width:100%;display:block}
+.tp-a{display:block}.tp-a .tp-cta{display:flex;width:100%;justify-content:center;align-items:center;min-height:50px;font-size:15.5px;font-weight:800;border-radius:12px;background:#e0301e;color:#fff;box-shadow:0 6px 16px -8px rgba(224,48,30,.6)}
+.tp-a .tp-cta:hover{background:#c4210f}
+.tp-t{width:100%;min-height:38px;border:0;background:none;color:var(--ink2);font-size:12.5px;text-decoration:underline;text-underline-offset:3px;padding:0}
+.tp-t:hover{background:none;color:var(--ink)}
+.qmark{font-size:12px;color:var(--ink2);cursor:help}
+.dl .bs{cursor:help;color:var(--ink2);font-size:11.5px}
+
+@media(max-width:600px){.ins{padding:12px 14px;gap:6px}.ins-k b{font-size:23px}.ins h3{font-size:16px}.ins-w p{font-size:13.5px}
+.ins-fact{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}}
 </style>
 </head>
 <body>
@@ -620,7 +673,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   </div>
   <nav class="tabs" aria-label="호수·목차"><div class="wrap tw">
     <button type="button" class="ed-chip" id="ed-chip" aria-haspopup="dialog" aria-controls="arc" title="호수 선택·과월호"><svg class="cal" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="3" width="13" height="11.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M1.5 6.5h13M5 1.5v3M11 1.5v3" stroke="currentColor" stroke-width="1.6"/></svg><span id="ed-chip-t">No.</span><span class="cv">▼</span></button>
-    <div class="toc" id="toc"><a href="#trends">숫자</a><a href="#picks">추천템</a><a href="#news">뉴스</a><a href="#products">제품</a><a class="xm" href="#deals-sec">특가</a><a class="xm" href="#subscribe">구독</a><a class="xm" href="#launches">신제품</a></div>
+    <div class="toc" id="toc"><a href="#brief">브리핑</a><a href="#insights">인사이트</a><a href="#picks">추천템 TOP3</a><a href="#news">뉴스·특가</a><a class="xm" href="#products">제품</a><a class="xm" href="#subscribe">구독</a><a class="xm" href="#launches">신제품</a></div>
   </div></nav>
 </header>
 <div class="past" id="past"><div class="wrap" id="past-in"></div></div>
@@ -630,24 +683,34 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   <div class="hmain">
   <div class="meta-line"><b id="ed-label"></b><span>매일 아침 7시 발행</span><a href="archive.html" id="arc-open2" style="color:#fff">과월호 보기 →</a></div>
   <h1 id="hero-title"></h1>
-  <p class="deck" id="hero-deck"></p>
+  <ul class="deck3" id="hero-deck" aria-label="오늘의 3줄 핵심 요약"></ul>
   <div class="hrow"><div class="hsrc" id="hero-src"></div><button type="button" class="kshare" id="kshare" aria-label="카카오톡 등으로 오늘 호 공유하기"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1 3.6c-.1.3.3.6.6.4l4.2-2.8c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg><span>공유</span></button></div>
+  <div class="kpis" id="kpis" role="list" aria-label="핵심 지표"></div>
+  <div class="kpis kpis-more" id="kpis-more" role="list" hidden></div>
+  <button type="button" class="kpi-tg" id="kpi-more" aria-expanded="false" aria-controls="kpis-more" hidden>전체 지표 펼쳐보기 <span aria-hidden="true">▾</span></button>
   </div>
   <div class="hside"><div class="kfigs" id="kfigs" role="list" aria-label="핵심 숫자"></div>
   <button type="button" class="kmore" id="kmore" aria-expanded="false" aria-controls="trends">숫자 전체·이번 주 흐름·나라별 보기 <span aria-hidden="true">▾</span></button></div>
 </div></section>
-<section class="sec" id="trends"><div class="wrap">
+<div class="wrap"><div class="adslot adbox" id="ad-slot-top" data-slot="top" hidden><!-- [AdSense 상단 슬롯] 수동으로 넣을 때: <span class="adlabel">광고</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5779293511896982" data-ad-slot="(슬롯 ID)" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> 를 붙여 넣고 hidden 속성을 지우세요. tools/config.json 의 ads.slots.top 에 슬롯 ID 를 넣으면 자동으로 들어갑니다. --></div></div>
+<section class="sec" id="insights" aria-labelledby="ins-h"><div class="wrap"><span id="trends" class="anchor"></span>
+  <div class="sh"><div><h2 id="ins-h">오늘의 가전·AI·로봇 트렌드 인사이트</h2><p>숫자 하나와 그 숫자가 왜 중요한지 · 출처 원문 연결</p></div></div>
+  <div class="inss" id="ins-list"></div>
+  <button type="button" class="more" id="ins-more" aria-expanded="false" hidden></button>
+  <div hidden aria-hidden="true">
   <div class="sh"><div><h2>숫자로 보는 오늘</h2><p>오늘 호의 핵심 수치와 이번 주 흐름 · 수치마다 출처 · 좌우로 넘겨 보기</p></div><div class="shc"><button type="button" class="rbtn" id="f-prev" aria-label="이전 수치">‹</button><button type="button" class="rbtn" id="f-next" aria-label="다음 수치">›</button></div></div>
   <div class="chip-row rchips" id="fig-regs" role="group" aria-label="나라별 보기"></div>
   <div class="figs" id="figs" tabindex="0" aria-roledescription="carousel" aria-label="숫자로 보는 오늘"></div>
   <div class="trends" id="trend-list"></div>
+  </div>
 </div></section>
+<div class="wrap"><div class="adslot adbox" id="ad-slot-mid" data-slot="mid" hidden><!-- [AdSense 중간 인아티클 슬롯] 수동으로 넣을 때: <span class="adlabel">광고</span><ins class="adsbygoogle" style="display:block;text-align:center" data-ad-client="ca-pub-5779293511896982" data-ad-slot="(슬롯 ID)" data-ad-layout="in-article" data-ad-format="fluid"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> 를 붙여 넣고 hidden 속성을 지우세요. tools/config.json 의 ads.slots.mid 에 슬롯 ID 를 넣으면 자동으로 들어갑니다. --></div></div>
 <section class="sec" id="picks" aria-labelledby="picks-h"><div class="wrap"><span id="md" class="anchor"></span>
-  <div class="sh"><div><h2 id="picks-h">오늘의 추천템 3</h2><p id="picks-sub">가전레이더 MD가 고른 오늘의 3개 · 매일 바뀜</p></div></div>
+  <div class="sh"><div><h2 id="picks-h">인사이트 연동 오늘의 추천템 TOP 3</h2><p id="picks-sub">가전레이더 MD가 고른 오늘의 3개 · 매일 바뀜</p></div></div>
   <div class="tps" id="tp-list"></div>
   <div class="tps tps-more" id="tp-more" hidden></div>
   <button type="button" class="more" id="tp-more-btn" aria-expanded="false" aria-controls="tp-more" hidden></button>
-  <p class="ad-note ad-fix">[광고] 쿠팡 버튼은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+  <p class="ad-note ad-fix">[광고] 쿠팡 버튼은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.<br><span id="picks-asof">가격·할인율·리뷰·평점은 각 카드의 기준일 쿠팡 파트너스·다나와 조회 값이며 판매자·시점에 따라 달라질 수 있습니다.</span></p>
 </div></section>
 <section class="sec" id="news"><div class="wrap">
   <div class="sh"><div><h2>오늘의 가전뉴스</h2><p>중요도 순 · 한국·미국·일본·중국·유럽 · 제목을 누르면 원문으로 가고, 해외 기사는 한국어 번역으로 열립니다 · 핵심 수치는 형광펜 표시</p></div></div>
@@ -657,9 +720,8 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   <div class="news" id="news-list"></div>
   <div class="morebar"><button type="button" class="more" id="news-more" hidden></button><button type="button" class="more less" id="news-less" hidden>접기 ▴</button></div>
 </div></section>
-<div class="wrap"><div class="adslot" data-slot="mid" hidden></div></div>
 <section class="sec" id="deals-sec" aria-label="오늘의 특가"><div class="wrap">
-  <div class="sh"><div><h2>오늘의 특가 <span style="color:var(--acc)">30% 이상</span></h2><p id="deals-sub">인기 브랜드 제품 중 할인 폭이 큰 6개 · 쿠팡 표시 정가(또는 다나와 출시가) 대비 30% 이상 · 쿠팡 반품 최상 등급 포함</p></div><div class="shc"><button type="button" class="rbtn" id="d-prev" aria-label="이전 특가">‹</button><button type="button" class="rbtn" id="d-play" aria-label="자동 넘김 멈춤"></button><button type="button" class="rbtn" id="d-next" aria-label="다음 특가">›</button></div></div>
+  <div class="sh"><div><h2>오늘의 특가 <span style="color:var(--acc)">30% 이상</span></h2><p id="deals-sub" title="인기 브랜드 제품 중 할인 폭이 큰 최대 6개 · 쿠팡 표시 정가(또는 다나와 출시가) 대비 30% 이상 · 쿠팡 반품 최상 등급 포함">인기 브랜드 · 30% 이상 할인 · 최대 6개 <span class="qmark" aria-hidden="true">ⓘ</span></p></div><div class="shc"><button type="button" class="rbtn" id="d-prev" aria-label="이전 특가">‹</button><button type="button" class="rbtn" id="d-play" aria-label="자동 넘김 멈춤"></button><button type="button" class="rbtn" id="d-next" aria-label="다음 특가">›</button></div></div>
   <div class="deals" id="deal-list"></div>
 </div></section>
 <section class="sec" id="products"><div class="wrap">
@@ -671,7 +733,6 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   <div id="plist"></div>
   <button type="button" class="more" id="plist-more" hidden>더 보기</button>
 </div></section>
-<div class="wrap"><div class="adslot" data-slot="top" hidden></div></div>
 
 <section class="subw" id="subscribe"><div class="wrap sgrid">
   <div class="scopy"><h2>매일 아침 7시,<br>가전 뉴스와 MD 픽을 메일로</h2>
@@ -841,7 +902,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   function applyEn(j){if(LANG!=='en'||!j||j.__en)return j;var E=j.en||{};j.__en=1;
     if(E.cover){if(E.cover.title)j.cover.title=E.cover.title;if(E.cover.deck)j.cover.deck=E.cover.deck;
       (j.cover.figs||[]).forEach(function(f,i){if(E.cover.figs&&E.cover.figs[i])f.l=E.cover.figs[i];var r=enVal(f.v,f.u);f.v=r[0];f.u=r[1];});}
-    if(E.trends&&E.trends.length===(j.trends||[]).length)j.trends.forEach(function(t,i){var x=E.trends[i]||{};if(x.t)t.t=x.t;if(x.sl)t.sl=x.sl;if(x.line)t.line=x.line;t.stat=enVal(t.stat,'').join(' ').trim();});
+    if(E.trends&&E.trends.length===(j.trends||[]).length)j.trends.forEach(function(t,i){var x=E.trends[i]||{};if(x.t)t.t=x.t;if(x.sl)t.sl=x.sl;if(x.line)t.line=x.line;if(x.why)t.why=x.why;else if(t.why)delete t.why;if(t.tags)delete t.tags;t.stat=enVal(t.stat,'').join(' ').trim();});
     if(E.news&&E.news.length===(j.news||[]).length)j.news.forEach(function(n,i){var x=E.news[i];if(x){n.h=x[0];n.p=x[1];}});
     if(E.launches&&E.launches.length===(j.launches||[]).length)j.launches.forEach(function(l,i){var x=E.launches[i];if(x){l.cat=x[0];l.p=x[1];}l.pr=enPrice(l.pr);l.b=(E.brands||{})[l.b]||l.b;});
     if(E.ticker&&E.ticker.length===(j.ticker||[]).length)j.ticker=E.ticker;
@@ -869,7 +930,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   function hl(t,T){var x=esc(t);T.forEach(function(k){var e=esc(k).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');if(e)x=x.replace(new RegExp('('+e+')','ig'),'<mark>$1</mark>');});return x;}
 
   var MOB=window.matchMedia&&matchMedia('(max-width:759px)').matches;
-  var D=null,grp='mobile',sub='',brand='',pq='',PER=4,shown=PER,ncat='all',nscope='today',ALLN=null,ALLL=null,npg=1,NPP=MOB?3:6,lmon='',lpg=1,LPP=MOB?3:6,CPLAY=true,CT=null;
+  var D=null,grp='mobile',sub='',brand='',pq='',PER=4,shown=PER,ncat='all',nscope='today',ALLN=null,ALLL=null,npg=1,NPP=5,lmon='',lpg=1,LPP=MOB?3:6,CPLAY=true,CT=null;
   function ranked(){return D.picks.slice().sort(function(a,b){return (overall(b.sc)-overall(a.sc))||(b.sc[0]-a.sc[0])||(b.sc[1]-a.sc[1]);});}
 
   var CPBAD=[];try{CPBAD=JSON.parse($('cp-bad').textContent)||[];}catch(e){}
@@ -903,12 +964,12 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
     $('hero-title').innerHTML=H0?'<a href="'+esc(sU(H0))+'" target="_blank" rel="noopener">'+j.cover.title+'</a>':j.cover.title;
     fitTitle();
     $('hero-src').innerHTML=HS.map(function(k){var S=j.sources[k];return S?'<a href="'+esc(sU(S))+'" target="_blank" rel="noopener"><b>'+SRCW+'</b>'+esc(media(S))+' 바로가기 ↗</a>':'';}).join('');
-    $('hero-deck').textContent=j.cover.deck;
+    $('hero-deck').innerHTML=String(j.cover.deck||'').split(/\n+|(?<=[.!?다])\s+(?=[가-힣A-Z0-9“"‘])/).map(function(x){return x.trim();}).filter(Boolean).slice(0,3).map(function(x){return '<li>'+hlN(x)+'</li>';}).join('');renderKPI(j);renderInsights(j);
     freg='all';renderFigs();renderKFigs(j);
     renderPicks(j);
     pickDeals(j);var DL=j.picks.filter(isDeal).sort(function(a,b){return b.dc-a.dc;});
     $('deals-sec').hidden=!DL.length;var dt=document.querySelector('#toc a[href="#deals-sec"]');if(dt)dt.hidden=!DL.length;
-    $('deal-list').innerHTML=DL.map(function(p){return '<article class="dl"><span class="off">−'+esc(p.dc)+'%</span><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="who">'+esc(p.brand)+'</div><div class="n">'+esc(p.name)+'</div><div class="was">'+esc(p.was||'')+'</div><div class="p">'+esc(p.price)+'</div><div class="bs">'+esc(p.dcb||'')+'</div><div class="acts">'+cta(p)+'</div></article>';}).join('');
+    $('deal-list').innerHTML=DL.map(function(p){return '<article class="dl"><span class="off">−'+esc(p.dc)+'%</span><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="who">'+esc(p.brand)+'</div><div class="n">'+esc(p.name)+'</div><div class="was">'+esc(p.was||'')+'</div><div class="p">'+esc(p.price)+'</div><div class="bs" title="'+esc(p.dcb||'')+'">'+(p.dcb?'할인 기준 ⓘ':'')+'</div><div class="acts">'+cta(p)+'</div></article>';}).join('');
     renderCats();renderProducts();catSync();
     renderNewsCats();renderNews();
     renderLaunches();
@@ -962,27 +1023,45 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
         +(rel.length?'<div class="trn">'+rel.map(function(n){return '<a href="'+esc(sU(j.sources[n.s]))+'" target="_blank" rel="noopener">관련 기사 · '+esc(n.h)+' ↗</a>';}).join('')+'</div>':'')
         +(S.length?'<div class="trs"><b>'+SRCW+'</b>'+S.map(function(k){return '<a href="'+esc(sU(j.sources[k]))+'" target="_blank" rel="noopener">'+esc(media(j.sources[k]))+' ↗</a>';}).join('')+'</div>':'')+'</article>';}).join('');
   }
+  function kpiHtml(f,j){var S=j.sources[(f.s||[])[0]],g=regsOf(j,f.s)[0]||'KR';return '<div class="kpi" role="listitem"><div class="v">'+esc(f.v)+'<small>'+esc(f.u)+'</small></div><div class="l">'+esc(f.l)+'</div><div class="ks2"><span class="rg rg-'+g+'">'+RGN[g]+'</span>'+(S?'<a href="'+esc(sU(S))+'" target="_blank" rel="noopener">'+esc(media(S))+'</a>':'')+'</div></div>';}
+  function renderKPI(j){var F=j.cover.figs||[];$('kpis').innerHTML=F.slice(0,4).map(function(f){return kpiHtml(f,j);}).join('');$('kpis-more').innerHTML=F.slice(4).map(function(f){return kpiHtml(f,j);}).join('');
+    $('kpis-more').hidden=true;var b=$('kpi-more');b.hidden=F.length<=4;b.setAttribute('aria-expanded','false');b.firstChild.nodeValue=(LANG==='en'?'Show all figures ('+F.length+') ':'전체 지표 펼쳐보기 ('+F.length+'개) ');}
+  var INSN=MOB?3:4;
+  function renderInsights(j){var T=j.trends||[],EN=LANG==='en';
+    $('ins-list').innerHTML=T.map(function(t,i){var S=(t.s||[]).filter(function(k){return j.sources[k];}),rel=j.news.filter(function(n){return S.indexOf(n.s)>=0;}).slice(0,2);
+      var tags=(t.tags&&t.tags.length?t.tags:[]).map(function(x){return '<span class="tag">#'+esc(x)+'</span>';}).join('')+regsOf(j,t.s).map(function(g){return '<span class="rg rg-'+g+'">'+RGN[g]+'</span>';}).join('');
+      return '<article class="ins'+(i>=INSN?' ins-x':'')+'"'+(i>=INSN?' hidden':'')+'><div class="ins-k"><b>'+esc(t.stat)+'</b><span>'+esc(t.sl)+'</span></div><h3>'+esc(t.t)+'</h3>'
+        +'<div class="ins-w"><span class="lbl">Why it matters</span><p>'+hlN(t.why||t.line)+'</p></div>'
+        +(t.why?'<p class="ins-fact">'+hlN(t.line)+'</p>':'')
+        +'<div class="ins-f"><div class="tags">'+tags+'</div>'+(S.length?'<details class="ins-src"><summary>'+(EN?'Sources':'출처·관련 기사')+' '+S.length+'</summary>'+rel.map(function(n){return '<a href="'+esc(sU(j.sources[n.s]))+'" target="_blank" rel="noopener">'+(EN?'Related · ':'관련 기사 · ')+esc(n.h)+' ↗</a>';}).join('')+S.map(function(k){return '<a href="'+esc(sU(j.sources[k]))+'" target="_blank" rel="noopener">'+esc(j.sources[k].t)+' ↗</a>';}).join('')+'</details>':'')+'</div></article>';}).join('');
+    var b=$('ins-more');b.hidden=T.length<=INSN;b.setAttribute('aria-expanded','false');b.textContent=(EN?'More insights ':'인사이트 더 보기 ')+'('+(T.length-INSN)+')';}
   function moreBtn(id,n,total,step,label){var b=$(id);if(!b)return;b.hidden=n>=total;b.textContent=label+' ('+n+' / '+total+')';var l=$(id.replace('-more','-less'));if(l){l.hidden=n<=step;l.textContent=(LANG==='en'?'Show fewer':'접기')+' ▴';}}
   function openTrends(op,scroll){var t=$('trends'),b=$('kmore');t.hidden=!op;b.setAttribute('aria-expanded',op?'true':'false');b.querySelector('span').textContent=op?'▴':'▾';if(op&&scroll)t.scrollIntoView({behavior:RM?'auto':'smooth'});}
   window.addEventListener('hashchange',function(){if(location.hash==='#trends')openTrends(true,true);});
-  function renderKFigs(j){var F=(j.cover.figs||[]).slice(0,4);
+  function renderKFigs(j){if(!$('kfigs'))return;var F=(j.cover.figs||[]).slice(0,4);
     $('kfigs').innerHTML=F.map(function(f){var s=(f.s||[])[0],S=j.sources[s],g=regsOf(j,f.s)[0]||'KR';return '<div class="kf" role="listitem"><div class="v">'+esc(f.v)+'<small>'+esc(f.u)+'</small></div><div class="l">'+esc(f.l)+'</div><div class="ks2"><span class="rg rg-'+g+'">'+RGN[g]+'</span>'+(S?'<a href="'+esc(sU(S))+'" target="_blank" rel="noopener">'+esc(media(S))+'</a>':'')+'</div></div>';}).join('');
     var n=(j.cover.figs||[]).length;$('kmore').firstChild.nodeValue=(LANG==='en'?'All '+n+' figures · trends · by country ':'숫자 '+n+'개 전체·이번 주 흐름·나라별 보기 ');
     }
-  function tpCard(p,i){var v=overall(p.sc),d=verdict(v),sid='tpd-'+esc(p.id);
-    var rr=(p.rate&&!/리뷰|★|평점|review|rating/i.test(p.ch||'')?'★'+esc(p.rate)+(p.rev?' ('+esc(p.rev)+')':''):'');
+  function asof(p){var m=String(p.note||'').match(/(\d{4})\.(\d{1,2})\.(\d{1,2})/);if(m)return (+m[2])+'.'+(+m[3]);var c=(D.edition&&D.edition.collected)||'';var k=c.match(/\d{4}-(\d{2})-(\d{2})/);return k?(+k[1])+'.'+(+k[2]):'';}
+  function dcOf(p){if(p.dc)return +p.dc;var m=String(p.ch||'').match(/(\d{1,2})\s?%\s*(?:[↓낮]|below|off|lower)/i);return m?+m[1]:0;}
+  function tpCard(p,i){var v=overall(p.sc),d=verdict(v),sid='tpd-'+esc(p.id),EN=LANG==='en',dc=dcOf(p),as=asof(p);
+    var rr=(p.rate?'★'+esc(p.rate):'')+(p.rev?' · '+(EN?'reviews ':'쿠팡 리뷰 ')+esc(p.rev):'');
     var srcs=(p.src||[]).filter(function(k){return D.sources[k];}).map(function(k){return '<a href="'+esc(sU(D.sources[k]))+'" target="_blank" rel="noopener">'+esc(media(D.sources[k]))+' ↗</a>';}).join('');
-    return '<article class="tp"><div class="tp-h"><span class="rk">'+(i+1)+'</span><span class="tc">'+esc(UPN[upOf(p)]||'')+' · '+esc(subOf(p))+'</span><span class="badge '+d[1]+'">'+d[0]+' '+v.toFixed(1)+'</span>'+((p.dc||0)>=10?'<span class="pk d">−'+esc(p.dc)+'%</span>':'')+'</div>'
+    var c=cpOk(p.cp)?'<a class="cta cp tp-cta" href="'+esc(p.cp)+'" target="_blank" rel="noopener sponsored nofollow" data-track="coupang" data-id="'+esc(p.id)+'">'+(EN?'Check price & discount on Coupang ↗':'쿠팡 할인가·리뷰 확인하기 ↗')+'</a>':cta(p);
+    return '<article class="tp"><div class="tp-h"><span class="rk">'+(i+1)+'</span><span class="tc">'+esc(UPN[upOf(p)]||'')+' · '+esc(subOf(p))+'</span>'+(as?'<span class="asof">'+as+(EN?'':' 기준')+'</span>':'')+'</div>'
+      +(p.target?'<p class="tp-why">'+(EN?'Good for: ':'이런 분께 · ')+esc(p.target)+'</p>':'')
       +'<div class="tp-b"><button type="button" class="im" data-id="'+esc(p.id)+'" aria-label="'+esc(p.name)+' 상세">'+pimg(p)+'</button><div class="tp-i"><div class="who">'+esc(p.brand)+'</div><h3>'+esc(p.name)+'</h3>'
-      +'<div class="tp-p"><b>'+esc(p.price)+'</b>'+(p.was?'<s>'+esc(p.was.replace(/^(정가|출시가) /,''))+'</s>':'')+'</div><p class="tp-r">'+esc(p.ch||'')+(rr?' · '+rr:'')+'</p></div></div>'
-      +'<div class="tp-a">'+cta(p)+'<button type="button" class="tp-t" data-tp="'+esc(p.id)+'" aria-expanded="false" aria-controls="'+sid+'">'+(LANG==='en'?'Details':'상세 정보')+' <b aria-hidden="true">▾</b></button></div>'
-      +'<div class="tp-d" id="'+sid+'" hidden><p>'+esc(p.why||'')+'</p>'+(p.target?'<p><b>'+(LANG==='en'?'For':'추천 대상')+'</b> '+esc(p.target)+'</p>':'')+(p.usp?'<p><b>USP</b> '+esc(p.usp)+'</p>':'')
+      +(p.usp?'<p class="tp-spec">'+esc(p.usp)+'</p>':'')+'</div></div>'
+      +'<div class="tp-p">'+(dc>0?'<span class="dcb">−'+dc+'%</span>':'')+'<b>'+esc(p.price)+'</b>'+(p.was?'<s>'+esc(p.was.replace(/^(정가|출시가) /,''))+'</s>':'')+(rr?'<span class="tp-r">'+rr+'</span>':'')+'</div>'
+      +'<div class="tp-a">'+c+'</div>'
+      +'<button type="button" class="tp-t" data-tp="'+esc(p.id)+'" aria-expanded="false" aria-controls="'+sid+'">'+(EN?'MD market analysis':'MD 시장 분석 보기')+' <b aria-hidden="true">▾</b></button>'
+      +'<div class="tp-d" id="'+sid+'" hidden><p><span class="badge '+d[1]+'">'+d[0]+' '+v.toFixed(1)+'</span> '+esc(p.why||'')+'</p>'+(p.ch?'<p>'+esc(p.ch)+'</p>':'')
       +'<ul class="tp-sc">'+LBL.map(function(l,k){return '<li><span>'+l+'</span><i style="--w:'+((p.sc[k]||0)*20)+'%"></i><b>'+(p.sc[k]||0)+'</b>'+(p.scw&&p.scw[k]?'<em>'+esc(p.scw[k])+'</em>':'')+'</li>';}).join('')+'</ul>'
       +(p.note?'<p class="fine">'+esc(p.note)+'</p>':'')+(srcs?'<div class="trs"><b>'+SRCW+'</b>'+srcs+'</div>':'')
-      +'<button type="button" class="lk" data-id="'+esc(p.id)+'">'+(LANG==='en'?'Open full details':'전체 상세 보기')+'</button></div></article>';}
+      +'<button type="button" class="lk" data-id="'+esc(p.id)+'">'+(EN?'Open full details':'전체 상세 보기')+'</button></div></article>';}
   function renderPicks(j){var L=mdList(j),A=L.slice(0,3),B=L.slice(3);$('picks').hidden=!L.length;
     $('tp-list').innerHTML=A.map(tpCard).join('');$('tp-more').innerHTML=B.map(function(p,i){return tpCard(p,i+3);}).join('');$('tp-more').hidden=true;
-    var b=$('tp-more-btn');b.hidden=!B.length;b.dataset.l=(LANG==='en'?'More MD picks ('+B.length+')':'MD 픽 '+B.length+'개 더 보기');b.textContent=b.dataset.l;b.setAttribute('aria-expanded','false');
+    var b=$('tp-more-btn');b.hidden=!B.length;b.dataset.l=(LANG==='en'?'More picks ('+B.length+')':'추천템 더 보기 ('+B.length+')');b.textContent=b.dataset.l;b.setAttribute('aria-expanded','false');
     var c=(j.edition&&j.edition.collected)||'';$('picks-sub').textContent=(LANG==='en'?'Three picks by the editors · changes daily':'가전레이더 MD가 고른 오늘의 3개 · 매일 바뀜')+(c?(LANG==='en'?' · prices as of ':' · 가격 기준 ')+c:'');}
   function renderNewsCats(){
     var ALLS=newsSrc(),rc={all:0};ALLS.forEach(function(x){if(ncat!=='all'&&x.n.c!==ncat)return;rc.all++;var g=rg(x.n.r);rc[g]=(rc[g]||0)+1;});if(nreg!=='all'&&!rc[nreg])nreg='all';regChips('news-regs',rc,nreg,'data-nr');
@@ -1002,7 +1081,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
     if(nscope==='all')L.sort(function(a,b){return a.d<b.d?1:(a.d>b.d?-1:0);});else L.sort(function(a,b){return ((b.n.pt?1:0)-(a.n.pt?1:0))||((b.n.imp||0)-(a.n.imp||0));});
     var T=Math.max(1,Math.ceil(L.length/NPP));npg=Math.min(Math.max(1,npg),T);
     var lastD='';$('news-list').innerHTML=L.slice(0,npg*NPP).map(function(x){var n=x.n,S=x.j.sources[n.s];var hd='';if(nscope==='all'&&x.d.slice(0,10)!==lastD){lastD=x.d.slice(0,10);hd='<div class="ndate">'+esc(lastD)+'</div>';}return hd+'<article class="nw"><div class="m">'+(n.pt?'<span class="pt">'+(LANG==='en'?'Key':'주요')+'</span>':'')+'<span class="c">'+esc(NCN[n.c]||n.c)+'</span><span class="rg rg-'+rg(n.r)+'">'+esc(REG[n.r]||RGN[rg(n.r)]||n.r)+'</span><span>'+esc(n.d||'')+'</span>'+(S?'<a class="s" href="'+esc(sU(S))+'" target="_blank" rel="noopener">'+esc(media(S))+'</a>'+trTag(S)+(LANG!=='en'&&isFor(S)?'<a class="s s2" href="'+esc(S.u)+'" target="_blank" rel="noopener">원문 ↗</a>':''):'')+'</div><h3>'+(S?'<a href="'+esc(sU(S))+'" target="_blank" rel="noopener">'+esc(n.h)+'</a>':esc(n.h))+'</h3><p>'+hlN(n.p)+'</p></article>';}).join('');
-    moreBtn('news-more',Math.min(npg*NPP,L.length),L.length,NPP,LANG==='en'?'More news':'뉴스 더 보기');
+    moreBtn('news-more',Math.min(npg*NPP,L.length),L.length,NPP,LANG==='en'?'All news':'전체 뉴스 보기');
   }
   function lmonOf(l){var m=String(l.d||'').match(/^(\d{4})\.(\d{2})/);return m?m[1]+'.'+m[2]:'기타';}
   function renderLaunches(){
@@ -1055,6 +1134,8 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
     if(e.target.closest('#launch-less')){lpg=1;renderLaunches();$('launches').scrollIntoView({behavior:RM?'auto':'smooth'});return;}
     var tt=e.target.closest('[data-tp]');if(tt){var dd=$(tt.getAttribute('aria-controls'));var op=tt.getAttribute('aria-expanded')!=='true';tt.setAttribute('aria-expanded',op?'true':'false');dd.hidden=!op;tt.querySelector('b').textContent=op?'▴':'▾';if(op)track('detail',{target:tt.dataset.tp});return;}
     var tm=e.target.closest('#tp-more-btn');if(tm){var o2=tm.getAttribute('aria-expanded')!=='true';tm.setAttribute('aria-expanded',o2?'true':'false');$('tp-more').hidden=!o2;tm.textContent=o2?(LANG==='en'?'Show fewer':'접기'):tm.dataset.l;return;}
+    var kp=e.target.closest('#kpi-more');if(kp){var o=kp.getAttribute('aria-expanded')!=='true';kp.setAttribute('aria-expanded',o?'true':'false');$('kpis-more').hidden=!o;kp.querySelector('span').textContent=o?'▴':'▾';return;}
+    var im=e.target.closest('#ins-more');if(im){var o3=im.getAttribute('aria-expanded')!=='true';im.setAttribute('aria-expanded',o3?'true':'false');document.querySelectorAll('#ins-list .ins-x').forEach(function(x){x.hidden=!o3;});im.textContent=o3?(LANG==='en'?'Show fewer':'접기 ▴'):(LANG==='en'?'More insights ':'인사이트 더 보기 ')+'('+document.querySelectorAll('#ins-list .ins-x').length+')';return;}
     var km=e.target.closest('#kmore');if(km){openTrends(km.getAttribute('aria-expanded')!=='true',true);return;}
     var lm=e.target.closest('[data-lm]');if(lm){lmon=lm.dataset.lm;lpg=1;renderLaunches();return;}
     var cp=e.target.closest('a.cp');if(cp){track('click',{target:cp.dataset.id,where:cp.className});return;}
