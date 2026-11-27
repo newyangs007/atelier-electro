@@ -143,7 +143,7 @@ _bm = re.search(r'<div class="biz">비즈니스 협업 환영 : (.*?)</div>', t)
 BIZ_SNIP = _bm.group(1) if _bm else ''
 t = t.replace('/*__BRANDS__*/', open(T + '/brands.json', encoding='utf-8').read())
 t = t.replace('/*__ICONS__*/', open(T + '/icons.txt', encoding='utf-8').read())
-t = t.replace('/*__ARCHIVE__*/', dump(issues)).replace('/*__ISSUE__*/', dump(latest)).replace('/*__CPBAD__*/', dump(_BADCP))
+t = t.replace('__BUILT__', __import__('datetime').datetime.utcnow().__add__(__import__('datetime').timedelta(hours=9)).strftime('%m.%d %H:%M')).replace('/*__ARCHIVE__*/', dump(issues)).replace('/*__ISSUE__*/', dump(latest)).replace('/*__CPBAD__*/', dump(_BADCP))
 ADS = ('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=%s"\n     crossorigin="anonymous"></script>' % cfg['ads']['client']) if (cfg.get('ads') or {}).get('client') else ''
 ST.ADS_HEAD = ADS
 BCSS = ('body{margin:0;font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:#111;background:#fafafa;word-break:keep-all;line-height:1.6}'
@@ -411,7 +411,7 @@ _te = _te.replace('<a href="./" aria-current="true" hreflang="ko" lang="ko"', '<
 _te = _te.replace('<a href="en/" hreflang="en"', '<a href="en/" aria-current="true" hreflang="en"', 1)
 _te = _te.replace('/*__BRANDS__*/', open(T + '/brands.json', encoding='utf-8').read())
 _te = _te.replace('/*__ICONS__*/', open(T + '/icons.txt', encoding='utf-8').read())
-_te = _te.replace('/*__ARCHIVE__*/', dump(issues)).replace('/*__ISSUE__*/', dump(latest)).replace('/*__CPBAD__*/', dump(_BADCP))
+_te = _te.replace('__BUILT__', __import__('datetime').datetime.utcnow().__add__(__import__('datetime').timedelta(hours=9)).strftime('%m.%d %H:%M')).replace('/*__ARCHIVE__*/', dump(issues)).replace('/*__ISSUE__*/', dump(latest)).replace('/*__CPBAD__*/', dump(_BADCP))
 _anchor_fix = ("<script>window.AE_LANG='en';document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href^=\"#\"]');"
                "if(!a)return;var id=a.getAttribute('href').slice(1),el=id&&document.getElementById(id);if(!el)return;ev.preventDefault();el.scrollIntoView({behavior:'smooth'});"
                "try{history.replaceState(null,'',location.pathname+location.search+'#'+id);}catch(x){}},true);</script>")
