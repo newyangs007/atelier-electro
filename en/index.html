@@ -452,7 +452,7 @@ footer a{text-decoration:none}
 .ln .t a{color:inherit;text-decoration:none}.ln .t a:hover{text-decoration:underline;text-underline-offset:3px}
 #launch-months{margin-bottom:6px}
 @media(prefers-reduced-motion:reduce){#plist .grid{animation:none}}
-.biz{margin-top:14px;padding-top:12px;border-top:1px solid #333;font-size:13px;color:#ddd}.biz a{color:#fff;font-weight:700;text-decoration:underline}
+.biz{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:#555}.biz a{color:#111;font-weight:700;text-decoration:underline}
 .refer{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:4px 0 14px;font-size:13px}.refer span{flex-basis:100%;opacity:.85}
 .refer button{border:1px solid currentColor;background:transparent;color:inherit;border-radius:999px;padding:8px 14px;font-weight:700;cursor:pointer}.refer .ks{background:#fee500;color:#191919;border-color:#fee500}
 .substrip{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:26px 0 0;padding:16px 18px;border-radius:16px;background:#111;color:#fff}
@@ -601,16 +601,61 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
 .morebar .more{margin:0!important;max-width:none;flex:0 1 260px}
 .morebar .more.less{flex:0 0 auto;background:#fff;color:var(--ink);border:1px solid var(--line)}
 .ln .x .trk{margin-left:6px}
+
+/* ===== 심플 홈 (2026-11-27): 홈 = 브리핑 3줄 · 뉴스 5 · 추천템 3 · 구독, 나머지는 하위 페이지 ===== */
+.tabs,.kfab,#c-play,#d-play,.hside{display:none!important}
+.top .hdate{font-size:12.5px;color:#bbb;margin-left:2px;white-space:nowrap}
+.backbar{display:none;background:var(--soft);border-bottom:1px solid var(--line)}
+.backbar .wrap{padding-top:10px;padding-bottom:10px}.backbar a{font-size:13.5px;font-weight:600;color:var(--ink);text-decoration:none}
+body:not([data-pg=home]) .backbar{display:block}
+body[data-pg=home] #trends,body[data-pg=home] #deals-sec,body[data-pg=home] #products,body[data-pg=home] #launches{display:none!important}
+body:not([data-pg=home]) #brief,body:not([data-pg=home]) #picks,body:not([data-pg=home]) #subscribe,body:not([data-pg=home]) #faq{display:none!important}
+body[data-pg=numbers] #news,body[data-pg=numbers] #deals-sec,body[data-pg=numbers] #products,body[data-pg=numbers] #launches{display:none!important}
+body[data-pg=news] #trends,body[data-pg=news] #deals-sec,body[data-pg=news] #products,body[data-pg=news] #launches{display:none!important}
+body[data-pg=products] #trends,body[data-pg=products] #news,body[data-pg=products] #launches{display:none!important}
+body[data-pg=launches] #trends,body[data-pg=launches] #news,body[data-pg=launches] #deals-sec,body[data-pg=launches] #products{display:none!important}
+body:not([data-pg=home]) .golink{display:none}
+body[data-pg=home] #news .nscope,body[data-pg=home] #news-regs,body[data-pg=home] #news-cats,body[data-pg=home] #news .sh p,body[data-pg=home] #news .morebar{display:none!important}
+body[data-pg=home] #tp-more-btn,body[data-pg=home] #tp-more,body[data-pg=home] .tp-h .badge{display:none!important}
+body[data-pg=home] .opt-fold,body[data-pg=home] .refer,body[data-pg=home] #stats{display:none!important}
+body[data-pg=home] .hero .deck,body[data-pg=home] .hrow .hsrc{display:none}
+.golink{display:block;text-align:center;margin:14px auto 0;max-width:420px;padding:12px;border:1px solid var(--line);border-radius:12px;font-weight:700;font-size:14.5px;color:var(--ink);text-decoration:none;background:#fff}
+.golink:hover{background:var(--soft)}
+.b3{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}
+.b3 li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:baseline;border-top:1px solid #2a2a2e;padding-top:8px}
+.b3 li:first-child{border-top:0;padding-top:0}
+.b3 b{font-family:var(--num);font-size:20px;font-weight:800;color:#fff;white-space:nowrap}.b3 b small{font-size:.6em;color:var(--acc);margin-left:1px}
+.b3 span{font-size:14px;line-height:1.45;color:#e6e6e6}.b3 a{font-size:12px;color:#9a9a9a;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
+.hrow .bmore{font-size:12.5px;font-weight:700;color:#fff;text-decoration:none;border:1px solid #444;border-radius:999px;padding:5px 11px}
+.hrow .bmore:hover{border-color:#888}
+.nws{padding:12px 0;border-bottom:1px solid var(--line)}
+.nws .m{font-size:12px;color:var(--ink2);gap:6px}.nws h3{font-size:16px;margin:3px 0 3px;line-height:1.4}
+.nws p{-webkit-line-clamp:1!important;font-size:13.5px;color:#444}
+body[data-pg=home] #news-list{display:block}
+@media(max-width:600px){
+  .top .lang{display:none}
+  .hrow .kshare{display:inline-flex!important;padding:5px 10px}
+  .hrow .kshare span{display:none}
+  .b3 b{font-size:18px}.b3 span{font-size:13.5px}
+}
+@media(min-width:900px){
+  body[data-pg=home] main{display:grid;grid-template-columns:minmax(16px,1fr) minmax(0,740px) minmax(320px,420px) minmax(16px,1fr);column-gap:28px;align-items:start}
+  body[data-pg=home] main>*{grid-column:1/-1}
+  body[data-pg=home] main>#news{grid-column:2;grid-row:3}
+  body[data-pg=home] main>#picks{grid-column:3;grid-row:3;position:sticky;top:70px}
+  body[data-pg=home] #picks .tps{grid-template-columns:1fr}
+  body[data-pg=home] #picks .wrap,body[data-pg=home] #news .wrap{max-width:none;padding-left:0;padding-right:0}
+}
 </style>
 </head>
-<body>
+<body data-pg="home">
 <header class="top">
   <div class="wrap">
     <a class="logo" href="./" aria-label="Gajeon Radar home"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22" fill="none" stroke="#fff" stroke-width="4"/><circle cx="32" cy="32" r="11" fill="none" stroke="#fff" stroke-width="4"/><path d="M32 32L50 18" stroke="#e0301e" stroke-width="6" stroke-linecap="round"/></svg>GAJEON RADAR</a>
-    <span class="sp"></span>
+    <span class="hdate" id="hdate"></span><span class="sp"></span>
     <button type="button" class="sx-btn" id="sx-open" aria-haspopup="dialog" aria-controls="sx" aria-label="Search the whole site"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>Search</span></button>
     <div class="lang" role="navigation" aria-label="Language"><a href="./?lang=ko" hreflang="ko" lang="ko" title="한국어">KO</a><a href="en/" aria-current="true" hreflang="en" lang="en" title="English">EN</a></div>
-    <a class="btn-sub" href="#subscribe">Subscribe</a>
+    <a class="btn-sub" href="./#subscribe">Subscribe</a>
   </div>
   <nav class="tabs" aria-label="Issue & contents"><div class="wrap tw">
     <button type="button" class="ed-chip" id="ed-chip" aria-haspopup="dialog" aria-controls="arc" title="Pick an issue · past issues"><svg class="cal" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="3" width="13" height="11.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M1.5 6.5h13M5 1.5v3M11 1.5v3" stroke="currentColor" stroke-width="1.6"/></svg><span id="ed-chip-t">No.</span><span class="cv">▼</span></button>
@@ -620,12 +665,14 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
 <div class="past" id="past"><div class="wrap" id="past-in"></div></div>
 
 <main>
+<div class="backbar"><div class="wrap"><a href="./">← Back to today</a></div></div>
 <section class="hero" id="brief" aria-labelledby="hero-title"><div class="wrap hgrid">
   <div class="hmain">
   <div class="meta-line"><b id="ed-label"></b><span>Published daily at 7 a.m. KST</span><a href="archive.html" id="arc-open2" style="color:#fff">Past issues →</a></div>
   <h1 id="hero-title"></h1>
   <p class="deck" id="hero-deck"></p>
-  <div class="hrow"><div class="hsrc" id="hero-src"></div><button type="button" class="kshare" id="kshare" aria-label="Share today's issue"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1 3.6c-.1.3.3.6.6.4l4.2-2.8c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg><span>Share</span></button></div>
+  <ul class="b3" id="b3" aria-label="Today's three key lines"></ul>
+  <div class="hrow"><div class="hsrc" id="hero-src"></div><a class="bmore" href="numbers.html">More figures →</a><button type="button" class="kshare" id="kshare" aria-label="Share today's issue"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1 3.6c-.1.3.3.6.6.4l4.2-2.8c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg><span>Share</span></button></div>
   </div>
   <div class="hside"><div class="kfigs" id="kfigs" role="list" aria-label="Key figures"></div>
   <button type="button" class="kmore" id="kmore" aria-expanded="false" aria-controls="trends">All figures · trends · by country <span aria-hidden="true">▾</span></button></div>
@@ -636,13 +683,6 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   <div class="figs" id="figs" tabindex="0" aria-roledescription="carousel" aria-label="Today in numbers"></div>
   <div class="trends" id="trend-list"></div>
 </div></section>
-<section class="sec" id="picks" aria-labelledby="picks-h"><div class="wrap"><span id="md" class="anchor"></span>
-  <div class="sh"><div><h2 id="picks-h">Today's top 3 picks</h2><p id="picks-sub">Three picks by the editors · changes daily</p></div></div>
-  <div class="tps" id="tp-list"></div>
-  <div class="tps tps-more" id="tp-more" hidden></div>
-  <button type="button" class="more" id="tp-more-btn" aria-expanded="false" aria-controls="tp-more" hidden></button>
-  <p class="ad-note ad-fix">[Ad] Coupang buttons are Coupang Partners affiliate links; we earn a commission on purchases.</p>
-</div></section>
 <section class="sec" id="news"><div class="wrap">
   <div class="sh"><div><h2>Today's appliance news</h2><p>By importance · Korea, US, Japan, China, Europe · click a headline to open the original article · key figures highlighted</p></div></div>
   <div class="nscope" role="tablist" aria-label="News range"><button type="button" role="tab" data-ns="today" aria-selected="true">Today's issue · by importance</button><button type="button" role="tab" data-ns="all" aria-selected="false">Including past news · by date</button><a href="news.html">All news page →</a></div>
@@ -650,6 +690,15 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   <div class="chip-row" id="news-cats" role="group" aria-label="News topics"></div>
   <div class="news" id="news-list"></div>
   <div class="morebar"><button type="button" class="more" id="news-more" hidden></button><button type="button" class="more less" id="news-less" hidden>접기 ▴</button></div>
+  <a class="golink" href="news.html">All news →</a>
+</div></section>
+<section class="sec" id="picks" aria-labelledby="picks-h"><div class="wrap"><span id="md" class="anchor"></span>
+  <div class="sh"><div><h2 id="picks-h">Today's top 3 picks</h2><p id="picks-sub">Three picks by the editors · changes daily</p></div></div>
+  <div class="tps" id="tp-list"></div>
+  <div class="tps tps-more" id="tp-more" hidden></div>
+  <button type="button" class="more" id="tp-more-btn" aria-expanded="false" aria-controls="tp-more" hidden></button>
+  <a class="golink" href="products.html">All deals & products →</a>
+  <p class="ad-note ad-fix">[Ad] Coupang buttons are Coupang Partners affiliate links; we earn a commission on purchases.</p>
 </div></section>
 <div class="wrap"><div class="adslot" data-slot="mid" hidden></div></div>
 <section class="sec" id="deals-sec" aria-label="Today's deals"><div class="wrap">
@@ -717,7 +766,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
 
 <footer><div class="wrap">
   <div><b>GAJEON RADAR GAJEON RADAR</b> · Appliance trends and picks every morning at 7</div>
-  <div class="links"><span id="foot-stats"></span><a href="news.html">All news</a><a href="launches.html">All launches</a><a href="privacy.html">Privacy policy</a><a href="archive.html">Past issues</a><a href="brands.html">Brands</a><a href="unsubscribe.html">Unsubscribe</a><a href="en/" hreflang="en">English</a><a href="rss.xml">RSS</a><a href="llms.txt">llms.txt</a></div>
+  <div class="links"><span id="foot-stats"></span><a href="numbers.html">Today in numbers</a><a href="news.html">All news</a><a href="products.html">Deals & products</a><a href="launches.html">Launches</a><a href="news-archive.html">News archive</a><a href="./#faq">FAQ & sources</a><a href="privacy.html">Privacy policy</a><a href="archive.html">Past issues</a><a href="brands.html">Brands</a><a href="unsubscribe.html">Unsubscribe</a><a href="en/" hreflang="en">English</a><a href="rss.xml">RSS</a><a href="llms.txt">llms.txt</a></div>
   <div class="biz">Business inquiries: <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=newyangs007%40gmail.com&amp;su=%5B%EA%B0%80%EC%A0%84%EB%A0%88%EC%9D%B4%EB%8D%94%5D%20%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%20%ED%98%91%EC%97%85%20%EB%AC%B8%EC%9D%98" target="_blank" rel="noopener">newyangs007@gmail.com</a></div>
 </div></footer>
 
@@ -960,6 +1009,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   function sU(S){if(!S)return '#';return (LANG!=='en'&&isFor(S))?'https://translate.google.com/translate?sl=auto&tl=ko&hl=ko&u='+encodeURIComponent(S.u):S.u;}
   var HLN='\\d[\\d,]*(?:\\.\\d+)?',HLX=new RegExp('([+\u2212-]?'+HLN+'(?:\\s?(?:조|억|만|천)(?:\\s?'+HLN+')?)*\\s?(?:%p|%|만|대|원|달러|위안|엔|명|배|개|GB|g|K|M|B|units|people))','g');
   function hlN(t){return esc(t).replace(HLX,'<mark class="hl">$1</mark>');}
+  function hl1(t){var k=0;return esc(t).replace(HLX,function(m,a){return k++?a:'<mark class="hl">'+a+'</mark>';});}
   function trTag(S){return (LANG!=='en'&&isFor(S))?'<span class="trk">한국어 번역</span>':'';}
   function fitTitle(){var h=$('hero-title');if(!h)return;h.style.fontSize='';if(window.innerWidth>600)return;var fs=parseFloat(getComputedStyle(h).fontSize),n=0;while(n<24&&fs>17){var lh=parseFloat(getComputedStyle(h).lineHeight)||fs*1.2;if(h.getBoundingClientRect().height<=lh*2+3)break;fs-=1;h.style.fontSize=fs+'px';n++;}}
   window.addEventListener('resize',function(){clearTimeout(window.__ft);window.__ft=setTimeout(fitTitle,150);});
@@ -1061,7 +1111,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   function hl(t,T){var x=esc(t);T.forEach(function(k){var e=esc(k).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');if(e)x=x.replace(new RegExp('('+e+')','ig'),'<mark>$1</mark>');});return x;}
 
   var MOB=window.matchMedia&&matchMedia('(max-width:759px)').matches;
-  var D=null,grp='mobile',sub='',brand='',pq='',PER=4,shown=PER,ncat='all',nscope='today',ALLN=null,ALLL=null,npg=1,NPP=MOB?3:6,lmon='',lpg=1,LPP=MOB?3:6,CPLAY=true,CT=null;
+  var D=null,grp='mobile',sub='',brand='',pq='',PER=4,shown=PER,ncat='all',nscope='today',ALLN=null,ALLL=null,npg=1,NPP=MOB?3:6,lmon='',lpg=1,LPP=MOB?3:6,CPLAY=false,CT=null;var PG=document.body.getAttribute('data-pg')||'home';if(PG==='home')NPP=5;
   function ranked(){return D.picks.slice().sort(function(a,b){return (overall(b.sc)-overall(a.sc))||(b.sc[0]-a.sc[0])||(b.sc[1]-a.sc[1]);});}
 
   var CPBAD=[];try{CPBAD=JSON.parse($('cp-bad').textContent)||[];}catch(e){}
@@ -1096,6 +1146,8 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
     fitTitle();
     $('hero-src').innerHTML=HS.map(function(k){var S=j.sources[k];return S?'<a href="'+esc(sU(S))+'" target="_blank" rel="noopener"><b>'+SRCW+'</b>'+esc(media(S))+' ↗</a>':'';}).join('');
     $('hero-deck').textContent=j.cover.deck;
+    $('b3').innerHTML=(j.cover.figs||[]).slice(0,3).map(function(f){var S=j.sources[(f.s||[])[0]];return '<li><b>'+esc(f.v)+'<small>'+esc(f.u)+'</small></b><span>'+esc(f.l)+(S?' <a href="'+esc(sU(S))+'" target="_blank" rel="noopener">'+esc(media(S))+'</a>':'')+'</span></li>';}).join('');
+    try{var dd=j.edition.date.split('-');$('hdate').textContent=(+dd[1])+'.'+(+dd[2])+(LANG==='en'?'':'');}catch(e){}
     freg='all';renderFigs();renderKFigs(j);
     renderPicks(j);
     pickDeals(j);var DL=j.picks.filter(isDeal).sort(function(a,b){return b.dc-a.dc;});
@@ -1193,8 +1245,8 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
     var L=newsSrc().filter(function(x){return (ncat==='all'||x.n.c===ncat)&&(nreg==='all'||rg(x.n.r)===nreg);});
     if(nscope==='all')L.sort(function(a,b){return a.d<b.d?1:(a.d>b.d?-1:0);});else L.sort(function(a,b){return ((b.n.pt?1:0)-(a.n.pt?1:0))||((b.n.imp||0)-(a.n.imp||0));});
     var T=Math.max(1,Math.ceil(L.length/NPP));npg=Math.min(Math.max(1,npg),T);
-    var lastD='';$('news-list').innerHTML=L.slice(0,npg*NPP).map(function(x){var n=x.n,S=x.j.sources[n.s];var hd='';if(nscope==='all'&&x.d.slice(0,10)!==lastD){lastD=x.d.slice(0,10);hd='<div class="ndate">'+esc(lastD)+'</div>';}return hd+'<article class="nw"><div class="m">'+(n.pt?'<span class="pt">'+(LANG==='en'?'Key':'Key')+'</span>':'')+'<span class="c">'+esc(NCN[n.c]||n.c)+'</span><span class="rg rg-'+rg(n.r)+'">'+esc(REG[n.r]||RGN[rg(n.r)]||n.r)+'</span><span>'+esc(n.d||'')+'</span>'+(S?'<a class="s" href="'+esc(sU(S))+'" target="_blank" rel="noopener">'+esc(media(S))+'</a>'+trTag(S)+(LANG!=='en'&&isFor(S)?'<a class="s s2" href="'+esc(S.u)+'" target="_blank" rel="noopener">Article ↗</a>':''):'')+'</div><h3>'+(S?'<a href="'+esc(sU(S))+'" target="_blank" rel="noopener">'+esc(n.h)+'</a>':esc(n.h))+'</h3><p>'+hlN(n.p)+'</p></article>';}).join('');
-    moreBtn('news-more',Math.min(npg*NPP,L.length),L.length,NPP,LANG==='en'?'More news':'More news');
+    var lastD='';$('news-list').innerHTML=L.slice(0,npg*NPP).map(function(x){var n=x.n,S=x.j.sources[n.s];var hd='';if(PG==='home')return '<article class="nw nws"><div class="m">'+(n.pt?'<span class="pt">'+(LANG==='en'?'Key':'Key')+'</span>':'')+'<span>'+esc(NCN[n.c]||n.c)+' · '+esc(REG[n.r]||RGN[rg(n.r)]||n.r)+(S?' · '+esc(media(S)):'')+'</span></div><h3>'+(S?'<a href="'+esc(sU(S))+'" target="_blank" rel="noopener">'+esc(n.h)+'</a>':esc(n.h))+'</h3><p>'+hl1(n.p)+'</p></article>';if(nscope==='all'&&x.d.slice(0,10)!==lastD){lastD=x.d.slice(0,10);hd='<div class="ndate">'+esc(lastD)+'</div>';}return hd+'<article class="nw"><div class="m">'+(n.pt?'<span class="pt">'+(LANG==='en'?'Key':'Key')+'</span>':'')+'<span class="c">'+esc(NCN[n.c]||n.c)+'</span><span class="rg rg-'+rg(n.r)+'">'+esc(REG[n.r]||RGN[rg(n.r)]||n.r)+'</span><span>'+esc(n.d||'')+'</span>'+(S?'<a class="s" href="'+esc(sU(S))+'" target="_blank" rel="noopener">'+esc(media(S))+'</a>'+trTag(S)+(LANG!=='en'&&isFor(S)?'<a class="s s2" href="'+esc(S.u)+'" target="_blank" rel="noopener">Article ↗</a>':''):'')+'</div><h3>'+(S?'<a href="'+esc(sU(S))+'" target="_blank" rel="noopener">'+esc(n.h)+'</a>':esc(n.h))+'</h3><p>'+hlN(n.p)+'</p></article>';}).join('');
+    if(PG==='home'){$('news-more').hidden=true;$('news-less').hidden=true;}else moreBtn('news-more',Math.min(npg*NPP,L.length),L.length,NPP,LANG==='en'?'More news':'More news');
   }
   function lmonOf(l){var m=String(l.d||'').match(/^(\d{4})\.(\d{2})/);return m?m[1]+'.'+m[2]:'Other';}
   function renderLaunches(){
@@ -1383,7 +1435,7 @@ mark{background:#ffe1dc;color:inherit;border-radius:3px;padding:0 1px}
   function slideBy(tr,d){var c=tr.children;if(!c.length)return;var g=parseFloat(getComputedStyle(tr).columnGap)||12,w=c[0].getBoundingClientRect().width+g,max=tr.scrollWidth-tr.clientWidth,x=tr.scrollLeft+d*w;if(d>0&&tr.scrollLeft>=max-4)x=0;else if(d<0&&tr.scrollLeft<=4)x=max;tr.scrollTo({left:x,behavior:RM?'auto':'smooth'});}
   $('f-prev').onclick=function(){slideBy($('figs'),-1);};$('f-next').onclick=function(){slideBy($('figs'),1);};
   $('figs').addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();slideBy(this,1);}else if(e.key==='ArrowLeft'){e.preventDefault();slideBy(this,-1);}});
-  var DPLAY=true,DT=null,DH=false;function dealAuto(){clearInterval(DT);if(!DPLAY)return;DT=setInterval(function(){if(document.hidden||DH)return;var t=$('deal-list');if(t.scrollWidth>t.clientWidth+4)slideBy(t,1);},3500);}
+  var DPLAY=false,DT=null,DH=false;function dealAuto(){clearInterval(DT);if(!DPLAY)return;DT=setInterval(function(){if(document.hidden||DH)return;var t=$('deal-list');if(t.scrollWidth>t.clientWidth+4)slideBy(t,1);},3500);}
   $('d-play').innerHTML=PAU;$('d-prev').onclick=function(){slideBy($('deal-list'),-1);dealAuto();};$('d-next').onclick=function(){slideBy($('deal-list'),1);dealAuto();};
   $('d-play').onclick=function(){DPLAY=!DPLAY;this.innerHTML=DPLAY?PAU:PLY;this.setAttribute('aria-label',DPLAY?'Pause auto-advance':'Resume auto-advance');dealAuto();};
   (function(t){['pointerenter','focusin','touchstart'].forEach(function(ev){t.addEventListener(ev,function(){DH=true;},{passive:true});});['pointerleave','focusout','touchend'].forEach(function(ev){t.addEventListener(ev,function(){DH=false;},{passive:true});});})($('deal-list'));dealAuto();

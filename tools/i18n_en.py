@@ -12,6 +12,8 @@ D = {
     '뉴스': 'News', '신제품': 'Launches', 'MD픽': 'MD picks', '특가': 'Deals', '제품': 'Products',
     '매일 아침 7시 발행': 'Published daily at 7 a.m. KST', '과월호 보기 →': 'Past issues →',
     '카카오톡 등으로 오늘 호 공유하기': "Share today's issue", '카카오톡으로 공유': 'Share',
+    '숫자 더 보기 →': 'More figures →', '뉴스 전체 보기 →': 'All news →', '특가·제품 전체 보기 →': 'All deals & products →', '← 오늘의 요약으로': '← Back to today', '오늘의 핵심 3줄': "Today's three key lines",
+    '숫자로 보는 오늘': 'Today in numbers', '뉴스 전체': 'All news', '특가·제품': 'Deals & products', '신제품': 'Launches', '지난 뉴스 아카이브': 'News archive', 'FAQ·출처': 'FAQ & sources', ' 발행': '',
     '브리핑': 'Briefing', '추천템': 'Top picks', '핵심 숫자': 'Key figures', '나라별 보기': 'By country',
     '숫자 전체·이번 주 흐름·나라별 보기': 'All figures · trends · by country',
     '오늘의 추천템 3': "Today's top 3 picks", '가전레이더 MD가 고른 오늘의 3개 · 매일 바뀜': 'Three picks by the editors · changes daily',
