@@ -1,0 +1,30 @@
+name: 바뀐 페이지 검색엔진 알림 (IndexNow — Bing·네이버 등)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 50
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: GitHub Pages 반영 대기
+        run: sleep 90
+      - name: IndexNow 알림
+        env:
+          SITE_PATH: atelier-electro
+        run: |
+          BEFORE="${{ github.event.before }}"
+          if [ -z "$BEFORE" ] || ! git cat-file -e "$BEFORE" 2>/dev/null; then BEFORE=HEAD~1; fi
+          python .github/indexnow.py "$BEFORE" HEAD
